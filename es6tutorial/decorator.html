@@ -1,0 +1,956 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>24. Decorator</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="module.html"/>
+    <link rel="prev" href="simd.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="decorator.html">24. Decorator</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_25">24. Decorator</h1>
+        <div class="section">
+            <h1 id="修饰器" class="calibre5">修饰器</h1>
+<h2 id="类的修饰" class="calibre16">类的修饰</h2>
+<p class="calibre6">许多面向对象的语言都有修饰器（Decorator）函数，用来修改类的行为。目前，有一个<a href="https://github.com/tc39/proposal-decorators" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">提案</a>将这项功能，引入了 ECMAScript。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">@testable
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyTestableClass</span> </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">testable</span>(<span class="hljs-number">target</span>) </span>{
+  target.isTestable = <span class="hljs-number">true</span>;
+}
+
+MyTestableClass.isTestable <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">@testable</code>就是一个修饰器。它修改了<code class="pcalibre3 calibre13 pcalibre4">MyTestableClass</code>这个类的行为，为它加上了静态属性<code class="pcalibre3 calibre13 pcalibre4">isTestable</code>。<code class="pcalibre3 calibre13 pcalibre4">testable</code>函数的参数<code class="pcalibre3 calibre13 pcalibre4">target</code>是<code class="pcalibre3 calibre13 pcalibre4">MyTestableClass</code>类本身。</p>
+<p class="calibre6">基本上，修饰器的行为就是下面这样。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">@decorator
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">A</span> </span>{}
+
+<span class="hljs-comment">// 等同于</span>
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">A</span> </span>{}
+A = decorator(A) || A;
+</code></pre>
+<p class="calibre6">也就是说，修饰器是一个对类进行处理的函数。修饰器函数的第一个参数，就是所要修饰的目标类。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">testable</span>(<span class="hljs-number">target</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">testable</code>函数的参数<code class="pcalibre3 calibre13 pcalibre4">target</code>，就是会被修饰的类。</p>
+<p class="calibre6">如果觉得一个参数不够用，可以在修饰器外面再封装一层函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">testable</span>(<span class="hljs-number">isTestable</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target</span>) </span>{
+    target.isTestable = isTestable;
+  }
+}
+
+@testable(<span class="hljs-number">true</span>)
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyTestableClass</span> </span>{}
+MyTestableClass.isTestable <span class="hljs-comment">// true</span>
+
+@testable(<span class="hljs-number">false</span>)
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{}
+MyClass.isTestable <span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">上面代码中，修饰器<code class="pcalibre3 calibre13 pcalibre4">testable</code>可以接受参数，这就等于可以修改修饰器的行为。</p>
+<p class="calibre6">注意，修饰器对类的行为的改变，是代码编译时发生的，而不是在运行时。这意味着，修饰器能在编译阶段运行代码。也就是说，修饰器本质就是编译时执行的函数。</p>
+<p class="calibre6">前面的例子是为类添加一个静态属性，如果想添加实例属性，可以通过目标类的<code class="pcalibre3 calibre13 pcalibre4">prototype</code>对象操作。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">testable</span>(<span class="hljs-number">target</span>) </span>{
+  target.prototype.isTestable = <span class="hljs-number">true</span>;
+}
+
+@testable
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyTestableClass</span> </span>{}
+
+<span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">new</span> MyTestableClass();
+obj.isTestable <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，修饰器函数<code class="pcalibre3 calibre13 pcalibre4">testable</code>是在目标类的<code class="pcalibre3 calibre13 pcalibre4">prototype</code>对象上添加属性，因此就可以在实例上调用。</p>
+<p class="calibre6">下面是另外一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// mixins.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">mixins</span>(<span class="hljs-number">...list</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">target</span>) </span>{
+    <span class="hljs-number">Object</span>.assign(target.prototype, ...list)
+  }
+}
+
+<span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">import</span> { mixins } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./mixins&#39;</span>
+
+<span class="hljs-keyword">const</span> Foo = {
+  foo() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo&#39;</span>) }
+};
+
+@mixins(Foo)
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{}
+
+<span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">new</span> MyClass();
+obj.foo() <span class="hljs-comment">// &#39;foo&#39;</span>
+</code></pre>
+<p class="calibre6">上面代码通过修饰器<code class="pcalibre3 calibre13 pcalibre4">mixins</code>，把<code class="pcalibre3 calibre13 pcalibre4">Foo</code>对象的方法添加到了<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>的实例上面。可以用<code class="pcalibre3 calibre13 pcalibre4">Object.assign()</code>模拟这个功能。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> Foo = {
+  foo() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo&#39;</span>) }
+};
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{}
+
+<span class="hljs-number">Object</span>.assign(MyClass.prototype, Foo);
+
+<span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">new</span> MyClass();
+obj.foo() <span class="hljs-comment">// &#39;foo&#39;</span>
+</code></pre>
+<p class="calibre6">实际开发中，React 与 Redux 库结合使用时，常常需要写成下面这样。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyReactComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">React</span>.<span class="hljs-comment">Component</span> </span>{}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> connect(mapStateToProps, mapDispatchToProps)(MyReactComponent);
+</code></pre>
+<p class="calibre6">有了装饰器，就可以改写上面的代码。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">@connect(mapStateToProps, mapDispatchToProps)
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyReactComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">React</span>.<span class="hljs-comment">Component</span> </span>{}
+</code></pre>
+<p class="calibre6">相对来说，后一种写法看上去更容易理解。</p>
+<h2 id="方法的修饰" class="calibre12">方法的修饰</h2>
+<p class="calibre6">修饰器不仅可以修饰类，还可以修饰类的属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Person</span> </span>{
+  @readonly
+  name() { <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-_">${this.first}</span> <span class="hljs-_">${this.last}</span>`</span> }
+}
+</code></pre>
+<p class="calibre6">上面代码中，修饰器<code class="pcalibre3 calibre13 pcalibre4">readonly</code>用来修饰“类”的<code class="pcalibre3 calibre13 pcalibre4">name</code>方法。</p>
+<p class="calibre6">修饰器函数<code class="pcalibre3 calibre13 pcalibre4">readonly</code>一共可以接受三个参数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">readonly</span>(<span class="hljs-number">target, name, descriptor</span>)</span>{
+  <span class="hljs-comment">// descriptor对象原来的值如下</span>
+  <span class="hljs-comment">// {</span>
+  <span class="hljs-comment">//   value: specifiedFunction,</span>
+  <span class="hljs-comment">//   enumerable: false,</span>
+  <span class="hljs-comment">//   configurable: true,</span>
+  <span class="hljs-comment">//   writable: true</span>
+  <span class="hljs-comment">// };</span>
+  descriptor.writable = <span class="hljs-number">false</span>;
+  <span class="hljs-keyword">return</span> descriptor;
+}
+
+readonly(Person.prototype, <span class="hljs-string">&#39;name&#39;</span>, descriptor);
+<span class="hljs-comment">// 类似于</span>
+<span class="hljs-number">Object</span>.defineProperty(Person.prototype, <span class="hljs-string">&#39;name&#39;</span>, descriptor);
+</code></pre>
+<p class="calibre6">修饰器第一个参数是类的原型对象，上例是<code class="pcalibre3 calibre13 pcalibre4">Person.prototype</code>，修饰器的本意是要“修饰”类的实例，但是这个时候实例还没生成，所以只能去修饰原型（这不同于类的修饰，那种情况时<code class="pcalibre3 calibre13 pcalibre4">target</code>参数指的是类本身）；第二个参数是所要修饰的属性名，第三个参数是该属性的描述对象。</p>
+<p class="calibre6">另外，上面代码说明，修饰器（readonly）会修改属性的描述对象（descriptor），然后被修改的描述对象再用来定义属性。</p>
+<p class="calibre6">下面是另一个例子，修改属性描述对象的<code class="pcalibre3 calibre13 pcalibre4">enumerable</code>属性，使得该属性不可遍历。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Person</span> </span>{
+  @nonenumerable
+  get kidCount() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.children.length; }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">nonenumerable</span>(<span class="hljs-number">target, name, descriptor</span>) </span>{
+  descriptor.enumerable = <span class="hljs-number">false</span>;
+  <span class="hljs-keyword">return</span> descriptor;
+}
+</code></pre>
+<p class="calibre6">下面的<code class="pcalibre3 calibre13 pcalibre4">@log</code>修饰器，可以起到输出日志的作用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Math</span> </span>{
+  @log
+  add(a, b) {
+    <span class="hljs-keyword">return</span> a + b;
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">log</span>(<span class="hljs-number">target, name, descriptor</span>) </span>{
+  <span class="hljs-keyword">var</span> oldValue = descriptor.value;
+
+  descriptor.value = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">`Calling <span class="hljs-_">${name}</span> with`</span>, <span class="hljs-number">arguments</span>);
+    <span class="hljs-keyword">return</span> oldValue.apply(<span class="hljs-number">null</span>, <span class="hljs-number">arguments</span>);
+  };
+
+  <span class="hljs-keyword">return</span> descriptor;
+}
+
+<span class="hljs-keyword">const</span> math = <span class="hljs-keyword">new</span> <span class="hljs-number">Math</span>();
+
+<span class="hljs-comment">// passed parameters should get logged now</span>
+math.add(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>);
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">@log</code>修饰器的作用就是在执行原始的操作之前，执行一次<code class="pcalibre3 calibre13 pcalibre4">console.log</code>，从而达到输出日志的目的。</p>
+<p class="calibre6">修饰器有注释的作用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">@testable
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Person</span> </span>{
+  @readonly
+  @nonenumerable
+  name() { <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-_">${this.first}</span> <span class="hljs-_">${this.last}</span>`</span> }
+}
+</code></pre>
+<p class="calibre6">从上面代码中，我们一眼就能看出，<code class="pcalibre3 calibre13 pcalibre4">Person</code>类是可测试的，而<code class="pcalibre3 calibre13 pcalibre4">name</code>方法是只读和不可枚举的。</p>
+<p class="calibre6">下面是使用 Decorator 写法的<a href="https://github.com/ionic-team/stencil" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">组件</a>，看上去一目了然。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">@Component({
+  tag: <span class="hljs-string">&#39;my-component&#39;</span>,
+  styleUrl: <span class="hljs-string">&#39;my-component.scss&#39;</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyComponent</span> </span>{
+  @Prop() first: string;
+  @Prop() last: string;
+  @State() isVisible: boolean = <span class="hljs-number">true</span>;
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="hljs-_"><span class="hljs-tag">&lt;<span class="hljs-_">p</span>&gt;</span>Hello, my name is {this.first} {this.last}<span class="hljs-tag">&lt;/<span class="hljs-_">p</span>&gt;</span></span>
+    );
+  }
+}
+</code></pre>
+<p class="calibre6">如果同一个方法有多个修饰器，会像剥洋葱一样，先从外到内进入，然后由内向外执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">dec</span>(<span class="hljs-number">id</span>)</span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;evaluated&#39;</span>, id);
+  <span class="hljs-keyword">return</span> (target, property, descriptor) =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;executed&#39;</span>, id);
+}
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Example</span> </span>{
+    @dec(<span class="hljs-number">1</span>)
+    @dec(<span class="hljs-number">2</span>)
+    method(){}
+}
+<span class="hljs-comment">// evaluated 1</span>
+<span class="hljs-comment">// evaluated 2</span>
+<span class="hljs-comment">// executed 2</span>
+<span class="hljs-comment">// executed 1</span>
+</code></pre>
+<p class="calibre6">上面代码中，外层修饰器<code class="pcalibre3 calibre13 pcalibre4">@dec(1)</code>先进入，但是内层修饰器<code class="pcalibre3 calibre13 pcalibre4">@dec(2)</code>先执行。</p>
+<p class="calibre6">除了注释，修饰器还能用来类型检查。所以，对于类来说，这项功能相当有用。从长期来看，它将是 JavaScript 代码静态分析的重要工具。</p>
+<h2 id="为什么修饰器不能用于函数？" class="calibre12">为什么修饰器不能用于函数？</h2>
+<p class="calibre6">修饰器只能用于类和类的方法，不能用于函数，因为存在函数提升。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> counter = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">var</span> add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  counter++;
+};
+
+@add
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+}
+</code></pre>
+<p class="calibre6">上面的代码，意图是执行后<code class="pcalibre3 calibre13 pcalibre4">counter</code>等于 1，但是实际上结果是<code class="pcalibre3 calibre13 pcalibre4">counter</code>等于 0。因为函数提升，使得实际执行的代码是下面这样。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">@add
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+}
+
+<span class="hljs-keyword">var</span> counter;
+<span class="hljs-keyword">var</span> add;
+
+counter = <span class="hljs-number">0</span>;
+
+add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  counter++;
+};
+</code></pre>
+<p class="calibre6">下面是另一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> readOnly = <span class="hljs-number">require</span>(<span class="hljs-string">&#34;some-decorator&#34;</span>);
+
+@readOnly
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+}
+</code></pre>
+<p class="calibre6">上面代码也有问题，因为实际执行是下面这样。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> readOnly;
+
+@readOnly
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+}
+
+readOnly = <span class="hljs-number">require</span>(<span class="hljs-string">&#34;some-decorator&#34;</span>);
+</code></pre>
+<p class="calibre6">总之，由于存在函数提升，使得修饰器不能用于函数。类是不会提升的，所以就没有这方面的问题。</p>
+<p class="calibre6">另一方面，如果一定要修饰函数，可以采用高阶函数的形式直接执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">doSomething</span>(<span class="hljs-number">name</span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Hello, &#39;</span> + name);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">loggingDecorator</span>(<span class="hljs-number">wrapped</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Starting&#39;</span>);
+    <span class="hljs-keyword">const</span> result = wrapped.apply(<span class="hljs-keyword">this</span>, <span class="hljs-number">arguments</span>);
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Finished&#39;</span>);
+    <span class="hljs-keyword">return</span> result;
+  }
+}
+
+<span class="hljs-keyword">const</span> wrapped = loggingDecorator(doSomething);
+</code></pre>
+<h2 id="core-decoratorsjs" class="calibre12">core-decorators.js</h2>
+<p class="calibre6"><a href="https://github.com/jayphelps/core-decorators.js" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">core-decorators.js</a>是一个第三方模块，提供了几个常见的修饰器，通过它可以更好地理解修饰器。</p>
+<p class="calibre6"><strong class="calibre17">（1）@autobind</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">autobind</code>修饰器使得方法中的<code class="pcalibre3 calibre13 pcalibre4">this</code>对象，绑定原始对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> { autobind } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;core-decorators&#39;</span>;
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Person</span> </span>{
+  @autobind
+  getPerson() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+  }
+}
+
+<span class="hljs-keyword">let</span> person = <span class="hljs-keyword">new</span> Person();
+<span class="hljs-keyword">let</span> getPerson = person.getPerson;
+
+getPerson() === person;
+<span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6"><strong class="calibre17">（2）@readonly</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">readonly</code>修饰器使得属性或方法不可写。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> { readonly } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;core-decorators&#39;</span>;
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Meal</span> </span>{
+  @readonly
+  entree = <span class="hljs-string">&#39;steak&#39;</span>;
+}
+
+<span class="hljs-keyword">var</span> dinner = <span class="hljs-keyword">new</span> Meal();
+dinner.entree = <span class="hljs-string">&#39;salmon&#39;</span>;
+<span class="hljs-comment">// Cannot assign to read only property &#39;entree&#39; of [object Object]</span>
+</code></pre>
+<p class="calibre6"><strong class="calibre17">（3）@override</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">override</code>修饰器检查子类的方法，是否正确覆盖了父类的同名方法，如果不正确会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> { override } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;core-decorators&#39;</span>;
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Parent</span> </span>{
+  speak(first, second) {}
+}
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Child</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">Parent</span> </span>{
+  @override
+  speak() {}
+  <span class="hljs-comment">// SyntaxError: Child#speak() does not properly override Parent#speak(first, second)</span>
+}
+
+<span class="hljs-comment">// or</span>
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Child</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">Parent</span> </span>{
+  @override
+  speaks() {}
+  <span class="hljs-comment">// SyntaxError: No descriptor matching Child#speaks() was found on the prototype chain.</span>
+  <span class="hljs-comment">//</span>
+  <span class="hljs-comment">//   Did you mean &#34;speak&#34;?</span>
+}
+</code></pre>
+<p class="calibre6"><strong class="calibre17">（4）@deprecate (别名@deprecated)</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">deprecate</code>或<code class="pcalibre3 calibre13 pcalibre4">deprecated</code>修饰器在控制台显示一条警告，表示该方法将废除。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> { deprecate } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;core-decorators&#39;</span>;
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Person</span> </span>{
+  @deprecate
+  facepalm() {}
+
+  @deprecate(<span class="hljs-string">&#39;We stopped facepalming&#39;</span>)
+  facepalmHard() {}
+
+  @deprecate(<span class="hljs-string">&#39;We stopped facepalming&#39;</span>, { url: <span class="hljs-string">&#39;http://knowyourmeme.com/memes/facepalm&#39;</span> })
+  facepalmHarder() {}
+}
+
+<span class="hljs-keyword">let</span> person = <span class="hljs-keyword">new</span> Person();
+
+person.facepalm();
+<span class="hljs-comment">// DEPRECATION Person#facepalm: This function will be removed in future versions.</span>
+
+person.facepalmHard();
+<span class="hljs-comment">// DEPRECATION Person#facepalmHard: We stopped facepalming</span>
+
+person.facepalmHarder();
+<span class="hljs-comment">// DEPRECATION Person#facepalmHarder: We stopped facepalming</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">//     See http://knowyourmeme.com/memes/facepalm for more details.</span>
+<span class="hljs-comment">//</span>
+</code></pre>
+<p class="calibre6"><strong class="calibre17">（5）@suppressWarnings</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">suppressWarnings</code>修饰器抑制<code class="pcalibre3 calibre13 pcalibre4">deprecated</code>修饰器导致的<code class="pcalibre3 calibre13 pcalibre4">console.warn()</code>调用。但是，异步代码发出的调用除外。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> { suppressWarnings } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;core-decorators&#39;</span>;
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Person</span> </span>{
+  @deprecated
+  facepalm() {}
+
+  @suppressWarnings
+  facepalmWithoutWarning() {
+    <span class="hljs-keyword">this</span>.facepalm();
+  }
+}
+
+<span class="hljs-keyword">let</span> person = <span class="hljs-keyword">new</span> Person();
+
+person.facepalmWithoutWarning();
+<span class="hljs-comment">// no warning is logged</span>
+</code></pre>
+<h2 id="使用修饰器实现自动发布事件" class="calibre12">使用修饰器实现自动发布事件</h2>
+<p class="calibre6">我们可以使用修饰器，使得对象的方法被调用时，自动发出一个事件。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> postal = <span class="hljs-number">require</span>(<span class="hljs-string">&#34;postal/lib/postal.lodash&#34;</span>);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">publish</span>(<span class="hljs-number">topic, channel</span>) </span>{
+  <span class="hljs-keyword">const</span> channelName = channel || <span class="hljs-string">&#39;/&#39;</span>;
+  <span class="hljs-keyword">const</span> msgChannel = postal.channel(channelName);
+  msgChannel.subscribe(topic, v =&gt; {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;频道: &#39;</span>, channelName);
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;事件: &#39;</span>, topic);
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;数据: &#39;</span>, v);
+  });
+
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target, name, descriptor</span>) </span>{
+    <span class="hljs-keyword">const</span> fn = descriptor.value;
+
+    descriptor.value = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+      <span class="hljs-keyword">let</span> value = fn.apply(<span class="hljs-keyword">this</span>, <span class="hljs-number">arguments</span>);
+      msgChannel.publish(topic, value);
+    };
+  };
+}
+</code></pre>
+<p class="calibre6">上面代码定义了一个名为<code class="pcalibre3 calibre13 pcalibre4">publish</code>的修饰器，它通过改写<code class="pcalibre3 calibre13 pcalibre4">descriptor.value</code>，使得原方法被调用时，会自动发出一个事件。它使用的事件“发布/订阅”库是<a href="https://github.com/postaljs/postal.js" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">Postal.js</a>。</p>
+<p class="calibre6">它的用法如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// index.js</span>
+<span class="hljs-keyword">import</span> publish <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./publish&#39;</span>;
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">FooComponent</span> </span>{
+  @publish(<span class="hljs-string">&#39;foo.some.message&#39;</span>, <span class="hljs-string">&#39;component&#39;</span>)
+  someMethod() {
+    <span class="hljs-keyword">return</span> { my: <span class="hljs-string">&#39;data&#39;</span> };
+  }
+  @publish(<span class="hljs-string">&#39;foo.some.other&#39;</span>)
+  anotherMethod() {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-keyword">let</span> foo = <span class="hljs-keyword">new</span> FooComponent();
+
+foo.someMethod();
+foo.anotherMethod();
+</code></pre>
+<p class="calibre6">以后，只要调用<code class="pcalibre3 calibre13 pcalibre4">someMethod</code>或者<code class="pcalibre3 calibre13 pcalibre4">anotherMethod</code>，就会自动发出一个事件。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ bash-node index.js
+频道:  component
+事件:  foo.some.message
+数据:  { my: <span class="hljs-string">&#39;data&#39;</span> }
+
+频道:  /
+事件:  foo.some.other
+数据:  undefined
+</code></pre>
+<h2 id="mixin" class="calibre12">Mixin</h2>
+<p class="calibre6">在修饰器的基础上，可以实现<code class="pcalibre3 calibre13 pcalibre4">Mixin</code>模式。所谓<code class="pcalibre3 calibre13 pcalibre4">Mixin</code>模式，就是对象继承的一种替代方案，中文译为“混入”（mix in），意为在一个对象之中混入另外一个对象的方法。</p>
+<p class="calibre6">请看下面的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> Foo = {
+  foo() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo&#39;</span>) }
+};
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{}
+
+<span class="hljs-number">Object</span>.assign(MyClass.prototype, Foo);
+
+<span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">new</span> MyClass();
+obj.foo() <span class="hljs-comment">// &#39;foo&#39;</span>
+</code></pre>
+<p class="calibre6">上面代码之中，对象<code class="pcalibre3 calibre13 pcalibre4">Foo</code>有一个<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法，通过<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>方法，可以将<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法“混入”<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>类，导致<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>的实例<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象都具有<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法。这就是“混入”模式的一个简单实现。</p>
+<p class="calibre6">下面，我们部署一个通用脚本<code class="pcalibre3 calibre13 pcalibre4">mixins.js</code>，将 Mixin 写成一个修饰器。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">mixins</span>(<span class="hljs-number">...list</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">target</span>) </span>{
+    <span class="hljs-number">Object</span>.assign(target.prototype, ...list);
+  };
+}
+</code></pre>
+<p class="calibre6">然后，就可以使用上面这个修饰器，为类“混入”各种方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> { mixins } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./mixins&#39;</span>;
+
+<span class="hljs-keyword">const</span> Foo = {
+  foo() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo&#39;</span>) }
+};
+
+@mixins(Foo)
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{}
+
+<span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">new</span> MyClass();
+obj.foo() <span class="hljs-comment">// &#34;foo&#34;</span>
+</code></pre>
+<p class="calibre6">通过<code class="pcalibre3 calibre13 pcalibre4">mixins</code>这个修饰器，实现了在<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>类上面“混入”<code class="pcalibre3 calibre13 pcalibre4">Foo</code>对象的<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法。</p>
+<p class="calibre6">不过，上面的方法会改写<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>类的<code class="pcalibre3 calibre13 pcalibre4">prototype</code>对象，如果不喜欢这一点，也可以通过类的继承实现 Mixin。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">MyBaseClass</span> </span>{
+  <span class="hljs-comment">/* ... */</span>
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>继承了<code class="pcalibre3 calibre13 pcalibre4">MyBaseClass</code>。如果我们想在<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>里面“混入”一个<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法，一个办法是在<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>和<code class="pcalibre3 calibre13 pcalibre4">MyBaseClass</code>之间插入一个混入类，这个类具有<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法，并且继承了<code class="pcalibre3 calibre13 pcalibre4">MyBaseClass</code>的所有方法，然后<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>再继承这个类。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> MyMixin = (superclass) =&gt; <span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">superclass</span> </span>{
+  foo() {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo from MyMixin&#39;</span>);
+  }
+};
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">MyMixin</code>是一个混入类生成器，接受<code class="pcalibre3 calibre13 pcalibre4">superclass</code>作为参数，然后返回一个继承<code class="pcalibre3 calibre13 pcalibre4">superclass</code>的子类，该子类包含一个<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法。</p>
+<p class="calibre6">接着，目标类再去继承这个混入类，就达到了“混入”<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法的目的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">MyMixin</span>(<span class="hljs-comment">MyBaseClass</span>) </span>{
+  <span class="hljs-comment">/* ... */</span>
+}
+
+<span class="hljs-keyword">let</span> c = <span class="hljs-keyword">new</span> MyClass();
+c.foo(); <span class="hljs-comment">// &#34;foo from MyMixin&#34;</span>
+</code></pre>
+<p class="calibre6">如果需要“混入”多个方法，就生成多个混入类。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">Mixin1</span>(<span class="hljs-comment">Mixin2</span>(<span class="hljs-comment">MyBaseClass</span>)) </span>{
+  <span class="hljs-comment">/* ... */</span>
+}
+</code></pre>
+<p class="calibre6">这种写法的一个好处，是可以调用<code class="pcalibre3 calibre13 pcalibre4">super</code>，因此可以避免在“混入”过程中覆盖父类的同名方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> Mixin1 = (superclass) =&gt; <span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">superclass</span> </span>{
+  foo() {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo from Mixin1&#39;</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">super</span>.foo) <span class="hljs-keyword">super</span>.foo();
+  }
+};
+
+<span class="hljs-keyword">let</span> Mixin2 = (superclass) =&gt; <span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">superclass</span> </span>{
+  foo() {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo from Mixin2&#39;</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">super</span>.foo) <span class="hljs-keyword">super</span>.foo();
+  }
+};
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">S</span> </span>{
+  foo() {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo from S&#39;</span>);
+  }
+}
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">C</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">Mixin1</span>(<span class="hljs-comment">Mixin2</span>(<span class="hljs-comment">S</span>)) </span>{
+  foo() {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo from C&#39;</span>);
+    <span class="hljs-keyword">super</span>.foo();
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码中，每一次<code class="pcalibre3 calibre13 pcalibre4">混入</code>发生时，都调用了父类的<code class="pcalibre3 calibre13 pcalibre4">super.foo</code>方法，导致父类的同名方法没有被覆盖，行为被保留了下来。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">new</span> C().foo()
+<span class="hljs-comment">// foo from C</span>
+<span class="hljs-comment">// foo from Mixin1</span>
+<span class="hljs-comment">// foo from Mixin2</span>
+<span class="hljs-comment">// foo from S</span>
+</code></pre>
+<h2 id="trait" class="calibre12">Trait</h2>
+<p class="calibre6">Trait 也是一种修饰器，效果与 Mixin 类似，但是提供更多功能，比如防止同名方法的冲突、排除混入某些方法、为混入的方法起别名等等。</p>
+<p class="calibre6">下面采用<a href="https://github.com/CocktailJS/traits-decorator" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">traits-decorator</a>这个第三方模块作为例子。这个模块提供的<code class="pcalibre3 calibre13 pcalibre4">traits</code>修饰器，不仅可以接受对象，还可以接受 ES6 类作为参数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> { traits } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;traits-decorator&#39;</span>;
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">TFoo</span> </span>{
+  foo() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo&#39;</span>) }
+}
+
+<span class="hljs-keyword">const</span> TBar = {
+  bar() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;bar&#39;</span>) }
+};
+
+@traits(TFoo, TBar)
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{ }
+
+<span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">new</span> MyClass();
+obj.foo() <span class="hljs-comment">// foo</span>
+obj.bar() <span class="hljs-comment">// bar</span>
+</code></pre>
+<p class="calibre6">上面代码中，通过<code class="pcalibre3 calibre13 pcalibre4">traits</code>修饰器，在<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>类上面“混入”了<code class="pcalibre3 calibre13 pcalibre4">TFoo</code>类的<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法和<code class="pcalibre3 calibre13 pcalibre4">TBar</code>对象的<code class="pcalibre3 calibre13 pcalibre4">bar</code>方法。</p>
+<p class="calibre6">Trait 不允许“混入”同名方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> { traits } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;traits-decorator&#39;</span>;
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">TFoo</span> </span>{
+  foo() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo&#39;</span>) }
+}
+
+<span class="hljs-keyword">const</span> TBar = {
+  bar() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;bar&#39;</span>) },
+  foo() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo&#39;</span>) }
+};
+
+@traits(TFoo, TBar)
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{ }
+<span class="hljs-comment">// 报错</span>
+<span class="hljs-comment">// throw new Error(&#39;Method named: &#39; + methodName + &#39; is defined twice.&#39;);</span>
+<span class="hljs-comment">//        ^</span>
+<span class="hljs-comment">// Error: Method named: foo is defined twice.</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">TFoo</code>和<code class="pcalibre3 calibre13 pcalibre4">TBar</code>都有<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法，结果<code class="pcalibre3 calibre13 pcalibre4">traits</code>修饰器报错。</p>
+<p class="calibre6">一种解决方法是排除<code class="pcalibre3 calibre13 pcalibre4">TBar</code>的<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> { traits, excludes } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;traits-decorator&#39;</span>;
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">TFoo</span> </span>{
+  foo() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo&#39;</span>) }
+}
+
+<span class="hljs-keyword">const</span> TBar = {
+  bar() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;bar&#39;</span>) },
+  foo() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo&#39;</span>) }
+};
+
+@traits(TFoo, TBar::excludes(<span class="hljs-string">&#39;foo&#39;</span>))
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{ }
+
+<span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">new</span> MyClass();
+obj.foo() <span class="hljs-comment">// foo</span>
+obj.bar() <span class="hljs-comment">// bar</span>
+</code></pre>
+<p class="calibre6">上面代码使用绑定运算符（::）在<code class="pcalibre3 calibre13 pcalibre4">TBar</code>上排除<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法，混入时就不会报错了。</p>
+<p class="calibre6">另一种方法是为<code class="pcalibre3 calibre13 pcalibre4">TBar</code>的<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法起一个别名。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> { traits, alias } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;traits-decorator&#39;</span>;
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">TFoo</span> </span>{
+  foo() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo&#39;</span>) }
+}
+
+<span class="hljs-keyword">const</span> TBar = {
+  bar() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;bar&#39;</span>) },
+  foo() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;foo&#39;</span>) }
+};
+
+@traits(TFoo, TBar::alias({foo: <span class="hljs-string">&#39;aliasFoo&#39;</span>}))
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{ }
+
+<span class="hljs-keyword">let</span> obj = <span class="hljs-keyword">new</span> MyClass();
+obj.foo() <span class="hljs-comment">// foo</span>
+obj.aliasFoo() <span class="hljs-comment">// foo</span>
+obj.bar() <span class="hljs-comment">// bar</span>
+</code></pre>
+<p class="calibre6">上面代码为<code class="pcalibre3 calibre13 pcalibre4">TBar</code>的<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法起了别名<code class="pcalibre3 calibre13 pcalibre4">aliasFoo</code>，于是<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>也可以混入<code class="pcalibre3 calibre13 pcalibre4">TBar</code>的<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法了。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">alias</code>和<code class="pcalibre3 calibre13 pcalibre4">excludes</code>方法，可以结合起来使用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">@traits(TExample::excludes(<span class="hljs-string">&#39;foo&#39;</span>,<span class="hljs-string">&#39;bar&#39;</span>)::alias({baz:<span class="hljs-string">&#39;exampleBaz&#39;</span>}))
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{}
+</code></pre>
+<p class="calibre6">上面代码排除<code class="pcalibre3 calibre13 pcalibre4">了TExample</code>的<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法和<code class="pcalibre3 calibre13 pcalibre4">bar</code>方法，为<code class="pcalibre3 calibre13 pcalibre4">baz</code>方法起了别名<code class="pcalibre3 calibre13 pcalibre4">exampleBaz</code>。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">as</code>方法则为上面的代码提供了另一种写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">@traits(TExample::<span class="hljs-keyword">as</span>({excludes:[<span class="hljs-string">&#39;foo&#39;</span>, <span class="hljs-string">&#39;bar&#39;</span>], alias: {baz: <span class="hljs-string">&#39;exampleBaz&#39;</span>}}))
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{}
+</code></pre>
+<h2 id="babel-转码器的支持" class="calibre12">Babel 转码器的支持</h2>
+<p class="calibre6">目前，Babel 转码器已经支持 Decorator。</p>
+<p class="calibre6">首先，安装<code class="pcalibre3 calibre13 pcalibre4">babel-core</code>和<code class="pcalibre3 calibre13 pcalibre4">babel-plugin-transform-decorators</code>。由于后者包括在<code class="pcalibre3 calibre13 pcalibre4">babel-preset-stage-0</code>之中，所以改为安装<code class="pcalibre3 calibre13 pcalibre4">babel-preset-stage-0</code>亦可。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ npm install babel-core babel-plugin-transform-decorators
+</code></pre>
+<p class="calibre6">然后，设置配置文件<code class="pcalibre3 calibre13 pcalibre4">.babelrc</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">{
+  <span class="hljs-string">&#34;plugins&#34;</span>: [<span class="hljs-string">&#34;transform-decorators&#34;</span>]
+}
+</code></pre>
+<p class="calibre6">这时，Babel 就可以对 Decorator 转码了。</p>
+<p class="calibre6">脚本中打开的命令如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">babel.transform(<span class="hljs-string">&#34;code&#34;</span>, {plugins: [<span class="hljs-string">&#34;transform-decorators&#34;</span>]})
+</code></pre>
+<p class="calibre6">Babel 的官方网站提供一个<a href="https://babeljs.io/repl/" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">在线转码器</a>，只要勾选 Experimental，就能支持 Decorator 的在线转码。</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="simd.html" class="navigation navigation-prev"
+           aria-label="Previous page: 23. SIMD">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="module.html" class="navigation navigation-next"
+           aria-label="Next page: 25. Module 的语法">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "25. Module 的语法",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "23. SIMD",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

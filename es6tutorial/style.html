@@ -1,0 +1,729 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>27. 编程风格</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="spec.html"/>
+    <link rel="prev" href="module-loader.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="style.html">27. 编程风格</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_28">27. 编程风格</h1>
+        <div class="section">
+            <h1 id="编程风格" class="calibre5">编程风格</h1>
+<p class="calibre6">本章探讨如何将 ES6 的新语法，运用到编码实践之中，与传统的 JavaScript 语法结合在一起，写出合理的、易于阅读和维护的代码。</p>
+<p class="calibre6">多家公司和组织已经公开了它们的风格规范，下面的内容主要参考了 <a href="https://github.com/airbnb/javascript" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">Airbnb</a> 公司的 JavaScript 风格规范。</p>
+<h2 id="块级作用域" class="calibre12">块级作用域</h2>
+<p class="calibre6"><strong class="calibre17">（1）let 取代 var</strong></p>
+<p class="calibre6">ES6 提出了两个新的声明变量的命令：<code class="pcalibre3 calibre13 pcalibre4">let</code>和<code class="pcalibre3 calibre13 pcalibre4">const</code>。其中，<code class="pcalibre3 calibre13 pcalibre4">let</code>完全可以取代<code class="pcalibre3 calibre13 pcalibre4">var</code>，因为两者语义相同，而且<code class="pcalibre3 calibre13 pcalibre4">let</code>没有副作用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_">&#39;use strict&#39;</span>;
+
+<span class="hljs-keyword">if</span> (<span class="hljs-number">true</span>) {
+  <span class="hljs-keyword">let</span> x = <span class="hljs-string">&#39;hello&#39;</span>;
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+  <span class="hljs-number">console</span>.log(i);
+}
+</code></pre>
+<p class="calibre6">上面代码如果用<code class="pcalibre3 calibre13 pcalibre4">var</code>替代<code class="pcalibre3 calibre13 pcalibre4">let</code>，实际上就声明了两个全局变量，这显然不是本意。变量应该只在其声明的代码块内有效，<code class="pcalibre3 calibre13 pcalibre4">var</code>命令做不到这一点。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">var</code>命令存在变量提升效用，<code class="pcalibre3 calibre13 pcalibre4">let</code>命令没有这个问题。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_">&#39;use strict&#39;</span>;
+
+<span class="hljs-keyword">if</span> (<span class="hljs-number">true</span>) {
+  <span class="hljs-number">console</span>.log(x); <span class="hljs-comment">// ReferenceError</span>
+  <span class="hljs-keyword">let</span> x = <span class="hljs-string">&#39;hello&#39;</span>;
+}
+</code></pre>
+<p class="calibre6">上面代码如果使用<code class="pcalibre3 calibre13 pcalibre4">var</code>替代<code class="pcalibre3 calibre13 pcalibre4">let</code>，<code class="pcalibre3 calibre13 pcalibre4">console.log</code>那一行就不会报错，而是会输出<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，因为变量声明提升到代码块的头部。这违反了变量先声明后使用的原则。</p>
+<p class="calibre6">所以，建议不再使用<code class="pcalibre3 calibre13 pcalibre4">var</code>命令，而是使用<code class="pcalibre3 calibre13 pcalibre4">let</code>命令取代。</p>
+<p class="calibre6"><strong class="calibre17">（2）全局常量和线程安全</strong></p>
+<p class="calibre6">在<code class="pcalibre3 calibre13 pcalibre4">let</code>和<code class="pcalibre3 calibre13 pcalibre4">const</code>之间，建议优先使用<code class="pcalibre3 calibre13 pcalibre4">const</code>，尤其是在全局环境，不应该设置变量，只应设置常量。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">const</code>优于<code class="pcalibre3 calibre13 pcalibre4">let</code>有几个原因。一个是<code class="pcalibre3 calibre13 pcalibre4">const</code>可以提醒阅读程序的人，这个变量不应该改变；另一个是<code class="pcalibre3 calibre13 pcalibre4">const</code>比较符合函数式编程思想，运算不改变值，只是新建值，而且这样也有利于将来的分布式运算；最后一个原因是 JavaScript 编译器会对<code class="pcalibre3 calibre13 pcalibre4">const</code>进行优化，所以多使用<code class="pcalibre3 calibre13 pcalibre4">const</code>，有利于提高程序的运行效率，也就是说<code class="pcalibre3 calibre13 pcalibre4">let</code>和<code class="pcalibre3 calibre13 pcalibre4">const</code>的本质区别，其实是编译器内部的处理不同。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>, b = <span class="hljs-number">2</span>, c = <span class="hljs-number">3</span>;
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">const</span> b = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> c = <span class="hljs-number">3</span>;
+
+<span class="hljs-comment">// best</span>
+<span class="hljs-keyword">const</span> [a, b, c] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">const</code>声明常量还有两个好处，一是阅读代码的人立刻会意识到不应该修改这个值，二是防止了无意间修改变量值所导致的错误。</p>
+<p class="calibre6">所有的函数都应该设置为常量。</p>
+<p class="calibre6">长远来看，JavaScript 可能会有多线程的实现（比如 Intel 公司的 River Trail 那一类的项目），这时<code class="pcalibre3 calibre13 pcalibre4">let</code>表示的变量，只应出现在单线程运行的代码中，不能是多线程共享的，这样有利于保证线程安全。</p>
+<h2 id="字符串" class="calibre12">字符串</h2>
+<p class="calibre6">静态字符串一律使用单引号或反引号，不使用双引号。动态字符串使用反引号。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">const</span> a = <span class="hljs-string">&#34;foobar&#34;</span>;
+<span class="hljs-keyword">const</span> b = <span class="hljs-string">&#39;foo&#39;</span> + a + <span class="hljs-string">&#39;bar&#39;</span>;
+
+<span class="hljs-comment">// acceptable</span>
+<span class="hljs-keyword">const</span> c = <span class="hljs-string">`foobar`</span>;
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">const</span> a = <span class="hljs-string">&#39;foobar&#39;</span>;
+<span class="hljs-keyword">const</span> b = <span class="hljs-string">`foo<span class="hljs-_">${a}</span>bar`</span>;
+<span class="hljs-keyword">const</span> c = <span class="hljs-string">&#39;foobar&#39;</span>;
+</code></pre>
+<h2 id="解构赋值" class="calibre12">解构赋值</h2>
+<p class="calibre6">使用数组成员对变量赋值时，优先使用解构赋值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+
+<span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">const</span> first = arr[<span class="hljs-number">0</span>];
+<span class="hljs-keyword">const</span> second = arr[<span class="hljs-number">1</span>];
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">const</span> [first, second] = arr;
+</code></pre>
+<p class="calibre6">函数的参数如果是对象的成员，优先使用解构赋值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">getFullName</span>(<span class="hljs-number">user</span>) </span>{
+  <span class="hljs-keyword">const</span> firstName = user.firstName;
+  <span class="hljs-keyword">const</span> lastName = user.lastName;
+}
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">getFullName</span>(<span class="hljs-number">obj</span>) </span>{
+  <span class="hljs-keyword">const</span> { firstName, lastName } = obj;
+}
+
+<span class="hljs-comment">// best</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">getFullName</span>(<span class="hljs-number">{ firstName, lastName }</span>) </span>{
+}
+</code></pre>
+<p class="calibre6">如果函数返回多个值，优先使用对象的解构赋值，而不是数组的解构赋值。这样便于以后添加返回值，以及更改返回值的顺序。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">processInput</span>(<span class="hljs-number">input</span>) </span>{
+  <span class="hljs-keyword">return</span> [left, right, top, bottom];
+}
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">processInput</span>(<span class="hljs-number">input</span>) </span>{
+  <span class="hljs-keyword">return</span> { left, right, top, bottom };
+}
+
+<span class="hljs-keyword">const</span> { left, right } = processInput(input);
+</code></pre>
+<h2 id="对象" class="calibre12">对象</h2>
+<p class="calibre6">单行定义的对象，最后一个成员不以逗号结尾。多行定义的对象，最后一个成员以逗号结尾。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">const</span> a = { k1: v1, k2: v2, };
+<span class="hljs-keyword">const</span> b = {
+  k1: v1,
+  k2: v2
+};
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">const</span> a = { k1: v1, k2: v2 };
+<span class="hljs-keyword">const</span> b = {
+  k1: v1,
+  k2: v2,
+};
+</code></pre>
+<p class="calibre6">对象尽量静态化，一旦定义，就不得随意添加新的属性。如果添加属性不可避免，要使用<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">const</span> a = {};
+a.x = <span class="hljs-number">3</span>;
+
+<span class="hljs-comment">// if reshape unavoidable</span>
+<span class="hljs-keyword">const</span> a = {};
+<span class="hljs-number">Object</span>.assign(a, { x: <span class="hljs-number">3</span> });
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">const</span> a = { x: <span class="hljs-number">null</span> };
+a.x = <span class="hljs-number">3</span>;
+</code></pre>
+<p class="calibre6">如果对象的属性名是动态的，可以在创造对象的时候，使用属性表达式定义。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">const</span> obj = {
+  id: <span class="hljs-number">5</span>,
+  name: <span class="hljs-string">&#39;San Francisco&#39;</span>,
+};
+obj[getKey(<span class="hljs-string">&#39;enabled&#39;</span>)] = <span class="hljs-number">true</span>;
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">const</span> obj = {
+  id: <span class="hljs-number">5</span>,
+  name: <span class="hljs-string">&#39;San Francisco&#39;</span>,
+  [getKey(<span class="hljs-string">&#39;enabled&#39;</span>)]: <span class="hljs-number">true</span>,
+};
+</code></pre>
+<p class="calibre6">上面代码中，对象<code class="pcalibre3 calibre13 pcalibre4">obj</code>的最后一个属性名，需要计算得到。这时最好采用属性表达式，在新建<code class="pcalibre3 calibre13 pcalibre4">obj</code>的时候，将该属性与其他属性定义在一起。这样一来，所有属性就在一个地方定义了。</p>
+<p class="calibre6">另外，对象的属性和方法，尽量采用简洁表达法，这样易于描述和书写。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> ref = <span class="hljs-string">&#39;some value&#39;</span>;
+
+<span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">const</span> atom = {
+  ref: ref,
+
+  value: <span class="hljs-number">1</span>,
+
+  addValue: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">value</span>) </span>{
+    <span class="hljs-keyword">return</span> atom.value + value;
+  },
+};
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">const</span> atom = {
+  ref,
+
+  value: <span class="hljs-number">1</span>,
+
+  addValue(value) {
+    <span class="hljs-keyword">return</span> atom.value + value;
+  },
+};
+</code></pre>
+<h2 id="数组" class="calibre12">数组</h2>
+<p class="calibre6">使用扩展运算符（...）拷贝数组。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">const</span> len = items.length;
+<span class="hljs-keyword">const</span> itemsCopy = [];
+<span class="hljs-keyword">let</span> i;
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+  itemsCopy[i] = items[i];
+}
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">const</span> itemsCopy = [...items];
+</code></pre>
+<p class="calibre6">使用 Array.from 方法，将类似数组的对象转为数组。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> foo = <span class="hljs-number">document</span>.querySelectorAll(<span class="hljs-string">&#39;.foo&#39;</span>);
+<span class="hljs-keyword">const</span> nodes = <span class="hljs-number">Array</span>.from(foo);
+</code></pre>
+<h2 id="函数" class="calibre12">函数</h2>
+<p class="calibre6">立即执行函数可以写成箭头函数的形式。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(() =&gt; {
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Welcome to the Internet.&#39;</span>);
+})();
+</code></pre>
+<p class="calibre6">那些需要使用函数表达式的场合，尽量用箭头函数代替。因为这样更简洁，而且绑定了 this。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>].map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-keyword">return</span> x * x;
+});
+
+<span class="hljs-comment">// good</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>].map((x) =&gt; {
+  <span class="hljs-keyword">return</span> x * x;
+});
+
+<span class="hljs-comment">// best</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>].map(x =&gt; x * x);
+</code></pre>
+<p class="calibre6">箭头函数取代<code class="pcalibre3 calibre13 pcalibre4">Function.prototype.bind</code>，不应再用 self/_this/that 绑定 this。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">const</span> self = <span class="hljs-keyword">this</span>;
+<span class="hljs-keyword">const</span> boundMethod = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">...params</span>) </span>{
+  <span class="hljs-keyword">return</span> method.apply(self, params);
+}
+
+<span class="hljs-comment">// acceptable</span>
+<span class="hljs-keyword">const</span> boundMethod = method.bind(<span class="hljs-keyword">this</span>);
+
+<span class="hljs-comment">// best</span>
+<span class="hljs-keyword">const</span> boundMethod = (...params) =&gt; method.apply(<span class="hljs-keyword">this</span>, params);
+</code></pre>
+<p class="calibre6">简单的、单行的、不会复用的函数，建议采用箭头函数。如果函数体较为复杂，行数较多，还是应该采用传统的函数写法。</p>
+<p class="calibre6">所有配置项都应该集中在一个对象，放在最后一个参数，布尔值不可以直接作为参数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">divide</span>(<span class="hljs-number">a, b, option = false </span>) </span>{
+}
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">divide</span>(<span class="hljs-number">a, b, { option = false } = {}</span>) </span>{
+}
+</code></pre>
+<p class="calibre6">不要在函数体内使用 arguments 变量，使用 rest 运算符（...）代替。因为 rest 运算符显式表明你想要获取参数，而且 arguments 是一个类似数组的对象，而 rest 运算符可以提供一个真正的数组。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">concatenateAll</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">const</span> args = <span class="hljs-number">Array</span>.prototype.slice.call(<span class="hljs-number">arguments</span>);
+  <span class="hljs-keyword">return</span> args.join(<span class="hljs-string">&#39;&#39;</span>);
+}
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">concatenateAll</span>(<span class="hljs-number">...args</span>) </span>{
+  <span class="hljs-keyword">return</span> args.join(<span class="hljs-string">&#39;&#39;</span>);
+}
+</code></pre>
+<p class="calibre6">使用默认值语法设置函数参数的默认值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">handleThings</span>(<span class="hljs-number">opts</span>) </span>{
+  opts = opts || {};
+}
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">handleThings</span>(<span class="hljs-number">opts = {}</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<h2 id="map-结构" class="calibre12">Map 结构</h2>
+<p class="calibre6">注意区分 Object 和 Map，只有模拟现实世界的实体对象时，才使用 Object。如果只是需要<code class="pcalibre3 calibre13 pcalibre4">key: value</code>的数据结构，使用 Map 结构。因为 Map 有内建的遍历机制。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> map = <span class="hljs-keyword">new</span> <span class="hljs-number">Map</span>(arr);
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">of</span> map.keys()) {
+  <span class="hljs-number">console</span>.log(key);
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> value <span class="hljs-keyword">of</span> map.values()) {
+  <span class="hljs-number">console</span>.log(value);
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> map.entries()) {
+  <span class="hljs-number">console</span>.log(item[<span class="hljs-number">0</span>], item[<span class="hljs-number">1</span>]);
+}
+</code></pre>
+<h2 id="class" class="calibre12">Class</h2>
+<p class="calibre6">总是用 Class，取代需要 prototype 的操作。因为 Class 的写法更简洁，更易于理解。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">Queue</span>(<span class="hljs-number">contents = []</span>) </span>{
+  <span class="hljs-keyword">this</span>._queue = [...contents];
+}
+Queue.prototype.pop = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">const</span> value = <span class="hljs-keyword">this</span>._queue[<span class="hljs-number">0</span>];
+  <span class="hljs-keyword">this</span>._queue.splice(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
+  <span class="hljs-keyword">return</span> value;
+}
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Queue</span> </span>{
+  <span class="hljs-keyword">constructor</span>(contents = []) {
+    <span class="hljs-keyword">this</span>._queue = [...contents];
+  }
+  pop() {
+    <span class="hljs-keyword">const</span> value = <span class="hljs-keyword">this</span>._queue[<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">this</span>._queue.splice(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">return</span> value;
+  }
+}
+</code></pre>
+<p class="calibre6">使用<code class="pcalibre3 calibre13 pcalibre4">extends</code>实现继承，因为这样更简单，不会有破坏<code class="pcalibre3 calibre13 pcalibre4">instanceof</code>运算的危险。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">const</span> inherits = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;inherits&#39;</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">PeekableQueue</span>(<span class="hljs-number">contents</span>) </span>{
+  Queue.apply(<span class="hljs-keyword">this</span>, contents);
+}
+inherits(PeekableQueue, Queue);
+PeekableQueue.prototype.peek = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._queue[<span class="hljs-number">0</span>];
+}
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">PeekableQueue</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">Queue</span> </span>{
+  peek() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._queue[<span class="hljs-number">0</span>];
+  }
+}
+</code></pre>
+<h2 id="模块" class="calibre12">模块</h2>
+<p class="calibre6">首先，Module 语法是 JavaScript 模块的标准写法，坚持使用这种写法。使用<code class="pcalibre3 calibre13 pcalibre4">import</code>取代<code class="pcalibre3 calibre13 pcalibre4">require</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">const</span> moduleA = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;moduleA&#39;</span>);
+<span class="hljs-keyword">const</span> func1 = moduleA.func1;
+<span class="hljs-keyword">const</span> func2 = moduleA.func2;
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">import</span> { func1, func2 } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;moduleA&#39;</span>;
+</code></pre>
+<p class="calibre6">使用<code class="pcalibre3 calibre13 pcalibre4">export</code>取代<code class="pcalibre3 calibre13 pcalibre4">module.exports</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// commonJS的写法</span>
+<span class="hljs-keyword">var</span> React = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;react&#39;</span>);
+
+<span class="hljs-keyword">var</span> Breadcrumbs = React.createClass({
+  render() {
+    <span class="hljs-keyword">return</span> &lt;nav /&gt;;
+  }
+});
+
+module.exports = Breadcrumbs;
+
+// ES6的写法
+import React from &#39;react&#39;;
+
+class Breadcrumbs extends React.Component {
+  render() {
+    return &lt;nav /&gt;;
+  }
+};
+
+export default Breadcrumbs;
+</code></pre>
+<p class="calibre6">如果模块只有一个输出值，就使用<code class="pcalibre3 calibre13 pcalibre4">export default</code>，如果模块有多个输出值，就不使用<code class="pcalibre3 calibre13 pcalibre4">export default</code>，<code class="pcalibre3 calibre13 pcalibre4">export default</code>与普通的<code class="pcalibre3 calibre13 pcalibre4">export</code>不要同时使用。</p>
+<p class="calibre6">不要在模块输入中使用通配符。因为这样可以确保你的模块之中，有一个默认输出（export default）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> myObject <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./importModule&#39;</span>;
+
+<span class="hljs-comment">// good</span>
+<span class="hljs-keyword">import</span> myObject <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./importModule&#39;</span>;
+</code></pre>
+<p class="calibre6">如果模块默认输出一个函数，函数名的首字母应该小写。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">makeStyleGuide</span>(<span class="hljs-number"></span>) </span>{
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> makeStyleGuide;
+</code></pre>
+<p class="calibre6">如果模块默认输出一个对象，对象名的首字母应该大写。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> StyleGuide = {
+  es6: {
+  }
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> StyleGuide;
+</code></pre>
+<h2 id="eslint-的使用" class="calibre12">ESLint 的使用</h2>
+<p class="calibre6">ESLint 是一个语法规则和代码风格的检查工具，可以用来保证写出语法正确、风格统一的代码。</p>
+<p class="calibre6">首先，安装 ESLint。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ npm i -g eslint
+</code></pre>
+<p class="calibre6">然后，安装 Airbnb 语法规则，以及 import、a11y、react 插件。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ npm i -g eslint-config-airbnb
+$ npm i -g eslint-plugin-import eslint-plugin-jsx<span class="hljs-_">-a</span>11y eslint-plugin-react
+</code></pre>
+<p class="calibre6">最后，在项目的根目录下新建一个<code class="pcalibre3 calibre13 pcalibre4">.eslintrc</code>文件，配置 ESLint。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">{
+  <span class="hljs-string">&#34;extends&#34;</span>: <span class="hljs-string">&#34;eslint-config-airbnb&#34;</span>
+}
+</code></pre>
+<p class="calibre6">现在就可以检查，当前项目的代码是否符合预设的规则。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">index.js</code>文件的代码如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> unusued = <span class="hljs-string">&#39;I have no purpose!&#39;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">greet</span>(<span class="hljs-number"></span>) </span>{
+    <span class="hljs-keyword">var</span> message = <span class="hljs-string">&#39;Hello, World!&#39;</span>;
+    alert(message);
+}
+
+greet();
+</code></pre>
+<p class="calibre6">使用 ESLint 检查这个文件，就会报出错误。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ eslint index.js
+index.js
+  1:1  error  Unexpected var, use <span class="hljs-number">let</span> or const instead          no-var
+  1:5  error  unusued is defined but never used                 no-unused-vars
+  4:5  error  Expected indentation of 2 characters but found 4  indent
+  4:5  error  Unexpected var, use <span class="hljs-number">let</span> or const instead          no-var
+  5:5  error  Expected indentation of 2 characters but found 4  indent
+
+✖ 5 problems (5 errors, 0 warnings)
+</code></pre>
+<p class="calibre6">上面代码说明，原文件有五个错误，其中两个是不应该使用<code class="pcalibre3 calibre13 pcalibre4">var</code>命令，而要使用<code class="pcalibre3 calibre13 pcalibre4">let</code>或<code class="pcalibre3 calibre13 pcalibre4">const</code>；一个是定义了变量，却没有使用；另外两个是行首缩进为 4 个空格，而不是规定的 2 个空格。</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="module-loader.html" class="navigation navigation-prev"
+           aria-label="Previous page: 26. Module 的加载实现">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="spec.html" class="navigation navigation-next"
+           aria-label="Next page: 28. 读懂规格">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "28. 读懂规格",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "26. Module 的加载实现",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

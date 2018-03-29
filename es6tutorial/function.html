@@ -1,0 +1,1290 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>7. 函数的扩展</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="fp.html"/>
+    <link rel="prev" href="number.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="function.html">7. 函数的扩展</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_8">7. 函数的扩展</h1>
+        <div class="section">
+            <h1 id="函数的扩展" class="calibre5">函数的扩展</h1>
+<h2 id="函数参数的默认值" class="calibre16">函数参数的默认值</h2>
+<h3 id="基本用法" class="calibre11">基本用法</h3>
+<p class="calibre6">ES6 之前，不能直接为函数的参数指定默认值，只能采用变通的方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">log</span>(<span class="hljs-number">x, y</span>) </span>{
+  y = y || <span class="hljs-string">&#39;World&#39;</span>;
+  <span class="hljs-number">console</span>.log(x, y);
+}
+
+log(<span class="hljs-string">&#39;Hello&#39;</span>) <span class="hljs-comment">// Hello World</span>
+log(<span class="hljs-string">&#39;Hello&#39;</span>, <span class="hljs-string">&#39;China&#39;</span>) <span class="hljs-comment">// Hello China</span>
+log(<span class="hljs-string">&#39;Hello&#39;</span>, <span class="hljs-string">&#39;&#39;</span>) <span class="hljs-comment">// Hello World</span>
+</code></pre>
+<p class="calibre6">上面代码检查函数<code class="pcalibre3 calibre13 pcalibre4">log</code>的参数<code class="pcalibre3 calibre13 pcalibre4">y</code>有没有赋值，如果没有，则指定默认值为<code class="pcalibre3 calibre13 pcalibre4">World</code>。这种写法的缺点在于，如果参数<code class="pcalibre3 calibre13 pcalibre4">y</code>赋值了，但是对应的布尔值为<code class="pcalibre3 calibre13 pcalibre4">false</code>，则该赋值不起作用。就像上面代码的最后一行，参数<code class="pcalibre3 calibre13 pcalibre4">y</code>等于空字符，结果被改为默认值。</p>
+<p class="calibre6">为了避免这个问题，通常需要先判断一下参数<code class="pcalibre3 calibre13 pcalibre4">y</code>是否被赋值，如果没有，再等于默认值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> y === <span class="hljs-string">&#39;undefined&#39;</span>) {
+  y = <span class="hljs-string">&#39;World&#39;</span>;
+}
+</code></pre>
+<p class="calibre6">ES6 允许为函数的参数设置默认值，即直接写在参数定义的后面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">log</span>(<span class="hljs-number">x, y = &#39;World&#39;</span>) </span>{
+  <span class="hljs-number">console</span>.log(x, y);
+}
+
+log(<span class="hljs-string">&#39;Hello&#39;</span>) <span class="hljs-comment">// Hello World</span>
+log(<span class="hljs-string">&#39;Hello&#39;</span>, <span class="hljs-string">&#39;China&#39;</span>) <span class="hljs-comment">// Hello China</span>
+log(<span class="hljs-string">&#39;Hello&#39;</span>, <span class="hljs-string">&#39;&#39;</span>) <span class="hljs-comment">// Hello</span>
+</code></pre>
+<p class="calibre6">可以看到，ES6 的写法比 ES5 简洁许多，而且非常自然。下面是另一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">Point</span>(<span class="hljs-number">x = 0, y = 0</span>) </span>{
+  <span class="hljs-keyword">this</span>.x = x;
+  <span class="hljs-keyword">this</span>.y = y;
+}
+
+<span class="hljs-keyword">const</span> p = <span class="hljs-keyword">new</span> Point();
+p <span class="hljs-comment">// { x: 0, y: 0 }</span>
+</code></pre>
+<p class="calibre6">除了简洁，ES6 的写法还有两个好处：首先，阅读代码的人，可以立刻意识到哪些参数是可以省略的，不用查看函数体或文档；其次，有利于将来的代码优化，即使未来的版本在对外接口中，彻底拿掉这个参数，也不会导致以前的代码无法运行。</p>
+<p class="calibre6">参数变量是默认声明的，所以不能用<code class="pcalibre3 calibre13 pcalibre4">let</code>或<code class="pcalibre3 calibre13 pcalibre4">const</code>再次声明。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number">x = 5</span>) </span>{
+  <span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>; <span class="hljs-comment">// error</span>
+  <span class="hljs-keyword">const</span> x = <span class="hljs-number">2</span>; <span class="hljs-comment">// error</span>
+}
+</code></pre>
+<p class="calibre6">上面代码中，参数变量<code class="pcalibre3 calibre13 pcalibre4">x</code>是默认声明的，在函数体中，不能用<code class="pcalibre3 calibre13 pcalibre4">let</code>或<code class="pcalibre3 calibre13 pcalibre4">const</code>再次声明，否则会报错。</p>
+<p class="calibre6">使用参数默认值时，函数不能有同名参数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 不报错</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number">x, x, y</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// 报错</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number">x, x, y = 1</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-comment">// SyntaxError: Duplicate parameter name not allowed in this context</span>
+</code></pre>
+<p class="calibre6">另外，一个容易忽略的地方是，参数默认值不是传值的，而是每次都重新计算默认值表达式的值。也就是说，参数默认值是惰性求值的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> x = <span class="hljs-number">99</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number">p = x + 1</span>) </span>{
+  <span class="hljs-number">console</span>.log(p);
+}
+
+foo() <span class="hljs-comment">// 100</span>
+
+x = <span class="hljs-number">100</span>;
+foo() <span class="hljs-comment">// 101</span>
+</code></pre>
+<p class="calibre6">上面代码中，参数<code class="pcalibre3 calibre13 pcalibre4">p</code>的默认值是<code class="pcalibre3 calibre13 pcalibre4">x + 1</code>。这时，每次调用函数<code class="pcalibre3 calibre13 pcalibre4">foo</code>，都会重新计算<code class="pcalibre3 calibre13 pcalibre4">x + 1</code>，而不是默认<code class="pcalibre3 calibre13 pcalibre4">p</code>等于 100。</p>
+<h3 id="与解构赋值默认值结合使用" class="calibre11">与解构赋值默认值结合使用</h3>
+<p class="calibre6">参数默认值可以与解构赋值的默认值，结合起来使用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number">{x, y = 5}</span>) </span>{
+  <span class="hljs-number">console</span>.log(x, y);
+}
+
+foo({}) <span class="hljs-comment">// undefined 5</span>
+foo({x: <span class="hljs-number">1</span>}) <span class="hljs-comment">// 1 5</span>
+foo({x: <span class="hljs-number">1</span>, y: <span class="hljs-number">2</span>}) <span class="hljs-comment">// 1 2</span>
+foo() <span class="hljs-comment">// TypeError: Cannot read property &#39;x&#39; of undefined</span>
+</code></pre>
+<p class="calibre6">上面代码只使用了对象的解构赋值默认值，没有使用函数参数的默认值。只有当函数<code class="pcalibre3 calibre13 pcalibre4">foo</code>的参数是一个对象时，变量<code class="pcalibre3 calibre13 pcalibre4">x</code>和<code class="pcalibre3 calibre13 pcalibre4">y</code>才会通过解构赋值生成。如果函数<code class="pcalibre3 calibre13 pcalibre4">foo</code>调用时没提供参数，变量<code class="pcalibre3 calibre13 pcalibre4">x</code>和<code class="pcalibre3 calibre13 pcalibre4">y</code>就不会生成，从而报错。通过提供函数参数的默认值，就可以避免这种情况。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number">{x, y = 5} = {}</span>) </span>{
+  <span class="hljs-number">console</span>.log(x, y);
+}
+
+foo() <span class="hljs-comment">// undefined 5</span>
+</code></pre>
+<p class="calibre6">上面代码指定，如果没有提供参数，函数<code class="pcalibre3 calibre13 pcalibre4">foo</code>的参数默认为一个空对象。</p>
+<p class="calibre6">下面是另一个解构赋值默认值的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">fetch</span>(<span class="hljs-number">url, { body = &#39;&#39;, method = &#39;GET&#39;, headers = {} }</span>) </span>{
+  <span class="hljs-number">console</span>.log(method);
+}
+
+fetch(<span class="hljs-string">&#39;http://example.com&#39;</span>, {})
+<span class="hljs-comment">// &#34;GET&#34;</span>
+
+fetch(<span class="hljs-string">&#39;http://example.com&#39;</span>)
+<span class="hljs-comment">// 报错</span>
+</code></pre>
+<p class="calibre6">上面代码中，如果函数<code class="pcalibre3 calibre13 pcalibre4">fetch</code>的第二个参数是一个对象，就可以为它的三个属性设置默认值。这种写法不能省略第二个参数，如果结合函数参数的默认值，就可以省略第二个参数。这时，就出现了双重默认值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">fetch</span>(<span class="hljs-number">url, { body = &#39;&#39;, method = &#39;GET&#39;, headers = {} } = {}</span>) </span>{
+  <span class="hljs-number">console</span>.log(method);
+}
+
+fetch(<span class="hljs-string">&#39;http://example.com&#39;</span>)
+<span class="hljs-comment">// &#34;GET&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">fetch</code>没有第二个参数时，函数参数的默认值就会生效，然后才是解构赋值的默认值生效，变量<code class="pcalibre3 calibre13 pcalibre4">method</code>才会取到默认值<code class="pcalibre3 calibre13 pcalibre4">GET</code>。</p>
+<p class="calibre6">作为练习，请问下面两种写法有什么差别？</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 写法一</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">m1</span>(<span class="hljs-number">{x = 0, y = 0} = {}</span>) </span>{
+  <span class="hljs-keyword">return</span> [x, y];
+}
+
+<span class="hljs-comment">// 写法二</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">m2</span>(<span class="hljs-number">{x, y} = { x: 0, y: 0 }</span>) </span>{
+  <span class="hljs-keyword">return</span> [x, y];
+}
+</code></pre>
+<p class="calibre6">上面两种写法都对函数的参数设定了默认值，区别是写法一函数参数的默认值是空对象，但是设置了对象解构赋值的默认值；写法二函数参数的默认值是一个有具体属性的对象，但是没有设置对象解构赋值的默认值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 函数没有参数的情况</span>
+m1() <span class="hljs-comment">// [0, 0]</span>
+m2() <span class="hljs-comment">// [0, 0]</span>
+
+<span class="hljs-comment">// x 和 y 都有值的情况</span>
+m1({x: <span class="hljs-number">3</span>, y: <span class="hljs-number">8</span>}) <span class="hljs-comment">// [3, 8]</span>
+m2({x: <span class="hljs-number">3</span>, y: <span class="hljs-number">8</span>}) <span class="hljs-comment">// [3, 8]</span>
+
+<span class="hljs-comment">// x 有值，y 无值的情况</span>
+m1({x: <span class="hljs-number">3</span>}) <span class="hljs-comment">// [3, 0]</span>
+m2({x: <span class="hljs-number">3</span>}) <span class="hljs-comment">// [3, undefined]</span>
+
+<span class="hljs-comment">// x 和 y 都无值的情况</span>
+m1({}) <span class="hljs-comment">// [0, 0];</span>
+m2({}) <span class="hljs-comment">// [undefined, undefined]</span>
+
+m1({z: <span class="hljs-number">3</span>}) <span class="hljs-comment">// [0, 0]</span>
+m2({z: <span class="hljs-number">3</span>}) <span class="hljs-comment">// [undefined, undefined]</span>
+</code></pre>
+<h3 id="参数默认值的位置" class="calibre11">参数默认值的位置</h3>
+<p class="calibre6">通常情况下，定义了默认值的参数，应该是函数的尾参数。因为这样比较容易看出来，到底省略了哪些参数。如果非尾部的参数设置默认值，实际上这个参数是没法省略的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 例一</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">x = 1, y</span>) </span>{
+  <span class="hljs-keyword">return</span> [x, y];
+}
+
+f() <span class="hljs-comment">// [1, undefined]</span>
+f(<span class="hljs-number">2</span>) <span class="hljs-comment">// [2, undefined])</span>
+f(, <span class="hljs-number">1</span>) <span class="hljs-comment">// 报错</span>
+f(<span class="hljs-number">undefined</span>, <span class="hljs-number">1</span>) <span class="hljs-comment">// [1, 1]</span>
+
+<span class="hljs-comment">// 例二</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">x, y = 5, z</span>) </span>{
+  <span class="hljs-keyword">return</span> [x, y, z];
+}
+
+f() <span class="hljs-comment">// [undefined, 5, undefined]</span>
+f(<span class="hljs-number">1</span>) <span class="hljs-comment">// [1, 5, undefined]</span>
+f(<span class="hljs-number">1</span>, ,<span class="hljs-number">2</span>) <span class="hljs-comment">// 报错</span>
+f(<span class="hljs-number">1</span>, <span class="hljs-number">undefined</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// [1, 5, 2]</span>
+</code></pre>
+<p class="calibre6">上面代码中，有默认值的参数都不是尾参数。这时，无法只省略该参数，而不省略它后面的参数，除非显式输入<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。</p>
+<p class="calibre6">如果传入<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，将触发该参数等于默认值，<code class="pcalibre3 calibre13 pcalibre4">null</code>则没有这个效果。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number">x = 5, y = 6</span>) </span>{
+  <span class="hljs-number">console</span>.log(x, y);
+}
+
+foo(<span class="hljs-number">undefined</span>, <span class="hljs-number">null</span>)
+<span class="hljs-comment">// 5 null</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">x</code>参数对应<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，结果触发了默认值，<code class="pcalibre3 calibre13 pcalibre4">y</code>参数等于<code class="pcalibre3 calibre13 pcalibre4">null</code>，就没有触发默认值。</p>
+<h3 id="函数的-length-属性" class="calibre11">函数的 length 属性</h3>
+<p class="calibre6">指定了默认值以后，函数的<code class="pcalibre3 calibre13 pcalibre4">length</code>属性，将返回没有指定默认值的参数个数。也就是说，指定了默认值后，<code class="pcalibre3 calibre13 pcalibre4">length</code>属性将失真。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">a</span>) </span>{}).length <span class="hljs-comment">// 1</span>
+(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">a = 5</span>) </span>{}).length <span class="hljs-comment">// 0</span>
+(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">a, b, c = 5</span>) </span>{}).length <span class="hljs-comment">// 2</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">length</code>属性的返回值，等于函数的参数个数减去指定了默认值的参数个数。比如，上面最后一个函数，定义了 3 个参数，其中有一个参数<code class="pcalibre3 calibre13 pcalibre4">c</code>指定了默认值，因此<code class="pcalibre3 calibre13 pcalibre4">length</code>属性等于<code class="pcalibre3 calibre13 pcalibre4">3</code>减去<code class="pcalibre3 calibre13 pcalibre4">1</code>，最后得到<code class="pcalibre3 calibre13 pcalibre4">2</code>。</p>
+<p class="calibre6">这是因为<code class="pcalibre3 calibre13 pcalibre4">length</code>属性的含义是，该函数预期传入的参数个数。某个参数指定默认值以后，预期传入的参数个数就不包括这个参数了。同理，后文的 rest 参数也不会计入<code class="pcalibre3 calibre13 pcalibre4">length</code>属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">...args</span>) </span>{}).length <span class="hljs-comment">// 0</span>
+</code></pre>
+<p class="calibre6">如果设置了默认值的参数不是尾参数，那么<code class="pcalibre3 calibre13 pcalibre4">length</code>属性也不再计入后面的参数了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">a = 0, b, c</span>) </span>{}).length <span class="hljs-comment">// 0</span>
+(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">a, b = 1, c</span>) </span>{}).length <span class="hljs-comment">// 1</span>
+</code></pre>
+<h3 id="作用域" class="calibre11">作用域</h3>
+<p class="calibre6">一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）。等到初始化结束，这个作用域就会消失。这种语法行为，在不设置参数默认值时，是不会出现的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">x, y = x</span>) </span>{
+  <span class="hljs-number">console</span>.log(y);
+}
+
+f(<span class="hljs-number">2</span>) <span class="hljs-comment">// 2</span>
+</code></pre>
+<p class="calibre6">上面代码中，参数<code class="pcalibre3 calibre13 pcalibre4">y</code>的默认值等于变量<code class="pcalibre3 calibre13 pcalibre4">x</code>。调用函数<code class="pcalibre3 calibre13 pcalibre4">f</code>时，参数形成一个单独的作用域。在这个作用域里面，默认值变量<code class="pcalibre3 calibre13 pcalibre4">x</code>指向第一个参数<code class="pcalibre3 calibre13 pcalibre4">x</code>，而不是全局变量<code class="pcalibre3 calibre13 pcalibre4">x</code>，所以输出是<code class="pcalibre3 calibre13 pcalibre4">2</code>。</p>
+<p class="calibre6">再看下面的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">y = x</span>) </span>{
+  <span class="hljs-keyword">let</span> x = <span class="hljs-number">2</span>;
+  <span class="hljs-number">console</span>.log(y);
+}
+
+f() <span class="hljs-comment">// 1</span>
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">f</code>调用时，参数<code class="pcalibre3 calibre13 pcalibre4">y = x</code>形成一个单独的作用域。这个作用域里面，变量<code class="pcalibre3 calibre13 pcalibre4">x</code>本身没有定义，所以指向外层的全局变量<code class="pcalibre3 calibre13 pcalibre4">x</code>。函数调用时，函数体内部的局部变量<code class="pcalibre3 calibre13 pcalibre4">x</code>影响不到默认值变量<code class="pcalibre3 calibre13 pcalibre4">x</code>。</p>
+<p class="calibre6">如果此时，全局变量<code class="pcalibre3 calibre13 pcalibre4">x</code>不存在，就会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">y = x</span>) </span>{
+  <span class="hljs-keyword">let</span> x = <span class="hljs-number">2</span>;
+  <span class="hljs-number">console</span>.log(y);
+}
+
+f() <span class="hljs-comment">// ReferenceError: x is not defined</span>
+</code></pre>
+<p class="calibre6">下面这样写，也会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number">x = x</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+foo() <span class="hljs-comment">// ReferenceError: x is not defined</span>
+</code></pre>
+<p class="calibre6">上面代码中，参数<code class="pcalibre3 calibre13 pcalibre4">x = x</code>形成一个单独作用域。实际执行的是<code class="pcalibre3 calibre13 pcalibre4">let x = x</code>，由于暂时性死区的原因，这行代码会报错”x 未定义“。</p>
+<p class="calibre6">如果参数的默认值是一个函数，该函数的作用域也遵守这个规则。请看下面的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> foo = <span class="hljs-string">&#39;outer&#39;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">bar</span>(<span class="hljs-number">func = (</span>) =&gt; <span class="hljs-comment">foo</span>) </span>{
+  <span class="hljs-keyword">let</span> foo = <span class="hljs-string">&#39;inner&#39;</span>;
+  <span class="hljs-number">console</span>.log(func());
+}
+
+bar(); <span class="hljs-comment">// outer</span>
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">bar</code>的参数<code class="pcalibre3 calibre13 pcalibre4">func</code>的默认值是一个匿名函数，返回值为变量<code class="pcalibre3 calibre13 pcalibre4">foo</code>。函数参数形成的单独作用域里面，并没有定义变量<code class="pcalibre3 calibre13 pcalibre4">foo</code>，所以<code class="pcalibre3 calibre13 pcalibre4">foo</code>指向外层的全局变量<code class="pcalibre3 calibre13 pcalibre4">foo</code>，因此输出<code class="pcalibre3 calibre13 pcalibre4">outer</code>。</p>
+<p class="calibre6">如果写成下面这样，就会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">bar</span>(<span class="hljs-number">func = (</span>) =&gt; <span class="hljs-comment">foo</span>) </span>{
+  <span class="hljs-keyword">let</span> foo = <span class="hljs-string">&#39;inner&#39;</span>;
+  <span class="hljs-number">console</span>.log(func());
+}
+
+bar() <span class="hljs-comment">// ReferenceError: foo is not defined</span>
+</code></pre>
+<p class="calibre6">上面代码中，匿名函数里面的<code class="pcalibre3 calibre13 pcalibre4">foo</code>指向函数外层，但是函数外层并没有声明变量<code class="pcalibre3 calibre13 pcalibre4">foo</code>，所以就报错了。</p>
+<p class="calibre6">下面是一个更复杂的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number">x, y = function(</span>) </span>{ x = <span class="hljs-number">2</span>; }) {
+  <span class="hljs-keyword">var</span> x = <span class="hljs-number">3</span>;
+  y();
+  <span class="hljs-number">console</span>.log(x);
+}
+
+foo() <span class="hljs-comment">// 3</span>
+x <span class="hljs-comment">// 1</span>
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">foo</code>的参数形成一个单独作用域。这个作用域里面，首先声明了变量<code class="pcalibre3 calibre13 pcalibre4">x</code>，然后声明了变量<code class="pcalibre3 calibre13 pcalibre4">y</code>，<code class="pcalibre3 calibre13 pcalibre4">y</code>的默认值是一个匿名函数。这个匿名函数内部的变量<code class="pcalibre3 calibre13 pcalibre4">x</code>，指向同一个作用域的第一个参数<code class="pcalibre3 calibre13 pcalibre4">x</code>。函数<code class="pcalibre3 calibre13 pcalibre4">foo</code>内部又声明了一个内部变量<code class="pcalibre3 calibre13 pcalibre4">x</code>，该变量与第一个参数<code class="pcalibre3 calibre13 pcalibre4">x</code>由于不是同一个作用域，所以不是同一个变量，因此执行<code class="pcalibre3 calibre13 pcalibre4">y</code>后，内部变量<code class="pcalibre3 calibre13 pcalibre4">x</code>和外部全局变量<code class="pcalibre3 calibre13 pcalibre4">x</code>的值都没变。</p>
+<p class="calibre6">如果将<code class="pcalibre3 calibre13 pcalibre4">var x = 3</code>的<code class="pcalibre3 calibre13 pcalibre4">var</code>去除，函数<code class="pcalibre3 calibre13 pcalibre4">foo</code>的内部变量<code class="pcalibre3 calibre13 pcalibre4">x</code>就指向第一个参数<code class="pcalibre3 calibre13 pcalibre4">x</code>，与匿名函数内部的<code class="pcalibre3 calibre13 pcalibre4">x</code>是一致的，所以最后输出的就是<code class="pcalibre3 calibre13 pcalibre4">2</code>，而外层的全局变量<code class="pcalibre3 calibre13 pcalibre4">x</code>依然不受影响。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number">x, y = function(</span>) </span>{ x = <span class="hljs-number">2</span>; }) {
+  x = <span class="hljs-number">3</span>;
+  y();
+  <span class="hljs-number">console</span>.log(x);
+}
+
+foo() <span class="hljs-comment">// 2</span>
+x <span class="hljs-comment">// 1</span>
+</code></pre>
+<h3 id="应用" class="calibre11">应用</h3>
+<p class="calibre6">利用参数默认值，可以指定某一个参数不得省略，如果省略就抛出一个错误。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">throwIfMissing</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;Missing parameter&#39;</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number">mustBeProvided = throwIfMissing(</span>)) </span>{
+  <span class="hljs-keyword">return</span> mustBeProvided;
+}
+
+foo()
+<span class="hljs-comment">// Error: Missing parameter</span>
+</code></pre>
+<p class="calibre6">上面代码的<code class="pcalibre3 calibre13 pcalibre4">foo</code>函数，如果调用的时候没有参数，就会调用默认值<code class="pcalibre3 calibre13 pcalibre4">throwIfMissing</code>函数，从而抛出一个错误。</p>
+<p class="calibre6">从上面代码还可以看到，参数<code class="pcalibre3 calibre13 pcalibre4">mustBeProvided</code>的默认值等于<code class="pcalibre3 calibre13 pcalibre4">throwIfMissing</code>函数的运行结果（注意函数名<code class="pcalibre3 calibre13 pcalibre4">throwIfMissing</code>之后有一对圆括号），这表明参数的默认值不是在定义时执行，而是在运行时执行。如果参数已经赋值，默认值中的函数就不会运行。</p>
+<p class="calibre6">另外，可以将参数默认值设为<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，表明这个参数是可以省略的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number">optional = undefined</span>) </span>{ ··· }
+</code></pre>
+<h2 id="rest-参数" class="calibre12">rest 参数</h2>
+<p class="calibre6">ES6 引入 rest 参数（形式为<code class="pcalibre3 calibre13 pcalibre4">...变量名</code>），用于获取函数的多余参数，这样就不需要使用<code class="pcalibre3 calibre13 pcalibre4">arguments</code>对象了。rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">add</span>(<span class="hljs-number">...values</span>) </span>{
+  <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> val <span class="hljs-keyword">of</span> values) {
+    sum += val;
+  }
+
+  <span class="hljs-keyword">return</span> sum;
+}
+
+add(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">3</span>) <span class="hljs-comment">// 10</span>
+</code></pre>
+<p class="calibre6">上面代码的<code class="pcalibre3 calibre13 pcalibre4">add</code>函数是一个求和函数，利用 rest 参数，可以向该函数传入任意数目的参数。</p>
+<p class="calibre6">下面是一个 rest 参数代替<code class="pcalibre3 calibre13 pcalibre4">arguments</code>变量的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// arguments变量的写法</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">sortNumbers</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">Array</span>.prototype.slice.call(<span class="hljs-number">arguments</span>).sort();
+}
+
+<span class="hljs-comment">// rest参数的写法</span>
+<span class="hljs-keyword">const</span> sortNumbers = (...numbers) =&gt; numbers.sort();
+</code></pre>
+<p class="calibre6">上面代码的两种写法，比较后可以发现，rest 参数的写法更自然也更简洁。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">arguments</code>对象不是数组，而是一个类似数组的对象。所以为了使用数组的方法，必须使用<code class="pcalibre3 calibre13 pcalibre4">Array.prototype.slice.call</code>先将其转为数组。rest 参数就不存在这个问题，它就是一个真正的数组，数组特有的方法都可以使用。下面是一个利用 rest 参数改写数组<code class="pcalibre3 calibre13 pcalibre4">push</code>方法的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">push</span>(<span class="hljs-number">array, ...items</span>) </span>{
+  items.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">item</span>) </span>{
+    array.push(item);
+    <span class="hljs-number">console</span>.log(item);
+  });
+}
+
+<span class="hljs-keyword">var</span> a = [];
+push(a, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+</code></pre>
+<p class="calibre6">注意，rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 报错</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">a, ...b, c</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p class="calibre6">函数的<code class="pcalibre3 calibre13 pcalibre4">length</code>属性，不包括 rest 参数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">a</span>) </span>{}).length  <span class="hljs-comment">// 1</span>
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">...a</span>) </span>{}).length  <span class="hljs-comment">// 0</span>
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">a, ...b</span>) </span>{}).length  <span class="hljs-comment">// 1</span>
+</code></pre>
+<h2 id="严格模式" class="calibre12">严格模式</h2>
+<p class="calibre6">从 ES5 开始，函数内部可以设定为严格模式。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">doSomething</span>(<span class="hljs-number">a, b</span>) </span>{
+<span class="hljs-_">  &#39;use strict&#39;</span>;
+  <span class="hljs-comment">// code</span>
+}
+</code></pre>
+<p class="calibre6">ES2016 做了一点修改，规定只要函数参数使用了默认值、解构赋值、或者扩展运算符，那么函数内部就不能显式设定为严格模式，否则会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 报错</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">doSomething</span>(<span class="hljs-number">a, b = a</span>) </span>{
+<span class="hljs-_">  &#39;use strict&#39;</span>;
+  <span class="hljs-comment">// code</span>
+}
+
+<span class="hljs-comment">// 报错</span>
+<span class="hljs-keyword">const</span> doSomething = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">{a, b}</span>) </span>{
+<span class="hljs-_">  &#39;use strict&#39;</span>;
+  <span class="hljs-comment">// code</span>
+};
+
+<span class="hljs-comment">// 报错</span>
+<span class="hljs-keyword">const</span> doSomething = (...a) =&gt; {
+  <span class="hljs-string">&#39;use strict&#39;</span>;
+  <span class="hljs-comment">// code</span>
+};
+
+<span class="hljs-keyword">const</span> obj = {
+  <span class="hljs-comment">// 报错</span>
+  doSomething({a, b}) {
+    <span class="hljs-string">&#39;use strict&#39;</span>;
+    <span class="hljs-comment">// code</span>
+  }
+};
+</code></pre>
+<p class="calibre6">这样规定的原因是，函数内部的严格模式，同时适用于函数体和函数参数。但是，函数执行的时候，先执行函数参数，然后再执行函数体。这样就有一个不合理的地方，只有从函数体之中，才能知道参数是否应该以严格模式执行，但是参数却应该先于函数体执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 报错</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">doSomething</span>(<span class="hljs-number">value = 070</span>) </span>{
+<span class="hljs-_">  &#39;use strict&#39;</span>;
+  <span class="hljs-keyword">return</span> value;
+}
+</code></pre>
+<p class="calibre6">上面代码中，参数<code class="pcalibre3 calibre13 pcalibre4">value</code>的默认值是八进制数<code class="pcalibre3 calibre13 pcalibre4">070</code>，但是严格模式下不能用前缀<code class="pcalibre3 calibre13 pcalibre4">0</code>表示八进制，所以应该报错。但是实际上，JavaScript 引擎会先成功执行<code class="pcalibre3 calibre13 pcalibre4">value = 070</code>，然后进入函数体内部，发现需要用严格模式执行，这时才会报错。</p>
+<p class="calibre6">虽然可以先解析函数体代码，再执行参数代码，但是这样无疑就增加了复杂性。因此，标准索性禁止了这种用法，只要参数使用了默认值、解构赋值、或者扩展运算符，就不能显式指定严格模式。</p>
+<p class="calibre6">两种方法可以规避这种限制。第一种是设定全局性的严格模式，这是合法的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_">&#39;use strict&#39;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">doSomething</span>(<span class="hljs-number">a, b = a</span>) </span>{
+  <span class="hljs-comment">// code</span>
+}
+</code></pre>
+<p class="calibre6">第二种是把函数包在一个无参数的立即执行函数里面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> doSomething = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+<span class="hljs-_">  &#39;use strict&#39;</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">value = 42</span>) </span>{
+    <span class="hljs-keyword">return</span> value;
+  };
+}());
+</code></pre>
+<h2 id="name-属性" class="calibre12">name 属性</h2>
+<p class="calibre6">函数的<code class="pcalibre3 calibre13 pcalibre4">name</code>属性，返回该函数的函数名。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{}
+foo.name <span class="hljs-comment">// &#34;foo&#34;</span>
+</code></pre>
+<p class="calibre6">这个属性早就被浏览器广泛支持，但是直到 ES6，才将其写入了标准。</p>
+<p class="calibre6">需要注意的是，ES6 对这个属性的行为做出了一些修改。如果将一个匿名函数赋值给一个变量，ES5 的<code class="pcalibre3 calibre13 pcalibre4">name</code>属性，会返回空字符串，而 ES6 的<code class="pcalibre3 calibre13 pcalibre4">name</code>属性会返回实际的函数名。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> f = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{};
+
+<span class="hljs-comment">// ES5</span>
+f.name <span class="hljs-comment">// &#34;&#34;</span>
+
+<span class="hljs-comment">// ES6</span>
+f.name <span class="hljs-comment">// &#34;f&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，变量<code class="pcalibre3 calibre13 pcalibre4">f</code>等于一个匿名函数，ES5 和 ES6 的<code class="pcalibre3 calibre13 pcalibre4">name</code>属性返回的值不一样。</p>
+<p class="calibre6">如果将一个具名函数赋值给一个变量，则 ES5 和 ES6 的<code class="pcalibre3 calibre13 pcalibre4">name</code>属性都返回这个具名函数原本的名字。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> bar = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">baz</span>(<span class="hljs-number"></span>) </span>{};
+
+<span class="hljs-comment">// ES5</span>
+bar.name <span class="hljs-comment">// &#34;baz&#34;</span>
+
+<span class="hljs-comment">// ES6</span>
+bar.name <span class="hljs-comment">// &#34;baz&#34;</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Function</code>构造函数返回的函数实例，<code class="pcalibre3 calibre13 pcalibre4">name</code>属性的值为<code class="pcalibre3 calibre13 pcalibre4">anonymous</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-keyword">new</span> <span class="hljs-number">Function</span>).name <span class="hljs-comment">// &#34;anonymous&#34;</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">bind</code>返回的函数，<code class="pcalibre3 calibre13 pcalibre4">name</code>属性值会加上<code class="pcalibre3 calibre13 pcalibre4">bound</code>前缀。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{};
+foo.bind({}).name <span class="hljs-comment">// &#34;bound foo&#34;</span>
+
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>)</span>{}).bind({}).name <span class="hljs-comment">// &#34;bound &#34;</span>
+</code></pre>
+<h2 id="箭头函数" class="calibre12">箭头函数</h2>
+<h3 class="calibre11">基本用法</h3>
+<p class="calibre6">ES6 允许使用“箭头”（<code class="pcalibre3 calibre13 pcalibre4">=&gt;</code>）定义函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> f = v =&gt; v;
+</code></pre>
+<p class="calibre6">上面的箭头函数等同于：</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> f = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">v</span>) </span>{
+  <span class="hljs-keyword">return</span> v;
+};
+</code></pre>
+<p class="calibre6">如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> f = () =&gt; <span class="hljs-number">5</span>;
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">var</span> f = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-number">5</span> };
+
+<span class="hljs-keyword">var</span> sum = (num1, num2) =&gt; num1 + num2;
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">var</span> sum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">num1, num2</span>) </span>{
+  <span class="hljs-keyword">return</span> num1 + num2;
+};
+</code></pre>
+<p class="calibre6">如果箭头函数的代码块部分多于一条语句，就要使用大括号将它们括起来，并且使用<code class="pcalibre3 calibre13 pcalibre4">return</code>语句返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> sum = (num1, num2) =&gt; { <span class="hljs-keyword">return</span> num1 + num2; }
+</code></pre>
+<p class="calibre6">由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号，否则会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 报错</span>
+<span class="hljs-keyword">let</span> getTempItem = id =&gt; { id: id, name: <span class="hljs-string">&#34;Temp&#34;</span> };
+
+<span class="hljs-comment">// 不报错</span>
+<span class="hljs-keyword">let</span> getTempItem = id =&gt; ({ id: id, name: <span class="hljs-string">&#34;Temp&#34;</span> });
+</code></pre>
+<p class="calibre6">如果箭头函数只有一行语句，且不需要返回值，可以采用下面的写法，就不用写大括号了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> fn = () =&gt; <span class="hljs-keyword">void</span> doesNotReturn();
+</code></pre>
+<p class="calibre6">箭头函数可以与变量解构结合使用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> full = ({ first, last }) =&gt; first + <span class="hljs-string">&#39; &#39;</span> + last;
+
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">full</span>(<span class="hljs-number">person</span>) </span>{
+  <span class="hljs-keyword">return</span> person.first + <span class="hljs-string">&#39; &#39;</span> + person.last;
+}
+</code></pre>
+<p class="calibre6">箭头函数使得表达更加简洁。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> isEven = n =&gt; n % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>;
+<span class="hljs-keyword">const</span> square = n =&gt; n * n;
+</code></pre>
+<p class="calibre6">上面代码只用了两行，就定义了两个简单的工具函数。如果不用箭头函数，可能就要占用多行，而且还不如现在这样写醒目。</p>
+<p class="calibre6">箭头函数的一个用处是简化回调函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 正常函数写法</span>
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>].map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-keyword">return</span> x * x;
+});
+
+<span class="hljs-comment">// 箭头函数写法</span>
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>].map(x =&gt; x * x);
+</code></pre>
+<p class="calibre6">另一个例子是</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 正常函数写法</span>
+<span class="hljs-keyword">var</span> result = values.sort(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a - b;
+});
+
+<span class="hljs-comment">// 箭头函数写法</span>
+<span class="hljs-keyword">var</span> result = values.sort((a, b) =&gt; a - b);
+</code></pre>
+<p class="calibre6">下面是 rest 参数与箭头函数结合的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> numbers = (...nums) =&gt; nums;
+
+numbers(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+<span class="hljs-comment">// [1,2,3,4,5]</span>
+
+<span class="hljs-keyword">const</span> headAndTail = (head, ...tail) =&gt; [head, tail];
+
+headAndTail(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+<span class="hljs-comment">// [1,[2,3,4,5]]</span>
+</code></pre>
+<h3 id="使用注意点" class="calibre11">使用注意点</h3>
+<p class="calibre6">箭头函数有几个使用注意点。</p>
+<p class="calibre6">（1）函数体内的<code class="pcalibre3 calibre13 pcalibre4">this</code>对象，就是定义时所在的对象，而不是使用时所在的对象。</p>
+<p class="calibre6">（2）不可以当作构造函数，也就是说，不可以使用<code class="pcalibre3 calibre13 pcalibre4">new</code>命令，否则会抛出一个错误。</p>
+<p class="calibre6">（3）不可以使用<code class="pcalibre3 calibre13 pcalibre4">arguments</code>对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。</p>
+<p class="calibre6">（4）不可以使用<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令，因此箭头函数不能用作 Generator 函数。</p>
+<p class="calibre6">上面四点中，第一点尤其值得注意。<code class="pcalibre3 calibre13 pcalibre4">this</code>对象的指向是可变的，但是在箭头函数中，它是固定的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+  setTimeout(() =&gt; {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;id:&#39;</span>, <span class="hljs-keyword">this</span>.id);
+  }, <span class="hljs-number">100</span>);
+}
+
+<span class="hljs-keyword">var</span> id = <span class="hljs-number">21</span>;
+
+foo.call({ id: <span class="hljs-number">42</span> });
+<span class="hljs-comment">// id: 42</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">setTimeout</code>的参数是一个箭头函数，这个箭头函数的定义生效是在<code class="pcalibre3 calibre13 pcalibre4">foo</code>函数生成时，而它的真正执行要等到 100 毫秒后。如果是普通函数，执行时<code class="pcalibre3 calibre13 pcalibre4">this</code>应该指向全局对象<code class="pcalibre3 calibre13 pcalibre4">window</code>，这时应该输出<code class="pcalibre3 calibre13 pcalibre4">21</code>。但是，箭头函数导致<code class="pcalibre3 calibre13 pcalibre4">this</code>总是指向函数定义生效时所在的对象（本例是<code class="pcalibre3 calibre13 pcalibre4">{id: 42}</code>），所以输出的是<code class="pcalibre3 calibre13 pcalibre4">42</code>。</p>
+<p class="calibre6">箭头函数可以让<code class="pcalibre3 calibre13 pcalibre4">setTimeout</code>里面的<code class="pcalibre3 calibre13 pcalibre4">this</code>，绑定定义时所在的作用域，而不是指向运行时所在的作用域。下面是另一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">Timer</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">this</span>.s1 = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">this</span>.s2 = <span class="hljs-number">0</span>;
+  <span class="hljs-comment">// 箭头函数</span>
+  setInterval(() =&gt; <span class="hljs-keyword">this</span>.s1++, <span class="hljs-number">1000</span>);
+  <span class="hljs-comment">// 普通函数</span>
+  setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+    <span class="hljs-keyword">this</span>.s2++;
+  }, <span class="hljs-number">1000</span>);
+}
+
+<span class="hljs-keyword">var</span> timer = <span class="hljs-keyword">new</span> Timer();
+
+setTimeout(() =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;s1: &#39;</span>, timer.s1), <span class="hljs-number">3100</span>);
+setTimeout(() =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;s2: &#39;</span>, timer.s2), <span class="hljs-number">3100</span>);
+<span class="hljs-comment">// s1: 3</span>
+<span class="hljs-comment">// s2: 0</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Timer</code>函数内部设置了两个定时器，分别使用了箭头函数和普通函数。前者的<code class="pcalibre3 calibre13 pcalibre4">this</code>绑定定义时所在的作用域（即<code class="pcalibre3 calibre13 pcalibre4">Timer</code>函数），后者的<code class="pcalibre3 calibre13 pcalibre4">this</code>指向运行时所在的作用域（即全局对象）。所以，3100 毫秒之后，<code class="pcalibre3 calibre13 pcalibre4">timer.s1</code>被更新了 3 次，而<code class="pcalibre3 calibre13 pcalibre4">timer.s2</code>一次都没更新。</p>
+<p class="calibre6">箭头函数可以让<code class="pcalibre3 calibre13 pcalibre4">this</code>指向固定化，这种特性很有利于封装回调函数。下面是一个例子，DOM 事件的回调函数封装在一个对象里面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> handler = {
+  id: <span class="hljs-string">&#39;123456&#39;</span>,
+
+  init: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+    <span class="hljs-number">document</span>.addEventListener(<span class="hljs-string">&#39;click&#39;</span>,
+      event =&gt; <span class="hljs-keyword">this</span>.doSomething(event.type), <span class="hljs-number">false</span>);
+  },
+
+  doSomething: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">type</span>) </span>{
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Handling &#39;</span> + type  + <span class="hljs-string">&#39; for &#39;</span> + <span class="hljs-keyword">this</span>.id);
+  }
+};
+</code></pre>
+<p class="calibre6">上面代码的<code class="pcalibre3 calibre13 pcalibre4">init</code>方法中，使用了箭头函数，这导致这个箭头函数里面的<code class="pcalibre3 calibre13 pcalibre4">this</code>，总是指向<code class="pcalibre3 calibre13 pcalibre4">handler</code>对象。否则，回调函数运行时，<code class="pcalibre3 calibre13 pcalibre4">this.doSomething</code>这一行会报错，因为此时<code class="pcalibre3 calibre13 pcalibre4">this</code>指向<code class="pcalibre3 calibre13 pcalibre4">document</code>对象。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">this</code>指向的固定化，并不是因为箭头函数内部有绑定<code class="pcalibre3 calibre13 pcalibre4">this</code>的机制，实际原因是箭头函数根本没有自己的<code class="pcalibre3 calibre13 pcalibre4">this</code>，导致内部的<code class="pcalibre3 calibre13 pcalibre4">this</code>就是外层代码块的<code class="pcalibre3 calibre13 pcalibre4">this</code>。正是因为它没有<code class="pcalibre3 calibre13 pcalibre4">this</code>，所以也就不能用作构造函数。</p>
+<p class="calibre6">所以，箭头函数转成 ES5 的代码如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// ES6</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+  setTimeout(() =&gt; {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;id:&#39;</span>, <span class="hljs-keyword">this</span>.id);
+  }, <span class="hljs-number">100</span>);
+}
+
+<span class="hljs-comment">// ES5</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">var</span> _this = <span class="hljs-keyword">this</span>;
+
+  setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;id:&#39;</span>, _this.id);
+  }, <span class="hljs-number">100</span>);
+}
+</code></pre>
+<p class="calibre6">上面代码中，转换后的 ES5 版本清楚地说明了，箭头函数里面根本没有自己的<code class="pcalibre3 calibre13 pcalibre4">this</code>，而是引用外层的<code class="pcalibre3 calibre13 pcalibre4">this</code>。</p>
+<p class="calibre6">请问下面的代码之中有几个<code class="pcalibre3 calibre13 pcalibre4">this</code>？</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> () =&gt; {
+    <span class="hljs-keyword">return</span> () =&gt; {
+      <span class="hljs-keyword">return</span> () =&gt; {
+        <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;id:&#39;</span>, <span class="hljs-keyword">this</span>.id);
+      };
+    };
+  };
+}
+
+<span class="hljs-keyword">var</span> f = foo.call({id: <span class="hljs-number">1</span>});
+
+<span class="hljs-keyword">var</span> t1 = f.call({id: <span class="hljs-number">2</span>})()(); <span class="hljs-comment">// id: 1</span>
+<span class="hljs-keyword">var</span> t2 = f().call({id: <span class="hljs-number">3</span>})(); <span class="hljs-comment">// id: 1</span>
+<span class="hljs-keyword">var</span> t3 = f()().call({id: <span class="hljs-number">4</span>}); <span class="hljs-comment">// id: 1</span>
+</code></pre>
+<p class="calibre6">上面代码之中，只有一个<code class="pcalibre3 calibre13 pcalibre4">this</code>，就是函数<code class="pcalibre3 calibre13 pcalibre4">foo</code>的<code class="pcalibre3 calibre13 pcalibre4">this</code>，所以<code class="pcalibre3 calibre13 pcalibre4">t1</code>、<code class="pcalibre3 calibre13 pcalibre4">t2</code>、<code class="pcalibre3 calibre13 pcalibre4">t3</code>都输出同样的结果。因为所有的内层函数都是箭头函数，都没有自己的<code class="pcalibre3 calibre13 pcalibre4">this</code>，它们的<code class="pcalibre3 calibre13 pcalibre4">this</code>其实都是最外层<code class="pcalibre3 calibre13 pcalibre4">foo</code>函数的<code class="pcalibre3 calibre13 pcalibre4">this</code>。</p>
+<p class="calibre6">除了<code class="pcalibre3 calibre13 pcalibre4">this</code>，以下三个变量在箭头函数之中也是不存在的，指向外层函数的对应变量：<code class="pcalibre3 calibre13 pcalibre4">arguments</code>、<code class="pcalibre3 calibre13 pcalibre4">super</code>、<code class="pcalibre3 calibre13 pcalibre4">new.target</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+  setTimeout(() =&gt; {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;args:&#39;</span>, <span class="hljs-number">arguments</span>);
+  }, <span class="hljs-number">100</span>);
+}
+
+foo(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>)
+<span class="hljs-comment">// args: [2, 4, 6, 8]</span>
+</code></pre>
+<p class="calibre6">上面代码中，箭头函数内部的变量<code class="pcalibre3 calibre13 pcalibre4">arguments</code>，其实是函数<code class="pcalibre3 calibre13 pcalibre4">foo</code>的<code class="pcalibre3 calibre13 pcalibre4">arguments</code>变量。</p>
+<p class="calibre6">另外，由于箭头函数没有自己的<code class="pcalibre3 calibre13 pcalibre4">this</code>，所以当然也就不能用<code class="pcalibre3 calibre13 pcalibre4">call()</code>、<code class="pcalibre3 calibre13 pcalibre4">apply()</code>、<code class="pcalibre3 calibre13 pcalibre4">bind()</code>这些方法去改变<code class="pcalibre3 calibre13 pcalibre4">this</code>的指向。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> [
+    (() =&gt; <span class="hljs-keyword">this</span>.x).bind({ x: <span class="hljs-string">&#39;inner&#39;</span> })()
+  ];
+}).call({ x: <span class="hljs-string">&#39;outer&#39;</span> });
+<span class="hljs-comment">// [&#39;outer&#39;]</span>
+</code></pre>
+<p class="calibre6">上面代码中，箭头函数没有自己的<code class="pcalibre3 calibre13 pcalibre4">this</code>，所以<code class="pcalibre3 calibre13 pcalibre4">bind</code>方法无效，内部的<code class="pcalibre3 calibre13 pcalibre4">this</code>指向外部的<code class="pcalibre3 calibre13 pcalibre4">this</code>。</p>
+<p class="calibre6">长期以来，JavaScript 语言的<code class="pcalibre3 calibre13 pcalibre4">this</code>对象一直是一个令人头痛的问题，在对象方法中使用<code class="pcalibre3 calibre13 pcalibre4">this</code>，必须非常小心。箭头函数”绑定”<code class="pcalibre3 calibre13 pcalibre4">this</code>，很大程度上解决了这个困扰。</p>
+<h3 id="嵌套的箭头函数" class="calibre11">嵌套的箭头函数</h3>
+<p class="calibre6">箭头函数内部，还可以再使用箭头函数。下面是一个 ES5 语法的多重嵌套函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">insert</span>(<span class="hljs-number">value</span>) </span>{
+  <span class="hljs-keyword">return</span> {into: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">array</span>) </span>{
+    <span class="hljs-keyword">return</span> {after: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">afterValue</span>) </span>{
+      array.splice(array.indexOf(afterValue) + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, value);
+      <span class="hljs-keyword">return</span> array;
+    }};
+  }};
+}
+
+insert(<span class="hljs-number">2</span>).into([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>]).after(<span class="hljs-number">1</span>); <span class="hljs-comment">//[1, 2, 3]</span>
+</code></pre>
+<p class="calibre6">上面这个函数，可以使用箭头函数改写。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> insert = (value) =&gt; ({into: (array) =&gt; ({after: (afterValue) =&gt; {
+  array.splice(array.indexOf(afterValue) + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, value);
+  <span class="hljs-keyword">return</span> array;
+}})});
+
+insert(<span class="hljs-number">2</span>).into([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>]).after(<span class="hljs-number">1</span>); <span class="hljs-comment">//[1, 2, 3]</span>
+</code></pre>
+<p class="calibre6">下面是一个部署管道机制（pipeline）的例子，即前一个函数的输出是后一个函数的输入。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> pipeline = (...funcs) =&gt;
+  val =&gt; funcs.reduce((a, b) =&gt; b(a), val);
+
+<span class="hljs-keyword">const</span> plus1 = a =&gt; a + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">const</span> mult2 = a =&gt; a * <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> addThenMult = pipeline(plus1, mult2);
+
+addThenMult(<span class="hljs-number">5</span>)
+<span class="hljs-comment">// 12</span>
+</code></pre>
+<p class="calibre6">如果觉得上面的写法可读性比较差，也可以采用下面的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> plus1 = a =&gt; a + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">const</span> mult2 = a =&gt; a * <span class="hljs-number">2</span>;
+
+mult2(plus1(<span class="hljs-number">5</span>))
+<span class="hljs-comment">// 12</span>
+</code></pre>
+<p class="calibre6">箭头函数还有一个功能，就是可以很方便地改写 λ 演算。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// λ演算的写法</span>
+fix = λf.(λx.f(λv.x(x)(v)))(λx.f(λv.x(x)(v)))
+
+<span class="hljs-comment">// ES6的写法</span>
+<span class="hljs-keyword">var</span> fix = f =&gt; (x =&gt; f(v =&gt; x(x)(v)))
+               (x =&gt; f(v =&gt; x(x)(v)));
+</code></pre>
+<p class="calibre6">上面两种写法，几乎是一一对应的。由于 λ 演算对于计算机科学非常重要，这使得我们可以用 ES6 作为替代工具，探索计算机科学。</p>
+<h2 id="双冒号运算符" class="calibre12">双冒号运算符</h2>
+<p class="calibre6">箭头函数可以绑定<code class="pcalibre3 calibre13 pcalibre4">this</code>对象，大大减少了显式绑定<code class="pcalibre3 calibre13 pcalibre4">this</code>对象的写法（<code class="pcalibre3 calibre13 pcalibre4">call</code>、<code class="pcalibre3 calibre13 pcalibre4">apply</code>、<code class="pcalibre3 calibre13 pcalibre4">bind</code>）。但是，箭头函数并不适用于所有场合，所以现在有一个<a href="https://github.com/zenparsing/es-function-bind" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">提案</a>，提出了“函数绑定”（function bind）运算符，用来取代<code class="pcalibre3 calibre13 pcalibre4">call</code>、<code class="pcalibre3 calibre13 pcalibre4">apply</code>、<code class="pcalibre3 calibre13 pcalibre4">bind</code>调用。</p>
+<p class="calibre6">函数绑定运算符是并排的两个冒号（<code class="pcalibre3 calibre13 pcalibre4">::</code>），双冒号左边是一个对象，右边是一个函数。该运算符会自动将左边的对象，作为上下文环境（即<code class="pcalibre3 calibre13 pcalibre4">this</code>对象），绑定到右边的函数上面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">foo::bar;
+<span class="hljs-comment">// 等同于</span>
+bar.bind(foo);
+
+foo::bar(...arguments);
+<span class="hljs-comment">// 等同于</span>
+bar.apply(foo, <span class="hljs-number">arguments</span>);
+
+<span class="hljs-keyword">const</span> hasOwnProperty = <span class="hljs-number">Object</span>.prototype.hasOwnProperty;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">hasOwn</span>(<span class="hljs-number">obj, key</span>) </span>{
+  <span class="hljs-keyword">return</span> obj::hasOwnProperty(key);
+}
+</code></pre>
+<p class="calibre6">如果双冒号左边为空，右边是一个对象的方法，则等于将该方法绑定在该对象上面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> method = obj::obj.foo;
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">var</span> method = ::obj.foo;
+
+<span class="hljs-keyword">let</span> log = ::<span class="hljs-number">console</span>.log;
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">var</span> log = <span class="hljs-number">console</span>.log.bind(<span class="hljs-number">console</span>);
+</code></pre>
+<p class="calibre6">如果双冒号运算符的运算结果，还是一个对象，就可以采用链式写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> { map, takeWhile, forEach } <span class="hljs-keyword">from</span> <span class="hljs-string">&#34;iterlib&#34;</span>;
+
+getPlayers()
+::map(x =&gt; x.character())
+::takeWhile(x =&gt; x.strength &gt; <span class="hljs-number">100</span>)
+::forEach(x =&gt; <span class="hljs-number">console</span>.log(x));
+</code></pre>
+<h2 id="尾调用优化" class="calibre12">尾调用优化</h2>
+<h3 id="什么是尾调用？" class="calibre11">什么是尾调用？</h3>
+<p class="calibre6">尾调用（Tail Call）是函数式编程的一个重要概念，本身非常简单，一句话就能说清楚，就是指某个函数的最后一步是调用另一个函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">x</span>)</span>{
+  <span class="hljs-keyword">return</span> g(x);
+}
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">f</code>的最后一步是调用函数<code class="pcalibre3 calibre13 pcalibre4">g</code>，这就叫尾调用。</p>
+<p class="calibre6">以下三种情况，都不属于尾调用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 情况一</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">x</span>)</span>{
+  <span class="hljs-keyword">let</span> y = g(x);
+  <span class="hljs-keyword">return</span> y;
+}
+
+<span class="hljs-comment">// 情况二</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">x</span>)</span>{
+  <span class="hljs-keyword">return</span> g(x) + <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-comment">// 情况三</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">x</span>)</span>{
+  g(x);
+}
+</code></pre>
+<p class="calibre6">上面代码中，情况一是调用函数<code class="pcalibre3 calibre13 pcalibre4">g</code>之后，还有赋值操作，所以不属于尾调用，即使语义完全一样。情况二也属于调用后还有操作，即使写在一行内。情况三等同于下面的代码。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">x</span>)</span>{
+  g(x);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">undefined</span>;
+}
+</code></pre>
+<p class="calibre6">尾调用不一定出现在函数尾部，只要是最后一步操作即可。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-keyword">if</span> (x &gt; <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> m(x)
+  }
+  <span class="hljs-keyword">return</span> n(x);
+}
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">m</code>和<code class="pcalibre3 calibre13 pcalibre4">n</code>都属于尾调用，因为它们都是函数<code class="pcalibre3 calibre13 pcalibre4">f</code>的最后一步操作。</p>
+<h3 class="calibre11">尾调用优化</h3>
+<p class="calibre6">尾调用之所以与其他调用不同，就在于它的特殊的调用位置。</p>
+<p class="calibre6">我们知道，函数调用会在内存形成一个“调用记录”，又称“调用帧”（call frame），保存调用位置和内部变量等信息。如果在函数<code class="pcalibre3 calibre13 pcalibre4">A</code>的内部调用函数<code class="pcalibre3 calibre13 pcalibre4">B</code>，那么在<code class="pcalibre3 calibre13 pcalibre4">A</code>的调用帧上方，还会形成一个<code class="pcalibre3 calibre13 pcalibre4">B</code>的调用帧。等到<code class="pcalibre3 calibre13 pcalibre4">B</code>运行结束，将结果返回到<code class="pcalibre3 calibre13 pcalibre4">A</code>，<code class="pcalibre3 calibre13 pcalibre4">B</code>的调用帧才会消失。如果函数<code class="pcalibre3 calibre13 pcalibre4">B</code>内部还调用函数<code class="pcalibre3 calibre13 pcalibre4">C</code>，那就还有一个<code class="pcalibre3 calibre13 pcalibre4">C</code>的调用帧，以此类推。所有的调用帧，就形成一个“调用栈”（call stack）。</p>
+<p class="calibre6">尾调用由于是函数的最后一步操作，所以不需要保留外层函数的调用帧，因为调用位置、内部变量等信息都不会再用到了，只要直接用内层函数的调用帧，取代外层函数的调用帧就可以了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">let</span> m = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">let</span> n = <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">return</span> g(m + n);
+}
+f();
+
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> g(<span class="hljs-number">3</span>);
+}
+f();
+
+<span class="hljs-comment">// 等同于</span>
+g(<span class="hljs-number">3</span>);
+</code></pre>
+<p class="calibre6">上面代码中，如果函数<code class="pcalibre3 calibre13 pcalibre4">g</code>不是尾调用，函数<code class="pcalibre3 calibre13 pcalibre4">f</code>就需要保存内部变量<code class="pcalibre3 calibre13 pcalibre4">m</code>和<code class="pcalibre3 calibre13 pcalibre4">n</code>的值、<code class="pcalibre3 calibre13 pcalibre4">g</code>的调用位置等信息。但由于调用<code class="pcalibre3 calibre13 pcalibre4">g</code>之后，函数<code class="pcalibre3 calibre13 pcalibre4">f</code>就结束了，所以执行到最后一步，完全可以删除<code class="pcalibre3 calibre13 pcalibre4">f(x)</code>的调用帧，只保留<code class="pcalibre3 calibre13 pcalibre4">g(3)</code>的调用帧。</p>
+<p class="calibre6">这就叫做“尾调用优化”（Tail call optimization），即只保留内层函数的调用帧。如果所有函数都是尾调用，那么完全可以做到每次执行时，调用帧只有一项，这将大大节省内存。这就是“尾调用优化”的意义。</p>
+<p class="calibre6">注意，只有不再用到外层函数的内部变量，内层函数的调用帧才会取代外层函数的调用帧，否则就无法进行“尾调用优化”。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">addOne</span>(<span class="hljs-number">a</span>)</span>{
+  <span class="hljs-keyword">var</span> one = <span class="hljs-number">1</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">inner</span>(<span class="hljs-number">b</span>)</span>{
+    <span class="hljs-keyword">return</span> b + one;
+  }
+  <span class="hljs-keyword">return</span> inner(a);
+}
+</code></pre>
+<p class="calibre6">上面的函数不会进行尾调用优化，因为内层函数<code class="pcalibre3 calibre13 pcalibre4">inner</code>用到了外层函数<code class="pcalibre3 calibre13 pcalibre4">addOne</code>的内部变量<code class="pcalibre3 calibre13 pcalibre4">one</code>。</p>
+<h3 id="尾递归" class="calibre11">尾递归</h3>
+<p class="calibre6">函数调用自身，称为递归。如果尾调用自身，就称为尾递归。</p>
+<p class="calibre6">递归非常耗费内存，因为需要同时保存成千上百个调用帧，很容易发生“栈溢出”错误（stack overflow）。但对于尾递归来说，由于只存在一个调用帧，所以永远不会发生“栈溢出”错误。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">factorial</span>(<span class="hljs-number">n</span>) </span>{
+  <span class="hljs-keyword">if</span> (n === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">return</span> n * factorial(n - <span class="hljs-number">1</span>);
+}
+
+factorial(<span class="hljs-number">5</span>) <span class="hljs-comment">// 120</span>
+</code></pre>
+<p class="calibre6">上面代码是一个阶乘函数，计算<code class="pcalibre3 calibre13 pcalibre4">n</code>的阶乘，最多需要保存<code class="pcalibre3 calibre13 pcalibre4">n</code>个调用记录，复杂度 O(n) 。</p>
+<p class="calibre6">如果改写成尾递归，只保留一个调用记录，复杂度 O(1) 。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">factorial</span>(<span class="hljs-number">n, total</span>) </span>{
+  <span class="hljs-keyword">if</span> (n === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> total;
+  <span class="hljs-keyword">return</span> factorial(n - <span class="hljs-number">1</span>, n * total);
+}
+
+factorial(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>) <span class="hljs-comment">// 120</span>
+</code></pre>
+<p class="calibre6">还有一个比较著名的例子，就是计算 Fibonacci 数列，也能充分说明尾递归优化的重要性。</p>
+<p class="calibre6">非尾递归的 Fibonacci 数列实现如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">Fibonacci</span> (<span class="hljs-number">n</span>) </span>{
+  <span class="hljs-keyword">if</span> ( n &lt;= <span class="hljs-number">1</span> ) {<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>};
+
+  <span class="hljs-keyword">return</span> Fibonacci(n - <span class="hljs-number">1</span>) + Fibonacci(n - <span class="hljs-number">2</span>);
+}
+
+Fibonacci(<span class="hljs-number">10</span>) <span class="hljs-comment">// 89</span>
+Fibonacci(<span class="hljs-number">100</span>) <span class="hljs-comment">// 堆栈溢出</span>
+Fibonacci(<span class="hljs-number">500</span>) <span class="hljs-comment">// 堆栈溢出</span>
+</code></pre>
+<p class="calibre6">尾递归优化过的 Fibonacci 数列实现如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">Fibonacci2</span> (<span class="hljs-number">n , ac1 = 1 , ac2 = 1</span>) </span>{
+  <span class="hljs-keyword">if</span>( n &lt;= <span class="hljs-number">1</span> ) {<span class="hljs-keyword">return</span> ac2};
+
+  <span class="hljs-keyword">return</span> Fibonacci2 (n - <span class="hljs-number">1</span>, ac2, ac1 + ac2);
+}
+
+Fibonacci2(<span class="hljs-number">100</span>) <span class="hljs-comment">// 573147844013817200000</span>
+Fibonacci2(<span class="hljs-number">1000</span>) <span class="hljs-comment">// 7.0330367711422765e+208</span>
+Fibonacci2(<span class="hljs-number">10000</span>) <span class="hljs-comment">// Infinity</span>
+</code></pre>
+<p class="calibre6">由此可见，“尾调用优化”对递归操作意义重大，所以一些函数式编程语言将其写入了语言规格。ES6 是如此，第一次明确规定，所有 ECMAScript 的实现，都必须部署“尾调用优化”。这就是说，ES6 中只要使用尾递归，就不会发生栈溢出，相对节省内存。</p>
+<h3 id="递归函数的改写" class="calibre11">递归函数的改写</h3>
+<p class="calibre6">尾递归的实现，往往需要改写递归函数，确保最后一步只调用自身。做到这一点的方法，就是把所有用到的内部变量改写成函数的参数。比如上面的例子，阶乘函数 factorial 需要用到一个中间变量<code class="pcalibre3 calibre13 pcalibre4">total</code>，那就把这个中间变量改写成函数的参数。这样做的缺点就是不太直观，第一眼很难看出来，为什么计算<code class="pcalibre3 calibre13 pcalibre4">5</code>的阶乘，需要传入两个参数<code class="pcalibre3 calibre13 pcalibre4">5</code>和<code class="pcalibre3 calibre13 pcalibre4">1</code>？</p>
+<p class="calibre6">两个方法可以解决这个问题。方法一是在尾递归函数之外，再提供一个正常形式的函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">tailFactorial</span>(<span class="hljs-number">n, total</span>) </span>{
+  <span class="hljs-keyword">if</span> (n === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> total;
+  <span class="hljs-keyword">return</span> tailFactorial(n - <span class="hljs-number">1</span>, n * total);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">factorial</span>(<span class="hljs-number">n</span>) </span>{
+  <span class="hljs-keyword">return</span> tailFactorial(n, <span class="hljs-number">1</span>);
+}
+
+factorial(<span class="hljs-number">5</span>) <span class="hljs-comment">// 120</span>
+</code></pre>
+<p class="calibre6">上面代码通过一个正常形式的阶乘函数<code class="pcalibre3 calibre13 pcalibre4">factorial</code>，调用尾递归函数<code class="pcalibre3 calibre13 pcalibre4">tailFactorial</code>，看起来就正常多了。</p>
+<p class="calibre6">函数式编程有一个概念，叫做柯里化（currying），意思是将多参数的函数转换成单参数的形式。这里也可以使用柯里化。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">currying</span>(<span class="hljs-number">fn, n</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">m</span>) </span>{
+    <span class="hljs-keyword">return</span> fn.call(<span class="hljs-keyword">this</span>, m, n);
+  };
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">tailFactorial</span>(<span class="hljs-number">n, total</span>) </span>{
+  <span class="hljs-keyword">if</span> (n === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> total;
+  <span class="hljs-keyword">return</span> tailFactorial(n - <span class="hljs-number">1</span>, n * total);
+}
+
+<span class="hljs-keyword">const</span> factorial = currying(tailFactorial, <span class="hljs-number">1</span>);
+
+factorial(<span class="hljs-number">5</span>) <span class="hljs-comment">// 120</span>
+</code></pre>
+<p class="calibre6">上面代码通过柯里化，将尾递归函数<code class="pcalibre3 calibre13 pcalibre4">tailFactorial</code>变为只接受一个参数的<code class="pcalibre3 calibre13 pcalibre4">factorial</code>。</p>
+<p class="calibre6">第二种方法就简单多了，就是采用 ES6 的函数默认值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">factorial</span>(<span class="hljs-number">n, total = 1</span>) </span>{
+  <span class="hljs-keyword">if</span> (n === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> total;
+  <span class="hljs-keyword">return</span> factorial(n - <span class="hljs-number">1</span>, n * total);
+}
+
+factorial(<span class="hljs-number">5</span>) <span class="hljs-comment">// 120</span>
+</code></pre>
+<p class="calibre6">上面代码中，参数<code class="pcalibre3 calibre13 pcalibre4">total</code>有默认值<code class="pcalibre3 calibre13 pcalibre4">1</code>，所以调用时不用提供这个值。</p>
+<p class="calibre6">总结一下，递归本质上是一种循环操作。纯粹的函数式编程语言没有循环操作命令，所有的循环都用递归实现，这就是为什么尾递归对这些语言极其重要。对于其他支持“尾调用优化”的语言（比如 Lua，ES6），只需要知道循环可以用递归代替，而一旦使用递归，就最好使用尾递归。</p>
+<h3 class="calibre11">严格模式</h3>
+<p class="calibre6">ES6 的尾调用优化只在严格模式下开启，正常模式是无效的。</p>
+<p class="calibre6">这是因为在正常模式下，函数内部有两个变量，可以跟踪函数的调用栈。</p>
+<ul class="calibre9">
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">func.arguments</code>：返回调用时函数的参数。</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">func.caller</code>：返回调用当前函数的那个函数。</li>
+</ul>
+<p class="calibre6">尾调用优化发生时，函数的调用栈会改写，因此上面两个变量就会失真。严格模式禁用这两个变量，所以尾调用模式仅在严格模式下生效。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">restricted</span>(<span class="hljs-number"></span>) </span>{
+<span class="hljs-_">  &#39;use strict&#39;</span>;
+  restricted.caller;    <span class="hljs-comment">// 报错</span>
+  restricted.arguments; <span class="hljs-comment">// 报错</span>
+}
+restricted();
+</code></pre>
+<h3 id="尾递归优化的实现" class="calibre11">尾递归优化的实现</h3>
+<p class="calibre6">尾递归优化只在严格模式下生效，那么正常模式下，或者那些不支持该功能的环境中，有没有办法也使用尾递归优化呢？回答是可以的，就是自己实现尾递归优化。</p>
+<p class="calibre6">它的原理非常简单。尾递归之所以需要优化，原因是调用栈太多，造成溢出，那么只要减少调用栈，就不会溢出。怎么做可以减少调用栈呢？就是采用“循环”换掉“递归”。</p>
+<p class="calibre6">下面是一个正常的递归函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">sum</span>(<span class="hljs-number">x, y</span>) </span>{
+  <span class="hljs-keyword">if</span> (y &gt; <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> sum(x + <span class="hljs-number">1</span>, y - <span class="hljs-number">1</span>);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> x;
+  }
+}
+
+sum(<span class="hljs-number">1</span>, <span class="hljs-number">100000</span>)
+<span class="hljs-comment">// Uncaught RangeError: Maximum call stack size exceeded(…)</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">sum</code>是一个递归函数，参数<code class="pcalibre3 calibre13 pcalibre4">x</code>是需要累加的值，参数<code class="pcalibre3 calibre13 pcalibre4">y</code>控制递归次数。一旦指定<code class="pcalibre3 calibre13 pcalibre4">sum</code>递归 100000 次，就会报错，提示超出调用栈的最大次数。</p>
+<p class="calibre6">蹦床函数（trampoline）可以将递归执行转为循环执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">trampoline</span>(<span class="hljs-number">f</span>) </span>{
+  <span class="hljs-keyword">while</span> (f &amp;&amp; f <span class="hljs-keyword">instanceof</span> <span class="hljs-number">Function</span>) {
+    f = f();
+  }
+  <span class="hljs-keyword">return</span> f;
+}
+</code></pre>
+<p class="calibre6">上面就是蹦床函数的一个实现，它接受一个函数<code class="pcalibre3 calibre13 pcalibre4">f</code>作为参数。只要<code class="pcalibre3 calibre13 pcalibre4">f</code>执行后返回一个函数，就继续执行。注意，这里是返回一个函数，然后执行该函数，而不是函数里面调用函数，这样就避免了递归执行，从而就消除了调用栈过大的问题。</p>
+<p class="calibre6">然后，要做的就是将原来的递归函数，改写为每一步返回另一个函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">sum</span>(<span class="hljs-number">x, y</span>) </span>{
+  <span class="hljs-keyword">if</span> (y &gt; <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> sum.bind(<span class="hljs-number">null</span>, x + <span class="hljs-number">1</span>, y - <span class="hljs-number">1</span>);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> x;
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">sum</code>函数的每次执行，都会返回自身的另一个版本。</p>
+<p class="calibre6">现在，使用蹦床函数执行<code class="pcalibre3 calibre13 pcalibre4">sum</code>，就不会发生调用栈溢出。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">trampoline(sum(<span class="hljs-number">1</span>, <span class="hljs-number">100000</span>))
+<span class="hljs-comment">// 100001</span>
+</code></pre>
+<p class="calibre6">蹦床函数并不是真正的尾递归优化，下面的实现才是。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">tco</span>(<span class="hljs-number">f</span>) </span>{
+  <span class="hljs-keyword">var</span> value;
+  <span class="hljs-keyword">var</span> active = <span class="hljs-number">false</span>;
+  <span class="hljs-keyword">var</span> accumulated = [];
+
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">accumulator</span>(<span class="hljs-number"></span>) </span>{
+    accumulated.push(<span class="hljs-number">arguments</span>);
+    <span class="hljs-keyword">if</span> (!active) {
+      active = <span class="hljs-number">true</span>;
+      <span class="hljs-keyword">while</span> (accumulated.length) {
+        value = f.apply(<span class="hljs-keyword">this</span>, accumulated.shift());
+      }
+      active = <span class="hljs-number">false</span>;
+      <span class="hljs-keyword">return</span> value;
+    }
+  };
+}
+
+<span class="hljs-keyword">var</span> sum = tco(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">x, y</span>) </span>{
+  <span class="hljs-keyword">if</span> (y &gt; <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> sum(x + <span class="hljs-number">1</span>, y - <span class="hljs-number">1</span>)
+  }
+  <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> x
+  }
+});
+
+sum(<span class="hljs-number">1</span>, <span class="hljs-number">100000</span>)
+<span class="hljs-comment">// 100001</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">tco</code>函数是尾递归优化的实现，它的奥妙就在于状态变量<code class="pcalibre3 calibre13 pcalibre4">active</code>。默认情况下，这个变量是不激活的。一旦进入尾递归优化的过程，这个变量就激活了。然后，每一轮递归<code class="pcalibre3 calibre13 pcalibre4">sum</code>返回的都是<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，所以就避免了递归执行；而<code class="pcalibre3 calibre13 pcalibre4">accumulated</code>数组存放每一轮<code class="pcalibre3 calibre13 pcalibre4">sum</code>执行的参数，总是有值的，这就保证了<code class="pcalibre3 calibre13 pcalibre4">accumulator</code>函数内部的<code class="pcalibre3 calibre13 pcalibre4">while</code>循环总是会执行。这样就很巧妙地将“递归”改成了“循环”，而后一轮的参数会取代前一轮的参数，保证了调用栈只有一层。</p>
+<h2 id="函数参数的尾逗号" class="calibre12">函数参数的尾逗号</h2>
+<p class="calibre6">ES2017 <a href="https://github.com/jeffmo/es-trailing-function-commas" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">允许</a>函数的最后一个参数有尾逗号（trailing comma）。</p>
+<p class="calibre6">此前，函数定义和调用时，都不允许最后一个参数后面出现逗号。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">clownsEverywhere</span>(<span class="hljs-number">
+  param1,
+  param2
+</span>) </span>{ <span class="hljs-comment">/* ... */</span> }
+
+clownsEverywhere(
+  <span class="hljs-string">&#39;foo&#39;</span>,
+  <span class="hljs-string">&#39;bar&#39;</span>
+);
+</code></pre>
+<p class="calibre6">上面代码中，如果在<code class="pcalibre3 calibre13 pcalibre4">param2</code>或<code class="pcalibre3 calibre13 pcalibre4">bar</code>后面加一个逗号，就会报错。</p>
+<p class="calibre6">如果像上面这样，将参数写成多行（即每个参数占据一行），以后修改代码的时候，想为函数<code class="pcalibre3 calibre13 pcalibre4">clownsEverywhere</code>添加第三个参数，或者调整参数的次序，就势必要在原来最后一个参数后面添加一个逗号。这对于版本管理系统来说，就会显示添加逗号的那一行也发生了变动。这看上去有点冗余，因此新的语法允许定义和调用时，尾部直接有一个逗号。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">clownsEverywhere</span>(<span class="hljs-number">
+  param1,
+  param2,
+</span>) </span>{ <span class="hljs-comment">/* ... */</span> }
+
+clownsEverywhere(
+  <span class="hljs-string">&#39;foo&#39;</span>,
+  <span class="hljs-string">&#39;bar&#39;</span>,
+);
+</code></pre>
+<p class="calibre6">这样的规定也使得，函数参数与数组和对象的尾逗号规则，保持一致了。</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="number.html" class="navigation navigation-prev"
+           aria-label="Previous page: 6. 数值的扩展">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="fp.html" class="navigation navigation-next"
+           aria-label="Next page: 8. 函数式编程">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "8. 函数式编程",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "6. 数值的扩展",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

@@ -1,0 +1,1395 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>10. 对象的扩展</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="symbol.html"/>
+    <link rel="prev" href="array.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="object.html">10. 对象的扩展</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_11">10. 对象的扩展</h1>
+        <div class="section">
+            <h1 id="对象的扩展" class="calibre5">对象的扩展</h1>
+<h2 id="属性的简洁表示法" class="calibre16">属性的简洁表示法</h2>
+<p class="calibre6">ES6 允许直接写入变量和函数，作为对象的属性和方法。这样的书写更加简洁。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> foo = <span class="hljs-string">&#39;bar&#39;</span>;
+<span class="hljs-keyword">const</span> baz = {foo};
+baz <span class="hljs-comment">// {foo: &#34;bar&#34;}</span>
+
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">const</span> baz = {foo: foo};
+</code></pre>
+<p class="calibre6">上面代码表明，ES6 允许在对象之中，直接写变量。这时，属性名为变量名, 属性值为变量的值。下面是另一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">x, y</span>) </span>{
+  <span class="hljs-keyword">return</span> {x, y};
+}
+
+<span class="hljs-comment">// 等同于</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">x, y</span>) </span>{
+  <span class="hljs-keyword">return</span> {x: x, y: y};
+}
+
+f(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// Object {x: 1, y: 2}</span>
+</code></pre>
+<p class="calibre6">除了属性简写，方法也可以简写。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> o = {
+  method() {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#34;Hello!&#34;</span>;
+  }
+};
+
+<span class="hljs-comment">// 等同于</span>
+
+<span class="hljs-keyword">const</span> o = {
+  method: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#34;Hello!&#34;</span>;
+  }
+};
+</code></pre>
+<p class="calibre6">下面是一个实际的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> birth = <span class="hljs-string">&#39;2000/01/01&#39;</span>;
+
+<span class="hljs-keyword">const</span> Person = {
+
+  name: <span class="hljs-string">&#39;张三&#39;</span>,
+
+  <span class="hljs-comment">//等同于birth: birth</span>
+  birth,
+
+  <span class="hljs-comment">// 等同于hello: function ()...</span>
+  hello() { <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;我的名字是&#39;</span>, <span class="hljs-keyword">this</span>.name); }
+
+};
+</code></pre>
+<p class="calibre6">这种写法用于函数的返回值，将会非常方便。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">getPoint</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">const</span> x = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">const</span> y = <span class="hljs-number">10</span>;
+  <span class="hljs-keyword">return</span> {x, y};
+}
+
+getPoint()
+<span class="hljs-comment">// {x:1, y:10}</span>
+</code></pre>
+<p class="calibre6">CommonJS 模块输出一组变量，就非常合适使用简洁写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> ms = {};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">getItem</span> (<span class="hljs-number">key</span>) </span>{
+  <span class="hljs-keyword">return</span> key <span class="hljs-keyword">in</span> ms ? ms[key] : <span class="hljs-number">null</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">setItem</span> (<span class="hljs-number">key, value</span>) </span>{
+  ms[key] = value;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">clear</span> (<span class="hljs-number"></span>) </span>{
+  ms = {};
+}
+
+<span class="hljs-number">module</span>.exports = { getItem, setItem, clear };
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-number">module</span>.exports = {
+  getItem: getItem,
+  setItem: setItem,
+  clear: clear
+};
+</code></pre>
+<p class="calibre6">属性的赋值器（setter）和取值器（getter），事实上也是采用这种写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> cart = {
+  _wheels: <span class="hljs-number">4</span>,
+
+  get wheels () {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._wheels;
+  },
+
+  set wheels (value) {
+    <span class="hljs-keyword">if</span> (value &lt; <span class="hljs-keyword">this</span>._wheels) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;数值太小了！&#39;</span>);
+    }
+    <span class="hljs-keyword">this</span>._wheels = value;
+  }
+}
+</code></pre>
+<p class="calibre6">注意，简洁写法的属性名总是字符串，这会导致一些看上去比较奇怪的结果。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = {
+  <span class="hljs-_"><span class="hljs-keyword">class</span> () </span>{}
+};
+
+<span class="hljs-comment">// 等同于</span>
+
+<span class="hljs-keyword">var</span> obj = {
+  <span class="hljs-string">&#39;class&#39;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{}
+};
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">class</code>是字符串，所以不会因为它属于关键字，而导致语法解析报错。</p>
+<p class="calibre6">如果某个方法的值是一个 Generator 函数，前面需要加上星号。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = {
+  * m() {
+    <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;hello world&#39;</span>;
+  }
+};
+</code></pre>
+<h2 id="属性名表达式" class="calibre12">属性名表达式</h2>
+<p class="calibre6">JavaScript 定义对象的属性，有两种方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 方法一</span>
+obj.foo = <span class="hljs-number">true</span>;
+
+<span class="hljs-comment">// 方法二</span>
+obj[<span class="hljs-string">&#39;a&#39;</span> + <span class="hljs-string">&#39;bc&#39;</span>] = <span class="hljs-number">123</span>;
+</code></pre>
+<p class="calibre6">上面代码的方法一是直接用标识符作为属性名，方法二是用表达式作为属性名，这时要将表达式放在方括号之内。</p>
+<p class="calibre6">但是，如果使用字面量方式定义对象（使用大括号），在 ES5 中只能使用方法一（标识符）定义属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> obj = {
+  foo: <span class="hljs-number">true</span>,
+  abc: <span class="hljs-number">123</span>
+};
+</code></pre>
+<p class="calibre6">ES6 允许字面量定义对象时，用方法二（表达式）作为对象的属性名，即把表达式放在方括号内。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> propKey = <span class="hljs-string">&#39;foo&#39;</span>;
+
+<span class="hljs-keyword">let</span> obj = {
+  [propKey]: <span class="hljs-number">true</span>,
+  [<span class="hljs-string">&#39;a&#39;</span> + <span class="hljs-string">&#39;bc&#39;</span>]: <span class="hljs-number">123</span>
+};
+</code></pre>
+<p class="calibre6">下面是另一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> lastWord = <span class="hljs-string">&#39;last word&#39;</span>;
+
+<span class="hljs-keyword">const</span> a = {
+  <span class="hljs-string">&#39;first word&#39;</span>: <span class="hljs-string">&#39;hello&#39;</span>,
+  [lastWord]: <span class="hljs-string">&#39;world&#39;</span>
+};
+
+a[<span class="hljs-string">&#39;first word&#39;</span>] <span class="hljs-comment">// &#34;hello&#34;</span>
+a[lastWord] <span class="hljs-comment">// &#34;world&#34;</span>
+a[<span class="hljs-string">&#39;last word&#39;</span>] <span class="hljs-comment">// &#34;world&#34;</span>
+</code></pre>
+<p class="calibre6">表达式还可以用于定义方法名。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> obj = {
+  [<span class="hljs-string">&#39;h&#39;</span> + <span class="hljs-string">&#39;ello&#39;</span>]() {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;hi&#39;</span>;
+  }
+};
+
+obj.hello() <span class="hljs-comment">// hi</span>
+</code></pre>
+<p class="calibre6">注意，属性名表达式与简洁表示法，不能同时使用，会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 报错</span>
+<span class="hljs-keyword">const</span> foo = <span class="hljs-string">&#39;bar&#39;</span>;
+<span class="hljs-keyword">const</span> bar = <span class="hljs-string">&#39;abc&#39;</span>;
+<span class="hljs-keyword">const</span> baz = { [foo] };
+
+<span class="hljs-comment">// 正确</span>
+<span class="hljs-keyword">const</span> foo = <span class="hljs-string">&#39;bar&#39;</span>;
+<span class="hljs-keyword">const</span> baz = { [foo]: <span class="hljs-string">&#39;abc&#39;</span>};
+</code></pre>
+<p class="calibre6">注意，属性名表达式如果是一个对象，默认情况下会自动将对象转为字符串<code class="pcalibre3 calibre13 pcalibre4">[object Object]</code>，这一点要特别小心。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> keyA = {a: <span class="hljs-number">1</span>};
+<span class="hljs-keyword">const</span> keyB = {b: <span class="hljs-number">2</span>};
+
+<span class="hljs-keyword">const</span> myObject = {
+  [keyA]: <span class="hljs-string">&#39;valueA&#39;</span>,
+  [keyB]: <span class="hljs-string">&#39;valueB&#39;</span>
+};
+
+myObject <span class="hljs-comment">// Object {[object Object]: &#34;valueB&#34;}</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">[keyA]</code>和<code class="pcalibre3 calibre13 pcalibre4">[keyB]</code>得到的都是<code class="pcalibre3 calibre13 pcalibre4">[object Object]</code>，所以<code class="pcalibre3 calibre13 pcalibre4">[keyB]</code>会把<code class="pcalibre3 calibre13 pcalibre4">[keyA]</code>覆盖掉，而<code class="pcalibre3 calibre13 pcalibre4">myObject</code>最后只有一个<code class="pcalibre3 calibre13 pcalibre4">[object Object]</code>属性。</p>
+<h2 id="方法的-name-属性" class="calibre12">方法的 name 属性</h2>
+<p class="calibre6">函数的<code class="pcalibre3 calibre13 pcalibre4">name</code>属性，返回函数名。对象方法也是函数，因此也有<code class="pcalibre3 calibre13 pcalibre4">name</code>属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> person = {
+  sayName() {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;hello!&#39;</span>);
+  },
+};
+
+person.sayName.name   <span class="hljs-comment">// &#34;sayName&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，方法的<code class="pcalibre3 calibre13 pcalibre4">name</code>属性返回函数名（即方法名）。</p>
+<p class="calibre6">如果对象的方法使用了取值函数（<code class="pcalibre3 calibre13 pcalibre4">getter</code>）和存值函数（<code class="pcalibre3 calibre13 pcalibre4">setter</code>），则<code class="pcalibre3 calibre13 pcalibre4">name</code>属性不是在该方法上面，而是该方法的属性的描述对象的<code class="pcalibre3 calibre13 pcalibre4">get</code>和<code class="pcalibre3 calibre13 pcalibre4">set</code>属性上面，返回值是方法名前加上<code class="pcalibre3 calibre13 pcalibre4">get</code>和<code class="pcalibre3 calibre13 pcalibre4">set</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = {
+  get foo() {},
+  set foo(x) {}
+};
+
+obj.foo.name
+<span class="hljs-comment">// TypeError: Cannot read property &#39;name&#39; of undefined</span>
+
+<span class="hljs-keyword">const</span> descriptor = <span class="hljs-number">Object</span>.getOwnPropertyDescriptor(obj, <span class="hljs-string">&#39;foo&#39;</span>);
+
+descriptor.get.name <span class="hljs-comment">// &#34;get foo&#34;</span>
+descriptor.set.name <span class="hljs-comment">// &#34;set foo&#34;</span>
+</code></pre>
+<p class="calibre6">有两种特殊情况：<code class="pcalibre3 calibre13 pcalibre4">bind</code>方法创造的函数，<code class="pcalibre3 calibre13 pcalibre4">name</code>属性返回<code class="pcalibre3 calibre13 pcalibre4">bound</code>加上原函数的名字；<code class="pcalibre3 calibre13 pcalibre4">Function</code>构造函数创造的函数，<code class="pcalibre3 calibre13 pcalibre4">name</code>属性返回<code class="pcalibre3 calibre13 pcalibre4">anonymous</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-keyword">new</span> <span class="hljs-number">Function</span>()).name <span class="hljs-comment">// &#34;anonymous&#34;</span>
+
+<span class="hljs-keyword">var</span> doSomething = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+};
+doSomething.bind().name <span class="hljs-comment">// &#34;bound doSomething&#34;</span>
+</code></pre>
+<p class="calibre6">如果对象的方法是一个 Symbol 值，那么<code class="pcalibre3 calibre13 pcalibre4">name</code>属性返回的是这个 Symbol 值的描述。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> key1 = <span class="hljs-number">Symbol</span>(<span class="hljs-string">&#39;description&#39;</span>);
+<span class="hljs-keyword">const</span> key2 = <span class="hljs-number">Symbol</span>();
+<span class="hljs-keyword">let</span> obj = {
+  [key1]() {},
+  [key2]() {},
+};
+obj[key1].name <span class="hljs-comment">// &#34;[description]&#34;</span>
+obj[key2].name <span class="hljs-comment">// &#34;&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">key1</code>对应的 Symbol 值有描述，<code class="pcalibre3 calibre13 pcalibre4">key2</code>没有。</p>
+<h2 id="objectis" class="calibre12">Object.is()</h2>
+<p class="calibre6">ES5 比较两个值是否相等，只有两个运算符：相等运算符（<code class="pcalibre3 calibre13 pcalibre4">==</code>）和严格相等运算符（<code class="pcalibre3 calibre13 pcalibre4">===</code>）。它们都有缺点，前者会自动转换数据类型，后者的<code class="pcalibre3 calibre13 pcalibre4">NaN</code>不等于自身，以及<code class="pcalibre3 calibre13 pcalibre4">+0</code>等于<code class="pcalibre3 calibre13 pcalibre4">-0</code>。JavaScript 缺乏一种运算，在所有环境中，只要两个值是一样的，它们就应该相等。</p>
+<p class="calibre6">ES6 提出“Same-value equality”（同值相等）算法，用来解决这个问题。<code class="pcalibre3 calibre13 pcalibre4">Object.is</code>就是部署这个算法的新方法。它用来比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.is(<span class="hljs-string">&#39;foo&#39;</span>, <span class="hljs-string">&#39;foo&#39;</span>)
+<span class="hljs-comment">// true</span>
+<span class="hljs-number">Object</span>.is({}, {})
+<span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">不同之处只有两个：一是<code class="pcalibre3 calibre13 pcalibre4">+0</code>不等于<code class="pcalibre3 calibre13 pcalibre4">-0</code>，二是<code class="pcalibre3 calibre13 pcalibre4">NaN</code>等于自身。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">+<span class="hljs-number">0</span> === <span class="hljs-number">-0</span> <span class="hljs-comment">//true</span>
+<span class="hljs-number">NaN</span> === <span class="hljs-number">NaN</span> <span class="hljs-comment">// false</span>
+
+<span class="hljs-number">Object</span>.is(+<span class="hljs-number">0</span>, <span class="hljs-number">-0</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Object</span>.is(<span class="hljs-number">NaN</span>, <span class="hljs-number">NaN</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">ES5 可以通过下面的代码，部署<code class="pcalibre3 calibre13 pcalibre4">Object.is</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.defineProperty(<span class="hljs-number">Object</span>, <span class="hljs-string">&#39;is&#39;</span>, {
+  value: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">x, y</span>) </span>{
+    <span class="hljs-keyword">if</span> (x === y) {
+      <span class="hljs-comment">// 针对+0 不等于 -0的情况</span>
+      <span class="hljs-keyword">return</span> x !== <span class="hljs-number">0</span> || <span class="hljs-number">1</span> / x === <span class="hljs-number">1</span> / y;
+    }
+    <span class="hljs-comment">// 针对NaN的情况</span>
+    <span class="hljs-keyword">return</span> x !== x &amp;&amp; y !== y;
+  },
+  configurable: <span class="hljs-number">true</span>,
+  enumerable: <span class="hljs-number">false</span>,
+  writable: <span class="hljs-number">true</span>
+});
+</code></pre>
+<h2 id="objectassign" class="calibre12">Object.assign()</h2>
+<h3 id="基本用法" class="calibre11">基本用法</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> target = { a: <span class="hljs-number">1</span> };
+
+<span class="hljs-keyword">const</span> source1 = { b: <span class="hljs-number">2</span> };
+<span class="hljs-keyword">const</span> source2 = { c: <span class="hljs-number">3</span> };
+
+<span class="hljs-number">Object</span>.assign(target, source1, source2);
+target <span class="hljs-comment">// {a:1, b:2, c:3}</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>方法的第一个参数是目标对象，后面的参数都是源对象。</p>
+<p class="calibre6">注意，如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> target = { a: <span class="hljs-number">1</span>, b: <span class="hljs-number">1</span> };
+
+<span class="hljs-keyword">const</span> source1 = { b: <span class="hljs-number">2</span>, c: <span class="hljs-number">2</span> };
+<span class="hljs-keyword">const</span> source2 = { c: <span class="hljs-number">3</span> };
+
+<span class="hljs-number">Object</span>.assign(target, source1, source2);
+target <span class="hljs-comment">// {a:1, b:2, c:3}</span>
+</code></pre>
+<p class="calibre6">如果只有一个参数，<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>会直接返回该参数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = {a: <span class="hljs-number">1</span>};
+<span class="hljs-number">Object</span>.assign(obj) === obj <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">如果该参数不是对象，则会先转成对象，然后返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">typeof</span> <span class="hljs-number">Object</span>.assign(<span class="hljs-number">2</span>) <span class="hljs-comment">// &#34;object&#34;</span>
+</code></pre>
+<p class="calibre6">由于<code class="pcalibre3 calibre13 pcalibre4">undefined</code>和<code class="pcalibre3 calibre13 pcalibre4">null</code>无法转成对象，所以如果它们作为参数，就会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.assign(<span class="hljs-number">undefined</span>) <span class="hljs-comment">// 报错</span>
+<span class="hljs-number">Object</span>.assign(<span class="hljs-number">null</span>) <span class="hljs-comment">// 报错</span>
+</code></pre>
+<p class="calibre6">如果非对象参数出现在源对象的位置（即非首参数），那么处理规则有所不同。首先，这些参数都会转成对象，如果无法转成对象，就会跳过。这意味着，如果<code class="pcalibre3 calibre13 pcalibre4">undefined</code>和<code class="pcalibre3 calibre13 pcalibre4">null</code>不在首参数，就不会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> obj = {a: <span class="hljs-number">1</span>};
+<span class="hljs-number">Object</span>.assign(obj, <span class="hljs-number">undefined</span>) === obj <span class="hljs-comment">// true</span>
+<span class="hljs-number">Object</span>.assign(obj, <span class="hljs-number">null</span>) === obj <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">其他类型的值（即数值、字符串和布尔值）不在首参数，也不会报错。但是，除了字符串会以数组形式，拷贝入目标对象，其他值都不会产生效果。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> v1 = <span class="hljs-string">&#39;abc&#39;</span>;
+<span class="hljs-keyword">const</span> v2 = <span class="hljs-number">true</span>;
+<span class="hljs-keyword">const</span> v3 = <span class="hljs-number">10</span>;
+
+<span class="hljs-keyword">const</span> obj = <span class="hljs-number">Object</span>.assign({}, v1, v2, v3);
+<span class="hljs-number">console</span>.log(obj); <span class="hljs-comment">// { &#34;0&#34;: &#34;a&#34;, &#34;1&#34;: &#34;b&#34;, &#34;2&#34;: &#34;c&#34; }</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">v1</code>、<code class="pcalibre3 calibre13 pcalibre4">v2</code>、<code class="pcalibre3 calibre13 pcalibre4">v3</code>分别是字符串、布尔值和数值，结果只有字符串合入目标对象（以字符数组的形式），数值和布尔值都会被忽略。这是因为只有字符串的包装对象，会产生可枚举属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>(<span class="hljs-number">true</span>) <span class="hljs-comment">// {[[PrimitiveValue]]: true}</span>
+<span class="hljs-number">Object</span>(<span class="hljs-number">10</span>)  <span class="hljs-comment">//  {[[PrimitiveValue]]: 10}</span>
+<span class="hljs-number">Object</span>(<span class="hljs-string">&#39;abc&#39;</span>) <span class="hljs-comment">// {0: &#34;a&#34;, 1: &#34;b&#34;, 2: &#34;c&#34;, length: 3, [[PrimitiveValue]]: &#34;abc&#34;}</span>
+</code></pre>
+<p class="calibre6">上面代码中，布尔值、数值、字符串分别转成对应的包装对象，可以看到它们的原始值都在包装对象的内部属性<code class="pcalibre3 calibre13 pcalibre4">[[PrimitiveValue]]</code>上面，这个属性是不会被<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>拷贝的。只有字符串的包装对象，会产生可枚举的实义属性，那些属性则会被拷贝。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>拷贝的属性是有限制的，只拷贝源对象的自身属性（不拷贝继承属性），也不拷贝不可枚举的属性（<code class="pcalibre3 calibre13 pcalibre4">enumerable: false</code>）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.assign({b: <span class="hljs-string">&#39;c&#39;</span>},
+  <span class="hljs-number">Object</span>.defineProperty({}, <span class="hljs-string">&#39;invisible&#39;</span>, {
+    enumerable: <span class="hljs-number">false</span>,
+    value: <span class="hljs-string">&#39;hello&#39;</span>
+  })
+)
+<span class="hljs-comment">// { b: &#39;c&#39; }</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>要拷贝的对象只有一个不可枚举属性<code class="pcalibre3 calibre13 pcalibre4">invisible</code>，这个属性并没有被拷贝进去。</p>
+<p class="calibre6">属性名为 Symbol 值的属性，也会被<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>拷贝。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.assign({ a: <span class="hljs-string">&#39;b&#39;</span> }, { [<span class="hljs-number">Symbol</span>(<span class="hljs-string">&#39;c&#39;</span>)]: <span class="hljs-string">&#39;d&#39;</span> })
+<span class="hljs-comment">// { a: &#39;b&#39;, Symbol(c): &#39;d&#39; }</span>
+</code></pre>
+<h3 id="注意点" class="calibre11">注意点</h3>
+<p class="calibre6"><strong class="calibre17">（1）浅拷贝</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>方法实行的是浅拷贝，而不是深拷贝。也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj1 = {a: {b: <span class="hljs-number">1</span>}};
+<span class="hljs-keyword">const</span> obj2 = <span class="hljs-number">Object</span>.assign({}, obj1);
+
+obj1.a.b = <span class="hljs-number">2</span>;
+obj2.a.b <span class="hljs-comment">// 2</span>
+</code></pre>
+<p class="calibre6">上面代码中，源对象<code class="pcalibre3 calibre13 pcalibre4">obj1</code>的<code class="pcalibre3 calibre13 pcalibre4">a</code>属性的值是一个对象，<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>拷贝得到的是这个对象的引用。这个对象的任何变化，都会反映到目标对象上面。</p>
+<p class="calibre6"><strong class="calibre17">（2）同名属性的替换</strong></p>
+<p class="calibre6">对于这种嵌套的对象，一旦遇到同名属性，<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>的处理方法是替换，而不是添加。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> target = { a: { b: <span class="hljs-string">&#39;c&#39;</span>, d: <span class="hljs-string">&#39;e&#39;</span> } }
+<span class="hljs-keyword">const</span> source = { a: { b: <span class="hljs-string">&#39;hello&#39;</span> } }
+<span class="hljs-number">Object</span>.assign(target, source)
+<span class="hljs-comment">// { a: { b: &#39;hello&#39; } }</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">target</code>对象的<code class="pcalibre3 calibre13 pcalibre4">a</code>属性被<code class="pcalibre3 calibre13 pcalibre4">source</code>对象的<code class="pcalibre3 calibre13 pcalibre4">a</code>属性整个替换掉了，而不会得到<code class="pcalibre3 calibre13 pcalibre4">{ a: { b: &#39;hello&#39;, d: &#39;e&#39; } }</code>的结果。这通常不是开发者想要的，需要特别小心。</p>
+<p class="calibre6">一些函数库提供<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>的定制版本（比如 Lodash 的<code class="pcalibre3 calibre13 pcalibre4">_.defaultsDeep</code>方法），可以得到深拷贝的合并。</p>
+<p class="calibre6"><strong class="calibre17">（3）数组的处理</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>可以用来处理数组，但是会把数组视为对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.assign([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>])
+<span class="hljs-comment">// [4, 5, 3]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>把数组视为属性名为 0、1、2 的对象，因此源数组的 0 号属性<code class="pcalibre3 calibre13 pcalibre4">4</code>覆盖了目标数组的 0 号属性<code class="pcalibre3 calibre13 pcalibre4">1</code>。</p>
+<p class="calibre6"><strong class="calibre17">（4）取值函数的处理</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>只能进行值的复制，如果要复制的值是一个取值函数，那么将求值后再复制。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> source = {
+  get foo() { <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> }
+};
+<span class="hljs-keyword">const</span> target = {};
+
+<span class="hljs-number">Object</span>.assign(target, source)
+<span class="hljs-comment">// { foo: 1 }</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">source</code>对象的<code class="pcalibre3 calibre13 pcalibre4">foo</code>属性是一个取值函数，<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>不会复制这个取值函数，只会拿到值以后，将这个值复制过去。</p>
+<h3 id="常见用途" class="calibre11">常见用途</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>方法有很多用处。</p>
+<p class="calibre6"><strong class="calibre17">（1）为对象添加属性</strong></p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Point</span> </span>{
+  <span class="hljs-keyword">constructor</span>(x, y) {
+    <span class="hljs-number">Object</span>.assign(<span class="hljs-keyword">this</span>, {x, y});
+  }
+}
+</code></pre>
+<p class="calibre6">上面方法通过<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>方法，将<code class="pcalibre3 calibre13 pcalibre4">x</code>属性和<code class="pcalibre3 calibre13 pcalibre4">y</code>属性添加到<code class="pcalibre3 calibre13 pcalibre4">Point</code>类的对象实例。</p>
+<p class="calibre6"><strong class="calibre17">（2）为对象添加方法</strong></p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.assign(SomeClass.prototype, {
+  someMethod(arg1, arg2) {
+    ···
+  },
+  anotherMethod() {
+    ···
+  }
+});
+
+<span class="hljs-comment">// 等同于下面的写法</span>
+SomeClass.prototype.someMethod = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">arg1, arg2</span>) </span>{
+  ···
+};
+SomeClass.prototype.anotherMethod = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  ···
+};
+</code></pre>
+<p class="calibre6">上面代码使用了对象属性的简洁表示法，直接将两个函数放在大括号中，再使用<code class="pcalibre3 calibre13 pcalibre4">assign</code>方法添加到<code class="pcalibre3 calibre13 pcalibre4">SomeClass.prototype</code>之中。</p>
+<p class="calibre6"><strong class="calibre17">（3）克隆对象</strong></p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">clone</span>(<span class="hljs-number">origin</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">Object</span>.assign({}, origin);
+}
+</code></pre>
+<p class="calibre6">上面代码将原始对象拷贝到一个空对象，就得到了原始对象的克隆。</p>
+<p class="calibre6">不过，采用这种方法克隆，只能克隆原始对象自身的值，不能克隆它继承的值。如果想要保持继承链，可以采用下面的代码。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">clone</span>(<span class="hljs-number">origin</span>) </span>{
+  <span class="hljs-keyword">let</span> originProto = <span class="hljs-number">Object</span>.getPrototypeOf(origin);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">Object</span>.assign(<span class="hljs-number">Object</span>.create(originProto), origin);
+}
+</code></pre>
+<p class="calibre6"><strong class="calibre17">（4）合并多个对象</strong></p>
+<p class="calibre6">将多个对象合并到某个对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> merge =
+  (target, ...sources) =&gt; <span class="hljs-number">Object</span>.assign(target, ...sources);
+</code></pre>
+<p class="calibre6">如果希望合并后返回一个新对象，可以改写上面函数，对一个空对象合并。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> merge =
+  (...sources) =&gt; <span class="hljs-number">Object</span>.assign({}, ...sources);
+</code></pre>
+<p class="calibre6"><strong class="calibre17">（5）为属性指定默认值</strong></p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> DEFAULTS = {
+  logLevel: <span class="hljs-number">0</span>,
+  outputFormat: <span class="hljs-string">&#39;html&#39;</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">processContent</span>(<span class="hljs-number">options</span>) </span>{
+  options = <span class="hljs-number">Object</span>.assign({}, DEFAULTS, options);
+  <span class="hljs-number">console</span>.log(options);
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">DEFAULTS</code>对象是默认值，<code class="pcalibre3 calibre13 pcalibre4">options</code>对象是用户提供的参数。<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>方法将<code class="pcalibre3 calibre13 pcalibre4">DEFAULTS</code>和<code class="pcalibre3 calibre13 pcalibre4">options</code>合并成一个新对象，如果两者有同名属性，则<code class="pcalibre3 calibre13 pcalibre4">option</code>的属性值会覆盖<code class="pcalibre3 calibre13 pcalibre4">DEFAULTS</code>的属性值。</p>
+<p class="calibre6">注意，由于存在浅拷贝的问题，<code class="pcalibre3 calibre13 pcalibre4">DEFAULTS</code>对象和<code class="pcalibre3 calibre13 pcalibre4">options</code>对象的所有属性的值，最好都是简单类型，不要指向另一个对象。否则，<code class="pcalibre3 calibre13 pcalibre4">DEFAULTS</code>对象的该属性很可能不起作用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> DEFAULTS = {
+  url: {
+    host: <span class="hljs-string">&#39;example.com&#39;</span>,
+    port: <span class="hljs-number">7070</span>
+  },
+};
+
+processContent({ url: {port: <span class="hljs-number">8000</span>} })
+<span class="hljs-comment">// {</span>
+<span class="hljs-comment">//   url: {port: 8000}</span>
+<span class="hljs-comment">// }</span>
+</code></pre>
+<p class="calibre6">上面代码的原意是将<code class="pcalibre3 calibre13 pcalibre4">url.port</code>改成 8000，<code class="pcalibre3 calibre13 pcalibre4">url.host</code>不变。实际结果却是<code class="pcalibre3 calibre13 pcalibre4">options.url</code>覆盖掉<code class="pcalibre3 calibre13 pcalibre4">DEFAULTS.url</code>，所以<code class="pcalibre3 calibre13 pcalibre4">url.host</code>就不存在了。</p>
+<h2 id="属性的可枚举性和遍历" class="calibre12">属性的可枚举性和遍历</h2>
+<h3 id="可枚举性" class="calibre11">可枚举性</h3>
+<p class="calibre6">对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyDescriptor</code>方法可以获取该属性的描述对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> obj = { foo: <span class="hljs-number">123</span> };
+<span class="hljs-number">Object</span>.getOwnPropertyDescriptor(obj, <span class="hljs-string">&#39;foo&#39;</span>)
+<span class="hljs-comment">//  {</span>
+<span class="hljs-comment">//    value: 123,</span>
+<span class="hljs-comment">//    writable: true,</span>
+<span class="hljs-comment">//    enumerable: true,</span>
+<span class="hljs-comment">//    configurable: true</span>
+<span class="hljs-comment">//  }</span>
+</code></pre>
+<p class="calibre6">描述对象的<code class="pcalibre3 calibre13 pcalibre4">enumerable</code>属性，称为”可枚举性“，如果该属性为<code class="pcalibre3 calibre13 pcalibre4">false</code>，就表示某些操作会忽略当前属性。</p>
+<p class="calibre6">目前，有四个操作会忽略<code class="pcalibre3 calibre13 pcalibre4">enumerable</code>为<code class="pcalibre3 calibre13 pcalibre4">false</code>的属性。</p>
+<ul class="calibre9">
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">for...in</code>循环：只遍历对象自身的和继承的可枚举的属性。</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Object.keys()</code>：返回对象自身的所有可枚举的属性的键名。</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">JSON.stringify()</code>：只串行化对象自身的可枚举的属性。</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Object.assign()</code>： 忽略<code class="pcalibre3 calibre13 pcalibre4">enumerable</code>为<code class="pcalibre3 calibre13 pcalibre4">false</code>的属性，只拷贝对象自身的可枚举的属性。</li>
+</ul>
+<p class="calibre6">这四个操作之中，前三个是 ES5 就有的，最后一个<code class="pcalibre3 calibre13 pcalibre4">Object.assign()</code>是 ES6 新增的。其中，只有<code class="pcalibre3 calibre13 pcalibre4">for...in</code>会返回继承的属性，其他三个方法都会忽略继承的属性，只处理对象自身的属性。实际上，引入“可枚举”（<code class="pcalibre3 calibre13 pcalibre4">enumerable</code>）这个概念的最初目的，就是让某些属性可以规避掉<code class="pcalibre3 calibre13 pcalibre4">for...in</code>操作，不然所有内部属性和方法都会被遍历到。比如，对象原型的<code class="pcalibre3 calibre13 pcalibre4">toString</code>方法，以及数组的<code class="pcalibre3 calibre13 pcalibre4">length</code>属性，就通过“可枚举性”，从而避免被<code class="pcalibre3 calibre13 pcalibre4">for...in</code>遍历到。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.getOwnPropertyDescriptor(<span class="hljs-number">Object</span>.prototype, <span class="hljs-string">&#39;toString&#39;</span>).enumerable
+<span class="hljs-comment">// false</span>
+
+<span class="hljs-number">Object</span>.getOwnPropertyDescriptor([], <span class="hljs-string">&#39;length&#39;</span>).enumerable
+<span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">toString</code>和<code class="pcalibre3 calibre13 pcalibre4">length</code>属性的<code class="pcalibre3 calibre13 pcalibre4">enumerable</code>都是<code class="pcalibre3 calibre13 pcalibre4">false</code>，因此<code class="pcalibre3 calibre13 pcalibre4">for...in</code>不会遍历到这两个继承自原型的属性。</p>
+<p class="calibre6">另外，ES6 规定，所有 Class 的原型的方法都是不可枚举的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.getOwnPropertyDescriptor(<span class="hljs-_"><span class="hljs-keyword">class</span> </span>{foo() {}}.prototype, <span class="hljs-string">&#39;foo&#39;</span>).enumerable
+<span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">总的来说，操作中引入继承的属性会让问题复杂化，大多数时候，我们只关心对象自身的属性。所以，尽量不要用<code class="pcalibre3 calibre13 pcalibre4">for...in</code>循环，而用<code class="pcalibre3 calibre13 pcalibre4">Object.keys()</code>代替。</p>
+<h3 id="属性的遍历" class="calibre11">属性的遍历</h3>
+<p class="calibre6">ES6 一共有 5 种方法可以遍历对象的属性。</p>
+<p class="calibre6"><strong class="calibre17">（1）for...in</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">for...in</code>循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。</p>
+<p class="calibre6"><strong class="calibre17">（2）Object.keys(obj)</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.keys</code>返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。</p>
+<p class="calibre6"><strong class="calibre17">（3）Object.getOwnPropertyNames(obj)</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyNames</code>返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名。</p>
+<p class="calibre6"><strong class="calibre17">（4）Object.getOwnPropertySymbols(obj)</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertySymbols</code>返回一个数组，包含对象自身的所有 Symbol 属性的键名。</p>
+<p class="calibre6"><strong class="calibre17">（5）Reflect.ownKeys(obj)</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Reflect.ownKeys</code>返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。</p>
+<p class="calibre6">以上的 5 种方法遍历对象的键名，都遵守同样的属性遍历的次序规则。</p>
+<ul class="calibre9">
+<li class="calibre10">首先遍历所有数值键，按照数值升序排列。</li>
+<li class="calibre10">其次遍历所有字符串键，按照加入时间升序排列。</li>
+<li class="calibre10">最后遍历所有 Symbol 键，按照加入时间升序排列。</li>
+</ul>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Reflect</span>.ownKeys({ [<span class="hljs-number">Symbol</span>()]:<span class="hljs-number">0</span>, b:<span class="hljs-number">0</span>, <span class="hljs-number">10</span>:<span class="hljs-number">0</span>, <span class="hljs-number">2</span>:<span class="hljs-number">0</span>, a:<span class="hljs-number">0</span> })
+<span class="hljs-comment">// [&#39;2&#39;, &#39;10&#39;, &#39;b&#39;, &#39;a&#39;, Symbol()]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Reflect.ownKeys</code>方法返回一个数组，包含了参数对象的所有属性。这个数组的属性次序是这样的，首先是数值属性<code class="pcalibre3 calibre13 pcalibre4">2</code>和<code class="pcalibre3 calibre13 pcalibre4">10</code>，其次是字符串属性<code class="pcalibre3 calibre13 pcalibre4">b</code>和<code class="pcalibre3 calibre13 pcalibre4">a</code>，最后是 Symbol 属性。</p>
+<h2 id="objectgetownpropertydescriptors" class="calibre12">Object.getOwnPropertyDescriptors()</h2>
+<p class="calibre6">前面说过，<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyDescriptor</code>方法会返回某个对象属性的描述对象（descriptor）。ES2017 引入了<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyDescriptors</code>方法，返回指定对象所有自身属性（非继承属性）的描述对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = {
+  foo: <span class="hljs-number">123</span>,
+  get bar() { <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;abc&#39;</span> }
+};
+
+<span class="hljs-number">Object</span>.getOwnPropertyDescriptors(obj)
+<span class="hljs-comment">// { foo:</span>
+<span class="hljs-comment">//    { value: 123,</span>
+<span class="hljs-comment">//      writable: true,</span>
+<span class="hljs-comment">//      enumerable: true,</span>
+<span class="hljs-comment">//      configurable: true },</span>
+<span class="hljs-comment">//   bar:</span>
+<span class="hljs-comment">//    { get: [Function: get bar],</span>
+<span class="hljs-comment">//      set: undefined,</span>
+<span class="hljs-comment">//      enumerable: true,</span>
+<span class="hljs-comment">//      configurable: true } }</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyDescriptors</code>方法返回一个对象，所有原对象的属性名都是该对象的属性名，对应的属性值就是该属性的描述对象。</p>
+<p class="calibre6">该方法的实现非常容易。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">getOwnPropertyDescriptors</span>(<span class="hljs-number">obj</span>) </span>{
+  <span class="hljs-keyword">const</span> result = {};
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">of</span> <span class="hljs-number">Reflect</span>.ownKeys(obj)) {
+    result[key] = <span class="hljs-number">Object</span>.getOwnPropertyDescriptor(obj, key);
+  }
+  <span class="hljs-keyword">return</span> result;
+}
+</code></pre>
+<p class="calibre6">该方法的引入目的，主要是为了解决<code class="pcalibre3 calibre13 pcalibre4">Object.assign()</code>无法正确拷贝<code class="pcalibre3 calibre13 pcalibre4">get</code>属性和<code class="pcalibre3 calibre13 pcalibre4">set</code>属性的问题。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> source = {
+  set foo(value) {
+    <span class="hljs-number">console</span>.log(value);
+  }
+};
+
+<span class="hljs-keyword">const</span> target1 = {};
+<span class="hljs-number">Object</span>.assign(target1, source);
+
+<span class="hljs-number">Object</span>.getOwnPropertyDescriptor(target1, <span class="hljs-string">&#39;foo&#39;</span>)
+<span class="hljs-comment">// { value: undefined,</span>
+<span class="hljs-comment">//   writable: true,</span>
+<span class="hljs-comment">//   enumerable: true,</span>
+<span class="hljs-comment">//   configurable: true }</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">source</code>对象的<code class="pcalibre3 calibre13 pcalibre4">foo</code>属性的值是一个赋值函数，<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>方法将这个属性拷贝给<code class="pcalibre3 calibre13 pcalibre4">target1</code>对象，结果该属性的值变成了<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。这是因为<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>方法总是拷贝一个属性的值，而不会拷贝它背后的赋值方法或取值方法。</p>
+<p class="calibre6">这时，<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyDescriptors</code>方法配合<code class="pcalibre3 calibre13 pcalibre4">Object.defineProperties</code>方法，就可以实现正确拷贝。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> source = {
+  set foo(value) {
+    <span class="hljs-number">console</span>.log(value);
+  }
+};
+
+<span class="hljs-keyword">const</span> target2 = {};
+<span class="hljs-number">Object</span>.defineProperties(target2, <span class="hljs-number">Object</span>.getOwnPropertyDescriptors(source));
+<span class="hljs-number">Object</span>.getOwnPropertyDescriptor(target2, <span class="hljs-string">&#39;foo&#39;</span>)
+<span class="hljs-comment">// { get: undefined,</span>
+<span class="hljs-comment">//   set: [Function: set foo],</span>
+<span class="hljs-comment">//   enumerable: true,</span>
+<span class="hljs-comment">//   configurable: true }</span>
+</code></pre>
+<p class="calibre6">上面代码中，两个对象合并的逻辑可以写成一个函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> shallowMerge = (target, source) =&gt; <span class="hljs-number">Object</span>.defineProperties(
+  target,
+  <span class="hljs-number">Object</span>.getOwnPropertyDescriptors(source)
+);
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyDescriptors</code>方法的另一个用处，是配合<code class="pcalibre3 calibre13 pcalibre4">Object.create</code>方法，将对象属性克隆到一个新对象。这属于浅拷贝。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> clone = <span class="hljs-number">Object</span>.create(<span class="hljs-number">Object</span>.getPrototypeOf(obj),
+  <span class="hljs-number">Object</span>.getOwnPropertyDescriptors(obj));
+
+<span class="hljs-comment">// 或者</span>
+
+<span class="hljs-keyword">const</span> shallowClone = (obj) =&gt; <span class="hljs-number">Object</span>.create(
+  <span class="hljs-number">Object</span>.getPrototypeOf(obj),
+  <span class="hljs-number">Object</span>.getOwnPropertyDescriptors(obj)
+);
+</code></pre>
+<p class="calibre6">上面代码会克隆对象<code class="pcalibre3 calibre13 pcalibre4">obj</code>。</p>
+<p class="calibre6">另外，<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyDescriptors</code>方法可以实现一个对象继承另一个对象。以前，继承另一个对象，常常写成下面这样。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = {
+  __proto__: prot,
+  foo: <span class="hljs-number">123</span>,
+};
+</code></pre>
+<p class="calibre6">ES6 规定<code class="pcalibre3 calibre13 pcalibre4">__proto__</code>只有浏览器要部署，其他环境不用部署。如果去除<code class="pcalibre3 calibre13 pcalibre4">__proto__</code>，上面代码就要改成下面这样。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = <span class="hljs-number">Object</span>.create(prot);
+obj.foo = <span class="hljs-number">123</span>;
+
+<span class="hljs-comment">// 或者</span>
+
+<span class="hljs-keyword">const</span> obj = <span class="hljs-number">Object</span>.assign(
+  <span class="hljs-number">Object</span>.create(prot),
+  {
+    foo: <span class="hljs-number">123</span>,
+  }
+);
+</code></pre>
+<p class="calibre6">有了<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyDescriptors</code>，我们就有了另一种写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = <span class="hljs-number">Object</span>.create(
+  prot,
+  <span class="hljs-number">Object</span>.getOwnPropertyDescriptors({
+    foo: <span class="hljs-number">123</span>,
+  })
+);
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyDescriptors</code>也可以用来实现 Mixin（混入）模式。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> mix = (object) =&gt; ({
+  <span class="hljs-keyword">with</span>: (...mixins) =&gt; mixins.reduce(
+    (c, mixin) =&gt; <span class="hljs-number">Object</span>.create(
+      c, <span class="hljs-number">Object</span>.getOwnPropertyDescriptors(mixin)
+    ), object)
+});
+
+<span class="hljs-comment">// multiple mixins example</span>
+<span class="hljs-keyword">let</span> a = {a: <span class="hljs-string">&#39;a&#39;</span>};
+<span class="hljs-keyword">let</span> b = {b: <span class="hljs-string">&#39;b&#39;</span>};
+<span class="hljs-keyword">let</span> c = {c: <span class="hljs-string">&#39;c&#39;</span>};
+<span class="hljs-keyword">let</span> d = mix(c).with(a, b);
+
+d.c <span class="hljs-comment">// &#34;c&#34;</span>
+d.b <span class="hljs-comment">// &#34;b&#34;</span>
+d.a <span class="hljs-comment">// &#34;a&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码返回一个新的对象<code class="pcalibre3 calibre13 pcalibre4">d</code>，代表了对象<code class="pcalibre3 calibre13 pcalibre4">a</code>和<code class="pcalibre3 calibre13 pcalibre4">b</code>被混入了对象<code class="pcalibre3 calibre13 pcalibre4">c</code>的操作。</p>
+<p class="calibre6">出于完整性的考虑，<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyDescriptors</code>进入标准以后，以后还会新增<code class="pcalibre3 calibre13 pcalibre4">Reflect.getOwnPropertyDescriptors</code>方法。</p>
+<h2 id="proto属性，objectsetprototypeof，objectgetprototypeof" class="calibre12"><code class="pcalibre3 pcalibre4 calibre19">__proto__</code>属性，Object.setPrototypeOf()，Object.getPrototypeOf()</h2>
+<p class="calibre6">JavaScript 语言的对象继承是通过原型链实现的。ES6 提供了更多原型对象的操作方法。</p>
+<h3 id="proto属性" class="calibre11"><code class="pcalibre3 calibre15 pcalibre4">__proto__</code>属性</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">__proto__</code>属性（前后各两个下划线），用来读取或设置当前对象的<code class="pcalibre3 calibre13 pcalibre4">prototype</code>对象。目前，所有浏览器（包括 IE11）都部署了这个属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// es6 的写法</span>
+<span class="hljs-keyword">const</span> obj = {
+  method: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{ ... }
+};
+obj.__proto__ = someOtherObj;
+
+<span class="hljs-comment">// es5 的写法</span>
+<span class="hljs-keyword">var</span> obj = <span class="hljs-number">Object</span>.create(someOtherObj);
+obj.method = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{ ... };
+</code></pre>
+<p class="calibre6">该属性没有写入 ES6 的正文，而是写入了附录，原因是<code class="pcalibre3 calibre13 pcalibre4">__proto__</code>前后的双下划线，说明它本质上是一个内部属性，而不是一个正式的对外的 API，只是由于浏览器广泛支持，才被加入了 ES6。标准明确规定，只有浏览器必须部署这个属性，其他运行环境不一定需要部署，而且新的代码最好认为这个属性是不存在的。因此，无论从语义的角度，还是从兼容性的角度，都不要使用这个属性，而是使用下面的<code class="pcalibre3 calibre13 pcalibre4">Object.setPrototypeOf()</code>（写操作）、<code class="pcalibre3 calibre13 pcalibre4">Object.getPrototypeOf()</code>（读操作）、<code class="pcalibre3 calibre13 pcalibre4">Object.create()</code>（生成操作）代替。</p>
+<p class="calibre6">实现上，<code class="pcalibre3 calibre13 pcalibre4">__proto__</code>调用的是<code class="pcalibre3 calibre13 pcalibre4">Object.prototype.__proto__</code>，具体实现如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.defineProperty(<span class="hljs-number">Object</span>.prototype, <span class="hljs-string">&#39;__proto__&#39;</span>, {
+  get() {
+    <span class="hljs-keyword">let</span> _thisObj = <span class="hljs-number">Object</span>(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">Object</span>.getPrototypeOf(_thisObj);
+  },
+  set(proto) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span> === <span class="hljs-number">undefined</span> || <span class="hljs-keyword">this</span> === <span class="hljs-number">null</span>) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">TypeError</span>();
+    }
+    <span class="hljs-keyword">if</span> (!isObject(<span class="hljs-keyword">this</span>)) {
+      <span class="hljs-keyword">return</span> <span class="hljs-number">undefined</span>;
+    }
+    <span class="hljs-keyword">if</span> (!isObject(proto)) {
+      <span class="hljs-keyword">return</span> <span class="hljs-number">undefined</span>;
+    }
+    <span class="hljs-keyword">let</span> status = <span class="hljs-number">Reflect</span>.setPrototypeOf(<span class="hljs-keyword">this</span>, proto);
+    <span class="hljs-keyword">if</span> (!status) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">TypeError</span>();
+    }
+  },
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">isObject</span>(<span class="hljs-number">value</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">Object</span>(value) === value;
+}
+</code></pre>
+<p class="calibre6">如果一个对象本身部署了<code class="pcalibre3 calibre13 pcalibre4">__proto__</code>属性，该属性的值就是对象的原型。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.getPrototypeOf({ __proto__: <span class="hljs-number">null</span> })
+<span class="hljs-comment">// null</span>
+</code></pre>
+<h3 id="objectsetprototypeof" class="calibre11">Object.setPrototypeOf()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.setPrototypeOf</code>方法的作用与<code class="pcalibre3 calibre13 pcalibre4">__proto__</code>相同，用来设置一个对象的<code class="pcalibre3 calibre13 pcalibre4">prototype</code>对象，返回参数对象本身。它是 ES6 正式推荐的设置原型对象的方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 格式</span>
+<span class="hljs-number">Object</span>.setPrototypeOf(object, prototype)
+
+<span class="hljs-comment">// 用法</span>
+<span class="hljs-keyword">const</span> o = <span class="hljs-number">Object</span>.setPrototypeOf({}, <span class="hljs-number">null</span>);
+</code></pre>
+<p class="calibre6">该方法等同于下面的函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">obj, proto</span>) </span>{
+  obj.__proto__ = proto;
+  <span class="hljs-keyword">return</span> obj;
+}
+</code></pre>
+<p class="calibre6">下面是一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> proto = {};
+<span class="hljs-keyword">let</span> obj = { x: <span class="hljs-number">10</span> };
+<span class="hljs-number">Object</span>.setPrototypeOf(obj, proto);
+
+proto.y = <span class="hljs-number">20</span>;
+proto.z = <span class="hljs-number">40</span>;
+
+obj.x <span class="hljs-comment">// 10</span>
+obj.y <span class="hljs-comment">// 20</span>
+obj.z <span class="hljs-comment">// 40</span>
+</code></pre>
+<p class="calibre6">上面代码将<code class="pcalibre3 calibre13 pcalibre4">proto</code>对象设为<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象的原型，所以从<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象可以读取<code class="pcalibre3 calibre13 pcalibre4">proto</code>对象的属性。</p>
+<p class="calibre6">如果第一个参数不是对象，会自动转为对象。但是由于返回的还是第一个参数，所以这个操作不会产生任何效果。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.setPrototypeOf(<span class="hljs-number">1</span>, {}) === <span class="hljs-number">1</span> <span class="hljs-comment">// true</span>
+<span class="hljs-number">Object</span>.setPrototypeOf(<span class="hljs-string">&#39;foo&#39;</span>, {}) === <span class="hljs-string">&#39;foo&#39;</span> <span class="hljs-comment">// true</span>
+<span class="hljs-number">Object</span>.setPrototypeOf(<span class="hljs-number">true</span>, {}) === <span class="hljs-number">true</span> <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">由于<code class="pcalibre3 calibre13 pcalibre4">undefined</code>和<code class="pcalibre3 calibre13 pcalibre4">null</code>无法转为对象，所以如果第一个参数是<code class="pcalibre3 calibre13 pcalibre4">undefined</code>或<code class="pcalibre3 calibre13 pcalibre4">null</code>，就会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.setPrototypeOf(<span class="hljs-number">undefined</span>, {})
+<span class="hljs-comment">// TypeError: Object.setPrototypeOf called on null or undefined</span>
+
+<span class="hljs-number">Object</span>.setPrototypeOf(<span class="hljs-number">null</span>, {})
+<span class="hljs-comment">// TypeError: Object.setPrototypeOf called on null or undefined</span>
+</code></pre>
+<h3 id="objectgetprototypeof" class="calibre11">Object.getPrototypeOf()</h3>
+<p class="calibre6">该方法与<code class="pcalibre3 calibre13 pcalibre4">Object.setPrototypeOf</code>方法配套，用于读取一个对象的原型对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.getPrototypeOf(obj);
+</code></pre>
+<p class="calibre6">下面是一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">Rectangle</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">const</span> rec = <span class="hljs-keyword">new</span> Rectangle();
+
+<span class="hljs-number">Object</span>.getPrototypeOf(rec) === Rectangle.prototype
+<span class="hljs-comment">// true</span>
+
+<span class="hljs-number">Object</span>.setPrototypeOf(rec, <span class="hljs-number">Object</span>.prototype);
+<span class="hljs-number">Object</span>.getPrototypeOf(rec) === Rectangle.prototype
+<span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">如果参数不是对象，会被自动转为对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 等同于 Object.getPrototypeOf(Number(1))</span>
+<span class="hljs-number">Object</span>.getPrototypeOf(<span class="hljs-number">1</span>)
+<span class="hljs-comment">// Number {[[PrimitiveValue]]: 0}</span>
+
+<span class="hljs-comment">// 等同于 Object.getPrototypeOf(String(&#39;foo&#39;))</span>
+<span class="hljs-number">Object</span>.getPrototypeOf(<span class="hljs-string">&#39;foo&#39;</span>)
+<span class="hljs-comment">// String {length: 0, [[PrimitiveValue]]: &#34;&#34;}</span>
+
+<span class="hljs-comment">// 等同于 Object.getPrototypeOf(Boolean(true))</span>
+<span class="hljs-number">Object</span>.getPrototypeOf(<span class="hljs-number">true</span>)
+<span class="hljs-comment">// Boolean {[[PrimitiveValue]]: false}</span>
+
+<span class="hljs-number">Object</span>.getPrototypeOf(<span class="hljs-number">1</span>) === <span class="hljs-number">Number</span>.prototype <span class="hljs-comment">// true</span>
+<span class="hljs-number">Object</span>.getPrototypeOf(<span class="hljs-string">&#39;foo&#39;</span>) === <span class="hljs-number">String</span>.prototype <span class="hljs-comment">// true</span>
+<span class="hljs-number">Object</span>.getPrototypeOf(<span class="hljs-number">true</span>) === <span class="hljs-number">Boolean</span>.prototype <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">如果参数是<code class="pcalibre3 calibre13 pcalibre4">undefined</code>或<code class="pcalibre3 calibre13 pcalibre4">null</code>，它们无法转为对象，所以会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.getPrototypeOf(<span class="hljs-number">null</span>)
+<span class="hljs-comment">// TypeError: Cannot convert undefined or null to object</span>
+
+<span class="hljs-number">Object</span>.getPrototypeOf(<span class="hljs-number">undefined</span>)
+<span class="hljs-comment">// TypeError: Cannot convert undefined or null to object</span>
+</code></pre>
+<h2 id="super-关键字" class="calibre12">super 关键字</h2>
+<p class="calibre6">我们知道，<code class="pcalibre3 calibre13 pcalibre4">this</code>关键字总是指向函数所在的当前对象，ES6 又新增了另一个类似的关键字<code class="pcalibre3 calibre13 pcalibre4">super</code>，指向当前对象的原型对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> proto = {
+  foo: <span class="hljs-string">&#39;hello&#39;</span>
+};
+
+<span class="hljs-keyword">const</span> obj = {
+  foo: <span class="hljs-string">&#39;world&#39;</span>,
+  find() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.foo;
+  }
+};
+
+<span class="hljs-number">Object</span>.setPrototypeOf(obj, proto);
+obj.find() <span class="hljs-comment">// &#34;hello&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，对象<code class="pcalibre3 calibre13 pcalibre4">obj</code>的<code class="pcalibre3 calibre13 pcalibre4">find</code>方法之中，通过<code class="pcalibre3 calibre13 pcalibre4">super.foo</code>引用了原型对象<code class="pcalibre3 calibre13 pcalibre4">proto</code>的<code class="pcalibre3 calibre13 pcalibre4">foo</code>属性。</p>
+<p class="calibre6">注意，<code class="pcalibre3 calibre13 pcalibre4">super</code>关键字表示原型对象时，只能用在对象的方法之中，用在其他地方都会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 报错</span>
+<span class="hljs-keyword">const</span> obj = {
+  foo: <span class="hljs-keyword">super</span>.foo
+}
+
+<span class="hljs-comment">// 报错</span>
+<span class="hljs-keyword">const</span> obj = {
+  foo: () =&gt; <span class="hljs-keyword">super</span>.foo
+}
+
+<span class="hljs-comment">// 报错</span>
+<span class="hljs-keyword">const</span> obj = {
+  foo: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.foo
+  }
+}
+</code></pre>
+<p class="calibre6">上面三种<code class="pcalibre3 calibre13 pcalibre4">super</code>的用法都会报错，因为对于 JavaScript 引擎来说，这里的<code class="pcalibre3 calibre13 pcalibre4">super</code>都没有用在对象的方法之中。第一种写法是<code class="pcalibre3 calibre13 pcalibre4">super</code>用在属性里面，第二种和第三种写法是<code class="pcalibre3 calibre13 pcalibre4">super</code>用在一个函数里面，然后赋值给<code class="pcalibre3 calibre13 pcalibre4">foo</code>属性。目前，只有对象方法的简写法可以让 JavaScript 引擎确认，定义的是对象的方法。</p>
+<p class="calibre6">JavaScript 引擎内部，<code class="pcalibre3 calibre13 pcalibre4">super.foo</code>等同于<code class="pcalibre3 calibre13 pcalibre4">Object.getPrototypeOf(this).foo</code>（属性）或<code class="pcalibre3 calibre13 pcalibre4">Object.getPrototypeOf(this).foo.call(this)</code>（方法）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> proto = {
+  x: <span class="hljs-string">&#39;hello&#39;</span>,
+  foo() {
+    <span class="hljs-number">console</span>.log(<span class="hljs-keyword">this</span>.x);
+  },
+};
+
+<span class="hljs-keyword">const</span> obj = {
+  x: <span class="hljs-string">&#39;world&#39;</span>,
+  foo() {
+    <span class="hljs-keyword">super</span>.foo();
+  }
+}
+
+<span class="hljs-number">Object</span>.setPrototypeOf(obj, proto);
+
+obj.foo() <span class="hljs-comment">// &#34;world&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">super.foo</code>指向原型对象<code class="pcalibre3 calibre13 pcalibre4">proto</code>的<code class="pcalibre3 calibre13 pcalibre4">foo</code>方法，但是绑定的<code class="pcalibre3 calibre13 pcalibre4">this</code>却还是当前对象<code class="pcalibre3 calibre13 pcalibre4">obj</code>，因此输出的就是<code class="pcalibre3 calibre13 pcalibre4">world</code>。</p>
+<h2 id="objectkeys，objectvalues，objectentries" class="calibre12">Object.keys()，Object.values()，Object.entries()</h2>
+<h3 id="objectkeys" class="calibre11">Object.keys()</h3>
+<p class="calibre6">ES5 引入了<code class="pcalibre3 calibre13 pcalibre4">Object.keys</code>方法，返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键名。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> obj = { foo: <span class="hljs-string">&#39;bar&#39;</span>, baz: <span class="hljs-number">42</span> };
+<span class="hljs-number">Object</span>.keys(obj)
+<span class="hljs-comment">// [&#34;foo&#34;, &#34;baz&#34;]</span>
+</code></pre>
+<p class="calibre6">ES2017 <a href="https://github.com/tc39/proposal-object-values-entries" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">引入</a>了跟<code class="pcalibre3 calibre13 pcalibre4">Object.keys</code>配套的<code class="pcalibre3 calibre13 pcalibre4">Object.values</code>和<code class="pcalibre3 calibre13 pcalibre4">Object.entries</code>，作为遍历一个对象的补充手段，供<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环使用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> {keys, values, entries} = <span class="hljs-number">Object</span>;
+<span class="hljs-keyword">let</span> obj = { a: <span class="hljs-number">1</span>, b: <span class="hljs-number">2</span>, c: <span class="hljs-number">3</span> };
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">of</span> keys(obj)) {
+  <span class="hljs-number">console</span>.log(key); <span class="hljs-comment">// &#39;a&#39;, &#39;b&#39;, &#39;c&#39;</span>
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> value <span class="hljs-keyword">of</span> values(obj)) {
+  <span class="hljs-number">console</span>.log(value); <span class="hljs-comment">// 1, 2, 3</span>
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> [key, value] <span class="hljs-keyword">of</span> entries(obj)) {
+  <span class="hljs-number">console</span>.log([key, value]); <span class="hljs-comment">// [&#39;a&#39;, 1], [&#39;b&#39;, 2], [&#39;c&#39;, 3]</span>
+}
+</code></pre>
+<h3 id="objectvalues" class="calibre11">Object.values()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.values</code>方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = { foo: <span class="hljs-string">&#39;bar&#39;</span>, baz: <span class="hljs-number">42</span> };
+<span class="hljs-number">Object</span>.values(obj)
+<span class="hljs-comment">// [&#34;bar&#34;, 42]</span>
+</code></pre>
+<p class="calibre6">返回数组的成员顺序，与本章的《属性的遍历》部分介绍的排列规则一致。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = { <span class="hljs-number">100</span>: <span class="hljs-string">&#39;a&#39;</span>, <span class="hljs-number">2</span>: <span class="hljs-string">&#39;b&#39;</span>, <span class="hljs-number">7</span>: <span class="hljs-string">&#39;c&#39;</span> };
+<span class="hljs-number">Object</span>.values(obj)
+<span class="hljs-comment">// [&#34;b&#34;, &#34;c&#34;, &#34;a&#34;]</span>
+</code></pre>
+<p class="calibre6">上面代码中，属性名为数值的属性，是按照数值大小，从小到大遍历的，因此返回的顺序是<code class="pcalibre3 calibre13 pcalibre4">b</code>、<code class="pcalibre3 calibre13 pcalibre4">c</code>、<code class="pcalibre3 calibre13 pcalibre4">a</code>。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.values</code>只返回对象自身的可遍历属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = <span class="hljs-number">Object</span>.create({}, {p: {value: <span class="hljs-number">42</span>}});
+<span class="hljs-number">Object</span>.values(obj) <span class="hljs-comment">// []</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Object.create</code>方法的第二个参数添加的对象属性（属性<code class="pcalibre3 calibre13 pcalibre4">p</code>），如果不显式声明，默认是不可遍历的，因为<code class="pcalibre3 calibre13 pcalibre4">p</code>的属性描述对象的<code class="pcalibre3 calibre13 pcalibre4">enumerable</code>默认是<code class="pcalibre3 calibre13 pcalibre4">false</code>，<code class="pcalibre3 calibre13 pcalibre4">Object.values</code>不会返回这个属性。只要把<code class="pcalibre3 calibre13 pcalibre4">enumerable</code>改成<code class="pcalibre3 calibre13 pcalibre4">true</code>，<code class="pcalibre3 calibre13 pcalibre4">Object.values</code>就会返回属性<code class="pcalibre3 calibre13 pcalibre4">p</code>的值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = <span class="hljs-number">Object</span>.create({}, {p:
+  {
+    value: <span class="hljs-number">42</span>,
+    enumerable: <span class="hljs-number">true</span>
+  }
+});
+<span class="hljs-number">Object</span>.values(obj) <span class="hljs-comment">// [42]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.values</code>会过滤属性名为 Symbol 值的属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.values({ [<span class="hljs-number">Symbol</span>()]: <span class="hljs-number">123</span>, foo: <span class="hljs-string">&#39;abc&#39;</span> });
+<span class="hljs-comment">// [&#39;abc&#39;]</span>
+</code></pre>
+<p class="calibre6">如果<code class="pcalibre3 calibre13 pcalibre4">Object.values</code>方法的参数是一个字符串，会返回各个字符组成的一个数组。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.values(<span class="hljs-string">&#39;foo&#39;</span>)
+<span class="hljs-comment">// [&#39;f&#39;, &#39;o&#39;, &#39;o&#39;]</span>
+</code></pre>
+<p class="calibre6">上面代码中，字符串会先转成一个类似数组的对象。字符串的每个字符，就是该对象的一个属性。因此，<code class="pcalibre3 calibre13 pcalibre4">Object.values</code>返回每个属性的键值，就是各个字符组成的一个数组。</p>
+<p class="calibre6">如果参数不是对象，<code class="pcalibre3 calibre13 pcalibre4">Object.values</code>会先将其转为对象。由于数值和布尔值的包装对象，都不会为实例添加非继承的属性。所以，<code class="pcalibre3 calibre13 pcalibre4">Object.values</code>会返回空数组。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.values(<span class="hljs-number">42</span>) <span class="hljs-comment">// []</span>
+<span class="hljs-number">Object</span>.values(<span class="hljs-number">true</span>) <span class="hljs-comment">// []</span>
+</code></pre>
+<h3 id="objectentries" class="calibre11">Object.entries</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.entries</code>方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = { foo: <span class="hljs-string">&#39;bar&#39;</span>, baz: <span class="hljs-number">42</span> };
+<span class="hljs-number">Object</span>.entries(obj)
+<span class="hljs-comment">// [ [&#34;foo&#34;, &#34;bar&#34;], [&#34;baz&#34;, 42] ]</span>
+</code></pre>
+<p class="calibre6">除了返回值不一样，该方法的行为与<code class="pcalibre3 calibre13 pcalibre4">Object.values</code>基本一致。</p>
+<p class="calibre6">如果原对象的属性名是一个 Symbol 值，该属性会被忽略。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.entries({ [<span class="hljs-number">Symbol</span>()]: <span class="hljs-number">123</span>, foo: <span class="hljs-string">&#39;abc&#39;</span> });
+<span class="hljs-comment">// [ [ &#39;foo&#39;, &#39;abc&#39; ] ]</span>
+</code></pre>
+<p class="calibre6">上面代码中，原对象有两个属性，<code class="pcalibre3 calibre13 pcalibre4">Object.entries</code>只输出属性名非 Symbol 值的属性。将来可能会有<code class="pcalibre3 calibre13 pcalibre4">Reflect.ownEntries()</code>方法，返回对象自身的所有属性。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.entries</code>的基本用途是遍历对象的属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> obj = { one: <span class="hljs-number">1</span>, two: <span class="hljs-number">2</span> };
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> [k, v] <span class="hljs-keyword">of</span> <span class="hljs-number">Object</span>.entries(obj)) {
+  <span class="hljs-number">console</span>.log(
+    <span class="hljs-string">`<span class="hljs-_">${JSON.stringify(k)}</span>: <span class="hljs-_">${JSON.stringify(v)}</span>`</span>
+  );
+}
+<span class="hljs-comment">// &#34;one&#34;: 1</span>
+<span class="hljs-comment">// &#34;two&#34;: 2</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Object.entries</code>方法的另一个用处是，将对象转为真正的<code class="pcalibre3 calibre13 pcalibre4">Map</code>结构。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = { foo: <span class="hljs-string">&#39;bar&#39;</span>, baz: <span class="hljs-number">42</span> };
+<span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> <span class="hljs-number">Map</span>(<span class="hljs-number">Object</span>.entries(obj));
+map <span class="hljs-comment">// Map { foo: &#34;bar&#34;, baz: 42 }</span>
+</code></pre>
+<p class="calibre6">自己实现<code class="pcalibre3 calibre13 pcalibre4">Object.entries</code>方法，非常简单。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// Generator函数的版本</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">entries</span>(<span class="hljs-number">obj</span>) </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">of</span> <span class="hljs-number">Object</span>.keys(obj)) {
+    <span class="hljs-keyword">yield</span> [key, obj[key]];
+  }
+}
+
+<span class="hljs-comment">// 非Generator函数的版本</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">entries</span>(<span class="hljs-number">obj</span>) </span>{
+  <span class="hljs-keyword">let</span> arr = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">of</span> <span class="hljs-number">Object</span>.keys(obj)) {
+    arr.push([key, obj[key]]);
+  }
+  <span class="hljs-keyword">return</span> arr;
+}
+</code></pre>
+<h2 id="对象的扩展运算符" class="calibre12">对象的扩展运算符</h2>
+<p class="calibre6">《数组的扩展》一章中，已经介绍过扩展运算符（<code class="pcalibre3 calibre13 pcalibre4">...</code>）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> [a, ...b] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+a <span class="hljs-comment">// 1</span>
+b <span class="hljs-comment">// [2, 3]</span>
+</code></pre>
+<p class="calibre6">ES2018 将这个运算符<a href="https://github.com/sebmarkbage/ecmascript-rest-spread" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">引入</a>了对象。</p>
+<h3 id="解构赋值" class="calibre11">解构赋值</h3>
+<p class="calibre6">对象的解构赋值用于从一个对象取值，相当于将目标对象自身的所有可遍历的（enumerable）、但尚未被读取的属性，分配到指定的对象上面。所有的键和它们的值，都会拷贝到新对象上面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> { x, y, ...z } = { x: <span class="hljs-number">1</span>, y: <span class="hljs-number">2</span>, a: <span class="hljs-number">3</span>, b: <span class="hljs-number">4</span> };
+x <span class="hljs-comment">// 1</span>
+y <span class="hljs-comment">// 2</span>
+z <span class="hljs-comment">// { a: 3, b: 4 }</span>
+</code></pre>
+<p class="calibre6">上面代码中，变量<code class="pcalibre3 calibre13 pcalibre4">z</code>是解构赋值所在的对象。它获取等号右边的所有尚未读取的键（<code class="pcalibre3 calibre13 pcalibre4">a</code>和<code class="pcalibre3 calibre13 pcalibre4">b</code>），将它们连同值一起拷贝过来。</p>
+<p class="calibre6">由于解构赋值要求等号右边是一个对象，所以如果等号右边是<code class="pcalibre3 calibre13 pcalibre4">undefined</code>或<code class="pcalibre3 calibre13 pcalibre4">null</code>，就会报错，因为它们无法转为对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> { x, y, ...z } = <span class="hljs-number">null</span>; <span class="hljs-comment">// 运行时错误</span>
+<span class="hljs-keyword">let</span> { x, y, ...z } = <span class="hljs-number">undefined</span>; <span class="hljs-comment">// 运行时错误</span>
+</code></pre>
+<p class="calibre6">解构赋值必须是最后一个参数，否则会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> { ...x, y, z } = obj; <span class="hljs-comment">// 句法错误</span>
+<span class="hljs-keyword">let</span> { x, ...y, ...z } = obj; <span class="hljs-comment">// 句法错误</span>
+</code></pre>
+<p class="calibre6">上面代码中，解构赋值不是最后一个参数，所以会报错。</p>
+<p class="calibre6">注意，解构赋值的拷贝是浅拷贝，即如果一个键的值是复合类型的值（数组、对象、函数）、那么解构赋值拷贝的是这个值的引用，而不是这个值的副本。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> obj = { a: { b: <span class="hljs-number">1</span> } };
+<span class="hljs-keyword">let</span> { ...x } = obj;
+obj.a.b = <span class="hljs-number">2</span>;
+x.a.b <span class="hljs-comment">// 2</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">x</code>是解构赋值所在的对象，拷贝了对象<code class="pcalibre3 calibre13 pcalibre4">obj</code>的<code class="pcalibre3 calibre13 pcalibre4">a</code>属性。<code class="pcalibre3 calibre13 pcalibre4">a</code>属性引用了一个对象，修改这个对象的值，会影响到解构赋值对它的引用。</p>
+<p class="calibre6">另外，扩展运算符的解构赋值，不能复制继承自原型对象的属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> o1 = { a: <span class="hljs-number">1</span> };
+<span class="hljs-keyword">let</span> o2 = { b: <span class="hljs-number">2</span> };
+o2.__proto__ = o1;
+<span class="hljs-keyword">let</span> { ...o3 } = o2;
+o3 <span class="hljs-comment">// { b: 2 }</span>
+o3.a <span class="hljs-comment">// undefined</span>
+</code></pre>
+<p class="calibre6">上面代码中，对象<code class="pcalibre3 calibre13 pcalibre4">o3</code>复制了<code class="pcalibre3 calibre13 pcalibre4">o2</code>，但是只复制了<code class="pcalibre3 calibre13 pcalibre4">o2</code>自身的属性，没有复制它的原型对象<code class="pcalibre3 calibre13 pcalibre4">o1</code>的属性。</p>
+<p class="calibre6">下面是另一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> o = <span class="hljs-number">Object</span>.create({ x: <span class="hljs-number">1</span>, y: <span class="hljs-number">2</span> });
+o.z = <span class="hljs-number">3</span>;
+
+<span class="hljs-keyword">let</span> { x, ...newObj } = o;
+<span class="hljs-keyword">let</span> { y, z } = newObj;
+x <span class="hljs-comment">// 1</span>
+y <span class="hljs-comment">// undefined</span>
+z <span class="hljs-comment">// 3</span>
+</code></pre>
+<p class="calibre6">上面代码中，变量<code class="pcalibre3 calibre13 pcalibre4">x</code>是单纯的解构赋值，所以可以读取对象<code class="pcalibre3 calibre13 pcalibre4">o</code>继承的属性；变量<code class="pcalibre3 calibre13 pcalibre4">y</code>和<code class="pcalibre3 calibre13 pcalibre4">z</code>是扩展运算符的解构赋值，只能读取对象<code class="pcalibre3 calibre13 pcalibre4">o</code>自身的属性，所以变量<code class="pcalibre3 calibre13 pcalibre4">z</code>可以赋值成功，变量<code class="pcalibre3 calibre13 pcalibre4">y</code>取不到值。ES6 规定，变量声明语句之中，如果使用解构赋值，扩展运算符后面必须是一个变量名，而不能是一个解构赋值表达式，所以上面代码引入了中间变量<code class="pcalibre3 calibre13 pcalibre4">newObj</code>，如果写成下面这样会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> { x, ...{ y, z } } = o;
+<span class="hljs-comment">// SyntaxError: ... must be followed by an identifier in declaration contexts</span>
+</code></pre>
+<p class="calibre6">解构赋值的一个用处，是扩展某个函数的参数，引入其他操作。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">baseFunction</span>(<span class="hljs-number">{ a, b }</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">wrapperFunction</span>(<span class="hljs-number">{ x, y, ...restConfig }</span>) </span>{
+  <span class="hljs-comment">// 使用 x 和 y 参数进行操作</span>
+  <span class="hljs-comment">// 其余参数传给原始函数</span>
+  <span class="hljs-keyword">return</span> baseFunction(restConfig);
+}
+</code></pre>
+<p class="calibre6">上面代码中，原始函数<code class="pcalibre3 calibre13 pcalibre4">baseFunction</code>接受<code class="pcalibre3 calibre13 pcalibre4">a</code>和<code class="pcalibre3 calibre13 pcalibre4">b</code>作为参数，函数<code class="pcalibre3 calibre13 pcalibre4">wrapperFunction</code>在<code class="pcalibre3 calibre13 pcalibre4">baseFunction</code>的基础上进行了扩展，能够接受多余的参数，并且保留原始函数的行为。</p>
+<h3 id="扩展运算符" class="calibre11">扩展运算符</h3>
+<p class="calibre6">对象的扩展运算符（<code class="pcalibre3 calibre13 pcalibre4">...</code>）用于取出参数对象的所有可遍历属性，拷贝到当前对象之中。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> z = { a: <span class="hljs-number">3</span>, b: <span class="hljs-number">4</span> };
+<span class="hljs-keyword">let</span> n = { ...z };
+n <span class="hljs-comment">// { a: 3, b: 4 }</span>
+</code></pre>
+<p class="calibre6">这等同于使用<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> aClone = { ...a };
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">let</span> aClone = <span class="hljs-number">Object</span>.assign({}, a);
+</code></pre>
+<p class="calibre6">上面的例子只是拷贝了对象实例的属性，如果想完整克隆一个对象，还拷贝对象原型的属性，可以采用下面的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 写法一</span>
+<span class="hljs-keyword">const</span> clone1 = {
+  __proto__: <span class="hljs-number">Object</span>.getPrototypeOf(obj),
+  ...obj
+};
+
+<span class="hljs-comment">// 写法二</span>
+<span class="hljs-keyword">const</span> clone2 = <span class="hljs-number">Object</span>.assign(
+  <span class="hljs-number">Object</span>.create(<span class="hljs-number">Object</span>.getPrototypeOf(obj)),
+  obj
+);
+
+<span class="hljs-comment">// 写法三</span>
+<span class="hljs-keyword">const</span> clone3 = <span class="hljs-number">Object</span>.create(
+  <span class="hljs-number">Object</span>.getPrototypeOf(obj),
+  <span class="hljs-number">Object</span>.getOwnPropertyDescriptors(obj)
+)
+</code></pre>
+<p class="calibre6">上面代码中，写法一的<code class="pcalibre3 calibre13 pcalibre4">__proto__</code>属性在非浏览器的环境不一定部署，因此推荐使用写法二和写法三。</p>
+<p class="calibre6">扩展运算符可以用于合并两个对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> ab = { ...a, ...b };
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">let</span> ab = <span class="hljs-number">Object</span>.assign({}, a, b);
+</code></pre>
+<p class="calibre6">如果用户自定义的属性，放在扩展运算符后面，则扩展运算符内部的同名属性会被覆盖掉。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> aWithOverrides = { ...a, x: <span class="hljs-number">1</span>, y: <span class="hljs-number">2</span> };
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">let</span> aWithOverrides = { ...a, ...{ x: <span class="hljs-number">1</span>, y: <span class="hljs-number">2</span> } };
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>, y = <span class="hljs-number">2</span>, aWithOverrides = { ...a, x, y };
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">let</span> aWithOverrides = <span class="hljs-number">Object</span>.assign({}, a, { x: <span class="hljs-number">1</span>, y: <span class="hljs-number">2</span> });
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">a</code>对象的<code class="pcalibre3 calibre13 pcalibre4">x</code>属性和<code class="pcalibre3 calibre13 pcalibre4">y</code>属性，拷贝到新对象后会被覆盖掉。</p>
+<p class="calibre6">这用来修改现有对象部分的属性就很方便了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> newVersion = {
+  ...previousVersion,
+  name: <span class="hljs-string">&#39;New Name&#39;</span> <span class="hljs-comment">// Override the name property</span>
+};
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">newVersion</code>对象自定义了<code class="pcalibre3 calibre13 pcalibre4">name</code>属性，其他属性全部复制自<code class="pcalibre3 calibre13 pcalibre4">previousVersion</code>对象。</p>
+<p class="calibre6">如果把自定义属性放在扩展运算符前面，就变成了设置新对象的默认属性值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> aWithDefaults = { x: <span class="hljs-number">1</span>, y: <span class="hljs-number">2</span>, ...a };
+<span class="hljs-comment">// 等同于</span>
+ even <span class="hljs-keyword">if</span> property keys don’t clash, because objects record insertion order:
+
+<span class="hljs-keyword">let</span> aWithDefaults = <span class="hljs-number">Object</span>.assign({}, { x: <span class="hljs-number">1</span>, y: <span class="hljs-number">2</span> }, a);
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">let</span> aWithDefaults = <span class="hljs-number">Object</span>.assign({ x: <span class="hljs-number">1</span>, y: <span class="hljs-number">2</span> }, a);
+</code></pre>
+<p class="calibre6">与数组的扩展运算符一样，对象的扩展运算符后面可以跟表达式。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = {
+  ...(x &gt; <span class="hljs-number">1</span> ? {a: <span class="hljs-number">1</span>} : {}),
+  b: <span class="hljs-number">2</span>,
+};
+</code></pre>
+<p class="calibre6">如果扩展运算符后面是一个空对象，则没有任何效果。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">{...{}, a: <span class="hljs-number">1</span>}
+<span class="hljs-comment">// { a: 1 }</span>
+ even <span class="hljs-keyword">if</span> property keys don’t clash, because objects record insertion order:
+</code></pre>
+<p class="calibre6">如果扩展运算符的参数是<code class="pcalibre3 calibre13 pcalibre4">null</code>或<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，这两个值会被忽略，不会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> emptyObject = { ...null, ...undefined }; <span class="hljs-comment">// 不报错</span>
+</code></pre>
+<p class="calibre6">扩展运算符的参数对象之中，如果有取值函数<code class="pcalibre3 calibre13 pcalibre4">get</code>，这个函数是会执行的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 并不会抛出错误，因为 x 属性只是被定义，但没执行</span>
+<span class="hljs-keyword">let</span> aWithXGetter = {
+  ...a,
+  get x() {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;not throw yet&#39;</span>);
+  }
+};
+
+<span class="hljs-comment">// 会抛出错误，因为 x 属性被执行了</span>
+<span class="hljs-keyword">let</span> runtimeError = {
+  ...a,
+  ...{
+    get x() {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;throw now&#39;</span>);
+    }
+  }
+};
+</code></pre>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="array.html" class="navigation navigation-prev"
+           aria-label="Previous page: 9. 数组的扩展">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="symbol.html" class="navigation navigation-next"
+           aria-label="Next page: 11. Symbol">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "11. Symbol",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "9. 数组的扩展",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

@@ -1,0 +1,1113 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>19. async 函数</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="class.html"/>
+    <link rel="prev" href="generator-async.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="async.html">19. async 函数</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_20">19. async 函数</h1>
+        <div class="section">
+            <h1 id="async-函数" class="calibre5">async 函数</h1>
+<h2 id="含义" class="calibre16">含义</h2>
+<p class="calibre6">ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
+<p class="calibre6">async 函数是什么？一句话，它就是 Generator 函数的语法糖。</p>
+<p class="calibre6">前文有一个 Generator 函数，依次读取两个文件。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> fs = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;fs&#39;</span>);
+
+<span class="hljs-keyword">const</span> readFile = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">fileName</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">resolve, reject</span>) </span>{
+    fs.readFile(fileName, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error, data</span>) </span>{
+      <span class="hljs-keyword">if</span> (error) <span class="hljs-keyword">return</span> reject(error);
+      resolve(data);
+    });
+  });
+};
+
+<span class="hljs-keyword">const</span> gen = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">const</span> f1 = <span class="hljs-keyword">yield</span> readFile(<span class="hljs-string">&#39;/etc/fstab&#39;</span>);
+  <span class="hljs-keyword">const</span> f2 = <span class="hljs-keyword">yield</span> readFile(<span class="hljs-string">&#39;/etc/shells&#39;</span>);
+  <span class="hljs-number">console</span>.log(f1.toString());
+  <span class="hljs-number">console</span>.log(f2.toString());
+};
+</code></pre>
+<p class="calibre6">写成<code class="pcalibre3 calibre13 pcalibre4">async</code>函数，就是下面这样。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> asyncReadFile = <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">const</span> f1 = <span class="hljs-keyword">await</span> readFile(<span class="hljs-string">&#39;/etc/fstab&#39;</span>);
+  <span class="hljs-keyword">const</span> f2 = <span class="hljs-keyword">await</span> readFile(<span class="hljs-string">&#39;/etc/shells&#39;</span>);
+  <span class="hljs-number">console</span>.log(f1.toString());
+  <span class="hljs-number">console</span>.log(f2.toString());
+};
+</code></pre>
+<p class="calibre6">一比较就会发现，<code class="pcalibre3 calibre13 pcalibre4">async</code>函数就是将 Generator 函数的星号（<code class="pcalibre3 calibre13 pcalibre4">*</code>）替换成<code class="pcalibre3 calibre13 pcalibre4">async</code>，将<code class="pcalibre3 calibre13 pcalibre4">yield</code>替换成<code class="pcalibre3 calibre13 pcalibre4">await</code>，仅此而已。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">async</code>函数对 Generator 函数的改进，体现在以下四点。</p>
+<p class="calibre6">（1）内置执行器。</p>
+<p class="calibre6">Generator 函数的执行必须靠执行器，所以才有了<code class="pcalibre3 calibre13 pcalibre4">co</code>模块，而<code class="pcalibre3 calibre13 pcalibre4">async</code>函数自带执行器。也就是说，<code class="pcalibre3 calibre13 pcalibre4">async</code>函数的执行，与普通函数一模一样，只要一行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">asyncReadFile();
+</code></pre>
+<p class="calibre6">上面的代码调用了<code class="pcalibre3 calibre13 pcalibre4">asyncReadFile</code>函数，然后它就会自动执行，输出最后结果。这完全不像 Generator 函数，需要调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，或者用<code class="pcalibre3 calibre13 pcalibre4">co</code>模块，才能真正执行，得到最后结果。</p>
+<p class="calibre6">（2）更好的语义。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">async</code>和<code class="pcalibre3 calibre13 pcalibre4">await</code>，比起星号和<code class="pcalibre3 calibre13 pcalibre4">yield</code>，语义更清楚了。<code class="pcalibre3 calibre13 pcalibre4">async</code>表示函数里有异步操作，<code class="pcalibre3 calibre13 pcalibre4">await</code>表示紧跟在后面的表达式需要等待结果。</p>
+<p class="calibre6">（3）更广的适用性。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">co</code>模块约定，<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令后面只能是 Thunk 函数或 Promise 对象，而<code class="pcalibre3 calibre13 pcalibre4">async</code>函数的<code class="pcalibre3 calibre13 pcalibre4">await</code>命令后面，可以是 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。</p>
+<p class="calibre6">（4）返回值是 Promise。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">async</code>函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定下一步的操作。</p>
+<p class="calibre6">进一步说，<code class="pcalibre3 calibre13 pcalibre4">async</code>函数完全可以看作多个异步操作，包装成的一个 Promise 对象，而<code class="pcalibre3 calibre13 pcalibre4">await</code>命令就是内部<code class="pcalibre3 calibre13 pcalibre4">then</code>命令的语法糖。</p>
+<h2 id="基本用法" class="calibre12">基本用法</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">async</code>函数返回一个 Promise 对象，可以使用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法添加回调函数。当函数执行的时候，一旦遇到<code class="pcalibre3 calibre13 pcalibre4">await</code>就会先返回，等到异步操作完成，再接着执行函数体内后面的语句。</p>
+<p class="calibre6">下面是一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">getStockPriceByName</span>(<span class="hljs-number">name</span>) </span>{
+  <span class="hljs-keyword">const</span> symbol = <span class="hljs-keyword">await</span> getStockSymbol(name);
+  <span class="hljs-keyword">const</span> stockPrice = <span class="hljs-keyword">await</span> getStockPrice(symbol);
+  <span class="hljs-keyword">return</span> stockPrice;
+}
+
+getStockPriceByName(<span class="hljs-string">&#39;goog&#39;</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">result</span>) </span>{
+  <span class="hljs-number">console</span>.log(result);
+});
+</code></pre>
+<p class="calibre6">上面代码是一个获取股票报价的函数，函数前面的<code class="pcalibre3 calibre13 pcalibre4">async</code>关键字，表明该函数内部有异步操作。调用该函数时，会立即返回一个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象。</p>
+<p class="calibre6">下面是另一个例子，指定多少毫秒后输出一个值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">timeout</span>(<span class="hljs-number">ms</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>((resolve) =&gt; {
+    setTimeout(resolve, ms);
+  });
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">asyncPrint</span>(<span class="hljs-number">value, ms</span>) </span>{
+  <span class="hljs-keyword">await</span> timeout(ms);
+  <span class="hljs-number">console</span>.log(value);
+}
+
+asyncPrint(<span class="hljs-string">&#39;hello world&#39;</span>, <span class="hljs-number">50</span>);
+</code></pre>
+<p class="calibre6">上面代码指定 50 毫秒以后，输出<code class="pcalibre3 calibre13 pcalibre4">hello world</code>。</p>
+<p class="calibre6">由于<code class="pcalibre3 calibre13 pcalibre4">async</code>函数返回的是 Promise 对象，可以作为<code class="pcalibre3 calibre13 pcalibre4">await</code>命令的参数。所以，上面的例子也可以写成下面的形式。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">timeout</span>(<span class="hljs-number">ms</span>) </span>{
+  <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>((resolve) =&gt; {
+    setTimeout(resolve, ms);
+  });
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">asyncPrint</span>(<span class="hljs-number">value, ms</span>) </span>{
+  <span class="hljs-keyword">await</span> timeout(ms);
+  <span class="hljs-number">console</span>.log(value);
+}
+
+asyncPrint(<span class="hljs-string">&#39;hello world&#39;</span>, <span class="hljs-number">50</span>);
+</code></pre>
+<p class="calibre6">async 函数有多种使用形式。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 函数声明</span>
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{}
+
+<span class="hljs-comment">// 函数表达式</span>
+<span class="hljs-keyword">const</span> foo = <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{};
+
+<span class="hljs-comment">// 对象的方法</span>
+<span class="hljs-keyword">let</span> obj = { <span class="hljs-keyword">async</span> foo() {} };
+obj.foo().then(...)
+
+<span class="hljs-comment">// Class 的方法</span>
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Storage</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">this</span>.cachePromise = caches.open(<span class="hljs-string">&#39;avatars&#39;</span>);
+  }
+
+  <span class="hljs-keyword">async</span> getAvatar(name) {
+    <span class="hljs-keyword">const</span> cache = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.cachePromise;
+    <span class="hljs-keyword">return</span> cache.match(<span class="hljs-string">`/avatars/<span class="hljs-_">${name}</span>.jpg`</span>);
+  }
+}
+
+<span class="hljs-keyword">const</span> storage = <span class="hljs-keyword">new</span> Storage();
+storage.getAvatar(<span class="hljs-string">&#39;jake&#39;</span>).then(…);
+
+<span class="hljs-comment">// 箭头函数</span>
+<span class="hljs-keyword">const</span> foo = <span class="hljs-keyword">async</span> () =&gt; {};
+</code></pre>
+<h2 id="语法" class="calibre12">语法</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">async</code>函数的语法规则总体上比较简单，难点是错误处理机制。</p>
+<h3 id="返回-promise-对象" class="calibre11">返回 Promise 对象</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">async</code>函数返回一个 Promise 对象。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">async</code>函数内部<code class="pcalibre3 calibre13 pcalibre4">return</code>语句返回的值，会成为<code class="pcalibre3 calibre13 pcalibre4">then</code>方法回调函数的参数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;hello world&#39;</span>;
+}
+
+f().then(v =&gt; <span class="hljs-number">console</span>.log(v))
+<span class="hljs-comment">// &#34;hello world&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">f</code>内部<code class="pcalibre3 calibre13 pcalibre4">return</code>命令返回的值，会被<code class="pcalibre3 calibre13 pcalibre4">then</code>方法回调函数接收到。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">async</code>函数内部抛出错误，会导致返回的 Promise 对象变为<code class="pcalibre3 calibre13 pcalibre4">reject</code>状态。抛出的错误对象会被<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法回调函数接收到。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;出错了&#39;</span>);
+}
+
+f().then(
+  v =&gt; <span class="hljs-number">console</span>.log(v),
+  e =&gt; <span class="hljs-number">console</span>.log(e)
+)
+<span class="hljs-comment">// Error: 出错了</span>
+</code></pre>
+<h3 id="promise-对象的状态变化" class="calibre11">Promise 对象的状态变化</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">async</code>函数返回的 Promise 对象，必须等到内部所有<code class="pcalibre3 calibre13 pcalibre4">await</code>命令后面的 Promise 对象执行完，才会发生状态改变，除非遇到<code class="pcalibre3 calibre13 pcalibre4">return</code>语句或者抛出错误。也就是说，只有<code class="pcalibre3 calibre13 pcalibre4">async</code>函数内部的异步操作执行完，才会执行<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定的回调函数。</p>
+<p class="calibre6">下面是一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">getTitle</span>(<span class="hljs-number">url</span>) </span>{
+  <span class="hljs-keyword">let</span> response = <span class="hljs-keyword">await</span> fetch(url);
+  <span class="hljs-keyword">let</span> html = <span class="hljs-keyword">await</span> response.text();
+  <span class="hljs-keyword">return</span> html.match(<span class="hljs-tag">/&lt;title&gt;([\s\S]+)&lt;\/title&gt;/i</span>)[<span class="hljs-number">1</span>];
+}
+getTitle(<span class="hljs-string">&#39;https://tc39.github.io/ecma262/&#39;</span>).then(<span class="hljs-number">console</span>.log)
+<span class="hljs-comment">// &#34;ECMAScript 2017 Language Specification&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">getTitle</code>内部有三个操作：抓取网页、取出文本、匹配页面标题。只有这三个操作全部完成，才会执行<code class="pcalibre3 calibre13 pcalibre4">then</code>方法里面的<code class="pcalibre3 calibre13 pcalibre4">console.log</code>。</p>
+<h3 id="await-命令" class="calibre11">await 命令</h3>
+<p class="calibre6">正常情况下，<code class="pcalibre3 calibre13 pcalibre4">await</code>命令后面是一个 Promise 对象。如果不是，会被转成一个立即<code class="pcalibre3 calibre13 pcalibre4">resolve</code>的 Promise 对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-number">123</span>;
+}
+
+f().then(v =&gt; <span class="hljs-number">console</span>.log(v))
+<span class="hljs-comment">// 123</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">await</code>命令的参数是数值<code class="pcalibre3 calibre13 pcalibre4">123</code>，它被转成 Promise 对象，并立即<code class="pcalibre3 calibre13 pcalibre4">resolve</code>。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">await</code>命令后面的 Promise 对象如果变为<code class="pcalibre3 calibre13 pcalibre4">reject</code>状态，则<code class="pcalibre3 calibre13 pcalibre4">reject</code>的参数会被<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法的回调函数接收到。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">await</span> <span class="hljs-number">Promise</span>.reject(<span class="hljs-string">&#39;出错了&#39;</span>);
+}
+
+f()
+.then(v =&gt; <span class="hljs-number">console</span>.log(v))
+.catch(e =&gt; <span class="hljs-number">console</span>.log(e))
+<span class="hljs-comment">// 出错了</span>
+</code></pre>
+<p class="calibre6">注意，上面代码中，<code class="pcalibre3 calibre13 pcalibre4">await</code>语句前面没有<code class="pcalibre3 calibre13 pcalibre4">return</code>，但是<code class="pcalibre3 calibre13 pcalibre4">reject</code>方法的参数依然传入了<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法的回调函数。这里如果在<code class="pcalibre3 calibre13 pcalibre4">await</code>前面加上<code class="pcalibre3 calibre13 pcalibre4">return</code>，效果是一样的。</p>
+<p class="calibre6">只要一个<code class="pcalibre3 calibre13 pcalibre4">await</code>语句后面的 Promise 变为<code class="pcalibre3 calibre13 pcalibre4">reject</code>，那么整个<code class="pcalibre3 calibre13 pcalibre4">async</code>函数都会中断执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">await</span> <span class="hljs-number">Promise</span>.reject(<span class="hljs-string">&#39;出错了&#39;</span>);
+  <span class="hljs-keyword">await</span> <span class="hljs-number">Promise</span>.resolve(<span class="hljs-string">&#39;hello world&#39;</span>); <span class="hljs-comment">// 不会执行</span>
+}
+</code></pre>
+<p class="calibre6">上面代码中，第二个<code class="pcalibre3 calibre13 pcalibre4">await</code>语句是不会执行的，因为第一个<code class="pcalibre3 calibre13 pcalibre4">await</code>语句状态变成了<code class="pcalibre3 calibre13 pcalibre4">reject</code>。</p>
+<p class="calibre6">有时，我们希望即使前一个异步操作失败，也不要中断后面的异步操作。这时可以将第一个<code class="pcalibre3 calibre13 pcalibre4">await</code>放在<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>结构里面，这样不管这个异步操作是否成功，第二个<code class="pcalibre3 calibre13 pcalibre4">await</code>都会执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">await</span> <span class="hljs-number">Promise</span>.reject(<span class="hljs-string">&#39;出错了&#39;</span>);
+  } <span class="hljs-keyword">catch</span>(e) {
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-number">Promise</span>.resolve(<span class="hljs-string">&#39;hello world&#39;</span>);
+}
+
+f()
+.then(v =&gt; <span class="hljs-number">console</span>.log(v))
+<span class="hljs-comment">// hello world</span>
+</code></pre>
+<p class="calibre6">另一种方法是<code class="pcalibre3 calibre13 pcalibre4">await</code>后面的 Promise 对象再跟一个<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法，处理前面可能出现的错误。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">await</span> <span class="hljs-number">Promise</span>.reject(<span class="hljs-string">&#39;出错了&#39;</span>)
+    .catch(e =&gt; <span class="hljs-number">console</span>.log(e));
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-number">Promise</span>.resolve(<span class="hljs-string">&#39;hello world&#39;</span>);
+}
+
+f()
+.then(v =&gt; <span class="hljs-number">console</span>.log(v))
+<span class="hljs-comment">// 出错了</span>
+<span class="hljs-comment">// hello world</span>
+</code></pre>
+<h3 id="错误处理" class="calibre11">错误处理</h3>
+<p class="calibre6">如果<code class="pcalibre3 calibre13 pcalibre4">await</code>后面的异步操作出错，那么等同于<code class="pcalibre3 calibre13 pcalibre4">async</code>函数返回的 Promise 对象被<code class="pcalibre3 calibre13 pcalibre4">reject</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">resolve, reject</span>) </span>{
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;出错了&#39;</span>);
+  });
+}
+
+f()
+.then(v =&gt; <span class="hljs-number">console</span>.log(v))
+.catch(e =&gt; <span class="hljs-number">console</span>.log(e))
+<span class="hljs-comment">// Error：出错了</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">async</code>函数<code class="pcalibre3 calibre13 pcalibre4">f</code>执行后，<code class="pcalibre3 calibre13 pcalibre4">await</code>后面的 Promise 对象会抛出一个错误对象，导致<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法的回调函数被调用，它的参数就是抛出的错误对象。具体的执行机制，可以参考后文的“async 函数的实现原理”。</p>
+<p class="calibre6">防止出错的方法，也是将其放在<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>代码块之中。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">resolve, reject</span>) </span>{
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;出错了&#39;</span>);
+    });
+  } <span class="hljs-keyword">catch</span>(e) {
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span>(<span class="hljs-string">&#39;hello world&#39;</span>);
+}
+</code></pre>
+<p class="calibre6">如果有多个<code class="pcalibre3 calibre13 pcalibre4">await</code>命令，可以统一放在<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>结构中。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">main</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> val1 = <span class="hljs-keyword">await</span> firstStep();
+    <span class="hljs-keyword">const</span> val2 = <span class="hljs-keyword">await</span> secondStep(val1);
+    <span class="hljs-keyword">const</span> val3 = <span class="hljs-keyword">await</span> thirdStep(val1, val2);
+
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Final: &#39;</span>, val3);
+  }
+  <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-number">console</span>.error(err);
+  }
+}
+</code></pre>
+<p class="calibre6">下面的例子使用<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>结构，实现多次重复尝试。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> superagent = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;superagent&#39;</span>);
+<span class="hljs-keyword">const</span> NUM_RETRIES = <span class="hljs-number">3</span>;
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">test</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">let</span> i;
+  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NUM_RETRIES; ++i) {
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">await</span> superagent.get(<span class="hljs-string">&#39;http://google.com/this-throws-an-error&#39;</span>);
+      <span class="hljs-keyword">break</span>;
+    } <span class="hljs-keyword">catch</span>(err) {}
+  }
+  <span class="hljs-number">console</span>.log(i); <span class="hljs-comment">// 3</span>
+}
+
+test();
+</code></pre>
+<p class="calibre6">上面代码中，如果<code class="pcalibre3 calibre13 pcalibre4">await</code>操作成功，就会使用<code class="pcalibre3 calibre13 pcalibre4">break</code>语句退出循环；如果失败，会被<code class="pcalibre3 calibre13 pcalibre4">catch</code>语句捕捉，然后进入下一轮循环。</p>
+<h3 id="使用注意点" class="calibre11">使用注意点</h3>
+<p class="calibre6">第一点，前面已经说过，<code class="pcalibre3 calibre13 pcalibre4">await</code>命令后面的<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象，运行结果可能是<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，所以最好把<code class="pcalibre3 calibre13 pcalibre4">await</code>命令放在<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>代码块中。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">myFunction</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">await</span> somethingThatReturnsAPromise();
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-number">console</span>.log(err);
+  }
+}
+
+<span class="hljs-comment">// 另一种写法</span>
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">myFunction</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">await</span> somethingThatReturnsAPromise()
+  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">err</span>) </span>{
+    <span class="hljs-number">console</span>.log(err);
+  });
+}
+</code></pre>
+<p class="calibre6">第二点，多个<code class="pcalibre3 calibre13 pcalibre4">await</code>命令后面的异步操作，如果不存在继发关系，最好让它们同时触发。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> foo = <span class="hljs-keyword">await</span> getFoo();
+<span class="hljs-keyword">let</span> bar = <span class="hljs-keyword">await</span> getBar();
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">getFoo</code>和<code class="pcalibre3 calibre13 pcalibre4">getBar</code>是两个独立的异步操作（即互不依赖），被写成继发关系。这样比较耗时，因为只有<code class="pcalibre3 calibre13 pcalibre4">getFoo</code>完成以后，才会执行<code class="pcalibre3 calibre13 pcalibre4">getBar</code>，完全可以让它们同时触发。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 写法一</span>
+<span class="hljs-keyword">let</span> [foo, bar] = <span class="hljs-keyword">await</span> <span class="hljs-number">Promise</span>.all([getFoo(), getBar()]);
+
+<span class="hljs-comment">// 写法二</span>
+<span class="hljs-keyword">let</span> fooPromise = getFoo();
+<span class="hljs-keyword">let</span> barPromise = getBar();
+<span class="hljs-keyword">let</span> foo = <span class="hljs-keyword">await</span> fooPromise;
+<span class="hljs-keyword">let</span> bar = <span class="hljs-keyword">await</span> barPromise;
+</code></pre>
+<p class="calibre6">上面两种写法，<code class="pcalibre3 calibre13 pcalibre4">getFoo</code>和<code class="pcalibre3 calibre13 pcalibre4">getBar</code>都是同时触发，这样就会缩短程序的执行时间。</p>
+<p class="calibre6">第三点，<code class="pcalibre3 calibre13 pcalibre4">await</code>命令只能用在<code class="pcalibre3 calibre13 pcalibre4">async</code>函数之中，如果用在普通函数，就会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">dbFuc</span>(<span class="hljs-number">db</span>) </span>{
+  <span class="hljs-keyword">let</span> docs = [{}, {}, {}];
+
+  <span class="hljs-comment">// 报错</span>
+  docs.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">doc</span>) </span>{
+    <span class="hljs-keyword">await</span> db.post(doc);
+  });
+}
+</code></pre>
+<p class="calibre6">上面代码会报错，因为<code class="pcalibre3 calibre13 pcalibre4">await</code>用在普通函数之中了。但是，如果将<code class="pcalibre3 calibre13 pcalibre4">forEach</code>方法的参数改成<code class="pcalibre3 calibre13 pcalibre4">async</code>函数，也有问题。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">dbFuc</span>(<span class="hljs-number">db</span>) </span>{ <span class="hljs-comment">//这里不需要 async</span>
+  <span class="hljs-keyword">let</span> docs = [{}, {}, {}];
+
+  <span class="hljs-comment">// 可能得到错误结果</span>
+  docs.forEach(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">doc</span>) </span>{
+    <span class="hljs-keyword">await</span> db.post(doc);
+  });
+}
+</code></pre>
+<p class="calibre6">上面代码可能不会正常工作，原因是这时三个<code class="pcalibre3 calibre13 pcalibre4">db.post</code>操作将是并发执行，也就是同时执行，而不是继发执行。正确的写法是采用<code class="pcalibre3 calibre13 pcalibre4">for</code>循环。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">dbFuc</span>(<span class="hljs-number">db</span>) </span>{
+  <span class="hljs-keyword">let</span> docs = [{}, {}, {}];
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> doc <span class="hljs-keyword">of</span> docs) {
+    <span class="hljs-keyword">await</span> db.post(doc);
+  }
+}
+</code></pre>
+<p class="calibre6">如果确实希望多个请求并发执行，可以使用<code class="pcalibre3 calibre13 pcalibre4">Promise.all</code>方法。当三个请求都会<code class="pcalibre3 calibre13 pcalibre4">resolved</code>时，下面两种写法效果相同。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">dbFuc</span>(<span class="hljs-number">db</span>) </span>{
+  <span class="hljs-keyword">let</span> docs = [{}, {}, {}];
+  <span class="hljs-keyword">let</span> promises = docs.map((doc) =&gt; db.post(doc));
+
+  <span class="hljs-keyword">let</span> results = <span class="hljs-keyword">await</span> <span class="hljs-number">Promise</span>.all(promises);
+  <span class="hljs-number">console</span>.log(results);
+}
+
+<span class="hljs-comment">// 或者使用下面的写法</span>
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">dbFuc</span>(<span class="hljs-number">db</span>) </span>{
+  <span class="hljs-keyword">let</span> docs = [{}, {}, {}];
+  <span class="hljs-keyword">let</span> promises = docs.map((doc) =&gt; db.post(doc));
+
+  <span class="hljs-keyword">let</span> results = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> promise <span class="hljs-keyword">of</span> promises) {
+    results.push(<span class="hljs-keyword">await</span> promise);
+  }
+  <span class="hljs-number">console</span>.log(results);
+}
+</code></pre>
+<p class="calibre6">目前，<a href="https://www.npmjs.com/package/@std/esm" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7"><code class="pcalibre3 calibre13 pcalibre4">@std/esm</code></a>模块加载器支持顶层<code class="pcalibre3 calibre13 pcalibre4">await</code>，即<code class="pcalibre3 calibre13 pcalibre4">await</code>命令可以不放在 async 函数里面，直接使用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// async 函数的写法</span>
+<span class="hljs-keyword">const</span> start = <span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> fetch(<span class="hljs-string">&#39;google.com&#39;</span>);
+  <span class="hljs-keyword">return</span> res.text();
+};
+
+start().then(<span class="hljs-number">console</span>.log);
+
+<span class="hljs-comment">// 顶层 await 的写法</span>
+<span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> fetch(<span class="hljs-string">&#39;google.com&#39;</span>);
+<span class="hljs-number">console</span>.log(<span class="hljs-keyword">await</span> res.text());
+</code></pre>
+<p class="calibre6">上面代码中，第二种写法的脚本必须使用<code class="pcalibre3 calibre13 pcalibre4">@std/esm</code>加载器，才会生效。</p>
+<h2 id="async-函数的实现原理" class="calibre12">async 函数的实现原理</h2>
+<p class="calibre6">async 函数的实现原理，就是将 Generator 函数和自动执行器，包装在一个函数里。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">fn</span>(<span class="hljs-number">args</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// 等同于</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">fn</span>(<span class="hljs-number">args</span>) </span>{
+  <span class="hljs-keyword">return</span> spawn(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+    <span class="hljs-comment">// ...</span>
+  });
+}
+</code></pre>
+<p class="calibre6">所有的<code class="pcalibre3 calibre13 pcalibre4">async</code>函数都可以写成上面的第二种形式，其中的<code class="pcalibre3 calibre13 pcalibre4">spawn</code>函数就是自动执行器。</p>
+<p class="calibre6">下面给出<code class="pcalibre3 calibre13 pcalibre4">spawn</code>函数的实现，基本就是前文自动执行器的翻版。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">spawn</span>(<span class="hljs-number">genF</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+    <span class="hljs-keyword">const</span> gen = genF();
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">step</span>(<span class="hljs-number">nextF</span>) </span>{
+      <span class="hljs-keyword">let</span> next;
+      <span class="hljs-keyword">try</span> {
+        next = nextF();
+      } <span class="hljs-keyword">catch</span>(e) {
+        <span class="hljs-keyword">return</span> reject(e);
+      }
+      <span class="hljs-keyword">if</span>(next.done) {
+        <span class="hljs-keyword">return</span> resolve(next.value);
+      }
+      <span class="hljs-number">Promise</span>.resolve(next.value).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">v</span>) </span>{
+        step(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{ <span class="hljs-keyword">return</span> gen.next(v); });
+      }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">e</span>) </span>{
+        step(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{ <span class="hljs-keyword">return</span> gen.throw(e); });
+      });
+    }
+    step(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{ <span class="hljs-keyword">return</span> gen.next(<span class="hljs-number">undefined</span>); });
+  });
+}
+</code></pre>
+<h2 id="与其他异步处理方法的比较" class="calibre12">与其他异步处理方法的比较</h2>
+<p class="calibre6">我们通过一个例子，来看 async 函数与 Promise、Generator 函数的比较。</p>
+<p class="calibre6">假定某个 DOM 元素上面，部署了一系列的动画，前一个动画结束，才能开始后一个。如果当中有一个动画出错，就不再往下执行，返回上一个成功执行的动画的返回值。</p>
+<p class="calibre6">首先是 Promise 的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">chainAnimationsPromise</span>(<span class="hljs-number">elem, animations</span>) </span>{
+
+  <span class="hljs-comment">// 变量ret用来保存上一个动画的返回值</span>
+  <span class="hljs-keyword">let</span> ret = <span class="hljs-number">null</span>;
+
+  <span class="hljs-comment">// 新建一个空的Promise</span>
+  <span class="hljs-keyword">let</span> p = <span class="hljs-number">Promise</span>.resolve();
+
+  <span class="hljs-comment">// 使用then方法，添加所有动画</span>
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> anim <span class="hljs-keyword">of</span> animations) {
+    p = p.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">val</span>) </span>{
+      ret = val;
+      <span class="hljs-keyword">return</span> anim(elem);
+    });
+  }
+
+  <span class="hljs-comment">// 返回一个部署了错误捕捉机制的Promise</span>
+  <span class="hljs-keyword">return</span> p.catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">e</span>) </span>{
+    <span class="hljs-comment">/* 忽略错误，继续执行 */</span>
+  }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+    <span class="hljs-keyword">return</span> ret;
+  });
+
+}
+</code></pre>
+<p class="calibre6">虽然 Promise 的写法比回调函数的写法大大改进，但是一眼看上去，代码完全都是 Promise 的 API（<code class="pcalibre3 calibre13 pcalibre4">then</code>、<code class="pcalibre3 calibre13 pcalibre4">catch</code>等等），操作本身的语义反而不容易看出来。</p>
+<p class="calibre6">接着是 Generator 函数的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">chainAnimationsGenerator</span>(<span class="hljs-number">elem, animations</span>) </span>{
+
+  <span class="hljs-keyword">return</span> spawn(<span class="hljs-function"><span class="hljs-keyword">function</span>*(<span class="hljs-number"></span>) </span>{
+    <span class="hljs-keyword">let</span> ret = <span class="hljs-number">null</span>;
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> anim <span class="hljs-keyword">of</span> animations) {
+        ret = <span class="hljs-keyword">yield</span> anim(elem);
+      }
+    } <span class="hljs-keyword">catch</span>(e) {
+      <span class="hljs-comment">/* 忽略错误，继续执行 */</span>
+    }
+    <span class="hljs-keyword">return</span> ret;
+  });
+
+}
+</code></pre>
+<p class="calibre6">上面代码使用 Generator 函数遍历了每个动画，语义比 Promise 写法更清晰，用户定义的操作全部都出现在<code class="pcalibre3 calibre13 pcalibre4">spawn</code>函数的内部。这个写法的问题在于，必须有一个任务运行器，自动执行 Generator 函数，上面代码的<code class="pcalibre3 calibre13 pcalibre4">spawn</code>函数就是自动执行器，它返回一个 Promise 对象，而且必须保证<code class="pcalibre3 calibre13 pcalibre4">yield</code>语句后面的表达式，必须返回一个 Promise。</p>
+<p class="calibre6">最后是 async 函数的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">chainAnimationsAsync</span>(<span class="hljs-number">elem, animations</span>) </span>{
+  <span class="hljs-keyword">let</span> ret = <span class="hljs-number">null</span>;
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> anim <span class="hljs-keyword">of</span> animations) {
+      ret = <span class="hljs-keyword">await</span> anim(elem);
+    }
+  } <span class="hljs-keyword">catch</span>(e) {
+    <span class="hljs-comment">/* 忽略错误，继续执行 */</span>
+  }
+  <span class="hljs-keyword">return</span> ret;
+}
+</code></pre>
+<p class="calibre6">可以看到 Async 函数的实现最简洁，最符合语义，几乎没有语义不相关的代码。它将 Generator 写法中的自动执行器，改在语言层面提供，不暴露给用户，因此代码量最少。如果使用 Generator 写法，自动执行器需要用户自己提供。</p>
+<h2 id="实例：按顺序完成异步操作" class="calibre12">实例：按顺序完成异步操作</h2>
+<p class="calibre6">实际开发中，经常遇到一组异步操作，需要按照顺序完成。比如，依次远程读取一组 URL，然后按照读取的顺序输出结果。</p>
+<p class="calibre6">Promise 的写法如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">logInOrder</span>(<span class="hljs-number">urls</span>) </span>{
+  <span class="hljs-comment">// 远程读取所有URL</span>
+  <span class="hljs-keyword">const</span> textPromises = urls.map(url =&gt; {
+    <span class="hljs-keyword">return</span> fetch(url).then(response =&gt; response.text());
+  });
+
+  <span class="hljs-comment">// 按次序输出</span>
+  textPromises.reduce((chain, textPromise) =&gt; {
+    <span class="hljs-keyword">return</span> chain.then(() =&gt; textPromise)
+      .then(text =&gt; <span class="hljs-number">console</span>.log(text));
+  }, <span class="hljs-number">Promise</span>.resolve());
+}
+</code></pre>
+<p class="calibre6">上面代码使用<code class="pcalibre3 calibre13 pcalibre4">fetch</code>方法，同时远程读取一组 URL。每个<code class="pcalibre3 calibre13 pcalibre4">fetch</code>操作都返回一个 Promise 对象，放入<code class="pcalibre3 calibre13 pcalibre4">textPromises</code>数组。然后，<code class="pcalibre3 calibre13 pcalibre4">reduce</code>方法依次处理每个 Promise 对象，然后使用<code class="pcalibre3 calibre13 pcalibre4">then</code>，将所有 Promise 对象连起来，因此就可以依次输出结果。</p>
+<p class="calibre6">这种写法不太直观，可读性比较差。下面是 async 函数实现。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">logInOrder</span>(<span class="hljs-number">urls</span>) </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> url <span class="hljs-keyword">of</span> urls) {
+    <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> fetch(url);
+    <span class="hljs-number">console</span>.log(<span class="hljs-keyword">await</span> response.text());
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码确实大大简化，问题是所有远程操作都是继发。只有前一个 URL 返回结果，才会去读取下一个 URL，这样做效率很差，非常浪费时间。我们需要的是并发发出远程请求。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">logInOrder</span>(<span class="hljs-number">urls</span>) </span>{
+  <span class="hljs-comment">// 并发读取远程URL</span>
+  <span class="hljs-keyword">const</span> textPromises = urls.map(<span class="hljs-keyword">async</span> url =&gt; {
+    <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> fetch(url);
+    <span class="hljs-keyword">return</span> response.text();
+  });
+
+  <span class="hljs-comment">// 按次序输出</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> textPromise <span class="hljs-keyword">of</span> textPromises) {
+    <span class="hljs-number">console</span>.log(<span class="hljs-keyword">await</span> textPromise);
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码中，虽然<code class="pcalibre3 calibre13 pcalibre4">map</code>方法的参数是<code class="pcalibre3 calibre13 pcalibre4">async</code>函数，但它是并发执行的，因为只有<code class="pcalibre3 calibre13 pcalibre4">async</code>函数内部是继发执行，外部不受影响。后面的<code class="pcalibre3 calibre13 pcalibre4">for..of</code>循环内部使用了<code class="pcalibre3 calibre13 pcalibre4">await</code>，因此实现了按顺序输出。</p>
+<h2 id="异步遍历器" class="calibre12">异步遍历器</h2>
+<p class="calibre6">《遍历器》一章说过，Iterator 接口是一种数据遍历的协议，只要调用遍历器对象的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，就会得到一个对象，表示当前遍历指针所在的那个位置的信息。<code class="pcalibre3 calibre13 pcalibre4">next</code>方法返回的对象的结构是<code class="pcalibre3 calibre13 pcalibre4">{value, done}</code>，其中<code class="pcalibre3 calibre13 pcalibre4">value</code>表示当前的数据的值，<code class="pcalibre3 calibre13 pcalibre4">done</code>是一个布尔值，表示遍历是否结束。</p>
+<p class="calibre6">这里隐含着一个规定，<code class="pcalibre3 calibre13 pcalibre4">next</code>方法必须是同步的，只要调用就必须立刻返回值。也就是说，一旦执行<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，就必须同步地得到<code class="pcalibre3 calibre13 pcalibre4">value</code>和<code class="pcalibre3 calibre13 pcalibre4">done</code>这两个属性。如果遍历指针正好指向同步操作，当然没有问题，但对于异步操作，就不太合适了。目前的解决方法是，Generator 函数里面的异步操作，返回一个 Thunk 函数或者 Promise 对象，即<code class="pcalibre3 calibre13 pcalibre4">value</code>属性是一个 Thunk 函数或者 Promise 对象，等待以后返回真正的值，而<code class="pcalibre3 calibre13 pcalibre4">done</code>属性则还是同步产生的。</p>
+<p class="calibre6">ES2018 <a href="https://github.com/tc39/proposal-async-iteration" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">引入</a>了”异步遍历器“（Async Iterator），为异步操作提供原生的遍历器接口，即<code class="pcalibre3 calibre13 pcalibre4">value</code>和<code class="pcalibre3 calibre13 pcalibre4">done</code>这两个属性都是异步产生。</p>
+<h3 id="异步遍历的接口" class="calibre11">异步遍历的接口</h3>
+<p class="calibre6">异步遍历器的最大的语法特点，就是调用遍历器的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，返回的是一个 Promise 对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">asyncIterator
+  .next()
+  .then(
+    ({ value, done }) =&gt; <span class="hljs-comment">/* ... */</span>
+  );
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">asyncIterator</code>是一个异步遍历器，调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法以后，返回一个 Promise 对象。因此，可以使用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定，这个 Promise 对象的状态变为<code class="pcalibre3 calibre13 pcalibre4">resolve</code>以后的回调函数。回调函数的参数，则是一个具有<code class="pcalibre3 calibre13 pcalibre4">value</code>和<code class="pcalibre3 calibre13 pcalibre4">done</code>两个属性的对象，这个跟同步遍历器是一样的。</p>
+<p class="calibre6">我们知道，一个对象的同步遍历器的接口，部署在<code class="pcalibre3 calibre13 pcalibre4">Symbol.iterator</code>属性上面。同样地，对象的异步遍历器接口，部署在<code class="pcalibre3 calibre13 pcalibre4">Symbol.asyncIterator</code>属性上面。不管是什么样的对象，只要它的<code class="pcalibre3 calibre13 pcalibre4">Symbol.asyncIterator</code>属性有值，就表示应该对它进行异步遍历。</p>
+<p class="calibre6">下面是一个异步遍历器的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> asyncIterable = createAsyncIterable([<span class="hljs-string">&#39;a&#39;</span>, <span class="hljs-string">&#39;b&#39;</span>]);
+<span class="hljs-keyword">const</span> asyncIterator = asyncIterable[<span class="hljs-number">Symbol</span>.asyncIterator]();
+
+asyncIterator
+.next()
+.then(iterResult1 =&gt; {
+  <span class="hljs-number">console</span>.log(iterResult1); <span class="hljs-comment">// { value: &#39;a&#39;, done: false }</span>
+  <span class="hljs-keyword">return</span> asyncIterator.next();
+})
+.then(iterResult2 =&gt; {
+  <span class="hljs-number">console</span>.log(iterResult2); <span class="hljs-comment">// { value: &#39;b&#39;, done: false }</span>
+  <span class="hljs-keyword">return</span> asyncIterator.next();
+})
+.then(iterResult3 =&gt; {
+  <span class="hljs-number">console</span>.log(iterResult3); <span class="hljs-comment">// { value: undefined, done: true }</span>
+});
+</code></pre>
+<p class="calibre6">上面代码中，异步遍历器其实返回了两次值。第一次调用的时候，返回一个 Promise 对象；等到 Promise 对象<code class="pcalibre3 calibre13 pcalibre4">resolve</code>了，再返回一个表示当前数据成员信息的对象。这就是说，异步遍历器与同步遍历器最终行为是一致的，只是会先返回 Promise 对象，作为中介。</p>
+<p class="calibre6">由于异步遍历器的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，返回的是一个 Promise 对象。因此，可以把它放在<code class="pcalibre3 calibre13 pcalibre4">await</code>命令后面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">const</span> asyncIterable = createAsyncIterable([<span class="hljs-string">&#39;a&#39;</span>, <span class="hljs-string">&#39;b&#39;</span>]);
+  <span class="hljs-keyword">const</span> asyncIterator = asyncIterable[<span class="hljs-number">Symbol</span>.asyncIterator]();
+  <span class="hljs-number">console</span>.log(<span class="hljs-keyword">await</span> asyncIterator.next());
+  <span class="hljs-comment">// { value: &#39;a&#39;, done: false }</span>
+  <span class="hljs-number">console</span>.log(<span class="hljs-keyword">await</span> asyncIterator.next());
+  <span class="hljs-comment">// { value: &#39;b&#39;, done: false }</span>
+  <span class="hljs-number">console</span>.log(<span class="hljs-keyword">await</span> asyncIterator.next());
+  <span class="hljs-comment">// { value: undefined, done: true }</span>
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">next</code>方法用<code class="pcalibre3 calibre13 pcalibre4">await</code>处理以后，就不必使用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法了。整个流程已经很接近同步处理了。</p>
+<p class="calibre6">注意，异步遍历器的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法是可以连续调用的，不必等到上一步产生的 Promise 对象<code class="pcalibre3 calibre13 pcalibre4">resolve</code>以后再调用。这种情况下，<code class="pcalibre3 calibre13 pcalibre4">next</code>方法会累积起来，自动按照每一步的顺序运行下去。下面是一个例子，把所有的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法放在<code class="pcalibre3 calibre13 pcalibre4">Promise.all</code>方法里面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> asyncGenObj = createAsyncIterable([<span class="hljs-string">&#39;a&#39;</span>, <span class="hljs-string">&#39;b&#39;</span>]);
+<span class="hljs-keyword">const</span> [{value: v1}, {value: v2}] = <span class="hljs-keyword">await</span> <span class="hljs-number">Promise</span>.all([
+  asyncGenObj.next(), asyncGenObj.next()
+]);
+
+<span class="hljs-number">console</span>.log(v1, v2); <span class="hljs-comment">// a b</span>
+</code></pre>
+<p class="calibre6">另一种用法是一次性调用所有的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，然后<code class="pcalibre3 calibre13 pcalibre4">await</code>最后一步操作。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">runner</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">const</span> writer = openFile(<span class="hljs-string">&#39;someFile.txt&#39;</span>);
+  writer.next(<span class="hljs-string">&#39;hello&#39;</span>);
+  writer.next(<span class="hljs-string">&#39;world&#39;</span>);
+  <span class="hljs-keyword">await</span> writer.return();
+}
+
+runner();
+</code></pre>
+<h3 id="for-awaitof" class="calibre11">for await...of</h3>
+<p class="calibre6">前面介绍过，<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环用于遍历同步的 Iterator 接口。新引入的<code class="pcalibre3 calibre13 pcalibre4">for await...of</code>循环，则是用于遍历异步的 Iterator 接口。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> x <span class="hljs-keyword">of</span> createAsyncIterable([<span class="hljs-string">&#39;a&#39;</span>, <span class="hljs-string">&#39;b&#39;</span>])) {
+    <span class="hljs-number">console</span>.log(x);
+  }
+}
+<span class="hljs-comment">// a</span>
+<span class="hljs-comment">// b</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">createAsyncIterable()</code>返回一个异步遍历器，<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环自动调用这个遍历器的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，会得到一个 Promise 对象。<code class="pcalibre3 calibre13 pcalibre4">await</code>用来处理这个 Promise 对象，一旦<code class="pcalibre3 calibre13 pcalibre4">resolve</code>，就把得到的值（<code class="pcalibre3 calibre13 pcalibre4">x</code>）传入<code class="pcalibre3 calibre13 pcalibre4">for...of</code>的循环体。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">for await...of</code>循环的一个用途，是部署了 asyncIterable 操作的异步接口，可以直接放入这个循环。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> body = <span class="hljs-string">&#39;&#39;</span>;
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span>(<span class="hljs-keyword">const</span> data <span class="hljs-keyword">of</span> req) body += data;
+  <span class="hljs-keyword">const</span> parsed = <span class="hljs-number">JSON</span>.parse(body);
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;got&#39;</span>, parsed);
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">req</code>是一个 asyncIterable 对象，用来异步读取数据。可以看到，使用<code class="pcalibre3 calibre13 pcalibre4">for await...of</code>循环以后，代码会非常简洁。</p>
+<p class="calibre6">如果<code class="pcalibre3 calibre13 pcalibre4">next</code>方法返回的 Promise 对象被<code class="pcalibre3 calibre13 pcalibre4">reject</code>，<code class="pcalibre3 calibre13 pcalibre4">for await...of</code>就会报错，要用<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>捕捉。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> x <span class="hljs-keyword">of</span> createRejectingIterable()) {
+      <span class="hljs-number">console</span>.log(x);
+    }
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-number">console</span>.error(e);
+  }
+}
+</code></pre>
+<p class="calibre6">注意，<code class="pcalibre3 calibre13 pcalibre4">for await...of</code>循环也可以用于同步遍历器。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> x <span class="hljs-keyword">of</span> [<span class="hljs-string">&#39;a&#39;</span>, <span class="hljs-string">&#39;b&#39;</span>]) {
+    <span class="hljs-number">console</span>.log(x);
+  }
+})();
+<span class="hljs-comment">// a</span>
+<span class="hljs-comment">// b</span>
+</code></pre>
+<h3 id="异步-generator-函数" class="calibre11">异步 Generator 函数</h3>
+<p class="calibre6">就像 Generator 函数返回一个同步遍历器对象一样，异步 Generator 函数的作用，是返回一个异步遍历器对象。</p>
+<p class="calibre6">在语法上，异步 Generator 函数就是<code class="pcalibre3 calibre13 pcalibre4">async</code>函数与 Generator 函数的结合。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;hello&#39;</span>;
+}
+<span class="hljs-keyword">const</span> genObj = gen();
+genObj.next().then(x =&gt; <span class="hljs-number">console</span>.log(x));
+<span class="hljs-comment">// { value: &#39;hello&#39;, done: false }</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">gen</code>是一个异步 Generator 函数，执行后返回一个异步 Iterator 对象。对该对象调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，返回一个 Promise 对象。</p>
+<p class="calibre6">异步遍历器的设计目的之一，就是 Generator 函数处理同步操作和异步操作时，能够使用同一套接口。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 同步 Generator 函数</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">map</span>(<span class="hljs-number">iterable, func</span>) </span>{
+  <span class="hljs-keyword">const</span> iter = iterable[<span class="hljs-number">Symbol</span>.iterator]();
+  <span class="hljs-keyword">while</span> (<span class="hljs-number">true</span>) {
+    <span class="hljs-keyword">const</span> {value, done} = iter.next();
+    <span class="hljs-keyword">if</span> (done) <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">yield</span> func(value);
+  }
+}
+
+<span class="hljs-comment">// 异步 Generator 函数</span>
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">map</span>(<span class="hljs-number">iterable, func</span>) </span>{
+  <span class="hljs-keyword">const</span> iter = iterable[<span class="hljs-number">Symbol</span>.asyncIterator]();
+  <span class="hljs-keyword">while</span> (<span class="hljs-number">true</span>) {
+    <span class="hljs-keyword">const</span> {value, done} = <span class="hljs-keyword">await</span> iter.next();
+    <span class="hljs-keyword">if</span> (done) <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">yield</span> func(value);
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">map</code>是一个 Generator 函数，第一个参数是可遍历对象<code class="pcalibre3 calibre13 pcalibre4">iterable</code>，第二个参数是一个回调函数<code class="pcalibre3 calibre13 pcalibre4">func</code>。<code class="pcalibre3 calibre13 pcalibre4">map</code>的作用是将<code class="pcalibre3 calibre13 pcalibre4">iterable</code>每一步返回的值，使用<code class="pcalibre3 calibre13 pcalibre4">func</code>进行处理。上面有两个版本的<code class="pcalibre3 calibre13 pcalibre4">map</code>，前一个处理同步遍历器，后一个处理异步遍历器，可以看到两个版本的写法基本上是一致的。</p>
+<p class="calibre6">下面是另一个异步 Generator 函数的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">readLines</span>(<span class="hljs-number">path</span>) </span>{
+  <span class="hljs-keyword">let</span> file = <span class="hljs-keyword">await</span> fileOpen(path);
+
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">while</span> (!file.EOF) {
+      <span class="hljs-keyword">yield</span> <span class="hljs-keyword">await</span> file.readLine();
+    }
+  } <span class="hljs-keyword">finally</span> {
+    <span class="hljs-keyword">await</span> file.close();
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码中，异步操作前面使用<code class="pcalibre3 calibre13 pcalibre4">await</code>关键字标明，即<code class="pcalibre3 calibre13 pcalibre4">await</code>后面的操作，应该返回 Promise 对象。凡是使用<code class="pcalibre3 calibre13 pcalibre4">yield</code>关键字的地方，就是<code class="pcalibre3 calibre13 pcalibre4">next</code>方法停下来的地方，它后面的表达式的值（即<code class="pcalibre3 calibre13 pcalibre4">await file.readLine()</code>的值），会作为<code class="pcalibre3 calibre13 pcalibre4">next()</code>返回对象的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性，这一点是与同步 Generator 函数一致的。</p>
+<p class="calibre6">异步 Generator 函数内部，能够同时使用<code class="pcalibre3 calibre13 pcalibre4">await</code>和<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令。可以这样理解，<code class="pcalibre3 calibre13 pcalibre4">await</code>命令用于将外部操作产生的值输入函数内部，<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令用于将函数内部的值输出。</p>
+<p class="calibre6">上面代码定义的异步 Generator 函数的用法如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> line <span class="hljs-keyword">of</span> readLines(filePath)) {
+    <span class="hljs-number">console</span>.log(line);
+  }
+})()
+</code></pre>
+<p class="calibre6">异步 Generator 函数可以与<code class="pcalibre3 calibre13 pcalibre4">for await...of</code>循环结合起来使用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">prefixLines</span>(<span class="hljs-number">asyncIterable</span>) </span>{
+  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> line <span class="hljs-keyword">of</span> asyncIterable) {
+    <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;&gt; &#39;</span> + line;
+  }
+}
+</code></pre>
+<p class="calibre6">异步 Generator 函数的返回值是一个异步 Iterator，即每次调用它的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，会返回一个 Promise 对象，也就是说，跟在<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令后面的，应该是一个 Promise 对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">fetchRandom</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">const</span> url = <span class="hljs-string">&#39;https://www.random.org/decimal-fractions/&#39;</span>
+    + <span class="hljs-string">&#39;?num=1&amp;dec=10&amp;col=1&amp;format=plain&amp;rnd=new&#39;</span>;
+  <span class="hljs-keyword">return</span> fetch(url);
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">asyncGenerator</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Start&#39;</span>);
+  <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> fetchRandom(); <span class="hljs-comment">// (A)</span>
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;Result: &#39;</span> + <span class="hljs-keyword">await</span> result.text(); <span class="hljs-comment">// (B)</span>
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Done&#39;</span>);
+}
+
+<span class="hljs-keyword">const</span> ag = asyncGenerator();
+ag.next().then(({value, done}) =&gt; {
+  <span class="hljs-number">console</span>.log(value);
+})
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">ag</code>是<code class="pcalibre3 calibre13 pcalibre4">asyncGenerator</code>函数返回的异步遍历器对象。调用<code class="pcalibre3 calibre13 pcalibre4">ag.next()</code>以后，上面代码的执行顺序如下。</p>
+<ol class="calibre2">
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">ag.next()</code>立刻返回一个 Promise 对象。</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">asyncGenerator</code>函数开始执行，打印出<code class="pcalibre3 calibre13 pcalibre4">Start</code>。</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">await</code>命令返回一个 Promise 对象，<code class="pcalibre3 calibre13 pcalibre4">asyncGenerator</code>函数停在这里。</li>
+<li class="calibre10">A 处变成 fulfilled 状态，产生的值放入<code class="pcalibre3 calibre13 pcalibre4">result</code>变量，<code class="pcalibre3 calibre13 pcalibre4">asyncGenerator</code>函数继续往下执行。</li>
+<li class="calibre10">函数在 B 处的<code class="pcalibre3 calibre13 pcalibre4">yield</code>暂停执行，一旦<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令取到值，<code class="pcalibre3 calibre13 pcalibre4">ag.next()</code>返回的那个 Promise 对象变成 fulfilled 状态。</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">ag.next()</code>后面的<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定的回调函数开始执行。该回调函数的参数是一个对象<code class="pcalibre3 calibre13 pcalibre4">{value, done}</code>，其中<code class="pcalibre3 calibre13 pcalibre4">value</code>的值是<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令后面的那个表达式的值，<code class="pcalibre3 calibre13 pcalibre4">done</code>的值是<code class="pcalibre3 calibre13 pcalibre4">false</code>。</li>
+</ol>
+<p class="calibre6">A 和 B 两行的作用类似于下面的代码。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>((resolve, reject) =&gt; {
+  fetchRandom()
+  .then(result =&gt; result.text())
+  .then(result =&gt; {
+     resolve({
+       value: <span class="hljs-string">&#39;Result: &#39;</span> + result,
+       done: <span class="hljs-number">false</span>,
+     });
+  });
+});
+</code></pre>
+<p class="calibre6">如果异步 Generator 函数抛出错误，会导致 Promise 对象的状态变为<code class="pcalibre3 calibre13 pcalibre4">reject</code>，然后抛出的错误被<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法捕获。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">asyncGenerator</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;Problem!&#39;</span>);
+}
+
+asyncGenerator()
+.next()
+.catch(err =&gt; <span class="hljs-number">console</span>.log(err)); <span class="hljs-comment">// Error: Problem!</span>
+</code></pre>
+<p class="calibre6">注意，普通的 async 函数返回的是一个 Promise 对象，而异步 Generator 函数返回的是一个异步 Iterator 对象。可以这样理解，async 函数和异步 Generator 函数，是封装异步操作的两种方法，都用来达到同一种目的。区别在于，前者自带执行器，后者通过<code class="pcalibre3 calibre13 pcalibre4">for await...of</code>执行，或者自己编写执行器。下面就是一个异步 Generator 函数的执行器。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">takeAsync</span>(<span class="hljs-number">asyncIterable, count = Infinity</span>) </span>{
+  <span class="hljs-keyword">const</span> result = [];
+  <span class="hljs-keyword">const</span> iterator = asyncIterable[<span class="hljs-number">Symbol</span>.asyncIterator]();
+  <span class="hljs-keyword">while</span> (result.length &lt; count) {
+    <span class="hljs-keyword">const</span> {value, done} = <span class="hljs-keyword">await</span> iterator.next();
+    <span class="hljs-keyword">if</span> (done) <span class="hljs-keyword">break</span>;
+    result.push(value);
+  }
+  <span class="hljs-keyword">return</span> result;
+}
+</code></pre>
+<p class="calibre6">上面代码中，异步 Generator 函数产生的异步遍历器，会通过<code class="pcalibre3 calibre13 pcalibre4">while</code>循环自动执行，每当<code class="pcalibre3 calibre13 pcalibre4">await iterator.next()</code>完成，就会进入下一轮循环。一旦<code class="pcalibre3 calibre13 pcalibre4">done</code>属性变为<code class="pcalibre3 calibre13 pcalibre4">true</code>，就会跳出循环，异步遍历器执行结束。</p>
+<p class="calibre6">下面是这个自动执行器的一个使用实例。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>) </span>{
+    <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;a&#39;</span>;
+    <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;b&#39;</span>;
+    <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;c&#39;</span>;
+  }
+
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> takeAsync(gen());
+}
+
+f().then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">result</span>) </span>{
+  <span class="hljs-number">console</span>.log(result); <span class="hljs-comment">// [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
+})
+</code></pre>
+<p class="calibre6">异步 Generator 函数出现以后，JavaScript 就有了四种函数形式：普通函数、async 函数、Generator 函数和异步 Generator 函数。请注意区分每种函数的不同之处。基本上，如果是一系列按照顺序执行的异步操作（比如读取文件，然后写入新内容，再存入硬盘），可以使用 async 函数；如果是一系列产生相同数据结构的异步操作（比如一行一行读取文件），可以使用异步 Generator 函数。</p>
+<p class="calibre6">异步 Generator 函数也可以通过<code class="pcalibre3 calibre13 pcalibre4">next</code>方法的参数，接收外部传入的数据。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> writer = openFile(<span class="hljs-string">&#39;someFile.txt&#39;</span>);
+writer.next(<span class="hljs-string">&#39;hello&#39;</span>); <span class="hljs-comment">// 立即执行</span>
+writer.next(<span class="hljs-string">&#39;world&#39;</span>); <span class="hljs-comment">// 立即执行</span>
+<span class="hljs-keyword">await</span> writer.return(); <span class="hljs-comment">// 等待写入结束</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">openFile</code>是一个异步 Generator 函数。<code class="pcalibre3 calibre13 pcalibre4">next</code>方法的参数，向该函数内部的操作传入数据。每次<code class="pcalibre3 calibre13 pcalibre4">next</code>方法都是同步执行的，最后的<code class="pcalibre3 calibre13 pcalibre4">await</code>命令用于等待整个写入操作结束。</p>
+<p class="calibre6">最后，同步的数据结构，也可以使用异步 Generator 函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">createAsyncIterable</span>(<span class="hljs-number">syncIterable</span>) </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> elem <span class="hljs-keyword">of</span> syncIterable) {
+    <span class="hljs-keyword">yield</span> elem;
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码中，由于没有异步操作，所以也就没有使用<code class="pcalibre3 calibre13 pcalibre4">await</code>关键字。</p>
+<h3 id="yield-语句" class="calibre11">yield* 语句</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">yield*</code>语句也可以跟一个异步遍历器。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen1</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;a&#39;</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;b&#39;</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen2</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-comment">// result 最终会等于 2</span>
+  <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">yield</span>* gen1();
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">gen2</code>函数里面的<code class="pcalibre3 calibre13 pcalibre4">result</code>变量，最后的值是<code class="pcalibre3 calibre13 pcalibre4">2</code>。</p>
+<p class="calibre6">与同步 Generator 函数一样，<code class="pcalibre3 calibre13 pcalibre4">for await...of</code>循环会展开<code class="pcalibre3 calibre13 pcalibre4">yield*</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> x <span class="hljs-keyword">of</span> gen2()) {
+    <span class="hljs-number">console</span>.log(x);
+  }
+})();
+<span class="hljs-comment">// a</span>
+<span class="hljs-comment">// b</span>
+</code></pre>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="generator-async.html" class="navigation navigation-prev"
+           aria-label="Previous page: 18. Generator 函数的异步应用">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="class.html" class="navigation navigation-next"
+           aria-label="Next page: 20. Class 的基本语法">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "20. Class 的基本语法",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "18. Generator 函数的异步应用",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

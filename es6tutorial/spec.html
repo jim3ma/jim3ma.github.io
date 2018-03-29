@@ -1,0 +1,593 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>28. 读懂规格</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="arraybuffer.html"/>
+    <link rel="prev" href="style.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="spec.html">28. 读懂规格</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_29">28. 读懂规格</h1>
+        <div class="section">
+            <h1 id="读懂-ecmascript-规格" class="calibre5">读懂 ECMAScript 规格</h1>
+<h2 id="概述" class="calibre16">概述</h2>
+<p class="calibre6">规格文件是计算机语言的官方标准，详细描述语法规则和实现方法。</p>
+<p class="calibre6">一般来说，没有必要阅读规格，除非你要写编译器。因为规格写得非常抽象和精炼，又缺乏实例，不容易理解，而且对于解决实际的应用问题，帮助不大。但是，如果你遇到疑难的语法问题，实在找不到答案，这时可以去查看规格文件，了解语言标准是怎么说的。规格是解决问题的“最后一招”。</p>
+<p class="calibre6">这对 JavaScript 语言很有必要。因为它的使用场景复杂，语法规则不统一，例外很多，各种运行环境的行为不一致，导致奇怪的语法问题层出不穷，任何语法书都不可能囊括所有情况。查看规格，不失为一种解决语法问题的最可靠、最权威的终极方法。</p>
+<p class="calibre6">本章介绍如何读懂 ECMAScript 6 的规格文件。</p>
+<p class="calibre6">ECMAScript 6 的规格，可以在 ECMA 国际标准组织的官方网站（<a href="http://www.ecma-international.org/ecma-262/6.0/" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">www.ecma-international.org/ecma-262/6.0/</a>）免费下载和在线阅读。</p>
+<p class="calibre6">这个规格文件相当庞大，一共有 26 章，A4 打印的话，足足有 545 页。它的特点就是规定得非常细致，每一个语法行为、每一个函数的实现都做了详尽的清晰的描述。基本上，编译器作者只要把每一步翻译成代码就可以了。这很大程度上，保证了所有 ES6 实现都有一致的行为。</p>
+<p class="calibre6">ECMAScript 6 规格的 26 章之中，第 1 章到第 3 章是对文件本身的介绍，与语言关系不大。第 4 章是对这门语言总体设计的描述，有兴趣的读者可以读一下。第 5 章到第 8 章是语言宏观层面的描述。第 5 章是规格的名词解释和写法的介绍，第 6 章介绍数据类型，第 7 章介绍语言内部用到的抽象操作，第 8 章介绍代码如何运行。第 9 章到第 26 章介绍具体的语法。</p>
+<p class="calibre6">对于一般用户来说，除了第 4 章，其他章节都涉及某一方面的细节，不用通读，只要在用到的时候，查阅相关章节即可。</p>
+<h2 id="术语" class="calibre12">术语</h2>
+<p class="calibre6">ES6 规格使用了一些专门的术语，了解这些术语，可以帮助你读懂规格。本节介绍其中的几个。</p>
+<h3 id="抽象操作" class="calibre11">抽象操作</h3>
+<p class="calibre6">所谓”抽象操作“（abstract operations）就是引擎的一些内部方法，外部不能调用。规格定义了一系列的抽象操作，规定了它们的行为，留给各种引擎自己去实现。</p>
+<p class="calibre6">举例来说，<code class="pcalibre3 calibre13 pcalibre4">Boolean(value)</code>的算法，第一步是这样的。</p>
+<blockquote class="calibre20">
+<ol class="calibre2">
+<li class="calibre10">Let <code class="pcalibre3 calibre13 pcalibre4">b</code> be <code class="pcalibre3 calibre13 pcalibre4">ToBoolean(value)</code>.</li>
+</ol>
+</blockquote>
+<p class="calibre6">这里的<code class="pcalibre3 calibre13 pcalibre4">ToBoolean</code>就是一个抽象操作，是引擎内部求出布尔值的算法。</p>
+<p class="calibre6">许多函数的算法都会多次用到同样的步骤，所以 ES6 规格将它们抽出来，定义成”抽象操作“，方便描述。</p>
+<h3 id="record-和-field" class="calibre11">Record 和 field</h3>
+<p class="calibre6">ES6 规格将键值对（key-value map）的数据结构称为 Record，其中的每一组键值对称为 field。这就是说，一个 Record 由多个 field 组成，而每个 field 都包含一个键名（key）和一个键值（value）。</p>
+<h3 id="notation" class="calibre11">[[Notation]]</h3>
+<p class="calibre6">ES6 规格大量使用<code class="pcalibre3 calibre13 pcalibre4">[[Notation]]</code>这种书写法，比如<code class="pcalibre3 calibre13 pcalibre4">[[Value]]</code>、<code class="pcalibre3 calibre13 pcalibre4">[[Writable]]</code>、<code class="pcalibre3 calibre13 pcalibre4">[[Get]]</code>、<code class="pcalibre3 calibre13 pcalibre4">[[Set]]</code>等等。它用来指代 field 的键名。</p>
+<p class="calibre6">举例来说，<code class="pcalibre3 calibre13 pcalibre4">obj</code>是一个 Record，它有一个<code class="pcalibre3 calibre13 pcalibre4">Prototype</code>属性。ES6 规格不会写<code class="pcalibre3 calibre13 pcalibre4">obj.Prototype</code>，而是写<code class="pcalibre3 calibre13 pcalibre4">obj.[[Prototype]]</code>。一般来说，使用<code class="pcalibre3 calibre13 pcalibre4">[[Notation]]</code>这种书写法的属性，都是对象的内部属性。</p>
+<p class="calibre6">所有的 JavaScript 函数都有一个内部属性<code class="pcalibre3 calibre13 pcalibre4">[[Call]]</code>，用来运行该函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">F.[[Call]](V, argumentsList)
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">F</code>是一个函数对象，<code class="pcalibre3 calibre13 pcalibre4">[[Call]]</code>是它的内部方法，<code class="pcalibre3 calibre13 pcalibre4">F.[[call]]()</code>表示运行该函数，<code class="pcalibre3 calibre13 pcalibre4">V</code>表示<code class="pcalibre3 calibre13 pcalibre4">[[Call]]</code>运行时<code class="pcalibre3 calibre13 pcalibre4">this</code>的值，<code class="pcalibre3 calibre13 pcalibre4">argumentsList</code>则是调用时传入函数的参数。</p>
+<h3 id="completion-record" class="calibre11">Completion Record</h3>
+<p class="calibre6">每一个语句都会返回一个 Completion Record，表示运行结果。每个 Completion Record 有一个<code class="pcalibre3 calibre13 pcalibre4">[[Type]]</code>属性，表示运行结果的类型。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">[[Type]]</code>属性有五种可能的值。</p>
+<ul class="calibre9">
+<li class="calibre10">normal</li>
+<li class="calibre10">return</li>
+<li class="calibre10">throw</li>
+<li class="calibre10">break</li>
+<li class="calibre10">continue</li>
+</ul>
+<p class="calibre6">如果<code class="pcalibre3 calibre13 pcalibre4">[[Type]]</code>的值是<code class="pcalibre3 calibre13 pcalibre4">normal</code>，就称为 normal completion，表示运行正常。其他的值，都称为 abrupt completion。其中，开发者只需要关注<code class="pcalibre3 calibre13 pcalibre4">[[Type]]</code>为<code class="pcalibre3 calibre13 pcalibre4">throw</code>的情况，即运行出错；<code class="pcalibre3 calibre13 pcalibre4">break</code>、<code class="pcalibre3 calibre13 pcalibre4">continue</code>、<code class="pcalibre3 calibre13 pcalibre4">return</code>这三个值都只出现在特定场景，可以不用考虑。</p>
+<h2 id="抽象操作的标准流程" class="calibre12">抽象操作的标准流程</h2>
+<p class="calibre6">抽象操作的运行流程，一般是下面这样。</p>
+<blockquote class="calibre20">
+<ol class="calibre2">
+<li class="calibre10">Let <code class="pcalibre3 calibre13 pcalibre4">resultCompletionRecord</code> be <code class="pcalibre3 calibre13 pcalibre4">AbstractOp()</code>.</li>
+<li class="calibre10">If <code class="pcalibre3 calibre13 pcalibre4">resultCompletionRecord</code> is an abrupt completion, return <code class="pcalibre3 calibre13 pcalibre4">resultCompletionRecord</code>.</li>
+<li class="calibre10">Let <code class="pcalibre3 calibre13 pcalibre4">result</code> be <code class="pcalibre3 calibre13 pcalibre4">resultCompletionRecord.[[Value]]</code>.</li>
+<li class="calibre10">return <code class="pcalibre3 calibre13 pcalibre4">result</code>.</li>
+</ol>
+</blockquote>
+<p class="calibre6">上面的第一步是调用抽象操作<code class="pcalibre3 calibre13 pcalibre4">AbstractOp()</code>，得到<code class="pcalibre3 calibre13 pcalibre4">resultCompletionRecord</code>，这是一个 Completion Record。第二步，如果这个 Record 属于 abrupt completion，就将<code class="pcalibre3 calibre13 pcalibre4">resultCompletionRecord</code>返回给用户。如果此处没有返回，就表示运行结果正常，所得的值存放在<code class="pcalibre3 calibre13 pcalibre4">resultCompletionRecord.[[Value]]</code>属性。第三步，将这个值记为<code class="pcalibre3 calibre13 pcalibre4">result</code>。第四步，将<code class="pcalibre3 calibre13 pcalibre4">result</code>返回给用户。</p>
+<p class="calibre6">ES6 规格将这个标准流程，使用简写的方式表达。</p>
+<blockquote class="calibre20">
+<ol class="calibre2">
+<li class="calibre10">Let <code class="pcalibre3 calibre13 pcalibre4">result</code> be <code class="pcalibre3 calibre13 pcalibre4">AbstractOp()</code>.</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">ReturnIfAbrupt(result)</code>.</li>
+<li class="calibre10">return <code class="pcalibre3 calibre13 pcalibre4">result</code>.</li>
+</ol>
+</blockquote>
+<p class="calibre6">这个简写方式里面的<code class="pcalibre3 calibre13 pcalibre4">ReturnIfAbrupt(result)</code>，就代表了上面的第二步和第三步，即如果有报错，就返回错误，否则取出值。</p>
+<p class="calibre6">甚至还有进一步的简写格式。</p>
+<blockquote class="calibre20">
+<ol class="calibre2">
+<li class="calibre10">Let <code class="pcalibre3 calibre13 pcalibre4">result</code> be <code class="pcalibre3 calibre13 pcalibre4">? AbstractOp()</code>.</li>
+<li class="calibre10">return <code class="pcalibre3 calibre13 pcalibre4">result</code>.</li>
+</ol>
+</blockquote>
+<p class="calibre6">上面流程的<code class="pcalibre3 calibre13 pcalibre4">?</code>，就代表<code class="pcalibre3 calibre13 pcalibre4">AbstractOp()</code>可能会报错。一旦报错，就返回错误，否则取出值。</p>
+<p class="calibre6">除了<code class="pcalibre3 calibre13 pcalibre4">?</code>，ES 6 规格还使用另一个简写符号<code class="pcalibre3 calibre13 pcalibre4">!</code>。</p>
+<blockquote class="calibre20">
+<ol class="calibre2">
+<li class="calibre10">Let <code class="pcalibre3 calibre13 pcalibre4">result</code> be <code class="pcalibre3 calibre13 pcalibre4">! AbstractOp()</code>.</li>
+<li class="calibre10">return <code class="pcalibre3 calibre13 pcalibre4">result</code>.</li>
+</ol>
+</blockquote>
+<p class="calibre6">上面流程的<code class="pcalibre3 calibre13 pcalibre4">!</code>，代表<code class="pcalibre3 calibre13 pcalibre4">AbstractOp()</code>不会报错，返回的一定是 normal completion，总是可以取出值。</p>
+<h2 id="相等运算符" class="calibre12">相等运算符</h2>
+<p class="calibre6">下面通过一些例子，介绍如何使用这份规格。</p>
+<p class="calibre6">相等运算符（<code class="pcalibre3 calibre13 pcalibre4">==</code>）是一个很让人头痛的运算符，它的语法行为多变，不符合直觉。这个小节就看看规格怎么规定它的行为。</p>
+<p class="calibre6">请看下面这个表达式，请问它的值是多少。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">0</span> == <span class="hljs-number">null</span>
+</code></pre>
+<p class="calibre6">如果你不确定答案，或者想知道语言内部怎么处理，就可以去查看规格，<a href="http://www.ecma-international.org/ecma-262/6.0/#sec-7.2.12" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">7.2.12 小节</a>是对相等运算符（<code class="pcalibre3 calibre13 pcalibre4">==</code>）的描述。</p>
+<p class="calibre6">规格对每一种语法行为的描述，都分成两部分：先是总体的行为描述，然后是实现的算法细节。相等运算符的总体描述，只有一句话。</p>
+<blockquote class="calibre20">
+<p class="calibre6">“The comparison <code class="pcalibre3 calibre13 pcalibre4">x == y</code>, where <code class="pcalibre3 calibre13 pcalibre4">x</code> and <code class="pcalibre3 calibre13 pcalibre4">y</code> are values, produces <code class="pcalibre3 calibre13 pcalibre4">true</code> or <code class="pcalibre3 calibre13 pcalibre4">false</code>.”</p>
+</blockquote>
+<p class="calibre6">上面这句话的意思是，相等运算符用于比较两个值，返回<code class="pcalibre3 calibre13 pcalibre4">true</code>或<code class="pcalibre3 calibre13 pcalibre4">false</code>。</p>
+<p class="calibre6">下面是算法细节。</p>
+<blockquote class="calibre20">
+<ol class="calibre2">
+<li class="calibre10">ReturnIfAbrupt(x).</li>
+<li class="calibre10">ReturnIfAbrupt(y).</li>
+<li class="calibre10">If <code class="pcalibre3 calibre13 pcalibre4">Type(x)</code> is the same as <code class="pcalibre3 calibre13 pcalibre4">Type(y)</code>, then\
+Return the result of performing Strict Equality Comparison <code class="pcalibre3 calibre13 pcalibre4">x === y</code>.</li>
+<li class="calibre10">If <code class="pcalibre3 calibre13 pcalibre4">x</code> is <code class="pcalibre3 calibre13 pcalibre4">null</code> and <code class="pcalibre3 calibre13 pcalibre4">y</code> is <code class="pcalibre3 calibre13 pcalibre4">undefined</code>, return <code class="pcalibre3 calibre13 pcalibre4">true</code>.</li>
+<li class="calibre10">If <code class="pcalibre3 calibre13 pcalibre4">x</code> is <code class="pcalibre3 calibre13 pcalibre4">undefined</code> and <code class="pcalibre3 calibre13 pcalibre4">y</code> is <code class="pcalibre3 calibre13 pcalibre4">null</code>, return <code class="pcalibre3 calibre13 pcalibre4">true</code>.</li>
+<li class="calibre10">If <code class="pcalibre3 calibre13 pcalibre4">Type(x)</code> is Number and <code class="pcalibre3 calibre13 pcalibre4">Type(y)</code> is String,\
+return the result of the comparison <code class="pcalibre3 calibre13 pcalibre4">x == ToNumber(y)</code>.</li>
+<li class="calibre10">If <code class="pcalibre3 calibre13 pcalibre4">Type(x)</code> is String and <code class="pcalibre3 calibre13 pcalibre4">Type(y)</code> is Number,\
+return the result of the comparison <code class="pcalibre3 calibre13 pcalibre4">ToNumber(x) == y</code>.</li>
+<li class="calibre10">If <code class="pcalibre3 calibre13 pcalibre4">Type(x)</code> is Boolean, return the result of the comparison <code class="pcalibre3 calibre13 pcalibre4">ToNumber(x) == y</code>.</li>
+<li class="calibre10">If <code class="pcalibre3 calibre13 pcalibre4">Type(y)</code> is Boolean, return the result of the comparison <code class="pcalibre3 calibre13 pcalibre4">x == ToNumber(y)</code>.</li>
+<li class="calibre10">If <code class="pcalibre3 calibre13 pcalibre4">Type(x)</code> is either String, Number, or Symbol and <code class="pcalibre3 calibre13 pcalibre4">Type(y)</code> is Object, then\
+return the result of the comparison <code class="pcalibre3 calibre13 pcalibre4">x == ToPrimitive(y)</code>.</li>
+<li class="calibre10">If <code class="pcalibre3 calibre13 pcalibre4">Type(x)</code> is Object and <code class="pcalibre3 calibre13 pcalibre4">Type(y)</code> is either String, Number, or Symbol, then\
+return the result of the comparison <code class="pcalibre3 calibre13 pcalibre4">ToPrimitive(x) == y</code>.</li>
+<li class="calibre10">Return <code class="pcalibre3 calibre13 pcalibre4">false</code>.</li>
+</ol>
+</blockquote>
+<p class="calibre6">上面这段算法，一共有 12 步，翻译如下。</p>
+<blockquote class="calibre20">
+<ol class="calibre2">
+<li class="calibre10">如果<code class="pcalibre3 calibre13 pcalibre4">x</code>不是正常值（比如抛出一个错误），中断执行。</li>
+<li class="calibre10">如果<code class="pcalibre3 calibre13 pcalibre4">y</code>不是正常值，中断执行。</li>
+<li class="calibre10">如果<code class="pcalibre3 calibre13 pcalibre4">Type(x)</code>与<code class="pcalibre3 calibre13 pcalibre4">Type(y)</code>相同，执行严格相等运算<code class="pcalibre3 calibre13 pcalibre4">x === y</code>。</li>
+<li class="calibre10">如果<code class="pcalibre3 calibre13 pcalibre4">x</code>是<code class="pcalibre3 calibre13 pcalibre4">null</code>，<code class="pcalibre3 calibre13 pcalibre4">y</code>是<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，返回<code class="pcalibre3 calibre13 pcalibre4">true</code>。</li>
+<li class="calibre10">如果<code class="pcalibre3 calibre13 pcalibre4">x</code>是<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，<code class="pcalibre3 calibre13 pcalibre4">y</code>是<code class="pcalibre3 calibre13 pcalibre4">null</code>，返回<code class="pcalibre3 calibre13 pcalibre4">true</code>。</li>
+<li class="calibre10">如果<code class="pcalibre3 calibre13 pcalibre4">Type(x)</code>是数值，<code class="pcalibre3 calibre13 pcalibre4">Type(y)</code>是字符串，返回<code class="pcalibre3 calibre13 pcalibre4">x == ToNumber(y)</code>的结果。</li>
+<li class="calibre10">如果<code class="pcalibre3 calibre13 pcalibre4">Type(x)</code>是字符串，<code class="pcalibre3 calibre13 pcalibre4">Type(y)</code>是数值，返回<code class="pcalibre3 calibre13 pcalibre4">ToNumber(x) == y</code>的结果。</li>
+<li class="calibre10">如果<code class="pcalibre3 calibre13 pcalibre4">Type(x)</code>是布尔值，返回<code class="pcalibre3 calibre13 pcalibre4">ToNumber(x) == y</code>的结果。</li>
+<li class="calibre10">如果<code class="pcalibre3 calibre13 pcalibre4">Type(y)</code>是布尔值，返回<code class="pcalibre3 calibre13 pcalibre4">x == ToNumber(y)</code>的结果。</li>
+<li class="calibre10">如果<code class="pcalibre3 calibre13 pcalibre4">Type(x)</code>是字符串或数值或<code class="pcalibre3 calibre13 pcalibre4">Symbol</code>值，<code class="pcalibre3 calibre13 pcalibre4">Type(y)</code>是对象，返回<code class="pcalibre3 calibre13 pcalibre4">x == ToPrimitive(y)</code>的结果。</li>
+<li class="calibre10">如果<code class="pcalibre3 calibre13 pcalibre4">Type(x)</code>是对象，<code class="pcalibre3 calibre13 pcalibre4">Type(y)</code>是字符串或数值或<code class="pcalibre3 calibre13 pcalibre4">Symbol</code>值，返回<code class="pcalibre3 calibre13 pcalibre4">ToPrimitive(x) == y</code>的结果。</li>
+<li class="calibre10">返回<code class="pcalibre3 calibre13 pcalibre4">false</code>。</li>
+</ol>
+</blockquote>
+<p class="calibre6">由于<code class="pcalibre3 calibre13 pcalibre4">0</code>的类型是数值，<code class="pcalibre3 calibre13 pcalibre4">null</code>的类型是 Null（这是规格<a href="http://www.ecma-international.org/ecma-262/6.0/#sec-4.3.13" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">4.3.13 小节</a>的规定，是内部 Type 运算的结果，跟<code class="pcalibre3 calibre13 pcalibre4">typeof</code>运算符无关）。因此上面的前 11 步都得不到结果，要到第 12 步才能得到<code class="pcalibre3 calibre13 pcalibre4">false</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">0</span> == <span class="hljs-number">null</span> <span class="hljs-comment">// false</span>
+</code></pre>
+<h2 id="数组的空位" class="calibre12">数组的空位</h2>
+<p class="calibre6">下面再看另一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> a1 = [<span class="hljs-number">undefined</span>, <span class="hljs-number">undefined</span>, <span class="hljs-number">undefined</span>];
+<span class="hljs-keyword">const</span> a2 = [, , ,];
+
+a1.length <span class="hljs-comment">// 3</span>
+a2.length <span class="hljs-comment">// 3</span>
+
+a1[<span class="hljs-number">0</span>] <span class="hljs-comment">// undefined</span>
+a2[<span class="hljs-number">0</span>] <span class="hljs-comment">// undefined</span>
+
+a1[<span class="hljs-number">0</span>] === a2[<span class="hljs-number">0</span>] <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，数组<code class="pcalibre3 calibre13 pcalibre4">a1</code>的成员是三个<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，数组<code class="pcalibre3 calibre13 pcalibre4">a2</code>的成员是三个空位。这两个数组很相似，长度都是 3，每个位置的成员读取出来都是<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。</p>
+<p class="calibre6">但是，它们实际上存在重大差异。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">0</span> <span class="hljs-keyword">in</span> a1 <span class="hljs-comment">// true</span>
+<span class="hljs-number">0</span> <span class="hljs-keyword">in</span> a2 <span class="hljs-comment">// false</span>
+
+a1.hasOwnProperty(<span class="hljs-number">0</span>) <span class="hljs-comment">// true</span>
+a2.hasOwnProperty(<span class="hljs-number">0</span>) <span class="hljs-comment">// false</span>
+
+<span class="hljs-number">Object</span>.keys(a1) <span class="hljs-comment">// [&#34;0&#34;, &#34;1&#34;, &#34;2&#34;]</span>
+<span class="hljs-number">Object</span>.keys(a2) <span class="hljs-comment">// []</span>
+
+a1.map(n =&gt; <span class="hljs-number">1</span>) <span class="hljs-comment">// [1, 1, 1]</span>
+a2.map(n =&gt; <span class="hljs-number">1</span>) <span class="hljs-comment">// [, , ,]</span>
+</code></pre>
+<p class="calibre6">上面代码一共列出了四种运算，数组<code class="pcalibre3 calibre13 pcalibre4">a1</code>和<code class="pcalibre3 calibre13 pcalibre4">a2</code>的结果都不一样。前三种运算（<code class="pcalibre3 calibre13 pcalibre4">in</code>运算符、数组的<code class="pcalibre3 calibre13 pcalibre4">hasOwnProperty</code>方法、<code class="pcalibre3 calibre13 pcalibre4">Object.keys</code>方法）都说明，数组<code class="pcalibre3 calibre13 pcalibre4">a2</code>取不到属性名。最后一种运算（数组的<code class="pcalibre3 calibre13 pcalibre4">map</code>方法）说明，数组<code class="pcalibre3 calibre13 pcalibre4">a2</code>没有发生遍历。</p>
+<p class="calibre6">为什么<code class="pcalibre3 calibre13 pcalibre4">a1</code>与<code class="pcalibre3 calibre13 pcalibre4">a2</code>成员的行为不一致？数组的成员是<code class="pcalibre3 calibre13 pcalibre4">undefined</code>或空位，到底有什么不同？</p>
+<p class="calibre6">规格的<a href="http://www.ecma-international.org/ecma-262/6.0/#sec-12.2.5" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">12.2.5 小节《数组的初始化》</a>给出了答案。</p>
+<blockquote class="calibre20">
+<p class="calibre6">“Array elements may be elided at the beginning, middle or end of the element list. Whenever a comma in the element list is not preceded by an AssignmentExpression (i.e., a comma at the beginning or after another comma), the missing array element contributes to the length of the Array and increases the index of subsequent elements. Elided array elements are not defined. If an element is elided at the end of an array, that element does not contribute to the length of the Array.”</p>
+</blockquote>
+<p class="calibre6">翻译如下。</p>
+<blockquote class="calibre20">
+<p class="calibre6">&#34;数组成员可以省略。只要逗号前面没有任何表达式，数组的<code class="pcalibre3 calibre13 pcalibre4">length</code>属性就会加 1，并且相应增加其后成员的位置索引。被省略的成员不会被定义。如果被省略的成员是数组最后一个成员，则不会导致数组<code class="pcalibre3 calibre13 pcalibre4">length</code>属性增加。”</p>
+</blockquote>
+<p class="calibre6">上面的规格说得很清楚，数组的空位会反映在<code class="pcalibre3 calibre13 pcalibre4">length</code>属性，也就是说空位有自己的位置，但是这个位置的值是未定义，即这个值是不存在的。如果一定要读取，结果就是<code class="pcalibre3 calibre13 pcalibre4">undefined</code>（因为<code class="pcalibre3 calibre13 pcalibre4">undefined</code>在 JavaScript 语言中表示不存在）。</p>
+<p class="calibre6">这就解释了为什么<code class="pcalibre3 calibre13 pcalibre4">in</code>运算符、数组的<code class="pcalibre3 calibre13 pcalibre4">hasOwnProperty</code>方法、<code class="pcalibre3 calibre13 pcalibre4">Object.keys</code>方法，都取不到空位的属性名。因为这个属性名根本就不存在，规格里面没说要为空位分配属性名(位置索引），只说要为下一个元素的位置索引加 1。</p>
+<p class="calibre6">至于为什么数组的<code class="pcalibre3 calibre13 pcalibre4">map</code>方法会跳过空位，请看下一节。</p>
+<h2 id="数组的-map-方法" class="calibre12">数组的 map 方法</h2>
+<p class="calibre6">规格的<a href="http://www.ecma-international.org/ecma-262/6.0/#sec-22.1.3.15" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">22.1.3.15 小节</a>定义了数组的<code class="pcalibre3 calibre13 pcalibre4">map</code>方法。该小节先是总体描述<code class="pcalibre3 calibre13 pcalibre4">map</code>方法的行为，里面没有提到数组空位。</p>
+<p class="calibre6">后面的算法描述是这样的。</p>
+<blockquote class="calibre20">
+<ol class="calibre2">
+<li class="calibre10">Let <code class="pcalibre3 calibre13 pcalibre4">O</code> be <code class="pcalibre3 calibre13 pcalibre4">ToObject(this value)</code>.</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">ReturnIfAbrupt(O)</code>.</li>
+<li class="calibre10">Let <code class="pcalibre3 calibre13 pcalibre4">len</code> be <code class="pcalibre3 calibre13 pcalibre4">ToLength(Get(O, &#34;length&#34;))</code>.</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">ReturnIfAbrupt(len)</code>.</li>
+<li class="calibre10">If <code class="pcalibre3 calibre13 pcalibre4">IsCallable(callbackfn)</code> is <code class="pcalibre3 calibre13 pcalibre4">false</code>, throw a TypeError exception.</li>
+<li class="calibre10">If <code class="pcalibre3 calibre13 pcalibre4">thisArg</code> was supplied, let <code class="pcalibre3 calibre13 pcalibre4">T</code> be <code class="pcalibre3 calibre13 pcalibre4">thisArg</code>; else let <code class="pcalibre3 calibre13 pcalibre4">T</code> be <code class="pcalibre3 calibre13 pcalibre4">undefined</code>.</li>
+<li class="calibre10">Let <code class="pcalibre3 calibre13 pcalibre4">A</code> be <code class="pcalibre3 calibre13 pcalibre4">ArraySpeciesCreate(O, len)</code>.</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">ReturnIfAbrupt(A)</code>.</li>
+<li class="calibre10">Let <code class="pcalibre3 calibre13 pcalibre4">k</code> be 0.</li>
+<li class="calibre10">Repeat, while <code class="pcalibre3 calibre13 pcalibre4">k</code> &lt; <code class="pcalibre3 calibre13 pcalibre4">len</code>\
+a. Let <code class="pcalibre3 calibre13 pcalibre4">Pk</code> be <code class="pcalibre3 calibre13 pcalibre4">ToString(k)</code>.\
+b. Let <code class="pcalibre3 calibre13 pcalibre4">kPresent</code> be <code class="pcalibre3 calibre13 pcalibre4">HasProperty(O, Pk)</code>.\
+c. <code class="pcalibre3 calibre13 pcalibre4">ReturnIfAbrupt(kPresent)</code>.\
+d. If <code class="pcalibre3 calibre13 pcalibre4">kPresent</code> is <code class="pcalibre3 calibre13 pcalibre4">true</code>, then\
+d-1. Let <code class="pcalibre3 calibre13 pcalibre4">kValue</code> be <code class="pcalibre3 calibre13 pcalibre4">Get(O, Pk)</code>.\
+d-2. <code class="pcalibre3 calibre13 pcalibre4">ReturnIfAbrupt(kValue)</code>.\
+d-3. Let <code class="pcalibre3 calibre13 pcalibre4">mappedValue</code> be <code class="pcalibre3 calibre13 pcalibre4">Call(callbackfn, T, «kValue, k, O»)</code>.\
+d-4. <code class="pcalibre3 calibre13 pcalibre4">ReturnIfAbrupt(mappedValue)</code>.\
+d-5. Let <code class="pcalibre3 calibre13 pcalibre4">status</code> be <code class="pcalibre3 calibre13 pcalibre4">CreateDataPropertyOrThrow (A, Pk, mappedValue)</code>.\
+d-6. <code class="pcalibre3 calibre13 pcalibre4">ReturnIfAbrupt(status)</code>.\
+e. Increase <code class="pcalibre3 calibre13 pcalibre4">k</code> by 1.</li>
+<li class="calibre10">Return <code class="pcalibre3 calibre13 pcalibre4">A</code>.</li>
+</ol>
+</blockquote>
+<p class="calibre6">翻译如下。</p>
+<blockquote class="calibre20">
+<ol class="calibre2">
+<li class="calibre10">得到当前数组的<code class="pcalibre3 calibre13 pcalibre4">this</code>对象</li>
+<li class="calibre10">如果报错就返回</li>
+<li class="calibre10">求出当前数组的<code class="pcalibre3 calibre13 pcalibre4">length</code>属性</li>
+<li class="calibre10">如果报错就返回</li>
+<li class="calibre10">如果 map 方法的参数<code class="pcalibre3 calibre13 pcalibre4">callbackfn</code>不可执行，就报错</li>
+<li class="calibre10">如果 map 方法的参数之中，指定了<code class="pcalibre3 calibre13 pcalibre4">this</code>，就让<code class="pcalibre3 calibre13 pcalibre4">T</code>等于该参数，否则<code class="pcalibre3 calibre13 pcalibre4">T</code>为<code class="pcalibre3 calibre13 pcalibre4">undefined</code></li>
+<li class="calibre10">生成一个新的数组<code class="pcalibre3 calibre13 pcalibre4">A</code>，跟当前数组的<code class="pcalibre3 calibre13 pcalibre4">length</code>属性保持一致</li>
+<li class="calibre10">如果报错就返回</li>
+<li class="calibre10">设定<code class="pcalibre3 calibre13 pcalibre4">k</code>等于 0</li>
+<li class="calibre10">只要<code class="pcalibre3 calibre13 pcalibre4">k</code>小于当前数组的<code class="pcalibre3 calibre13 pcalibre4">length</code>属性，就重复下面步骤\
+a. 设定<code class="pcalibre3 calibre13 pcalibre4">Pk</code>等于<code class="pcalibre3 calibre13 pcalibre4">ToString(k)</code>，即将<code class="pcalibre3 calibre13 pcalibre4">K</code>转为字符串\
+b. 设定<code class="pcalibre3 calibre13 pcalibre4">kPresent</code>等于<code class="pcalibre3 calibre13 pcalibre4">HasProperty(O, Pk)</code>，即求当前数组有没有指定属性\
+c. 如果报错就返回\
+d. 如果<code class="pcalibre3 calibre13 pcalibre4">kPresent</code>等于<code class="pcalibre3 calibre13 pcalibre4">true</code>，则进行下面步骤\
+d-1. 设定<code class="pcalibre3 calibre13 pcalibre4">kValue</code>等于<code class="pcalibre3 calibre13 pcalibre4">Get(O, Pk)</code>，取出当前数组的指定属性\
+d-2. 如果报错就返回\
+d-3. 设定<code class="pcalibre3 calibre13 pcalibre4">mappedValue</code>等于<code class="pcalibre3 calibre13 pcalibre4">Call(callbackfn, T, «kValue, k, O»)</code>，即执行回调函数\
+d-4. 如果报错就返回\
+d-5. 设定<code class="pcalibre3 calibre13 pcalibre4">status</code>等于<code class="pcalibre3 calibre13 pcalibre4">CreateDataPropertyOrThrow (A, Pk, mappedValue)</code>，即将回调函数的值放入<code class="pcalibre3 calibre13 pcalibre4">A</code>数组的指定位置\
+d-6. 如果报错就返回\
+e. <code class="pcalibre3 calibre13 pcalibre4">k</code>增加 1</li>
+<li class="calibre10">返回<code class="pcalibre3 calibre13 pcalibre4">A</code></li>
+</ol>
+</blockquote>
+<p class="calibre6">仔细查看上面的算法，可以发现，当处理一个全是空位的数组时，前面步骤都没有问题。进入第 10 步的 b 时，<code class="pcalibre3 calibre13 pcalibre4">kpresent</code>会报错，因为空位对应的属性名，对于数组来说是不存在的，因此就会返回，不会进行后面的步骤。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> arr = [, , ,];
+arr.map(n =&gt; {
+  <span class="hljs-number">console</span>.log(n);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}) <span class="hljs-comment">// [, , ,]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">arr</code>是一个全是空位的数组，<code class="pcalibre3 calibre13 pcalibre4">map</code>方法遍历成员时，发现是空位，就直接跳过，不会进入回调函数。因此，回调函数里面的<code class="pcalibre3 calibre13 pcalibre4">console.log</code>语句根本不会执行，整个<code class="pcalibre3 calibre13 pcalibre4">map</code>方法返回一个全是空位的新数组。</p>
+<p class="calibre6">V8 引擎对<code class="pcalibre3 calibre13 pcalibre4">map</code>方法的<a href="https://github.com/v8/v8/blob/44c44521ae11859478b42004f57ea93df52526ee/src/js/array.js#L1347" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">实现</a>如下，可以看到跟规格的算法描述完全一致。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">ArrayMap</span>(<span class="hljs-number">f, receiver</span>) </span>{
+  CHECK_OBJECT_COERCIBLE(<span class="hljs-keyword">this</span>, <span class="hljs-string">&#34;Array.prototype.map&#34;</span>);
+
+  <span class="hljs-comment">// Pull out the length so that modifications to the length in the</span>
+  <span class="hljs-comment">// loop will not affect the looping and side effects are visible.</span>
+  <span class="hljs-keyword">var</span> array = TO_OBJECT(<span class="hljs-keyword">this</span>);
+  <span class="hljs-keyword">var</span> length = TO_LENGTH_OR_UINT32(array.length);
+  <span class="hljs-keyword">return</span> InnerArrayMap(f, receiver, array, length);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">InnerArrayMap</span>(<span class="hljs-number">f, receiver, array, length</span>) </span>{
+  <span class="hljs-keyword">if</span> (!IS_CALLABLE(f)) <span class="hljs-keyword">throw</span> MakeTypeError(kCalledNonCallable, f);
+
+  <span class="hljs-keyword">var</span> accumulator = <span class="hljs-keyword">new</span> InternalArray(length);
+  <span class="hljs-keyword">var</span> is_array = IS_ARRAY(array);
+  <span class="hljs-keyword">var</span> stepping = DEBUG_IS_STEPPING(f);
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    <span class="hljs-keyword">if</span> (HAS_INDEX(array, i, is_array)) {
+      <span class="hljs-keyword">var</span> element = array[i];
+      <span class="hljs-comment">// Prepare break slots for debugger step in.</span>
+      <span class="hljs-keyword">if</span> (stepping) %DebugPrepareStepInIfStepping(f);
+      accumulator[i] = %_Call(f, receiver, element, i, array);
+    }
+  }
+  <span class="hljs-keyword">var</span> result = <span class="hljs-keyword">new</span> GlobalArray();
+  %MoveArrayContents(accumulator, result);
+  <span class="hljs-keyword">return</span> result;
+}
+</code></pre>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="style.html" class="navigation navigation-prev"
+           aria-label="Previous page: 27. 编程风格">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="arraybuffer.html" class="navigation navigation-next"
+           aria-label="Next page: 29. ArrayBuffer">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "29. ArrayBuffer",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "27. 编程风格",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

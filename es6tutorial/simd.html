@@ -1,0 +1,816 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>23. SIMD</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="decorator.html"/>
+    <link rel="prev" href="mixin.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="simd.html">23. SIMD</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_24">23. SIMD</h1>
+        <div class="section">
+            <h1 id="simd" class="calibre5">SIMD</h1>
+<h2 id="概述" class="calibre16">概述</h2>
+<p class="calibre6">SIMD（发音<code class="pcalibre3 calibre13 pcalibre4">/sim-dee/</code>）是“Single Instruction/Multiple Data”的缩写，意为“单指令，多数据”。它是 JavaScript 操作 CPU 对应指令的接口，你可以看做这是一种不同的运算执行模式。与它相对的是 SISD（“Single Instruction/Single Data”），即“单指令，单数据”。</p>
+<p class="calibre6">SIMD 的含义是使用一个指令，完成多个数据的运算；SISD 的含义是使用一个指令，完成单个数据的运算，这是 JavaScript 的默认运算模式。显而易见，SIMD 的执行效率要高于 SISD，所以被广泛用于 3D 图形运算、物理模拟等运算量超大的项目之中。</p>
+<p class="calibre6">为了理解 SIMD，请看下面的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">var</span> b = [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>];
+<span class="hljs-keyword">var</span> c = [];
+
+c[<span class="hljs-number">0</span>] = a[<span class="hljs-number">0</span>] + b[<span class="hljs-number">0</span>];
+c[<span class="hljs-number">1</span>] = a[<span class="hljs-number">1</span>] + b[<span class="hljs-number">1</span>];
+c[<span class="hljs-number">2</span>] = a[<span class="hljs-number">2</span>] + b[<span class="hljs-number">2</span>];
+c[<span class="hljs-number">3</span>] = a[<span class="hljs-number">3</span>] + b[<span class="hljs-number">3</span>];
+c <span class="hljs-comment">// Array[6, 8, 10, 12]</span>
+</code></pre>
+<p class="calibre6">上面代码中，数组<code class="pcalibre3 calibre13 pcalibre4">a</code>和<code class="pcalibre3 calibre13 pcalibre4">b</code>的对应成员相加，结果放入数组<code class="pcalibre3 calibre13 pcalibre4">c</code>。它的运算模式是依次处理每个数组成员，一共有四个数组成员，所以需要运算 4 次。</p>
+<p class="calibre6">如果采用 SIMD 模式，只要运算一次就够了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>);
+<span class="hljs-keyword">var</span> c = SIMD.Float32x4.add(a, b); <span class="hljs-comment">// Float32x4[6, 8, 10, 12]</span>
+</code></pre>
+<p class="calibre6">上面代码之中，数组<code class="pcalibre3 calibre13 pcalibre4">a</code>和<code class="pcalibre3 calibre13 pcalibre4">b</code>的四个成员的各自相加，只用一条指令就完成了。因此，速度比上一种写法提高了 4 倍。</p>
+<p class="calibre6">一次 SIMD 运算，可以处理多个数据，这些数据被称为“通道”（lane）。上面代码中，一次运算了四个数据，因此就是四个通道。</p>
+<p class="calibre6">SIMD 通常用于矢量运算。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">v + w    = 〈v1, …, vn〉+ 〈w1, …, wn〉
+      = 〈v1+w1, …, vn+wn〉
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">v</code>和<code class="pcalibre3 calibre13 pcalibre4">w</code>是两个多元矢量。它们的加运算，在 SIMD 下是一个指令、而不是 n 个指令完成的，这就大大提高了效率。这对于 3D 动画、图像处理、信号处理、数值处理、加密等运算是非常重要的。比如，Canvas 的<code class="pcalibre3 calibre13 pcalibre4">getImageData()</code>会将图像文件读成一个二进制数组，SIMD 就很适合对于这种数组的处理。</p>
+<p class="calibre6">总的来说，SIMD 是数据并行处理（parallelism）的一种手段，可以加速一些运算密集型操作的速度。将来与 WebAssembly 结合以后，可以让 JavaScript 达到二进制代码的运行速度。</p>
+<h2 id="数据类型" class="calibre12">数据类型</h2>
+<p class="calibre6">SIMD 提供 12 种数据类型，总长度都是 128 个二进制位。</p>
+<ul class="calibre9">
+<li class="calibre10">Float32x4：四个 32 位浮点数</li>
+<li class="calibre10">Float64x2：两个 64 位浮点数</li>
+<li class="calibre10">Int32x4：四个 32 位整数</li>
+<li class="calibre10">Int16x8：八个 16 位整数</li>
+<li class="calibre10">Int8x16：十六个 8 位整数</li>
+<li class="calibre10">Uint32x4：四个无符号的 32 位整数</li>
+<li class="calibre10">Uint16x8：八个无符号的 16 位整数</li>
+<li class="calibre10">Uint8x16：十六个无符号的 8 位整数</li>
+<li class="calibre10">Bool32x4：四个 32 位布尔值</li>
+<li class="calibre10">Bool16x8：八个 16 位布尔值</li>
+<li class="calibre10">Bool8x16：十六个 8 位布尔值</li>
+<li class="calibre10">Bool64x2：两个 64 位布尔值</li>
+</ul>
+<p class="calibre6">每种数据类型被<code class="pcalibre3 calibre13 pcalibre4">x</code>符号分隔成两部分，后面的部分表示通道数，前面的部分表示每个通道的宽度和类型。比如，<code class="pcalibre3 calibre13 pcalibre4">Float32x4</code>就表示这个值有 4 个通道，每个通道是一个 32 位浮点数。</p>
+<p class="calibre6">每个通道之中，可以放置四种数据。</p>
+<ul class="calibre9">
+<li class="calibre10">浮点数（float，比如 1.0）</li>
+<li class="calibre10">带符号的整数（Int，比如-1）</li>
+<li class="calibre10">无符号的整数（Uint，比如 1）</li>
+<li class="calibre10">布尔值（Bool，包含<code class="pcalibre3 calibre13 pcalibre4">true</code>和<code class="pcalibre3 calibre13 pcalibre4">false</code>两种值）</li>
+</ul>
+<p class="calibre6">每种 SIMD 的数据类型都是一个函数方法，可以传入参数，生成对应的值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>);
+</code></pre>
+<p class="calibre6">上面代码中，变量<code class="pcalibre3 calibre13 pcalibre4">a</code>就是一个 128 位、包含四个 32 位浮点数（即四个通道）的值。</p>
+<p class="calibre6">注意，这些数据类型方法都不是构造函数，前面不能加<code class="pcalibre3 calibre13 pcalibre4">new</code>，否则会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> v = <span class="hljs-keyword">new</span> SIMD.Float32x4(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+<span class="hljs-comment">// TypeError: SIMD.Float32x4 is not a constructor</span>
+</code></pre>
+<h2 id="静态方法：数学运算" class="calibre12">静态方法：数学运算</h2>
+<p class="calibre6">每种数据类型都有一系列运算符，支持基本的数学运算。</p>
+<h3 id="simdtypeabs，simdtypeneg" class="calibre11">SIMD.%type%.abs()，SIMD.%type%.neg()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">abs</code>方法接受一个 SIMD 值作为参数，将它的每个通道都转成绝对值，作为一个新的 SIMD 值返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">-1</span>, <span class="hljs-number">-2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">NaN</span>);
+SIMD.Float32x4.abs(a)
+<span class="hljs-comment">// Float32x4[1, 2, 0, NaN]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">neg</code>方法接受一个 SIMD 值作为参数，将它的每个通道都转成负值，作为一个新的 SIMD 值返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">-1</span>, <span class="hljs-number">-2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>);
+SIMD.Float32x4.neg(a)
+<span class="hljs-comment">// Float32x4[1, 2, -3, -0]</span>
+
+<span class="hljs-keyword">var</span> b = SIMD.Float64x2(<span class="hljs-number">NaN</span>, <span class="hljs-number">Infinity</span>);
+SIMD.Float64x2.neg(b)
+<span class="hljs-comment">// Float64x2[NaN, -Infinity]</span>
+</code></pre>
+<h3 id="simdtypeadd，simdtypeaddsaturate" class="calibre11">SIMD.%type%.add()，SIMD.%type%.addSaturate()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">add</code>方法接受两个 SIMD 值作为参数，将它们的每个通道相加，作为一个新的 SIMD 值返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">5.0</span>, <span class="hljs-number">10.0</span>, <span class="hljs-number">15.0</span>, <span class="hljs-number">20.0</span>);
+<span class="hljs-keyword">var</span> c = SIMD.Float32x4.add(a, b);
+</code></pre>
+<p class="calibre6">上面代码中，经过加法运算，新的 SIMD 值为<code class="pcalibre3 calibre13 pcalibre4">(6.0, 12.0, 18.0. 24.0)</code>。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">addSaturate</code>方法跟<code class="pcalibre3 calibre13 pcalibre4">add</code>方法的作用相同，都是两个通道相加，但是溢出的处理不一致。对于<code class="pcalibre3 calibre13 pcalibre4">add</code>方法，如果两个值相加发生溢出，溢出的二进制位会被丢弃; <code class="pcalibre3 calibre13 pcalibre4">addSaturate</code>方法则是返回该数据类型的最大值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Uint16x8(<span class="hljs-number">65533</span>, <span class="hljs-number">65534</span>, <span class="hljs-number">65535</span>, <span class="hljs-number">65535</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Uint16x8(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5000</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+SIMD.Uint16x8.addSaturate(a, b);
+<span class="hljs-comment">// Uint16x8[65534, 65535, 65535, 65535, 2, 2, 2, 2]</span>
+
+<span class="hljs-keyword">var</span> c = SIMD.Int16x8(<span class="hljs-number">32765</span>, <span class="hljs-number">32766</span>, <span class="hljs-number">32767</span>, <span class="hljs-number">32767</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+<span class="hljs-keyword">var</span> d = SIMD.Int16x8(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5000</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+SIMD.Int16x8.addSaturate(c, d);
+<span class="hljs-comment">// Int16x8[32766, 32767, 32767, 32767, 2, 2, 2, 2]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Uint16</code>的最大值是 65535，<code class="pcalibre3 calibre13 pcalibre4">Int16</code>的最大值是 32767。一旦发生溢出，就返回这两个值。</p>
+<p class="calibre6">注意，<code class="pcalibre3 calibre13 pcalibre4">Uint32x4</code>和<code class="pcalibre3 calibre13 pcalibre4">Int32x4</code>这两种数据类型没有<code class="pcalibre3 calibre13 pcalibre4">addSaturate</code>方法。</p>
+<h3 id="simdtypesub，simdtypesubsaturate" class="calibre11">SIMD.%type%.sub()，SIMD.%type%.subSaturate()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">sub</code>方法接受两个 SIMD 值作为参数，将它们的每个通道相减，作为一个新的 SIMD 值返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">-1</span>, <span class="hljs-number">-2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
+SIMD.Float32x4.sub(a, b)
+<span class="hljs-comment">// Float32x4[-4, -5, 0, 1]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">subSaturate</code>方法跟<code class="pcalibre3 calibre13 pcalibre4">sub</code>方法的作用相同，都是两个通道相减，但是溢出的处理不一致。对于<code class="pcalibre3 calibre13 pcalibre4">sub</code>方法，如果两个值相减发生溢出，溢出的二进制位会被丢弃; <code class="pcalibre3 calibre13 pcalibre4">subSaturate</code>方法则是返回该数据类型的最小值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Uint16x8(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Uint16x8(<span class="hljs-number">10</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+SIMD.Uint16x8.subSaturate(a, b)
+<span class="hljs-comment">// Uint16x8[0, 0, 0, 0, 0, 0, 0, 0]</span>
+
+<span class="hljs-keyword">var</span> c = SIMD.Int16x8(<span class="hljs-number">-100</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+<span class="hljs-keyword">var</span> d = SIMD.Int16x8(<span class="hljs-number">32767</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+SIMD.Int16x8.subSaturate(c, d)
+<span class="hljs-comment">// Int16x8[-32768, 0, 0, 0, 0, 0, 0, 0, 0]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Uint16</code>的最小值是<code class="pcalibre3 calibre13 pcalibre4">0</code>，<code class="pcalibre3 calibre13 pcalibre4">Int16</code>的最小值是<code class="pcalibre3 calibre13 pcalibre4">-32678</code>。一旦运算发生溢出，就返回最小值。</p>
+<h3 id="simdtypemul，simdtypediv，simdtypesqrt" class="calibre11">SIMD.%type%.mul()，SIMD.%type%.div()，SIMD.%type%.sqrt()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">mul</code>方法接受两个 SIMD 值作为参数，将它们的每个通道相乘，作为一个新的 SIMD 值返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">-1</span>, <span class="hljs-number">-2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
+SIMD.Float32x4.mul(a, b)
+<span class="hljs-comment">// Float32x4[-3, -6, 9, 12]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">div</code>方法接受两个 SIMD 值作为参数，将它们的每个通道相除，作为一个新的 SIMD 值返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>);
+SIMD.Float32x4.div(a, b)
+<span class="hljs-comment">// Float32x4[0.5, 0.5, 0.5, 0.5]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">sqrt</code>方法接受一个 SIMD 值作为参数，求出每个通道的平方根，作为一个新的 SIMD 值返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> b = SIMD.Float64x2(<span class="hljs-number">4</span>, <span class="hljs-number">8</span>);
+SIMD.Float64x2.sqrt(b)
+<span class="hljs-comment">// Float64x2[2, 2.8284271247461903]</span>
+</code></pre>
+<h3 id="simdfloattypereciprocalapproximation，simdtypereciprocalsqrtapproximation" class="calibre11">SIMD.%FloatType%.reciprocalApproximation()，SIMD.%type%.reciprocalSqrtApproximation()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">reciprocalApproximation</code>方法接受一个 SIMD 值作为参数，求出每个通道的倒数（<code class="pcalibre3 calibre13 pcalibre4">1 / x</code>），作为一个新的 SIMD 值返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+SIMD.Float32x4.reciprocalApproximation(a);
+<span class="hljs-comment">// Float32x4[1, 0.5, 0.3333333432674408, 0.25]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">reciprocalSqrtApproximation</code>方法接受一个 SIMD 值作为参数，求出每个通道的平方根的倒数（<code class="pcalibre3 calibre13 pcalibre4">1 / (x^0.5)</code>），作为一个新的 SIMD 值返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+SIMD.Float32x4.reciprocalSqrtApproximation(a)
+<span class="hljs-comment">// Float32x4[1, 0.7071067690849304, 0.5773502588272095, 0.5]</span>
+</code></pre>
+<p class="calibre6">注意，只有浮点数的数据类型才有这两个方法。</p>
+<h3 id="simdintegertypeshiftleftbyscalar" class="calibre11">SIMD.%IntegerType%.shiftLeftByScalar()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">shiftLeftByScalar</code>方法接受一个 SIMD 值作为参数，然后将每个通道的值左移指定的位数，作为一个新的 SIMD 值返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Int32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">8</span>);
+SIMD.Int32x4.shiftLeftByScalar(a, <span class="hljs-number">1</span>);
+<span class="hljs-comment">// Int32x4[2, 4, 8, 16]</span>
+</code></pre>
+<p class="calibre6">如果左移后，新的值超出了当前数据类型的位数，溢出的部分会被丢弃。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> ix4 = SIMD.Int32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+<span class="hljs-keyword">var</span> jx4 = SIMD.Int32x4.shiftLeftByScalar(ix4, <span class="hljs-number">32</span>);
+<span class="hljs-comment">// Int32x4[0, 0, 0, 0]</span>
+</code></pre>
+<p class="calibre6">注意，只有整数的数据类型才有这个方法。</p>
+<h3 id="simdintegertypeshiftrightbyscalar" class="calibre11">SIMD.%IntegerType%.shiftRightByScalar()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">shiftRightByScalar</code>方法接受一个 SIMD 值作为参数，然后将每个通道的值右移指定的位数，返回一个新的 SIMD 值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Int32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">-8</span>);
+SIMD.Int32x4.shiftRightByScalar(a, <span class="hljs-number">1</span>);
+<span class="hljs-comment">// Int32x4[0, 1, 2, -4]</span>
+</code></pre>
+<p class="calibre6">如果原来通道的值是带符号的值，则符号位保持不变，不受右移影响。如果是不带符号位的值，则右移后头部会补<code class="pcalibre3 calibre13 pcalibre4">0</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Uint32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">-8</span>);
+SIMD.Uint32x4.shiftRightByScalar(a, <span class="hljs-number">1</span>);
+<span class="hljs-comment">// Uint32x4[0, 1, 2, 2147483644]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">-8</code>右移一位变成了<code class="pcalibre3 calibre13 pcalibre4">2147483644</code>，是因为对于 32 位无符号整数来说，<code class="pcalibre3 calibre13 pcalibre4">-8</code>的二进制形式是<code class="pcalibre3 calibre13 pcalibre4">11111111111111111111111111111000</code>，右移一位就变成了<code class="pcalibre3 calibre13 pcalibre4">01111111111111111111111111111100</code>，相当于<code class="pcalibre3 calibre13 pcalibre4">2147483644</code>。</p>
+<p class="calibre6">注意，只有整数的数据类型才有这个方法。</p>
+<h2 id="静态方法：通道处理" class="calibre12">静态方法：通道处理</h2>
+<h3 id="simdtypecheck" class="calibre11">SIMD.%type%.check()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">check</code>方法用于检查一个值是否为当前类型的 SIMD 值。如果是的，就返回这个值，否则就报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">9</span>);
+
+SIMD.Float32x4.check(a);
+<span class="hljs-comment">// Float32x4[1, 2, 3, 9]</span>
+
+SIMD.Float32x4.check([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]) <span class="hljs-comment">// 报错</span>
+SIMD.Int32x4.check(a) <span class="hljs-comment">// 报错</span>
+SIMD.Int32x4.check(<span class="hljs-string">&#39;hello world&#39;</span>) <span class="hljs-comment">// 报错</span>
+</code></pre>
+<h3 id="simdtypeextractlane，simdtypereplacelane" class="calibre11">SIMD.%type%.extractLane()，SIMD.%type%.replaceLane()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">extractLane</code>方法用于返回给定通道的值。它接受两个参数，分别是 SIMD 值和通道编号。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> t = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+SIMD.Float32x4.extractLane(t, <span class="hljs-number">2</span>) <span class="hljs-comment">// 3</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">replaceLane</code>方法用于替换指定通道的值，并返回一个新的 SIMD 值。它接受三个参数，分别是原来的 SIMD 值、通道编号和新的通道值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> t = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+SIMD.Float32x4.replaceLane(t, <span class="hljs-number">2</span>, <span class="hljs-number">42</span>)
+<span class="hljs-comment">// Float32x4[1, 2, 42, 4]</span>
+</code></pre>
+<h3 id="simdtypeload" class="calibre11">SIMD.%type%.load()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">load</code>方法用于从二进制数组读入数据，生成一个新的 SIMD 值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> <span class="hljs-number">Int32Array</span>([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>]);
+SIMD.Int32x4.load(a, <span class="hljs-number">0</span>);
+<span class="hljs-comment">// Int32x4[1, 2, 3, 4]</span>
+
+<span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> <span class="hljs-number">Int32Array</span>([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>]);
+SIMD.Int32x4.load(a, <span class="hljs-number">2</span>);
+<span class="hljs-comment">// Int32x4[3, 4, 5, 6]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">load</code>方法接受两个参数：一个二进制数组和开始读取的位置（从 0 开始）。如果位置不合法（比如<code class="pcalibre3 calibre13 pcalibre4">-1</code>或者超出二进制数组的大小），就会抛出一个错误。</p>
+<p class="calibre6">这个方法还有三个变种<code class="pcalibre3 calibre13 pcalibre4">load1()</code>、<code class="pcalibre3 calibre13 pcalibre4">load2()</code>、<code class="pcalibre3 calibre13 pcalibre4">load3()</code>，表示从指定位置开始，只加载一个通道、二个通道、三个通道的值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 格式</span>
+SIMD.Int32x4.load(tarray, index)
+SIMD.Int32x4.load1(tarray, index)
+SIMD.Int32x4.load2(tarray, index)
+SIMD.Int32x4.load3(tarray, index)
+
+<span class="hljs-comment">// 实例</span>
+<span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> <span class="hljs-number">Int32Array</span>([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>]);
+SIMD.Int32x4.load1(a, <span class="hljs-number">0</span>);
+<span class="hljs-comment">// Int32x4[1, 0, 0, 0]</span>
+SIMD.Int32x4.load2(a, <span class="hljs-number">0</span>);
+<span class="hljs-comment">// Int32x4[1, 2, 0, 0]</span>
+SIMD.Int32x4.load3(a, <span class="hljs-number">0</span>);
+<span class="hljs-comment">// Int32x4[1, 2, 3,0]</span>
+</code></pre>
+<h3 id="simdtypestore" class="calibre11">SIMD.%type%.store()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">store</code>方法用于将一个 SIMD 值，写入一个二进制数组。它接受三个参数，分别是二进制数组、开始写入的数组位置、SIMD 值。它返回写入值以后的二进制数组。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> t1 = <span class="hljs-keyword">new</span> <span class="hljs-number">Int32Array</span>(<span class="hljs-number">8</span>);
+<span class="hljs-keyword">var</span> v1 = SIMD.Int32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+SIMD.Int32x4.store(t1, <span class="hljs-number">0</span>, v1)
+<span class="hljs-comment">// Int32Array[1, 2, 3, 4, 0, 0, 0, 0]</span>
+
+<span class="hljs-keyword">var</span> t2 = <span class="hljs-keyword">new</span> <span class="hljs-number">Int32Array</span>(<span class="hljs-number">8</span>);
+<span class="hljs-keyword">var</span> v2 = SIMD.Int32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+SIMD.Int32x4.store(t2, <span class="hljs-number">2</span>, v2)
+<span class="hljs-comment">// Int32Array[0, 0, 1, 2, 3, 4, 0, 0]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">t1</code>是一个二进制数组，<code class="pcalibre3 calibre13 pcalibre4">v1</code>是一个 SIMD 值，只有四个通道。所以写入<code class="pcalibre3 calibre13 pcalibre4">t1</code>以后，只有前四个位置有值，后四个位置都是 0。而<code class="pcalibre3 calibre13 pcalibre4">t2</code>是从 2 号位置开始写入，所以前两个位置和后两个位置都是 0。</p>
+<p class="calibre6">这个方法还有三个变种<code class="pcalibre3 calibre13 pcalibre4">store1()</code>、<code class="pcalibre3 calibre13 pcalibre4">store2()</code>和<code class="pcalibre3 calibre13 pcalibre4">store3()</code>，表示只写入一个通道、二个通道和三个通道的值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> tarray = <span class="hljs-keyword">new</span> <span class="hljs-number">Int32Array</span>(<span class="hljs-number">8</span>);
+<span class="hljs-keyword">var</span> value = SIMD.Int32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+SIMD.Int32x4.store1(tarray, <span class="hljs-number">0</span>, value);
+<span class="hljs-comment">// Int32Array[1, 0, 0, 0, 0, 0, 0, 0]</span>
+</code></pre>
+<h3 id="simdtypesplat" class="calibre11">SIMD.%type%.splat()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">splat</code>方法返回一个新的 SIMD 值，该值的所有通道都会设成同一个预先给定的值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">SIMD.Float32x4.splat(<span class="hljs-number">3</span>);
+<span class="hljs-comment">// Float32x4[3, 3, 3, 3]</span>
+SIMD.Float64x2.splat(<span class="hljs-number">3</span>);
+<span class="hljs-comment">// Float64x2[3, 3]</span>
+</code></pre>
+<p class="calibre6">如果省略参数，所有整数型的 SIMD 值都会设定<code class="pcalibre3 calibre13 pcalibre4">0</code>，浮点型的 SIMD 值都会设成<code class="pcalibre3 calibre13 pcalibre4">NaN</code>。</p>
+<h3 id="simdtypeswizzle" class="calibre11">SIMD.%type%.swizzle()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">swizzle</code>方法返回一个新的 SIMD 值，重新排列原有的 SIMD 值的通道顺序。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> t = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+SIMD.Float32x4.swizzle(t, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>);
+<span class="hljs-comment">// Float32x4[2,3,1,4]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">swizzle</code>方法的第一个参数是原有的 SIMD 值，后面的参数对应将要返回的 SIMD 值的四个通道。它的意思是新的 SIMD 的四个通道，依次是原来 SIMD 值的 1 号通道、2 号通道、0 号通道、3 号通道。由于 SIMD 值最多可以有 16 个通道，所以<code class="pcalibre3 calibre13 pcalibre4">swizzle</code>方法除了第一个参数以外，最多还可以接受 16 个参数。</p>
+<p class="calibre6">下面是另一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>);
+<span class="hljs-comment">// Float32x4[1.0, 2.0, 3.0, 4.0]</span>
+
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4.swizzle(a, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+<span class="hljs-comment">// Float32x4[1.0, 1.0, 2.0, 2.0]</span>
+
+<span class="hljs-keyword">var</span> c = SIMD.Float32x4.swizzle(a, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
+<span class="hljs-comment">// Float32x4[4.0, 4.0, 4.0, 4.0]</span>
+
+<span class="hljs-keyword">var</span> d = SIMD.Float32x4.swizzle(a, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>);
+<span class="hljs-comment">// Float32x4[4.0, 3.0, 2.0, 1.0]</span>
+</code></pre>
+<h3 id="simdtypeshuffle" class="calibre11">SIMD.%type%.shuffle()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">shuffle</code>方法从两个 SIMD 值之中取出指定通道，返回一个新的 SIMD 值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>);
+
+SIMD.Float32x4.shuffle(a, b, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>);
+<span class="hljs-comment">// Float32x4[2, 6, 8, 3]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">a</code>和<code class="pcalibre3 calibre13 pcalibre4">b</code>一共有 8 个通道，依次编号为 0 到 7。<code class="pcalibre3 calibre13 pcalibre4">shuffle</code>根据编号，取出相应的通道，返回一个新的 SIMD 值。</p>
+<h2 id="静态方法：比较运算" class="calibre12">静态方法：比较运算</h2>
+<h3 id="simdtypeequal，simdtypenotequal" class="calibre11">SIMD.%type%.equal()，SIMD.%type%.notEqual()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">equal</code>方法用来比较两个 SIMD 值<code class="pcalibre3 calibre13 pcalibre4">a</code>和<code class="pcalibre3 calibre13 pcalibre4">b</code>的每一个通道，根据两者是否精确相等（<code class="pcalibre3 calibre13 pcalibre4">a === b</code>），得到一个布尔值。最后，所有通道的比较结果，组成一个新的 SIMD 值，作为掩码返回。<code class="pcalibre3 calibre13 pcalibre4">notEqual</code>方法则是比较两个通道是否不相等（<code class="pcalibre3 calibre13 pcalibre4">a !== b</code>）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">9</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>);
+
+SIMD.Float32x4.equal(a,b)
+<span class="hljs-comment">// Bool32x4[true, false, false, true]</span>
+
+SIMD.Float32x4.notEqual(a,b);
+<span class="hljs-comment">// Bool32x4[false, true, true, false]</span>
+</code></pre>
+<h3 id="simdtypegreaterthan，simdtypegreaterthanorequal" class="calibre11">SIMD.%type%.greaterThan()，SIMD.%type%.greaterThanOrEqual()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">greatThan</code>方法用来比较两个 SIMD 值<code class="pcalibre3 calibre13 pcalibre4">a</code>和<code class="pcalibre3 calibre13 pcalibre4">b</code>的每一个通道，如果在该通道中，<code class="pcalibre3 calibre13 pcalibre4">a</code>较大就得到<code class="pcalibre3 calibre13 pcalibre4">true</code>，否则得到<code class="pcalibre3 calibre13 pcalibre4">false</code>。最后，所有通道的比较结果，组成一个新的 SIMD 值，作为掩码返回。<code class="pcalibre3 calibre13 pcalibre4">greaterThanOrEqual</code>则是比较<code class="pcalibre3 calibre13 pcalibre4">a</code>是否大于等于<code class="pcalibre3 calibre13 pcalibre4">b</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span>, <span class="hljs-number">11</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>);
+
+SIMD.Float32x4.greaterThan(a, b)
+<span class="hljs-comment">// Bool32x4[false, true, false, true]</span>
+
+SIMD.Float32x4.greaterThanOrEqual(a, b)
+<span class="hljs-comment">// Bool32x4[true, true, false, true]</span>
+</code></pre>
+<h3 id="simdtypelessthan，simdtypelessthanorequal" class="calibre11">SIMD.%type%.lessThan()，SIMD.%type%.lessThanOrEqual()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">lessThan</code>方法用来比较两个 SIMD 值<code class="pcalibre3 calibre13 pcalibre4">a</code>和<code class="pcalibre3 calibre13 pcalibre4">b</code>的每一个通道，如果在该通道中，<code class="pcalibre3 calibre13 pcalibre4">a</code>较小就得到<code class="pcalibre3 calibre13 pcalibre4">true</code>，否则得到<code class="pcalibre3 calibre13 pcalibre4">false</code>。最后，所有通道的比较结果，会组成一个新的 SIMD 值，作为掩码返回。<code class="pcalibre3 calibre13 pcalibre4">lessThanOrEqual</code>方法则是比较<code class="pcalibre3 calibre13 pcalibre4">a</code>是否等于<code class="pcalibre3 calibre13 pcalibre4">b</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">11</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>);
+
+SIMD.Float32x4.lessThan(a, b)
+<span class="hljs-comment">// Bool32x4[false, true, true, false]</span>
+
+SIMD.Float32x4.lessThanOrEqual(a, b)
+<span class="hljs-comment">// Bool32x4[true, true, true, false]</span>
+</code></pre>
+<h3 id="simdtypeselect" class="calibre11">SIMD.%type%.select()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">select</code>方法通过掩码生成一个新的 SIMD 值。它接受三个参数，分别是掩码和两个 SIMD 值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>);
+
+<span class="hljs-keyword">var</span> mask = SIMD.Bool32x4(<span class="hljs-number">true</span>, <span class="hljs-number">false</span>, <span class="hljs-number">false</span>, <span class="hljs-number">true</span>);
+
+SIMD.Float32x4.select(mask, a, b);
+<span class="hljs-comment">// Float32x4[1, 6, 7, 4]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">select</code>方法接受掩码和两个 SIMD 值作为参数。当某个通道对应的掩码为<code class="pcalibre3 calibre13 pcalibre4">true</code>时，会选择第一个 SIMD 值的对应通道，否则选择第二个 SIMD 值的对应通道。</p>
+<p class="calibre6">这个方法通常与比较运算符结合使用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">0</span>, <span class="hljs-number">12</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">0</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">50</span>);
+
+<span class="hljs-keyword">var</span> mask = SIMD.Float32x4.lessThan(a,b);
+<span class="hljs-comment">// Bool32x4[false, false, true, true]</span>
+
+<span class="hljs-keyword">var</span> result = SIMD.Float32x4.select(mask, a, b);
+<span class="hljs-comment">// Float32x4[0, 6, 3, 4]</span>
+</code></pre>
+<p class="calibre6">上面代码中，先通过<code class="pcalibre3 calibre13 pcalibre4">lessThan</code>方法生成一个掩码，然后通过<code class="pcalibre3 calibre13 pcalibre4">select</code>方法生成一个由每个通道的较小值组成的新的 SIMD 值。</p>
+<h3 id="simdbooleantypealltrue，simdbooleantypeanytrue" class="calibre11">SIMD.%BooleanType%.allTrue()，SIMD.%BooleanType%.anyTrue()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">allTrue</code>方法接受一个 SIMD 值作为参数，然后返回一个布尔值，表示该 SIMD 值的所有通道是否都为<code class="pcalibre3 calibre13 pcalibre4">true</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Bool32x4(<span class="hljs-number">true</span>, <span class="hljs-number">true</span>, <span class="hljs-number">true</span>, <span class="hljs-number">true</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Bool32x4(<span class="hljs-number">true</span>, <span class="hljs-number">false</span>, <span class="hljs-number">true</span>, <span class="hljs-number">true</span>);
+
+SIMD.Bool32x4.allTrue(a); <span class="hljs-comment">// true</span>
+SIMD.Bool32x4.allTrue(b); <span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">anyTrue</code>方法则是只要有一个通道为<code class="pcalibre3 calibre13 pcalibre4">true</code>，就返回<code class="pcalibre3 calibre13 pcalibre4">true</code>，否则返回<code class="pcalibre3 calibre13 pcalibre4">false</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Bool32x4(<span class="hljs-number">false</span>, <span class="hljs-number">false</span>, <span class="hljs-number">false</span>, <span class="hljs-number">false</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Bool32x4(<span class="hljs-number">false</span>, <span class="hljs-number">false</span>, <span class="hljs-number">true</span>, <span class="hljs-number">false</span>);
+
+SIMD.Bool32x4.anyTrue(a); <span class="hljs-comment">// false</span>
+SIMD.Bool32x4.anyTrue(b); <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">注意，只有四种布尔值数据类型（<code class="pcalibre3 calibre13 pcalibre4">Bool32x4</code>、<code class="pcalibre3 calibre13 pcalibre4">Bool16x8</code>、<code class="pcalibre3 calibre13 pcalibre4">Bool8x16</code>、<code class="pcalibre3 calibre13 pcalibre4">Bool64x2</code>）才有这两个方法。</p>
+<p class="calibre6">这两个方法通常与比较运算符结合使用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> ax4    = SIMD.Float32x4(<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>);
+<span class="hljs-keyword">var</span> bx4    = SIMD.Float32x4(<span class="hljs-number">0.0</span>, <span class="hljs-number">6.0</span>, <span class="hljs-number">7.0</span>, <span class="hljs-number">8.0</span>);
+<span class="hljs-keyword">var</span> ix4    = SIMD.Float32x4.lessThan(ax4, bx4);
+<span class="hljs-keyword">var</span> b1     = SIMD.Int32x4.allTrue(ix4); <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">var</span> b2     = SIMD.Int32x4.anyTrue(ix4); <span class="hljs-comment">// true</span>
+</code></pre>
+<h3 id="simdtypemin，simdtypeminnum" class="calibre11">SIMD.%type%.min()，SIMD.%type%.minNum()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">min</code>方法接受两个 SIMD 值作为参数，将两者的对应通道的较小值，组成一个新的 SIMD 值返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">-1</span>, <span class="hljs-number">-2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5.2</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">0</span>, <span class="hljs-number">-4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5.5</span>);
+SIMD.Float32x4.min(a, b);
+<span class="hljs-comment">// Float32x4[-1, -4, 3, 5.2]</span>
+</code></pre>
+<p class="calibre6">如果有一个通道的值是<code class="pcalibre3 calibre13 pcalibre4">NaN</code>，则会优先返回<code class="pcalibre3 calibre13 pcalibre4">NaN</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> c = SIMD.Float64x2(<span class="hljs-number">NaN</span>, <span class="hljs-number">Infinity</span>)
+<span class="hljs-keyword">var</span> d = SIMD.Float64x2(<span class="hljs-number">1337</span>, <span class="hljs-number">42</span>);
+SIMD.Float64x2.min(c, d);
+<span class="hljs-comment">// Float64x2[NaN, 42]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">minNum</code>方法与<code class="pcalibre3 calibre13 pcalibre4">min</code>的作用一模一样，唯一的区别是如果有一个通道的值是<code class="pcalibre3 calibre13 pcalibre4">NaN</code>，则会优先返回另一个通道的值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> ax4 = SIMD.Float32x4(<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">NaN</span>, <span class="hljs-number">NaN</span>);
+<span class="hljs-keyword">var</span> bx4 = SIMD.Float32x4(<span class="hljs-number">2.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">NaN</span>);
+<span class="hljs-keyword">var</span> cx4 = SIMD.Float32x4.min(ax4, bx4);
+<span class="hljs-comment">// Float32x4[1.0, 1.0, NaN, NaN]</span>
+<span class="hljs-keyword">var</span> dx4 = SIMD.Float32x4.minNum(ax4, bx4);
+<span class="hljs-comment">// Float32x4[1.0, 1.0, 3.0, NaN]</span>
+</code></pre>
+<h3 id="simdtypemax，simdtypemaxnum" class="calibre11">SIMD.%type%.max()，SIMD.%type%.maxNum()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">max</code>方法接受两个 SIMD 值作为参数，将两者的对应通道的较大值，组成一个新的 SIMD 值返回。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">-1</span>, <span class="hljs-number">-2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5.2</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Float32x4(<span class="hljs-number">0</span>, <span class="hljs-number">-4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5.5</span>);
+SIMD.Float32x4.max(a, b);
+<span class="hljs-comment">// Float32x4[0, -2, 6, 5.5]</span>
+</code></pre>
+<p class="calibre6">如果有一个通道的值是<code class="pcalibre3 calibre13 pcalibre4">NaN</code>，则会优先返回<code class="pcalibre3 calibre13 pcalibre4">NaN</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> c = SIMD.Float64x2(<span class="hljs-number">NaN</span>, <span class="hljs-number">Infinity</span>)
+<span class="hljs-keyword">var</span> d = SIMD.Float64x2(<span class="hljs-number">1337</span>, <span class="hljs-number">42</span>);
+SIMD.Float64x2.max(c, d)
+<span class="hljs-comment">// Float64x2[NaN, Infinity]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">maxNum</code>方法与<code class="pcalibre3 calibre13 pcalibre4">max</code>的作用一模一样，唯一的区别是如果有一个通道的值是<code class="pcalibre3 calibre13 pcalibre4">NaN</code>，则会优先返回另一个通道的值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> c = SIMD.Float64x2(<span class="hljs-number">NaN</span>, <span class="hljs-number">Infinity</span>)
+<span class="hljs-keyword">var</span> d = SIMD.Float64x2(<span class="hljs-number">1337</span>, <span class="hljs-number">42</span>);
+SIMD.Float64x2.maxNum(c, d)
+<span class="hljs-comment">// Float64x2[1337, Infinity]</span>
+</code></pre>
+<h2 id="静态方法：位运算" class="calibre12">静态方法：位运算</h2>
+<h3 id="simdtypeand，simdtypeor，simdtypexor，simdtypenot" class="calibre11">SIMD.%type%.and()，SIMD.%type%.or()，SIMD.%type%.xor()，SIMD.%type%.not()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">and</code>方法接受两个 SIMD 值作为参数，返回两者对应的通道进行二进制<code class="pcalibre3 calibre13 pcalibre4">AND</code>运算（<code class="pcalibre3 calibre13 pcalibre4">&amp;</code>）后得到的新的 SIMD 值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Int32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">8</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Int32x4(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+SIMD.Int32x4.and(a, b)
+<span class="hljs-comment">// Int32x4[1, 0, 4, 0]</span>
+</code></pre>
+<p class="calibre6">上面代码中，以通道<code class="pcalibre3 calibre13 pcalibre4">0</code>为例，<code class="pcalibre3 calibre13 pcalibre4">1</code>的二进制形式是<code class="pcalibre3 calibre13 pcalibre4">0001</code>，<code class="pcalibre3 calibre13 pcalibre4">5</code>的二进制形式是<code class="pcalibre3 calibre13 pcalibre4">01001</code>，所以进行<code class="pcalibre3 calibre13 pcalibre4">AND</code>运算以后，得到<code class="pcalibre3 calibre13 pcalibre4">0001</code>。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">or</code>方法接受两个 SIMD 值作为参数，返回两者对应的通道进行二进制<code class="pcalibre3 calibre13 pcalibre4">OR</code>运算（<code class="pcalibre3 calibre13 pcalibre4">|</code>）后得到的新的 SIMD 值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Int32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">8</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Int32x4(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+SIMD.Int32x4.or(a, b)
+<span class="hljs-comment">// Int32x4[5, 7, 5, 13]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">xor</code>方法接受两个 SIMD 值作为参数，返回两者对应的通道进行二进制”异或“运算（<code class="pcalibre3 calibre13 pcalibre4">^</code>）后得到的新的 SIMD 值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Int32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">8</span>);
+<span class="hljs-keyword">var</span> b = SIMD.Int32x4(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+SIMD.Int32x4.xor(a, b)
+<span class="hljs-comment">// Int32x4[4, 7, 1, 13]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">not</code>方法接受一个 SIMD 值作为参数，返回每个通道进行二进制”否“运算（<code class="pcalibre3 calibre13 pcalibre4">~</code>）后得到的新的 SIMD 值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Int32x4(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">8</span>);
+SIMD.Int32x4.not(a)
+<span class="hljs-comment">// Int32x4[-2, -3, -5, -9]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">1</code>的否运算之所以得到<code class="pcalibre3 calibre13 pcalibre4">-2</code>，是因为在计算机内部，负数采用”2 的补码“这种形式进行表示。也就是说，整数<code class="pcalibre3 calibre13 pcalibre4">n</code>的负数形式<code class="pcalibre3 calibre13 pcalibre4">-n</code>，是对每一个二进制位取反以后，再加上 1。因此，直接取反就相当于负数形式再减去 1，比如<code class="pcalibre3 calibre13 pcalibre4">1</code>的负数形式是<code class="pcalibre3 calibre13 pcalibre4">-1</code>，再减去 1，就得到了<code class="pcalibre3 calibre13 pcalibre4">-2</code>。</p>
+<h2 id="静态方法：数据类型转换" class="calibre12">静态方法：数据类型转换</h2>
+<p class="calibre6">SIMD 提供以下方法，用来将一种数据类型转为另一种数据类型。</p>
+<ul class="calibre9">
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">SIMD.%type%.fromFloat32x4()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">SIMD.%type%.fromFloat32x4Bits()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">SIMD.%type%.fromFloat64x2Bits()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">SIMD.%type%.fromInt32x4()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">SIMD.%type%.fromInt32x4Bits()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">SIMD.%type%.fromInt16x8Bits()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">SIMD.%type%.fromInt8x16Bits()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">SIMD.%type%.fromUint32x4()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">SIMD.%type%.fromUint32x4Bits()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">SIMD.%type%.fromUint16x8Bits()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">SIMD.%type%.fromUint8x16Bits()</code></li>
+</ul>
+<p class="calibre6">带有<code class="pcalibre3 calibre13 pcalibre4">Bits</code>后缀的方法，会原封不动地将二进制位拷贝到新的数据类型；不带后缀的方法，则会进行数据类型转换。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> t = SIMD.Float32x4(<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>);
+SIMD.Int32x4.fromFloat32x4(t);
+<span class="hljs-comment">// Int32x4[1, 2, 3, 4]</span>
+
+SIMD.Int32x4.fromFloat32x4Bits(t);
+<span class="hljs-comment">// Int32x4[1065353216, 1073741824, 1077936128, 1082130432]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">fromFloat32x4</code>是将浮点数转为整数，然后存入新的数据类型；<code class="pcalibre3 calibre13 pcalibre4">fromFloat32x4Bits</code>则是将二进制位原封不动地拷贝进入新的数据类型，然后进行解读。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Bits</code>后缀的方法，还可以用于通道数目不对等的拷贝。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> t = SIMD.Float32x4(<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>);
+SIMD.Int16x8.fromFloat32x4Bits(t);
+<span class="hljs-comment">// Int16x8[0, 16256, 0, 16384, 0, 16448, 0, 16512]</span>
+</code></pre>
+<p class="calibre6">上面代码中，原始 SIMD 值<code class="pcalibre3 calibre13 pcalibre4">t</code>是 4 通道的，而目标值是 8 通道的。</p>
+<p class="calibre6">如果数据转换时，原通道的数据大小，超过了目标通道的最大宽度，就会报错。</p>
+<h2 id="实例方法" class="calibre12">实例方法</h2>
+<h3 id="simdtypeprototypetostring" class="calibre11">SIMD.%type%.prototype.toString()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">toString</code>方法返回一个 SIMD 值的字符串形式。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = SIMD.Float32x4(<span class="hljs-number">11</span>, <span class="hljs-number">22</span>, <span class="hljs-number">33</span>, <span class="hljs-number">44</span>);
+a.toString() <span class="hljs-comment">// &#34;SIMD.Float32x4(11, 22, 33, 44)&#34;</span>
+</code></pre>
+<h2 id="实例：求平均值" class="calibre12">实例：求平均值</h2>
+<p class="calibre6">正常模式下，计算<code class="pcalibre3 calibre13 pcalibre4">n</code>个值的平均值，需要运算<code class="pcalibre3 calibre13 pcalibre4">n</code>次。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">average</span>(<span class="hljs-number">list</span>) </span>{
+  <span class="hljs-keyword">var</span> n = list.length;
+  <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0.0</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+    sum += list[i];
+  }
+  <span class="hljs-keyword">return</span> sum / n;
+}
+</code></pre>
+<p class="calibre6">使用 SIMD，可以将计算次数减少到<code class="pcalibre3 calibre13 pcalibre4">n</code>次的四分之一。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">average</span>(<span class="hljs-number">list</span>) </span>{
+  <span class="hljs-keyword">var</span> n = list.length;
+  <span class="hljs-keyword">var</span> sum = SIMD.Float32x4.splat(<span class="hljs-number">0.0</span>);
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; n; i += <span class="hljs-number">4</span>) {
+    sum = SIMD.Float32x4.add(
+      sum,
+      SIMD.Float32x4.load(list, i)
+    );
+  }
+  <span class="hljs-keyword">var</span> total = SIMD.Float32x4.extractLane(sum, <span class="hljs-number">0</span>) +
+              SIMD.Float32x4.extractLane(sum, <span class="hljs-number">1</span>) +
+              SIMD.Float32x4.extractLane(sum, <span class="hljs-number">2</span>) +
+              SIMD.Float32x4.extractLane(sum, <span class="hljs-number">3</span>);
+  <span class="hljs-keyword">return</span> total / n;
+}
+</code></pre>
+<p class="calibre6">上面代码先是每隔四位，将所有的值读入一个 SIMD，然后立刻累加。然后，得到累加值四个通道的总和，再除以<code class="pcalibre3 calibre13 pcalibre4">n</code>就可以了。</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="mixin.html" class="navigation navigation-prev"
+           aria-label="Previous page: 22. Mixin">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="decorator.html" class="navigation navigation-next"
+           aria-label="Next page: 24. Decorator">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "24. Decorator",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "22. Mixin",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

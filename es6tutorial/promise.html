@@ -1,0 +1,1066 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>15. Promise 对象</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="iterator.html"/>
+    <link rel="prev" href="reflect.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="promise.html">15. Promise 对象</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_16">15. Promise 对象</h1>
+        <div class="section">
+            <h1 id="promise-对象" class="calibre5">Promise 对象</h1>
+<h2 id="promise-的含义" class="calibre16">Promise 的含义</h2>
+<p class="calibre6">Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。它由社区最早提出和实现，ES6 将其写进了语言标准，统一了用法，原生提供了<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象。</p>
+<p class="calibre6">所谓<code class="pcalibre3 calibre13 pcalibre4">Promise</code>，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象有以下两个特点。</p>
+<p class="calibre6">（1）对象的状态不受外界影响。<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象代表一个异步操作，有三种状态：<code class="pcalibre3 calibre13 pcalibre4">pending</code>（进行中）、<code class="pcalibre3 calibre13 pcalibre4">fulfilled</code>（已成功）和<code class="pcalibre3 calibre13 pcalibre4">rejected</code>（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是<code class="pcalibre3 calibre13 pcalibre4">Promise</code>这个名字的由来，它的英语意思就是“承诺”，表示其他手段无法改变。</p>
+<p class="calibre6">（2）一旦状态改变，就不会再变，任何时候都可以得到这个结果。<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象的状态改变，只有两种可能：从<code class="pcalibre3 calibre13 pcalibre4">pending</code>变为<code class="pcalibre3 calibre13 pcalibre4">fulfilled</code>和从<code class="pcalibre3 calibre13 pcalibre4">pending</code>变为<code class="pcalibre3 calibre13 pcalibre4">rejected</code>。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果，这时就称为 resolved（已定型）。如果改变已经发生了，你再对<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。</p>
+<p class="calibre6">注意，为了行文方便，本章后面的<code class="pcalibre3 calibre13 pcalibre4">resolved</code>统一只指<code class="pcalibre3 calibre13 pcalibre4">fulfilled</code>状态，不包含<code class="pcalibre3 calibre13 pcalibre4">rejected</code>状态。</p>
+<p class="calibre6">有了<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象提供统一的接口，使得控制异步操作更加容易。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise</code>也有一些缺点。首先，无法取消<code class="pcalibre3 calibre13 pcalibre4">Promise</code>，一旦新建它就会立即执行，无法中途取消。其次，如果不设置回调函数，<code class="pcalibre3 calibre13 pcalibre4">Promise</code>内部抛出的错误，不会反应到外部。第三，当处于<code class="pcalibre3 calibre13 pcalibre4">pending</code>状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。</p>
+<p class="calibre6">如果某些事件不断地反复发生，一般来说，使用 <a href="https://nodejs.org/api/stream.html" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">Stream</a> 模式是比部署<code class="pcalibre3 calibre13 pcalibre4">Promise</code>更好的选择。</p>
+<h2 id="基本用法" class="calibre12">基本用法</h2>
+<p class="calibre6">ES6 规定，<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象是一个构造函数，用来生成<code class="pcalibre3 calibre13 pcalibre4">Promise</code>实例。</p>
+<p class="calibre6">下面代码创造了一个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>实例。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+  <span class="hljs-comment">// ... some code</span>
+
+  <span class="hljs-keyword">if</span> (<span class="hljs-comment">/* 异步操作成功 */</span>){
+    resolve(value);
+  } <span class="hljs-keyword">else</span> {
+    reject(error);
+  }
+});
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise</code>构造函数接受一个函数作为参数，该函数的两个参数分别是<code class="pcalibre3 calibre13 pcalibre4">resolve</code>和<code class="pcalibre3 calibre13 pcalibre4">reject</code>。它们是两个函数，由 JavaScript 引擎提供，不用自己部署。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">resolve</code>函数的作用是，将<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象的状态从“未完成”变为“成功”（即从 pending 变为 resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；<code class="pcalibre3 calibre13 pcalibre4">reject</code>函数的作用是，将<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise</code>实例生成以后，可以用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法分别指定<code class="pcalibre3 calibre13 pcalibre4">resolved</code>状态和<code class="pcalibre3 calibre13 pcalibre4">rejected</code>状态的回调函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">value</span>) </span>{
+  <span class="hljs-comment">// success</span>
+}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{
+  <span class="hljs-comment">// failure</span>
+});
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">then</code>方法可以接受两个回调函数作为参数。第一个回调函数是<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象的状态变为<code class="pcalibre3 calibre13 pcalibre4">resolved</code>时调用，第二个回调函数是<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象的状态变为<code class="pcalibre3 calibre13 pcalibre4">rejected</code>时调用。其中，第二个函数是可选的，不一定要提供。这两个函数都接受<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象传出的值作为参数。</p>
+<p class="calibre6">下面是一个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象的简单例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">timeout</span>(<span class="hljs-number">ms</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>((resolve, reject) =&gt; {
+    setTimeout(resolve, ms, <span class="hljs-string">&#39;done&#39;</span>);
+  });
+}
+
+timeout(<span class="hljs-number">100</span>).then((value) =&gt; {
+  <span class="hljs-number">console</span>.log(value);
+});
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">timeout</code>方法返回一个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>实例，表示一段时间以后才会发生的结果。过了指定的时间（<code class="pcalibre3 calibre13 pcalibre4">ms</code>参数）以后，<code class="pcalibre3 calibre13 pcalibre4">Promise</code>实例的状态变为<code class="pcalibre3 calibre13 pcalibre4">resolved</code>，就会触发<code class="pcalibre3 calibre13 pcalibre4">then</code>方法绑定的回调函数。</p>
+<p class="calibre6">Promise 新建后就会立即执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Promise&#39;</span>);
+  resolve();
+});
+
+promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;resolved.&#39;</span>);
+});
+
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Hi!&#39;</span>);
+
+<span class="hljs-comment">// Promise</span>
+<span class="hljs-comment">// Hi!</span>
+<span class="hljs-comment">// resolved</span>
+</code></pre>
+<p class="calibre6">上面代码中，Promise 新建后立即执行，所以首先输出的是<code class="pcalibre3 calibre13 pcalibre4">Promise</code>。然后，<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定的回调函数，将在当前脚本所有同步任务执行完才会执行，所以<code class="pcalibre3 calibre13 pcalibre4">resolved</code>最后输出。</p>
+<p class="calibre6">下面是异步加载图片的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">loadImageAsync</span>(<span class="hljs-number">url</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+    <span class="hljs-keyword">const</span> image = <span class="hljs-keyword">new</span> Image();
+
+    image.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+      resolve(image);
+    };
+
+    image.onerror = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+      reject(<span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;Could not load image at &#39;</span> + url));
+    };
+
+    image.src = url;
+  });
+}
+</code></pre>
+<p class="calibre6">上面代码中，使用<code class="pcalibre3 calibre13 pcalibre4">Promise</code>包装了一个图片加载的异步操作。如果加载成功，就调用<code class="pcalibre3 calibre13 pcalibre4">resolve</code>方法，否则就调用<code class="pcalibre3 calibre13 pcalibre4">reject</code>方法。</p>
+<p class="calibre6">下面是一个用<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象实现的 Ajax 操作的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> getJSON = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">url</span>) </span>{
+  <span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>)</span>{
+    <span class="hljs-keyword">const</span> handler = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.readyState !== <span class="hljs-number">4</span>) {
+        <span class="hljs-keyword">return</span>;
+      }
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.status === <span class="hljs-number">200</span>) {
+        resolve(<span class="hljs-keyword">this</span>.response);
+      } <span class="hljs-keyword">else</span> {
+        reject(<span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-keyword">this</span>.statusText));
+      }
+    };
+    <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> XMLHttpRequest();
+    client.open(<span class="hljs-string">&#34;GET&#34;</span>, url);
+    client.onreadystatechange = handler;
+    client.responseType = <span class="hljs-string">&#34;json&#34;</span>;
+    client.setRequestHeader(<span class="hljs-string">&#34;Accept&#34;</span>, <span class="hljs-string">&#34;application/json&#34;</span>);
+    client.send();
+
+  });
+
+  <span class="hljs-keyword">return</span> promise;
+};
+
+getJSON(<span class="hljs-string">&#34;/posts.json&#34;</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">json</span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Contents: &#39;</span> + json);
+}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{
+  <span class="hljs-number">console</span>.error(<span class="hljs-string">&#39;出错了&#39;</span>, error);
+});
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">getJSON</code>是对 XMLHttpRequest 对象的封装，用于发出一个针对 JSON 数据的 HTTP 请求，并且返回一个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象。需要注意的是，在<code class="pcalibre3 calibre13 pcalibre4">getJSON</code>内部，<code class="pcalibre3 calibre13 pcalibre4">resolve</code>函数和<code class="pcalibre3 calibre13 pcalibre4">reject</code>函数调用时，都带有参数。</p>
+<p class="calibre6">如果调用<code class="pcalibre3 calibre13 pcalibre4">resolve</code>函数和<code class="pcalibre3 calibre13 pcalibre4">reject</code>函数时带有参数，那么它们的参数会被传递给回调函数。<code class="pcalibre3 calibre13 pcalibre4">reject</code>函数的参数通常是<code class="pcalibre3 calibre13 pcalibre4">Error</code>对象的实例，表示抛出的错误；<code class="pcalibre3 calibre13 pcalibre4">resolve</code>函数的参数除了正常的值以外，还可能是另一个 Promise 实例，比如像下面这样。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> p1 = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">resolve, reject</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+});
+
+<span class="hljs-keyword">const</span> p2 = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">resolve, reject</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+  resolve(p1);
+})
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">p1</code>和<code class="pcalibre3 calibre13 pcalibre4">p2</code>都是 Promise 的实例，但是<code class="pcalibre3 calibre13 pcalibre4">p2</code>的<code class="pcalibre3 calibre13 pcalibre4">resolve</code>方法将<code class="pcalibre3 calibre13 pcalibre4">p1</code>作为参数，即一个异步操作的结果是返回另一个异步操作。</p>
+<p class="calibre6">注意，这时<code class="pcalibre3 calibre13 pcalibre4">p1</code>的状态就会传递给<code class="pcalibre3 calibre13 pcalibre4">p2</code>，也就是说，<code class="pcalibre3 calibre13 pcalibre4">p1</code>的状态决定了<code class="pcalibre3 calibre13 pcalibre4">p2</code>的状态。如果<code class="pcalibre3 calibre13 pcalibre4">p1</code>的状态是<code class="pcalibre3 calibre13 pcalibre4">pending</code>，那么<code class="pcalibre3 calibre13 pcalibre4">p2</code>的回调函数就会等待<code class="pcalibre3 calibre13 pcalibre4">p1</code>的状态改变；如果<code class="pcalibre3 calibre13 pcalibre4">p1</code>的状态已经是<code class="pcalibre3 calibre13 pcalibre4">resolved</code>或者<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，那么<code class="pcalibre3 calibre13 pcalibre4">p2</code>的回调函数将会立刻执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> p1 = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">resolve, reject</span>) </span>{
+  setTimeout(() =&gt; reject(<span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;fail&#39;</span>)), <span class="hljs-number">3000</span>)
+})
+
+<span class="hljs-keyword">const</span> p2 = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">resolve, reject</span>) </span>{
+  setTimeout(() =&gt; resolve(p1), <span class="hljs-number">1000</span>)
+})
+
+p2
+  .then(result =&gt; <span class="hljs-number">console</span>.log(result))
+  .catch(error =&gt; <span class="hljs-number">console</span>.log(error))
+<span class="hljs-comment">// Error: fail</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">p1</code>是一个 Promise，3 秒之后变为<code class="pcalibre3 calibre13 pcalibre4">rejected</code>。<code class="pcalibre3 calibre13 pcalibre4">p2</code>的状态在 1 秒之后改变，<code class="pcalibre3 calibre13 pcalibre4">resolve</code>方法返回的是<code class="pcalibre3 calibre13 pcalibre4">p1</code>。由于<code class="pcalibre3 calibre13 pcalibre4">p2</code>返回的是另一个 Promise，导致<code class="pcalibre3 calibre13 pcalibre4">p2</code>自己的状态无效了，由<code class="pcalibre3 calibre13 pcalibre4">p1</code>的状态决定<code class="pcalibre3 calibre13 pcalibre4">p2</code>的状态。所以，后面的<code class="pcalibre3 calibre13 pcalibre4">then</code>语句都变成针对后者（<code class="pcalibre3 calibre13 pcalibre4">p1</code>）。又过了 2 秒，<code class="pcalibre3 calibre13 pcalibre4">p1</code>变为<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，导致触发<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法指定的回调函数。</p>
+<p class="calibre6">注意，调用<code class="pcalibre3 calibre13 pcalibre4">resolve</code>或<code class="pcalibre3 calibre13 pcalibre4">reject</code>并不会终结 Promise 的参数函数的执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>((resolve, reject) =&gt; {
+  resolve(<span class="hljs-number">1</span>);
+  <span class="hljs-number">console</span>.log(<span class="hljs-number">2</span>);
+}).then(r =&gt; {
+  <span class="hljs-number">console</span>.log(r);
+});
+<span class="hljs-comment">// 2</span>
+<span class="hljs-comment">// 1</span>
+</code></pre>
+<p class="calibre6">上面代码中，调用<code class="pcalibre3 calibre13 pcalibre4">resolve(1)</code>以后，后面的<code class="pcalibre3 calibre13 pcalibre4">console.log(2)</code>还是会执行，并且会首先打印出来。这是因为立即 resolved 的 Promise 是在本轮事件循环的末尾执行，总是晚于本轮循环的同步任务。</p>
+<p class="calibre6">一般来说，调用<code class="pcalibre3 calibre13 pcalibre4">resolve</code>或<code class="pcalibre3 calibre13 pcalibre4">reject</code>以后，Promise 的使命就完成了，后继操作应该放到<code class="pcalibre3 calibre13 pcalibre4">then</code>方法里面，而不应该直接写在<code class="pcalibre3 calibre13 pcalibre4">resolve</code>或<code class="pcalibre3 calibre13 pcalibre4">reject</code>的后面。所以，最好在它们前面加上<code class="pcalibre3 calibre13 pcalibre4">return</code>语句，这样就不会有意外。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>((resolve, reject) =&gt; {
+  <span class="hljs-keyword">return</span> resolve(<span class="hljs-number">1</span>);
+  <span class="hljs-comment">// 后面的语句不会执行</span>
+  <span class="hljs-number">console</span>.log(<span class="hljs-number">2</span>);
+})
+</code></pre>
+<h2 id="promiseprototypethen" class="calibre12">Promise.prototype.then()</h2>
+<p class="calibre6">Promise 实例具有<code class="pcalibre3 calibre13 pcalibre4">then</code>方法，也就是说，<code class="pcalibre3 calibre13 pcalibre4">then</code>方法是定义在原型对象<code class="pcalibre3 calibre13 pcalibre4">Promise.prototype</code>上的。它的作用是为 Promise 实例添加状态改变时的回调函数。前面说过，<code class="pcalibre3 calibre13 pcalibre4">then</code>方法的第一个参数是<code class="pcalibre3 calibre13 pcalibre4">resolved</code>状态的回调函数，第二个参数（可选）是<code class="pcalibre3 calibre13 pcalibre4">rejected</code>状态的回调函数。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">then</code>方法返回的是一个新的<code class="pcalibre3 calibre13 pcalibre4">Promise</code>实例（注意，不是原来那个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>实例）。因此可以采用链式写法，即<code class="pcalibre3 calibre13 pcalibre4">then</code>方法后面再调用另一个<code class="pcalibre3 calibre13 pcalibre4">then</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">getJSON(<span class="hljs-string">&#34;/posts.json&#34;</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">json</span>) </span>{
+  <span class="hljs-keyword">return</span> json.post;
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">post</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<p class="calibre6">上面的代码使用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法，依次指定了两个回调函数。第一个回调函数完成以后，会将返回结果作为参数，传入第二个回调函数。</p>
+<p class="calibre6">采用链式的<code class="pcalibre3 calibre13 pcalibre4">then</code>，可以指定一组按照次序调用的回调函数。这时，前一个回调函数，有可能返回的还是一个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象（即有异步操作），这时后一个回调函数，就会等待该<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象的状态发生变化，才会被调用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">getJSON(<span class="hljs-string">&#34;/post/1.json&#34;</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">post</span>) </span>{
+  <span class="hljs-keyword">return</span> getJSON(post.commentURL);
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">funcA</span>(<span class="hljs-number">comments</span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#34;resolved: &#34;</span>, comments);
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">funcB</span>(<span class="hljs-number">err</span>)</span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#34;rejected: &#34;</span>, err);
+});
+</code></pre>
+<p class="calibre6">上面代码中，第一个<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定的回调函数，返回的是另一个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象。这时，第二个<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定的回调函数，就会等待这个新的<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象状态发生变化。如果变为<code class="pcalibre3 calibre13 pcalibre4">resolved</code>，就调用<code class="pcalibre3 calibre13 pcalibre4">funcA</code>，如果状态变为<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，就调用<code class="pcalibre3 calibre13 pcalibre4">funcB</code>。</p>
+<p class="calibre6">如果采用箭头函数，上面的代码可以写得更简洁。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">getJSON(<span class="hljs-string">&#34;/post/1.json&#34;</span>).then(
+  post =&gt; getJSON(post.commentURL)
+).then(
+  comments =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#34;resolved: &#34;</span>, comments),
+  err =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#34;rejected: &#34;</span>, err)
+);
+</code></pre>
+<h2 id="promiseprototypecatch" class="calibre12">Promise.prototype.catch()</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise.prototype.catch</code>方法是<code class="pcalibre3 calibre13 pcalibre4">.then(null, rejection)</code>的别名，用于指定发生错误时的回调函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">getJSON(<span class="hljs-string">&#39;/posts.json&#39;</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">posts</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{
+  <span class="hljs-comment">// 处理 getJSON 和 前一个回调函数运行时发生的错误</span>
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;发生错误！&#39;</span>, error);
+});
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">getJSON</code>方法返回一个 Promise 对象，如果该对象状态变为<code class="pcalibre3 calibre13 pcalibre4">resolved</code>，则会调用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定的回调函数；如果异步操作抛出错误，状态就会变为<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，就会调用<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法指定的回调函数，处理这个错误。另外，<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定的回调函数，如果运行中抛出错误，也会被<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法捕获。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">p.then((val) =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;fulfilled:&#39;</span>, val))
+  .catch((err) =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;rejected&#39;</span>, err));
+
+<span class="hljs-comment">// 等同于</span>
+p.then((val) =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;fulfilled:&#39;</span>, val))
+  .then(<span class="hljs-number">null</span>, (err) =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#34;rejected:&#34;</span>, err));
+</code></pre>
+<p class="calibre6">下面是一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;test&#39;</span>);
+});
+promise.catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{
+  <span class="hljs-number">console</span>.log(error);
+});
+<span class="hljs-comment">// Error: test</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">promise</code>抛出一个错误，就被<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法指定的回调函数捕获。注意，上面的写法与下面两种写法是等价的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 写法一</span>
+<span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;test&#39;</span>);
+  } <span class="hljs-keyword">catch</span>(e) {
+    reject(e);
+  }
+});
+promise.catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{
+  <span class="hljs-number">console</span>.log(error);
+});
+
+<span class="hljs-comment">// 写法二</span>
+<span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+  reject(<span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;test&#39;</span>));
+});
+promise.catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{
+  <span class="hljs-number">console</span>.log(error);
+});
+</code></pre>
+<p class="calibre6">比较上面两种写法，可以发现<code class="pcalibre3 calibre13 pcalibre4">reject</code>方法的作用，等同于抛出错误。</p>
+<p class="calibre6">如果 Promise 状态已经变成<code class="pcalibre3 calibre13 pcalibre4">resolved</code>，再抛出错误是无效的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+  resolve(<span class="hljs-string">&#39;ok&#39;</span>);
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;test&#39;</span>);
+});
+promise
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">value</span>) </span>{ <span class="hljs-number">console</span>.log(value) })
+  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{ <span class="hljs-number">console</span>.log(error) });
+<span class="hljs-comment">// ok</span>
+</code></pre>
+<p class="calibre6">上面代码中，Promise 在<code class="pcalibre3 calibre13 pcalibre4">resolve</code>语句后面，再抛出错误，不会被捕获，等于没有抛出。因为 Promise 的状态一旦改变，就永久保持该状态，不会再变了。</p>
+<p class="calibre6">Promise 对象的错误具有“冒泡”性质，会一直向后传递，直到被捕获为止。也就是说，错误总是会被下一个<code class="pcalibre3 calibre13 pcalibre4">catch</code>语句捕获。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">getJSON(<span class="hljs-string">&#39;/post/1.json&#39;</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">post</span>) </span>{
+  <span class="hljs-keyword">return</span> getJSON(post.commentURL);
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">comments</span>) </span>{
+  <span class="hljs-comment">// some code</span>
+}).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{
+  <span class="hljs-comment">// 处理前面三个Promise产生的错误</span>
+});
+</code></pre>
+<p class="calibre6">上面代码中，一共有三个 Promise 对象：一个由<code class="pcalibre3 calibre13 pcalibre4">getJSON</code>产生，两个由<code class="pcalibre3 calibre13 pcalibre4">then</code>产生。它们之中任何一个抛出的错误，都会被最后一个<code class="pcalibre3 calibre13 pcalibre4">catch</code>捕获。</p>
+<p class="calibre6">一般来说，不要在<code class="pcalibre3 calibre13 pcalibre4">then</code>方法里面定义 Reject 状态的回调函数（即<code class="pcalibre3 calibre13 pcalibre4">then</code>的第二个参数），总是使用<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// bad</span>
+promise
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">data</span>) </span>{
+    <span class="hljs-comment">// success</span>
+  }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">err</span>) </span>{
+    <span class="hljs-comment">// error</span>
+  });
+
+<span class="hljs-comment">// good</span>
+promise
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">data</span>) </span>{ <span class="hljs-comment">//cb</span>
+    <span class="hljs-comment">// success</span>
+  })
+  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">err</span>) </span>{
+    <span class="hljs-comment">// error</span>
+  });
+</code></pre>
+<p class="calibre6">上面代码中，第二种写法要好于第一种写法，理由是第二种写法可以捕获前面<code class="pcalibre3 calibre13 pcalibre4">then</code>方法执行中的错误，也更接近同步的写法（<code class="pcalibre3 calibre13 pcalibre4">try/catch</code>）。因此，建议总是使用<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法，而不使用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法的第二个参数。</p>
+<p class="calibre6">跟传统的<code class="pcalibre3 calibre13 pcalibre4">try/catch</code>代码块不同的是，如果没有使用<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法指定错误处理的回调函数，Promise 对象抛出的错误不会传递到外层代码，即不会有任何反应。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> someAsyncThing = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+    <span class="hljs-comment">// 下面一行会报错，因为x没有声明</span>
+    resolve(x + <span class="hljs-number">2</span>);
+  });
+};
+
+someAsyncThing().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;everything is great&#39;</span>);
+});
+
+setTimeout(() =&gt; { <span class="hljs-number">console</span>.log(<span class="hljs-number">123</span>) }, <span class="hljs-number">2000</span>);
+<span class="hljs-comment">// Uncaught (in promise) ReferenceError: x is not defined</span>
+<span class="hljs-comment">// 123</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">someAsyncThing</code>函数产生的 Promise 对象，内部有语法错误。浏览器运行到这一行，会打印出错误提示<code class="pcalibre3 calibre13 pcalibre4">ReferenceError: x is not defined</code>，但是不会退出进程、终止脚本执行，2 秒之后还是会输出<code class="pcalibre3 calibre13 pcalibre4">123</code>。这就是说，Promise 内部的错误不会影响到 Promise 外部的代码，通俗的说法就是“Promise 会吃掉错误”。</p>
+<p class="calibre6">这个脚本放在服务器执行，退出码就是<code class="pcalibre3 calibre13 pcalibre4">0</code>（即表示执行成功）。不过，Node 有一个<code class="pcalibre3 calibre13 pcalibre4">unhandledRejection</code>事件，专门监听未捕获的<code class="pcalibre3 calibre13 pcalibre4">reject</code>错误，上面的脚本会触发这个事件的监听函数，可以在监听函数里面抛出错误。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">process.on(<span class="hljs-string">&#39;unhandledRejection&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">err, p</span>) </span>{
+  <span class="hljs-keyword">throw</span> err;
+});
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">unhandledRejection</code>事件的监听函数有两个参数，第一个是错误对象，第二个是报错的 Promise 实例，它可以用来了解发生错误的环境信息。</p>
+<p class="calibre6">注意，Node 有计划在未来废除<code class="pcalibre3 calibre13 pcalibre4">unhandledRejection</code>事件。如果 Promise 内部有未捕获的错误，会直接终止进程，并且进程的退出码不为 0。</p>
+<p class="calibre6">再看下面的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">resolve, reject</span>) </span>{
+  resolve(<span class="hljs-string">&#39;ok&#39;</span>);
+  setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;test&#39;</span>) }, <span class="hljs-number">0</span>)
+});
+promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">value</span>) </span>{ <span class="hljs-number">console</span>.log(value) });
+<span class="hljs-comment">// ok</span>
+<span class="hljs-comment">// Uncaught Error: test</span>
+</code></pre>
+<p class="calibre6">上面代码中，Promise 指定在下一轮“事件循环”再抛出错误。到了那个时候，Promise 的运行已经结束了，所以这个错误是在 Promise 函数体外抛出的，会冒泡到最外层，成了未捕获的错误。</p>
+<p class="calibre6">一般总是建议，Promise 对象后面要跟<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法，这样可以处理 Promise 内部发生的错误。<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法返回的还是一个 Promise 对象，因此后面还可以接着调用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> someAsyncThing = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+    <span class="hljs-comment">// 下面一行会报错，因为x没有声明</span>
+    resolve(x + <span class="hljs-number">2</span>);
+  });
+};
+
+someAsyncThing()
+.catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;oh no&#39;</span>, error);
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;carry on&#39;</span>);
+});
+<span class="hljs-comment">// oh no [ReferenceError: x is not defined]</span>
+<span class="hljs-comment">// carry on</span>
+</code></pre>
+<p class="calibre6">上面代码运行完<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法指定的回调函数，会接着运行后面那个<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定的回调函数。如果没有报错，则会跳过<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Promise</span>.resolve()
+.catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;oh no&#39;</span>, error);
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;carry on&#39;</span>);
+});
+<span class="hljs-comment">// carry on</span>
+</code></pre>
+<p class="calibre6">上面的代码因为没有报错，跳过了<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法，直接执行后面的<code class="pcalibre3 calibre13 pcalibre4">then</code>方法。此时，要是<code class="pcalibre3 calibre13 pcalibre4">then</code>方法里面报错，就与前面的<code class="pcalibre3 calibre13 pcalibre4">catch</code>无关了。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">catch</code>方法之中，还能再抛出错误。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> someAsyncThing = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+    <span class="hljs-comment">// 下面一行会报错，因为x没有声明</span>
+    resolve(x + <span class="hljs-number">2</span>);
+  });
+};
+
+someAsyncThing().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> someOtherAsyncThing();
+}).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;oh no&#39;</span>, error);
+  <span class="hljs-comment">// 下面一行会报错，因为 y 没有声明</span>
+  y + <span class="hljs-number">2</span>;
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;carry on&#39;</span>);
+});
+<span class="hljs-comment">// oh no [ReferenceError: x is not defined]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法抛出一个错误，因为后面没有别的<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法了，导致这个错误不会被捕获，也不会传递到外层。如果改写一下，结果就不一样了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">someAsyncThing().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> someOtherAsyncThing();
+}).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;oh no&#39;</span>, error);
+  <span class="hljs-comment">// 下面一行会报错，因为y没有声明</span>
+  y + <span class="hljs-number">2</span>;
+}).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error</span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;carry on&#39;</span>, error);
+});
+<span class="hljs-comment">// oh no [ReferenceError: x is not defined]</span>
+<span class="hljs-comment">// carry on [ReferenceError: y is not defined]</span>
+</code></pre>
+<p class="calibre6">上面代码中，第二个<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法用来捕获，前一个<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法抛出的错误。</p>
+<h2 id="promiseprototypefinally" class="calibre12">Promise.prototype.finally()</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">finally</code>方法用于指定不管 Promise 对象最后状态如何，都会执行的操作。该方法是 ES2018 引入标准的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">promise
+.then(result =&gt; {···})
+.catch(error =&gt; {···})
+.finally(() =&gt; {···});
+</code></pre>
+<p class="calibre6">上面代码中，不管<code class="pcalibre3 calibre13 pcalibre4">promise</code>最后的状态，在执行完<code class="pcalibre3 calibre13 pcalibre4">then</code>或<code class="pcalibre3 calibre13 pcalibre4">catch</code>指定的回调函数以后，都会执行<code class="pcalibre3 calibre13 pcalibre4">finally</code>方法指定的回调函数。</p>
+<p class="calibre6">下面是一个例子，服务器使用 Promise 处理请求，然后使用<code class="pcalibre3 calibre13 pcalibre4">finally</code>方法关掉服务器。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">server.listen(port)
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+    <span class="hljs-comment">// ...</span>
+  })
+  .finally(server.stop);
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">finally</code>方法的回调函数不接受任何参数，这意味着没有办法知道，前面的 Promise 状态到底是<code class="pcalibre3 calibre13 pcalibre4">fulfilled</code>还是<code class="pcalibre3 calibre13 pcalibre4">rejected</code>。这表明，<code class="pcalibre3 calibre13 pcalibre4">finally</code>方法里面的操作，应该是与状态无关的，不依赖于 Promise 的执行结果。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">finally</code>本质上是<code class="pcalibre3 calibre13 pcalibre4">then</code>方法的特例。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">promise
+.finally(() =&gt; {
+  <span class="hljs-comment">// 语句</span>
+});
+
+<span class="hljs-comment">// 等同于</span>
+promise
+.then(
+  result =&gt; {
+    <span class="hljs-comment">// 语句</span>
+    <span class="hljs-keyword">return</span> result;
+  },
+  error =&gt; {
+    <span class="hljs-comment">// 语句</span>
+    <span class="hljs-keyword">throw</span> error;
+  }
+);
+</code></pre>
+<p class="calibre6">上面代码中，如果不使用<code class="pcalibre3 calibre13 pcalibre4">finally</code>方法，同样的语句需要为成功和失败两种情况各写一次。有了<code class="pcalibre3 calibre13 pcalibre4">finally</code>方法，则只需要写一次。</p>
+<p class="calibre6">它的实现也很简单。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Promise</span>.prototype.finally = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">callback</span>) </span>{
+  <span class="hljs-keyword">let</span> P = <span class="hljs-keyword">this</span>.constructor;
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.then(
+    value  =&gt; P.resolve(callback()).then(() =&gt; value),
+    reason =&gt; P.resolve(callback()).then(() =&gt; { <span class="hljs-keyword">throw</span> reason })
+  );
+};
+</code></pre>
+<p class="calibre6">上面代码中，不管前面的 Promise 是<code class="pcalibre3 calibre13 pcalibre4">fulfilled</code>还是<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，都会执行回调函数<code class="pcalibre3 calibre13 pcalibre4">callback</code>。</p>
+<p class="calibre6">从上面的实现还可以看到，<code class="pcalibre3 calibre13 pcalibre4">finally</code>方法总是会返回原来的值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// resolve 的值是 undefined</span>
+<span class="hljs-number">Promise</span>.resolve(<span class="hljs-number">2</span>).then(() =&gt; {}, () =&gt; {})
+
+<span class="hljs-comment">// resolve 的值是 2</span>
+<span class="hljs-number">Promise</span>.resolve(<span class="hljs-number">2</span>).finally(() =&gt; {})
+
+<span class="hljs-comment">// reject 的值是 undefined</span>
+<span class="hljs-number">Promise</span>.reject(<span class="hljs-number">3</span>).then(() =&gt; {}, () =&gt; {})
+
+<span class="hljs-comment">// reject 的值是 3</span>
+<span class="hljs-number">Promise</span>.reject(<span class="hljs-number">3</span>).finally(() =&gt; {})
+</code></pre>
+<h2 id="promiseall" class="calibre12">Promise.all()</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise.all</code>方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> p = <span class="hljs-number">Promise</span>.all([p1, p2, p3]);
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Promise.all</code>方法接受一个数组作为参数，<code class="pcalibre3 calibre13 pcalibre4">p1</code>、<code class="pcalibre3 calibre13 pcalibre4">p2</code>、<code class="pcalibre3 calibre13 pcalibre4">p3</code>都是 Promise 实例，如果不是，就会先调用下面讲到的<code class="pcalibre3 calibre13 pcalibre4">Promise.resolve</code>方法，将参数转为 Promise 实例，再进一步处理。（<code class="pcalibre3 calibre13 pcalibre4">Promise.all</code>方法的参数可以不是数组，但必须具有 Iterator 接口，且返回的每个成员都是 Promise 实例。）</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">p</code>的状态由<code class="pcalibre3 calibre13 pcalibre4">p1</code>、<code class="pcalibre3 calibre13 pcalibre4">p2</code>、<code class="pcalibre3 calibre13 pcalibre4">p3</code>决定，分成两种情况。</p>
+<p class="calibre6">（1）只有<code class="pcalibre3 calibre13 pcalibre4">p1</code>、<code class="pcalibre3 calibre13 pcalibre4">p2</code>、<code class="pcalibre3 calibre13 pcalibre4">p3</code>的状态都变成<code class="pcalibre3 calibre13 pcalibre4">fulfilled</code>，<code class="pcalibre3 calibre13 pcalibre4">p</code>的状态才会变成<code class="pcalibre3 calibre13 pcalibre4">fulfilled</code>，此时<code class="pcalibre3 calibre13 pcalibre4">p1</code>、<code class="pcalibre3 calibre13 pcalibre4">p2</code>、<code class="pcalibre3 calibre13 pcalibre4">p3</code>的返回值组成一个数组，传递给<code class="pcalibre3 calibre13 pcalibre4">p</code>的回调函数。</p>
+<p class="calibre6">（2）只要<code class="pcalibre3 calibre13 pcalibre4">p1</code>、<code class="pcalibre3 calibre13 pcalibre4">p2</code>、<code class="pcalibre3 calibre13 pcalibre4">p3</code>之中有一个被<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，<code class="pcalibre3 calibre13 pcalibre4">p</code>的状态就变成<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，此时第一个被<code class="pcalibre3 calibre13 pcalibre4">reject</code>的实例的返回值，会传递给<code class="pcalibre3 calibre13 pcalibre4">p</code>的回调函数。</p>
+<p class="calibre6">下面是一个具体的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 生成一个Promise对象的数组</span>
+<span class="hljs-keyword">const</span> promises = [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">11</span>, <span class="hljs-number">13</span>].map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">id</span>) </span>{
+  <span class="hljs-keyword">return</span> getJSON(<span class="hljs-string">&#39;/post/&#39;</span> + id + <span class="hljs-string">&#34;.json&#34;</span>);
+});
+
+<span class="hljs-number">Promise</span>.all(promises).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">posts</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">reason</span>)</span>{
+  <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">promises</code>是包含 6 个 Promise 实例的数组，只有这 6 个实例的状态都变成<code class="pcalibre3 calibre13 pcalibre4">fulfilled</code>，或者其中有一个变为<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，才会调用<code class="pcalibre3 calibre13 pcalibre4">Promise.all</code>方法后面的回调函数。</p>
+<p class="calibre6">下面是另一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> databasePromise = connectDatabase();
+
+<span class="hljs-keyword">const</span> booksPromise = databasePromise
+  .then(findAllBooks);
+
+<span class="hljs-keyword">const</span> userPromise = databasePromise
+  .then(getCurrentUser);
+
+<span class="hljs-number">Promise</span>.all([
+  booksPromise,
+  userPromise
+])
+.then(([books, user]) =&gt; pickTopRecommentations(books, user));
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">booksPromise</code>和<code class="pcalibre3 calibre13 pcalibre4">userPromise</code>是两个异步操作，只有等到它们的结果都返回了，才会触发<code class="pcalibre3 calibre13 pcalibre4">pickTopRecommentations</code>这个回调函数。</p>
+<p class="calibre6">注意，如果作为参数的 Promise 实例，自己定义了<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法，那么它一旦被<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，并不会触发<code class="pcalibre3 calibre13 pcalibre4">Promise.all()</code>的<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> p1 = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>((resolve, reject) =&gt; {
+  resolve(<span class="hljs-string">&#39;hello&#39;</span>);
+})
+.then(result =&gt; result)
+.catch(e =&gt; e);
+
+<span class="hljs-keyword">const</span> p2 = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>((resolve, reject) =&gt; {
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;报错了&#39;</span>);
+})
+.then(result =&gt; result)
+.catch(e =&gt; e);
+
+<span class="hljs-number">Promise</span>.all([p1, p2])
+.then(result =&gt; <span class="hljs-number">console</span>.log(result))
+.catch(e =&gt; <span class="hljs-number">console</span>.log(e));
+<span class="hljs-comment">// [&#34;hello&#34;, Error: 报错了]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">p1</code>会<code class="pcalibre3 calibre13 pcalibre4">resolved</code>，<code class="pcalibre3 calibre13 pcalibre4">p2</code>首先会<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，但是<code class="pcalibre3 calibre13 pcalibre4">p2</code>有自己的<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法，该方法返回的是一个新的 Promise 实例，<code class="pcalibre3 calibre13 pcalibre4">p2</code>指向的实际上是这个实例。该实例执行完<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法后，也会变成<code class="pcalibre3 calibre13 pcalibre4">resolved</code>，导致<code class="pcalibre3 calibre13 pcalibre4">Promise.all()</code>方法参数里面的两个实例都会<code class="pcalibre3 calibre13 pcalibre4">resolved</code>，因此会调用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定的回调函数，而不会调用<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法指定的回调函数。</p>
+<p class="calibre6">如果<code class="pcalibre3 calibre13 pcalibre4">p2</code>没有自己的<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法，就会调用<code class="pcalibre3 calibre13 pcalibre4">Promise.all()</code>的<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> p1 = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>((resolve, reject) =&gt; {
+  resolve(<span class="hljs-string">&#39;hello&#39;</span>);
+})
+.then(result =&gt; result);
+
+<span class="hljs-keyword">const</span> p2 = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>((resolve, reject) =&gt; {
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;报错了&#39;</span>);
+})
+.then(result =&gt; result);
+
+<span class="hljs-number">Promise</span>.all([p1, p2])
+.then(result =&gt; <span class="hljs-number">console</span>.log(result))
+.catch(e =&gt; <span class="hljs-number">console</span>.log(e));
+<span class="hljs-comment">// Error: 报错了</span>
+</code></pre>
+<h2 id="promiserace" class="calibre12">Promise.race()</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise.race</code>方法同样是将多个 Promise 实例，包装成一个新的 Promise 实例。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> p = <span class="hljs-number">Promise</span>.race([p1, p2, p3]);
+</code></pre>
+<p class="calibre6">上面代码中，只要<code class="pcalibre3 calibre13 pcalibre4">p1</code>、<code class="pcalibre3 calibre13 pcalibre4">p2</code>、<code class="pcalibre3 calibre13 pcalibre4">p3</code>之中有一个实例率先改变状态，<code class="pcalibre3 calibre13 pcalibre4">p</code>的状态就跟着改变。那个率先改变的 Promise 实例的返回值，就传递给<code class="pcalibre3 calibre13 pcalibre4">p</code>的回调函数。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise.race</code>方法的参数与<code class="pcalibre3 calibre13 pcalibre4">Promise.all</code>方法一样，如果不是 Promise 实例，就会先调用下面讲到的<code class="pcalibre3 calibre13 pcalibre4">Promise.resolve</code>方法，将参数转为 Promise 实例，再进一步处理。</p>
+<p class="calibre6">下面是一个例子，如果指定时间内没有获得结果，就将 Promise 的状态变为<code class="pcalibre3 calibre13 pcalibre4">reject</code>，否则变为<code class="pcalibre3 calibre13 pcalibre4">resolve</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> p = <span class="hljs-number">Promise</span>.race([
+  fetch(<span class="hljs-string">&#39;/resource-that-may-take-a-while&#39;</span>),
+  <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">resolve, reject</span>) </span>{
+    setTimeout(() =&gt; reject(<span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;request timeout&#39;</span>)), <span class="hljs-number">5000</span>)
+  })
+]);
+
+p
+.then(<span class="hljs-number">console</span>.log)
+.catch(<span class="hljs-number">console</span>.error);
+</code></pre>
+<p class="calibre6">上面代码中，如果 5 秒之内<code class="pcalibre3 calibre13 pcalibre4">fetch</code>方法无法返回结果，变量<code class="pcalibre3 calibre13 pcalibre4">p</code>的状态就会变为<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，从而触发<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法指定的回调函数。</p>
+<h2 id="promiseresolve" class="calibre12">Promise.resolve()</h2>
+<p class="calibre6">有时需要将现有对象转为 Promise 对象，<code class="pcalibre3 calibre13 pcalibre4">Promise.resolve</code>方法就起到这个作用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> jsPromise = <span class="hljs-number">Promise</span>.resolve($.ajax(<span class="hljs-string">&#39;/whatever.json&#39;</span>));
+</code></pre>
+<p class="calibre6">上面代码将 jQuery 生成的<code class="pcalibre3 calibre13 pcalibre4">deferred</code>对象，转为一个新的 Promise 对象。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise.resolve</code>等价于下面的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Promise</span>.resolve(<span class="hljs-string">&#39;foo&#39;</span>)
+<span class="hljs-comment">// 等价于</span>
+<span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(resolve =&gt; resolve(<span class="hljs-string">&#39;foo&#39;</span>))
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise.resolve</code>方法的参数分成四种情况。</p>
+<p class="calibre6"><strong class="calibre17">（1）参数是一个 Promise 实例</strong></p>
+<p class="calibre6">如果参数是 Promise 实例，那么<code class="pcalibre3 calibre13 pcalibre4">Promise.resolve</code>将不做任何修改、原封不动地返回这个实例。</p>
+<p class="calibre6"><strong class="calibre17">（2）参数是一个<code class="pcalibre3 calibre13 pcalibre4">thenable</code>对象</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">thenable</code>对象指的是具有<code class="pcalibre3 calibre13 pcalibre4">then</code>方法的对象，比如下面这个对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> thenable = {
+  then: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+    resolve(<span class="hljs-number">42</span>);
+  }
+};
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise.resolve</code>方法会将这个对象转为 Promise 对象，然后就立即执行<code class="pcalibre3 calibre13 pcalibre4">thenable</code>对象的<code class="pcalibre3 calibre13 pcalibre4">then</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> thenable = {
+  then: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+    resolve(<span class="hljs-number">42</span>);
+  }
+};
+
+<span class="hljs-keyword">let</span> p1 = <span class="hljs-number">Promise</span>.resolve(thenable);
+p1.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">value</span>) </span>{
+  <span class="hljs-number">console</span>.log(value);  <span class="hljs-comment">// 42</span>
+});
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">thenable</code>对象的<code class="pcalibre3 calibre13 pcalibre4">then</code>方法执行后，对象<code class="pcalibre3 calibre13 pcalibre4">p1</code>的状态就变为<code class="pcalibre3 calibre13 pcalibre4">resolved</code>，从而立即执行最后那个<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定的回调函数，输出 42。</p>
+<p class="calibre6"><strong class="calibre17">（3）参数不是具有<code class="pcalibre3 calibre13 pcalibre4">then</code>方法的对象，或根本就不是对象</strong></p>
+<p class="calibre6">如果参数是一个原始值，或者是一个不具有<code class="pcalibre3 calibre13 pcalibre4">then</code>方法的对象，则<code class="pcalibre3 calibre13 pcalibre4">Promise.resolve</code>方法返回一个新的 Promise 对象，状态为<code class="pcalibre3 calibre13 pcalibre4">resolved</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> p = <span class="hljs-number">Promise</span>.resolve(<span class="hljs-string">&#39;Hello&#39;</span>);
+
+p.then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">s</span>)</span>{
+  <span class="hljs-number">console</span>.log(s)
+});
+<span class="hljs-comment">// Hello</span>
+</code></pre>
+<p class="calibre6">上面代码生成一个新的 Promise 对象的实例<code class="pcalibre3 calibre13 pcalibre4">p</code>。由于字符串<code class="pcalibre3 calibre13 pcalibre4">Hello</code>不属于异步操作（判断方法是字符串对象不具有 then 方法），返回 Promise 实例的状态从一生成就是<code class="pcalibre3 calibre13 pcalibre4">resolved</code>，所以回调函数会立即执行。<code class="pcalibre3 calibre13 pcalibre4">Promise.resolve</code>方法的参数，会同时传给回调函数。</p>
+<p class="calibre6"><strong class="calibre17">（4）不带有任何参数</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise.resolve</code>方法允许调用时不带参数，直接返回一个<code class="pcalibre3 calibre13 pcalibre4">resolved</code>状态的 Promise 对象。</p>
+<p class="calibre6">所以，如果希望得到一个 Promise 对象，比较方便的方法就是直接调用<code class="pcalibre3 calibre13 pcalibre4">Promise.resolve</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> p = <span class="hljs-number">Promise</span>.resolve();
+
+p.then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<p class="calibre6">上面代码的变量<code class="pcalibre3 calibre13 pcalibre4">p</code>就是一个 Promise 对象。</p>
+<p class="calibre6">需要注意的是，立即<code class="pcalibre3 calibre13 pcalibre4">resolve</code>的 Promise 对象，是在本轮“事件循环”（event loop）的结束时，而不是在下一轮“事件循环”的开始时。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;three&#39;</span>);
+}, <span class="hljs-number">0</span>);
+
+<span class="hljs-number">Promise</span>.resolve().then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;two&#39;</span>);
+});
+
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;one&#39;</span>);
+
+<span class="hljs-comment">// one</span>
+<span class="hljs-comment">// two</span>
+<span class="hljs-comment">// three</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">setTimeout(fn, 0)</code>在下一轮“事件循环”开始时执行，<code class="pcalibre3 calibre13 pcalibre4">Promise.resolve()</code>在本轮“事件循环”结束时执行，<code class="pcalibre3 calibre13 pcalibre4">console.log(&#39;one&#39;)</code>则是立即执行，因此最先输出。</p>
+<h2 id="promisereject" class="calibre12">Promise.reject()</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Promise.reject(reason)</code>方法也会返回一个新的 Promise 实例，该实例的状态为<code class="pcalibre3 calibre13 pcalibre4">rejected</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> p = <span class="hljs-number">Promise</span>.reject(<span class="hljs-string">&#39;出错了&#39;</span>);
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">const</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>((resolve, reject) =&gt; reject(<span class="hljs-string">&#39;出错了&#39;</span>))
+
+p.then(<span class="hljs-number">null</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">s</span>) </span>{
+  <span class="hljs-number">console</span>.log(s)
+});
+<span class="hljs-comment">// 出错了</span>
+</code></pre>
+<p class="calibre6">上面代码生成一个 Promise 对象的实例<code class="pcalibre3 calibre13 pcalibre4">p</code>，状态为<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，回调函数会立即执行。</p>
+<p class="calibre6">注意，<code class="pcalibre3 calibre13 pcalibre4">Promise.reject()</code>方法的参数，会原封不动地作为<code class="pcalibre3 calibre13 pcalibre4">reject</code>的理由，变成后续方法的参数。这一点与<code class="pcalibre3 calibre13 pcalibre4">Promise.resolve</code>方法不一致。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> thenable = {
+  then(resolve, reject) {
+    reject(<span class="hljs-string">&#39;出错了&#39;</span>);
+  }
+};
+
+<span class="hljs-number">Promise</span>.reject(thenable)
+.catch(e =&gt; {
+  <span class="hljs-number">console</span>.log(e === thenable)
+})
+<span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Promise.reject</code>方法的参数是一个<code class="pcalibre3 calibre13 pcalibre4">thenable</code>对象，执行以后，后面<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法的参数不是<code class="pcalibre3 calibre13 pcalibre4">reject</code>抛出的“出错了”这个字符串，而是<code class="pcalibre3 calibre13 pcalibre4">thenable</code>对象。</p>
+<h2 id="应用" class="calibre12">应用</h2>
+<h3 id="加载图片" class="calibre11">加载图片</h3>
+<p class="calibre6">我们可以将图片的加载写成一个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>，一旦加载完成，<code class="pcalibre3 calibre13 pcalibre4">Promise</code>的状态就发生变化。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> preloadImage = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">path</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">resolve, reject</span>) </span>{
+    <span class="hljs-keyword">const</span> image = <span class="hljs-keyword">new</span> Image();
+    image.onload  = resolve;
+    image.onerror = reject;
+    image.src = path;
+  });
+};
+</code></pre>
+<h3 id="generator-函数与-promise-的结合" class="calibre11">Generator 函数与 Promise 的结合</h3>
+<p class="calibre6">使用 Generator 函数管理流程，遇到异步操作的时候，通常返回一个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">getFoo</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">resolve, reject</span>)</span>{
+    resolve(<span class="hljs-string">&#39;foo&#39;</span>);
+  });
+}
+
+<span class="hljs-keyword">const</span> g = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> foo = <span class="hljs-keyword">yield</span> getFoo();
+    <span class="hljs-number">console</span>.log(foo);
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-number">console</span>.log(e);
+  }
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">run</span> (<span class="hljs-number">generator</span>) </span>{
+  <span class="hljs-keyword">const</span> it = generator();
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">go</span>(<span class="hljs-number">result</span>) </span>{
+    <span class="hljs-keyword">if</span> (result.done) <span class="hljs-keyword">return</span> result.value;
+
+    <span class="hljs-keyword">return</span> result.value.then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">value</span>) </span>{
+      <span class="hljs-keyword">return</span> go(it.next(value));
+    }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">error</span>) </span>{
+      <span class="hljs-keyword">return</span> go(it.throw(error));
+    });
+  }
+
+  go(it.next());
+}
+
+run(g);
+</code></pre>
+<p class="calibre6">上面代码的 Generator 函数<code class="pcalibre3 calibre13 pcalibre4">g</code>之中，有一个异步操作<code class="pcalibre3 calibre13 pcalibre4">getFoo</code>，它返回的就是一个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象。函数<code class="pcalibre3 calibre13 pcalibre4">run</code>用来处理这个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象，并调用下一个<code class="pcalibre3 calibre13 pcalibre4">next</code>方法。</p>
+<h2 id="promisetry" class="calibre12">Promise.try()</h2>
+<p class="calibre6">实际开发中，经常遇到一种情况：不知道或者不想区分，函数<code class="pcalibre3 calibre13 pcalibre4">f</code>是同步函数还是异步操作，但是想用 Promise 来处理它。因为这样就可以不管<code class="pcalibre3 calibre13 pcalibre4">f</code>是否包含异步操作，都用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定下一步流程，用<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法处理<code class="pcalibre3 calibre13 pcalibre4">f</code>抛出的错误。一般就会采用下面的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Promise</span>.resolve().then(f)
+</code></pre>
+<p class="calibre6">上面的写法有一个缺点，就是如果<code class="pcalibre3 calibre13 pcalibre4">f</code>是同步函数，那么它会在本轮事件循环的末尾执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> f = () =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;now&#39;</span>);
+<span class="hljs-number">Promise</span>.resolve().then(f);
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;next&#39;</span>);
+<span class="hljs-comment">// next</span>
+<span class="hljs-comment">// now</span>
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">f</code>是同步的，但是用 Promise 包装了以后，就变成异步执行了。</p>
+<p class="calibre6">那么有没有一种方法，让同步函数同步执行，异步函数异步执行，并且让它们具有统一的 API 呢？回答是可以的，并且还有两种写法。第一种写法是用<code class="pcalibre3 calibre13 pcalibre4">async</code>函数来写。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> f = () =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;now&#39;</span>);
+(<span class="hljs-keyword">async</span> () =&gt; f())();
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;next&#39;</span>);
+<span class="hljs-comment">// now</span>
+<span class="hljs-comment">// next</span>
+</code></pre>
+<p class="calibre6">上面代码中，第二行是一个立即执行的匿名函数，会立即执行里面的<code class="pcalibre3 calibre13 pcalibre4">async</code>函数，因此如果<code class="pcalibre3 calibre13 pcalibre4">f</code>是同步的，就会得到同步的结果；如果<code class="pcalibre3 calibre13 pcalibre4">f</code>是异步的，就可以用<code class="pcalibre3 calibre13 pcalibre4">then</code>指定下一步，就像下面的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-keyword">async</span> () =&gt; f())()
+.then(...)
+</code></pre>
+<p class="calibre6">需要注意的是，<code class="pcalibre3 calibre13 pcalibre4">async () =&gt; f()</code>会吃掉<code class="pcalibre3 calibre13 pcalibre4">f()</code>抛出的错误。所以，如果想捕获错误，要使用<code class="pcalibre3 calibre13 pcalibre4">promise.catch</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-keyword">async</span> () =&gt; f())()
+.then(...)
+.catch(...)
+</code></pre>
+<p class="calibre6">第二种写法是使用<code class="pcalibre3 calibre13 pcalibre4">new Promise()</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> f = () =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;now&#39;</span>);
+(
+  () =&gt; <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(
+    resolve =&gt; resolve(f())
+  )
+)();
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;next&#39;</span>);
+<span class="hljs-comment">// now</span>
+<span class="hljs-comment">// next</span>
+</code></pre>
+<p class="calibre6">上面代码也是使用立即执行的匿名函数，执行<code class="pcalibre3 calibre13 pcalibre4">new Promise()</code>。这种情况下，同步函数也是同步执行的。</p>
+<p class="calibre6">鉴于这是一个很常见的需求，所以现在有一个<a href="https://github.com/ljharb/proposal-promise-try" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">提案</a>，提供<code class="pcalibre3 calibre13 pcalibre4">Promise.try</code>方法替代上面的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> f = () =&gt; <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;now&#39;</span>);
+<span class="hljs-number">Promise</span>.try(f);
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;next&#39;</span>);
+<span class="hljs-comment">// now</span>
+<span class="hljs-comment">// next</span>
+</code></pre>
+<p class="calibre6">事实上，<code class="pcalibre3 calibre13 pcalibre4">Promise.try</code>存在已久，Promise 库<a href="http://bluebirdjs.com/docs/api/promise.try.html" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7"><code class="pcalibre3 calibre13 pcalibre4">Bluebird</code></a>、<a href="https://github.com/kriskowal/q/wiki/API-Reference#promisefcallargs" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7"><code class="pcalibre3 calibre13 pcalibre4">Q</code></a>和<a href="https://github.com/cujojs/when/blob/master/docs/api.md#whentry" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7"><code class="pcalibre3 calibre13 pcalibre4">when</code></a>，早就提供了这个方法。</p>
+<p class="calibre6">由于<code class="pcalibre3 calibre13 pcalibre4">Promise.try</code>为所有操作提供了统一的处理机制，所以如果想用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法管理流程，最好都用<code class="pcalibre3 calibre13 pcalibre4">Promise.try</code>包装一下。这样有<a href="http://cryto.net/~joepie91/blog/2016/05/11/what-is-promise-try-and-why-does-it-matter/" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">许多好处</a>，其中一点就是可以更好地管理异常。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">getUsername</span>(<span class="hljs-number">userId</span>) </span>{
+  <span class="hljs-keyword">return</span> database.users.get({id: userId})
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">user</span>) </span>{
+    <span class="hljs-keyword">return</span> user.name;
+  });
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">database.users.get()</code>返回一个 Promise 对象，如果抛出异步错误，可以用<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法捕获，就像下面这样写。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">database.users.get({id: userId})
+.then(...)
+.catch(...)
+</code></pre>
+<p class="calibre6">但是<code class="pcalibre3 calibre13 pcalibre4">database.users.get()</code>可能还会抛出同步错误（比如数据库连接错误，具体要看实现方法），这时你就不得不用<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>去捕获。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">try</span> {
+  database.users.get({id: userId})
+  .then(...)
+  .catch(...)
+} <span class="hljs-keyword">catch</span> (e) {
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p class="calibre6">上面这样的写法就很笨拙了，这时就可以统一用<code class="pcalibre3 calibre13 pcalibre4">promise.catch()</code>捕获所有同步和异步的错误。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Promise</span>.try(database.users.get({id: userId}))
+  .then(...)
+  .catch(...)
+</code></pre>
+<p class="calibre6">事实上，<code class="pcalibre3 calibre13 pcalibre4">Promise.try</code>就是模拟<code class="pcalibre3 calibre13 pcalibre4">try</code>代码块，就像<code class="pcalibre3 calibre13 pcalibre4">promise.catch</code>模拟的是<code class="pcalibre3 calibre13 pcalibre4">catch</code>代码块。</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="reflect.html" class="navigation navigation-prev"
+           aria-label="Previous page: 14. Reflect">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="iterator.html" class="navigation navigation-next"
+           aria-label="Next page: 16. Iterator 和 for...of 循环">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "16. Iterator 和 for...of 循环",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "14. Reflect",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

@@ -1,0 +1,893 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>26. Module 的加载实现</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="style.html"/>
+    <link rel="prev" href="module.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="module-loader.html">26. Module 的加载实现</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_27">26. Module 的加载实现</h1>
+        <div class="section">
+            <h1 id="module-的加载实现" class="calibre5">Module 的加载实现</h1>
+<p class="calibre6">上一章介绍了模块的语法，本章介绍如何在浏览器和 Node 之中加载 ES6 模块，以及实际开发中经常遇到的一些问题（比如循环加载）。</p>
+<h2 id="浏览器加载" class="calibre12">浏览器加载</h2>
+<h3 id="传统方法" class="calibre11">传统方法</h3>
+<p class="calibre6">HTML 网页中，浏览器通过<code class="pcalibre3 calibre13 pcalibre4">&lt;script&gt;</code>标签加载 JavaScript 脚本。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">&lt;!-- 页面内嵌的脚本 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-_">script</span> <span class="hljs-_">type</span>=<span class="hljs-string">&#34;application/javascript&#34;</span>&gt;</span><span class="hljs-_">
+  <span class="hljs-comment">// module code</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-_">script</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- 外部脚本 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-_">script</span> <span class="hljs-_">type</span>=<span class="hljs-string">&#34;application/javascript&#34;</span> <span class="hljs-_">src</span>=<span class="hljs-string">&#34;path/to/myModule.js&#34;</span>&gt;</span><span class="hljs-_">
+</span><span class="hljs-tag">&lt;/<span class="hljs-_">script</span>&gt;</span>
+</code></pre>
+<p class="calibre6">上面代码中，由于浏览器脚本的默认语言是 JavaScript，因此<code class="pcalibre3 calibre13 pcalibre4">type=&#34;application/javascript&#34;</code>可以省略。</p>
+<p class="calibre6">默认情况下，浏览器是同步加载 JavaScript 脚本，即渲染引擎遇到<code class="pcalibre3 calibre13 pcalibre4">&lt;script&gt;</code>标签就会停下来，等到执行完脚本，再继续向下渲染。如果是外部脚本，还必须加入脚本下载的时间。</p>
+<p class="calibre6">如果脚本体积很大，下载和执行的时间就会很长，因此造成浏览器堵塞，用户会感觉到浏览器“卡死”了，没有任何响应。这显然是很不好的体验，所以浏览器允许脚本异步加载，下面就是两种异步加载的语法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-tag">&lt;<span class="hljs-_">script</span> <span class="hljs-_">src</span>=<span class="hljs-string">&#34;path/to/myModule.js&#34;</span> <span class="hljs-_">defer</span>&gt;</span><span class="hljs-_"></span><span class="hljs-tag">&lt;/<span class="hljs-_">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-_">script</span> <span class="hljs-_">src</span>=<span class="hljs-string">&#34;path/to/myModule.js&#34;</span> <span class="hljs-_">async</span>&gt;</span><span class="hljs-_"></span><span class="hljs-tag">&lt;/<span class="hljs-_">script</span>&gt;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">&lt;script&gt;</code>标签打开<code class="pcalibre3 calibre13 pcalibre4">defer</code>或<code class="pcalibre3 calibre13 pcalibre4">async</code>属性，脚本就会异步加载。渲染引擎遇到这一行命令，就会开始下载外部脚本，但不会等它下载和执行，而是直接执行后面的命令。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">defer</code>与<code class="pcalibre3 calibre13 pcalibre4">async</code>的区别是：<code class="pcalibre3 calibre13 pcalibre4">defer</code>要等到整个页面在内存中正常渲染结束（DOM 结构完全生成，以及其他脚本执行完成），才会执行；<code class="pcalibre3 calibre13 pcalibre4">async</code>一旦下载完，渲染引擎就会中断渲染，执行这个脚本以后，再继续渲染。一句话，<code class="pcalibre3 calibre13 pcalibre4">defer</code>是“渲染完再执行”，<code class="pcalibre3 calibre13 pcalibre4">async</code>是“下载完就执行”。另外，如果有多个<code class="pcalibre3 calibre13 pcalibre4">defer</code>脚本，会按照它们在页面出现的顺序加载，而多个<code class="pcalibre3 calibre13 pcalibre4">async</code>脚本是不能保证加载顺序的。</p>
+<h3 id="加载规则" class="calibre11">加载规则</h3>
+<p class="calibre6">浏览器加载 ES6 模块，也使用<code class="pcalibre3 calibre13 pcalibre4">&lt;script&gt;</code>标签，但是要加入<code class="pcalibre3 calibre13 pcalibre4">type=&#34;module&#34;</code>属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-tag">&lt;<span class="hljs-_">script</span> <span class="hljs-_">type</span>=<span class="hljs-string">&#34;module&#34;</span> <span class="hljs-_">src</span>=<span class="hljs-string">&#34;./foo.js&#34;</span>&gt;</span><span class="hljs-_"></span><span class="hljs-tag">&lt;/<span class="hljs-_">script</span>&gt;</span>
+</code></pre>
+<p class="calibre6">上面代码在网页中插入一个模块<code class="pcalibre3 calibre13 pcalibre4">foo.js</code>，由于<code class="pcalibre3 calibre13 pcalibre4">type</code>属性设为<code class="pcalibre3 calibre13 pcalibre4">module</code>，所以浏览器知道这是一个 ES6 模块。</p>
+<p class="calibre6">浏览器对于带有<code class="pcalibre3 calibre13 pcalibre4">type=&#34;module&#34;</code>的<code class="pcalibre3 calibre13 pcalibre4">&lt;script&gt;</code>，都是异步加载，不会造成堵塞浏览器，即等到整个页面渲染完，再执行模块脚本，等同于打开了<code class="pcalibre3 calibre13 pcalibre4">&lt;script&gt;</code>标签的<code class="pcalibre3 calibre13 pcalibre4">defer</code>属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-tag">&lt;<span class="hljs-_">script</span> <span class="hljs-_">type</span>=<span class="hljs-string">&#34;module&#34;</span> <span class="hljs-_">src</span>=<span class="hljs-string">&#34;./foo.js&#34;</span>&gt;</span><span class="hljs-_"></span><span class="hljs-tag">&lt;/<span class="hljs-_">script</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 等同于 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-_">script</span> <span class="hljs-_">type</span>=<span class="hljs-string">&#34;module&#34;</span> <span class="hljs-_">src</span>=<span class="hljs-string">&#34;./foo.js&#34;</span> <span class="hljs-_">defer</span>&gt;</span><span class="hljs-_"></span><span class="hljs-tag">&lt;/<span class="hljs-_">script</span>&gt;</span>
+</code></pre>
+<p class="calibre6">如果网页有多个<code class="pcalibre3 calibre13 pcalibre4">&lt;script type=&#34;module&#34;&gt;</code>，它们会按照在页面出现的顺序依次执行。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">&lt;script&gt;</code>标签的<code class="pcalibre3 calibre13 pcalibre4">async</code>属性也可以打开，这时只要加载完成，渲染引擎就会中断渲染立即执行。执行完成后，再恢复渲染。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-tag">&lt;<span class="hljs-_">script</span> <span class="hljs-_">type</span>=<span class="hljs-string">&#34;module&#34;</span> <span class="hljs-_">src</span>=<span class="hljs-string">&#34;./foo.js&#34;</span> <span class="hljs-_">async</span>&gt;</span><span class="hljs-_"></span><span class="hljs-tag">&lt;/<span class="hljs-_">script</span>&gt;</span>
+</code></pre>
+<p class="calibre6">一旦使用了<code class="pcalibre3 calibre13 pcalibre4">async</code>属性，<code class="pcalibre3 calibre13 pcalibre4">&lt;script type=&#34;module&#34;&gt;</code>就不会按照在页面出现的顺序执行，而是只要该模块加载完成，就执行该模块。</p>
+<p class="calibre6">ES6 模块也允许内嵌在网页中，语法行为与加载外部脚本完全一致。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-tag">&lt;<span class="hljs-_">script</span> <span class="hljs-_">type</span>=<span class="hljs-string">&#34;module&#34;</span>&gt;</span><span class="hljs-_">
+  <span class="hljs-keyword">import</span> utils <span class="hljs-keyword">from</span> <span class="hljs-string">&#34;./utils.js&#34;</span>;
+
+  <span class="hljs-comment">// other code</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-_">script</span>&gt;</span>
+</code></pre>
+<p class="calibre6">对于外部的模块脚本（上例是<code class="pcalibre3 calibre13 pcalibre4">foo.js</code>），有几点需要注意。</p>
+<ul class="calibre9">
+<li class="calibre10">代码是在模块作用域之中运行，而不是在全局作用域运行。模块内部的顶层变量，外部不可见。</li>
+<li class="calibre10">模块脚本自动采用严格模式，不管有没有声明<code class="pcalibre3 calibre13 pcalibre4">use strict</code>。</li>
+<li class="calibre10">模块之中，可以使用<code class="pcalibre3 calibre13 pcalibre4">import</code>命令加载其他模块（<code class="pcalibre3 calibre13 pcalibre4">.js</code>后缀不可省略，需要提供绝对 URL 或相对 URL），也可以使用<code class="pcalibre3 calibre13 pcalibre4">export</code>命令输出对外接口。</li>
+<li class="calibre10">模块之中，顶层的<code class="pcalibre3 calibre13 pcalibre4">this</code>关键字返回<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，而不是指向<code class="pcalibre3 calibre13 pcalibre4">window</code>。也就是说，在模块顶层使用<code class="pcalibre3 calibre13 pcalibre4">this</code>关键字，是无意义的。</li>
+<li class="calibre10">同一个模块如果加载多次，将只执行一次。</li>
+</ul>
+<p class="calibre6">下面是一个示例模块。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> utils <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;https://example.com/js/utils.js&#39;</span>;
+
+<span class="hljs-keyword">const</span> x = <span class="hljs-number">1</span>;
+
+<span class="hljs-number">console</span>.log(x === <span class="hljs-number">window</span>.x); <span class="hljs-comment">//false</span>
+<span class="hljs-number">console</span>.log(<span class="hljs-keyword">this</span> === <span class="hljs-number">undefined</span>); <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">利用顶层的<code class="pcalibre3 calibre13 pcalibre4">this</code>等于<code class="pcalibre3 calibre13 pcalibre4">undefined</code>这个语法点，可以侦测当前代码是否在 ES6 模块之中。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> isNotModuleScript = <span class="hljs-keyword">this</span> !== <span class="hljs-number">undefined</span>;
+</code></pre>
+<h2 id="es6-模块与-commonjs-模块的差异" class="calibre12">ES6 模块与 CommonJS 模块的差异</h2>
+<p class="calibre6">讨论 Node 加载 ES6 模块之前，必须了解 ES6 模块与 CommonJS 模块完全不同。</p>
+<p class="calibre6">它们有两个重大差异。</p>
+<ul class="calibre9">
+<li class="calibre10">CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</li>
+<li class="calibre10">CommonJS 模块是运行时加载，ES6 模块是编译时输出接口。</li>
+</ul>
+<p class="calibre6">第二个差异是因为 CommonJS 加载的是一个对象（即<code class="pcalibre3 calibre13 pcalibre4">module.exports</code>属性），该对象只有在脚本运行完才会生成。而 ES6 模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成。</p>
+<p class="calibre6">下面重点解释第一个差异。</p>
+<p class="calibre6">CommonJS 模块输出的是值的拷贝，也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。请看下面这个模块文件<code class="pcalibre3 calibre13 pcalibre4">lib.js</code>的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// lib.js</span>
+<span class="hljs-keyword">var</span> counter = <span class="hljs-number">3</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">incCounter</span>(<span class="hljs-number"></span>) </span>{
+  counter++;
+}
+<span class="hljs-number">module</span>.exports = {
+  counter: counter,
+  incCounter: incCounter,
+};
+</code></pre>
+<p class="calibre6">上面代码输出内部变量<code class="pcalibre3 calibre13 pcalibre4">counter</code>和改写这个变量的内部方法<code class="pcalibre3 calibre13 pcalibre4">incCounter</code>。然后，在<code class="pcalibre3 calibre13 pcalibre4">main.js</code>里面加载这个模块。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">var</span> mod = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;./lib&#39;</span>);
+
+<span class="hljs-number">console</span>.log(mod.counter);  <span class="hljs-comment">// 3</span>
+mod.incCounter();
+<span class="hljs-number">console</span>.log(mod.counter); <span class="hljs-comment">// 3</span>
+</code></pre>
+<p class="calibre6">上面代码说明，<code class="pcalibre3 calibre13 pcalibre4">lib.js</code>模块加载以后，它的内部变化就影响不到输出的<code class="pcalibre3 calibre13 pcalibre4">mod.counter</code>了。这是因为<code class="pcalibre3 calibre13 pcalibre4">mod.counter</code>是一个原始类型的值，会被缓存。除非写成一个函数，才能得到内部变动后的值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// lib.js</span>
+<span class="hljs-keyword">var</span> counter = <span class="hljs-number">3</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">incCounter</span>(<span class="hljs-number"></span>) </span>{
+  counter++;
+}
+<span class="hljs-number">module</span>.exports = {
+  get counter() {
+    <span class="hljs-keyword">return</span> counter
+  },
+  incCounter: incCounter,
+};
+</code></pre>
+<p class="calibre6">上面代码中，输出的<code class="pcalibre3 calibre13 pcalibre4">counter</code>属性实际上是一个取值器函数。现在再执行<code class="pcalibre3 calibre13 pcalibre4">main.js</code>，就可以正确读取内部变量<code class="pcalibre3 calibre13 pcalibre4">counter</code>的变动了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ node main.js
+3
+4
+</code></pre>
+<p class="calibre6">ES6 模块的运行机制与 CommonJS 不一样。JS 引擎对脚本静态分析的时候，遇到模块加载命令<code class="pcalibre3 calibre13 pcalibre4">import</code>，就会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。换句话说，ES6 的<code class="pcalibre3 calibre13 pcalibre4">import</code>有点像 Unix 系统的“符号连接”，原始值变了，<code class="pcalibre3 calibre13 pcalibre4">import</code>加载的值也会跟着变。因此，ES6 模块是动态引用，并且不会缓存值，模块里面的变量绑定其所在的模块。</p>
+<p class="calibre6">还是举上面的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// lib.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> counter = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">incCounter</span>(<span class="hljs-number"></span>) </span>{
+  counter++;
+}
+
+<span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">import</span> { counter, incCounter } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./lib&#39;</span>;
+<span class="hljs-number">console</span>.log(counter); <span class="hljs-comment">// 3</span>
+incCounter();
+<span class="hljs-number">console</span>.log(counter); <span class="hljs-comment">// 4</span>
+</code></pre>
+<p class="calibre6">上面代码说明，ES6 模块输入的变量<code class="pcalibre3 calibre13 pcalibre4">counter</code>是活的，完全反应其所在模块<code class="pcalibre3 calibre13 pcalibre4">lib.js</code>内部的变化。</p>
+<p class="calibre6">再举一个出现在<code class="pcalibre3 calibre13 pcalibre4">export</code>一节中的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// m1.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> foo = <span class="hljs-string">&#39;bar&#39;</span>;
+setTimeout(() =&gt; foo = <span class="hljs-string">&#39;baz&#39;</span>, <span class="hljs-number">500</span>);
+
+<span class="hljs-comment">// m2.js</span>
+<span class="hljs-keyword">import</span> {foo} <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./m1.js&#39;</span>;
+<span class="hljs-number">console</span>.log(foo);
+setTimeout(() =&gt; <span class="hljs-number">console</span>.log(foo), <span class="hljs-number">500</span>);
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">m1.js</code>的变量<code class="pcalibre3 calibre13 pcalibre4">foo</code>，在刚加载时等于<code class="pcalibre3 calibre13 pcalibre4">bar</code>，过了 500 毫秒，又变为等于<code class="pcalibre3 calibre13 pcalibre4">baz</code>。</p>
+<p class="calibre6">让我们看看，<code class="pcalibre3 calibre13 pcalibre4">m2.js</code>能否正确读取这个变化。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ babel-node m2.js
+
+bar
+baz
+</code></pre>
+<p class="calibre6">上面代码表明，ES6 模块不会缓存运行结果，而是动态地去被加载的模块取值，并且变量总是绑定其所在的模块。</p>
+<p class="calibre6">由于 ES6 输入的模块变量，只是一个“符号连接”，所以这个变量是只读的，对它进行重新赋值会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// lib.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> obj = {};
+
+<span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">import</span> { obj } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./lib&#39;</span>;
+
+obj.prop = <span class="hljs-number">123</span>; <span class="hljs-comment">// OK</span>
+obj = {}; <span class="hljs-comment">// TypeError</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">main.js</code>从<code class="pcalibre3 calibre13 pcalibre4">lib.js</code>输入变量<code class="pcalibre3 calibre13 pcalibre4">obj</code>，可以对<code class="pcalibre3 calibre13 pcalibre4">obj</code>添加属性，但是重新赋值就会报错。因为变量<code class="pcalibre3 calibre13 pcalibre4">obj</code>指向的地址是只读的，不能重新赋值，这就好比<code class="pcalibre3 calibre13 pcalibre4">main.js</code>创造了一个名为<code class="pcalibre3 calibre13 pcalibre4">obj</code>的<code class="pcalibre3 calibre13 pcalibre4">const</code>变量。</p>
+<p class="calibre6">最后，<code class="pcalibre3 calibre13 pcalibre4">export</code>通过接口，输出的是同一个值。不同的脚本加载这个接口，得到的都是同样的实例。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// mod.js</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">C</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">this</span>.sum = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">this</span>.add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+    <span class="hljs-keyword">this</span>.sum += <span class="hljs-number">1</span>;
+  };
+  <span class="hljs-keyword">this</span>.show = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+    <span class="hljs-number">console</span>.log(<span class="hljs-keyword">this</span>.sum);
+  };
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> c = <span class="hljs-keyword">new</span> C();
+</code></pre>
+<p class="calibre6">上面的脚本<code class="pcalibre3 calibre13 pcalibre4">mod.js</code>，输出的是一个<code class="pcalibre3 calibre13 pcalibre4">C</code>的实例。不同的脚本加载这个模块，得到的都是同一个实例。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// x.js</span>
+<span class="hljs-keyword">import</span> {c} <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./mod&#39;</span>;
+c.add();
+
+<span class="hljs-comment">// y.js</span>
+<span class="hljs-keyword">import</span> {c} <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./mod&#39;</span>;
+c.show();
+
+<span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#39;./x&#39;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#39;./y&#39;</span>;
+</code></pre>
+<p class="calibre6">现在执行<code class="pcalibre3 calibre13 pcalibre4">main.js</code>，输出的是<code class="pcalibre3 calibre13 pcalibre4">1</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ babel-node main.js
+1
+</code></pre>
+<p class="calibre6">这就证明了<code class="pcalibre3 calibre13 pcalibre4">x.js</code>和<code class="pcalibre3 calibre13 pcalibre4">y.js</code>加载的都是<code class="pcalibre3 calibre13 pcalibre4">C</code>的同一个实例。</p>
+<h2 id="node-加载" class="calibre12">Node 加载</h2>
+<h3 id="概述" class="calibre11">概述</h3>
+<p class="calibre6">Node 对 ES6 模块的处理比较麻烦，因为它有自己的 CommonJS 模块格式，与 ES6 模块格式是不兼容的。目前的解决方案是，将两者分开，ES6 模块和 CommonJS 采用各自的加载方案。</p>
+<p class="calibre6">Node 要求 ES6 模块采用<code class="pcalibre3 calibre13 pcalibre4">.mjs</code>后缀文件名。也就是说，只要脚本文件里面使用<code class="pcalibre3 calibre13 pcalibre4">import</code>或者<code class="pcalibre3 calibre13 pcalibre4">export</code>命令，那么就必须采用<code class="pcalibre3 calibre13 pcalibre4">.mjs</code>后缀名。<code class="pcalibre3 calibre13 pcalibre4">require</code>命令不能加载<code class="pcalibre3 calibre13 pcalibre4">.mjs</code>文件，会报错，只有<code class="pcalibre3 calibre13 pcalibre4">import</code>命令才可以加载<code class="pcalibre3 calibre13 pcalibre4">.mjs</code>文件。反过来，<code class="pcalibre3 calibre13 pcalibre4">.mjs</code>文件里面也不能使用<code class="pcalibre3 calibre13 pcalibre4">require</code>命令，必须使用<code class="pcalibre3 calibre13 pcalibre4">import</code>。</p>
+<p class="calibre6">目前，这项功能还在试验阶段。安装 Node v8.5.0 或以上版本，要用<code class="pcalibre3 calibre13 pcalibre4">--experimental-modules</code>参数才能打开该功能。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ node --experimental-modules my-app.mjs
+</code></pre>
+<p class="calibre6">为了与浏览器的<code class="pcalibre3 calibre13 pcalibre4">import</code>加载规则相同，Node 的<code class="pcalibre3 calibre13 pcalibre4">.mjs</code>文件支持 URL 路径。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> <span class="hljs-string">&#39;./foo?query=1&#39;</span>; <span class="hljs-comment">// 加载 ./foo 传入参数 ?query=1</span>
+</code></pre>
+<p class="calibre6">上面代码中，脚本路径带有参数<code class="pcalibre3 calibre13 pcalibre4">?query=1</code>，Node 会按 URL 规则解读。同一个脚本只要参数不同，就会被加载多次，并且保存成不同的缓存。由于这个原因，只要文件名中含有<code class="pcalibre3 calibre13 pcalibre4">:</code>、<code class="pcalibre3 calibre13 pcalibre4">%</code>、<code class="pcalibre3 calibre13 pcalibre4">#</code>、<code class="pcalibre3 calibre13 pcalibre4">?</code>等特殊字符，最好对这些字符进行转义。</p>
+<p class="calibre6">目前，Node 的<code class="pcalibre3 calibre13 pcalibre4">import</code>命令只支持加载本地模块（<code class="pcalibre3 calibre13 pcalibre4">file:</code>协议），不支持加载远程模块。</p>
+<p class="calibre6">如果模块名不含路径，那么<code class="pcalibre3 calibre13 pcalibre4">import</code>命令会去<code class="pcalibre3 calibre13 pcalibre4">node_modules</code>目录寻找这个模块。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> <span class="hljs-string">&#39;baz&#39;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#39;abc/123&#39;</span>;
+</code></pre>
+<p class="calibre6">如果模块名包含路径，那么<code class="pcalibre3 calibre13 pcalibre4">import</code>命令会按照路径去寻找这个名字的脚本文件。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">import</span> <span class="hljs-string">&#39;file:///etc/config/app.json&#39;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#39;./foo&#39;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#39;./foo?search&#39;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#39;../bar&#39;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#39;/baz&#39;</span>;
+</code></pre>
+<p class="calibre6">如果脚本文件省略了后缀名，比如<code class="pcalibre3 calibre13 pcalibre4">import &#39;./foo&#39;</code>，Node 会依次尝试四个后缀名：<code class="pcalibre3 calibre13 pcalibre4">./foo.mjs</code>、<code class="pcalibre3 calibre13 pcalibre4">./foo.js</code>、<code class="pcalibre3 calibre13 pcalibre4">./foo.json</code>、<code class="pcalibre3 calibre13 pcalibre4">./foo.node</code>。如果这些脚本文件都不存在，Node 就会去加载<code class="pcalibre3 calibre13 pcalibre4">./foo/package.json</code>的<code class="pcalibre3 calibre13 pcalibre4">main</code>字段指定的脚本。如果<code class="pcalibre3 calibre13 pcalibre4">./foo/package.json</code>不存在或者没有<code class="pcalibre3 calibre13 pcalibre4">main</code>字段，那么就会依次加载<code class="pcalibre3 calibre13 pcalibre4">./foo/index.mjs</code>、<code class="pcalibre3 calibre13 pcalibre4">./foo/index.js</code>、<code class="pcalibre3 calibre13 pcalibre4">./foo/index.json</code>、<code class="pcalibre3 calibre13 pcalibre4">./foo/index.node</code>。如果以上四个文件还是都不存在，就会抛出错误。</p>
+<p class="calibre6">最后，Node 的<code class="pcalibre3 calibre13 pcalibre4">import</code>命令是异步加载，这一点与浏览器的处理方法相同。</p>
+<h3 id="内部变量" class="calibre11">内部变量</h3>
+<p class="calibre6">ES6 模块应该是通用的，同一个模块不用修改，就可以用在浏览器环境和服务器环境。为了达到这个目标，Node 规定 ES6 模块之中不能使用 CommonJS 模块的特有的一些内部变量。</p>
+<p class="calibre6">首先，就是<code class="pcalibre3 calibre13 pcalibre4">this</code>关键字。ES6 模块之中，顶层的<code class="pcalibre3 calibre13 pcalibre4">this</code>指向<code class="pcalibre3 calibre13 pcalibre4">undefined</code>；CommonJS 模块的顶层<code class="pcalibre3 calibre13 pcalibre4">this</code>指向当前模块，这是两者的一个重大差异。</p>
+<p class="calibre6">其次，以下这些顶层变量在 ES6 模块之中都是不存在的。</p>
+<ul class="calibre9">
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">arguments</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">require</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">module</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">exports</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">__filename</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">__dirname</code></li>
+</ul>
+<p class="calibre6">如果你一定要使用这些变量，有一个变通方法，就是写一个 CommonJS 模块输出这些变量，然后再用 ES6 模块加载这个 CommonJS 模块。但是这样一来，该 ES6 模块就不能直接用于浏览器环境了，所以不推荐这样做。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// expose.js</span>
+<span class="hljs-number">module</span>.exports = {__dirname};
+
+<span class="hljs-comment">// use.mjs</span>
+<span class="hljs-keyword">import</span> expose <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./expose.js&#39;</span>;
+<span class="hljs-keyword">const</span> {__dirname} = expose;
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">expose.js</code>是一个 CommonJS 模块，输出变量<code class="pcalibre3 calibre13 pcalibre4">__dirname</code>，该变量在 ES6 模块之中不存在。ES6 模块加载<code class="pcalibre3 calibre13 pcalibre4">expose.js</code>，就可以得到<code class="pcalibre3 calibre13 pcalibre4">__dirname</code>。</p>
+<h3 id="es6-模块加载-commonjs-模块" class="calibre11">ES6 模块加载 CommonJS 模块</h3>
+<p class="calibre6">CommonJS 模块的输出都定义在<code class="pcalibre3 calibre13 pcalibre4">module.exports</code>这个属性上面。Node 的<code class="pcalibre3 calibre13 pcalibre4">import</code>命令加载 CommonJS 模块，Node 会自动将<code class="pcalibre3 calibre13 pcalibre4">module.exports</code>属性，当作模块的默认输出，即等同于<code class="pcalibre3 calibre13 pcalibre4">export default xxx</code>。</p>
+<p class="calibre6">下面是一个 CommonJS 模块。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// a.js</span>
+<span class="hljs-number">module</span>.exports = {
+  foo: <span class="hljs-string">&#39;hello&#39;</span>,
+  bar: <span class="hljs-string">&#39;world&#39;</span>
+};
+
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  foo: <span class="hljs-string">&#39;hello&#39;</span>,
+  bar: <span class="hljs-string">&#39;world&#39;</span>
+};
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">import</code>命令加载上面的模块，<code class="pcalibre3 calibre13 pcalibre4">module.exports</code>会被视为默认输出，即<code class="pcalibre3 calibre13 pcalibre4">import</code>命令实际上输入的是这样一个对象<code class="pcalibre3 calibre13 pcalibre4">{ default: module.exports }</code>。</p>
+<p class="calibre6">所以，一共有三种写法，可以拿到 CommonJS 模块的<code class="pcalibre3 calibre13 pcalibre4">module.exports</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 写法一</span>
+<span class="hljs-keyword">import</span> baz <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./a&#39;</span>;
+<span class="hljs-comment">// baz = {foo: &#39;hello&#39;, bar: &#39;world&#39;};</span>
+
+<span class="hljs-comment">// 写法二</span>
+<span class="hljs-keyword">import</span> {<span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> baz} <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./a&#39;</span>;
+<span class="hljs-comment">// baz = {foo: &#39;hello&#39;, bar: &#39;world&#39;};</span>
+
+<span class="hljs-comment">// 写法三</span>
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> baz <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./a&#39;</span>;
+<span class="hljs-comment">// baz = {</span>
+<span class="hljs-comment">//   get default() {return module.exports;},</span>
+<span class="hljs-comment">//   get foo() {return this.default.foo}.bind(baz),</span>
+<span class="hljs-comment">//   get bar() {return this.default.bar}.bind(baz)</span>
+<span class="hljs-comment">// }</span>
+</code></pre>
+<p class="calibre6">上面代码的第三种写法，可以通过<code class="pcalibre3 calibre13 pcalibre4">baz.default</code>拿到<code class="pcalibre3 calibre13 pcalibre4">module.exports</code>。<code class="pcalibre3 calibre13 pcalibre4">foo</code>属性和<code class="pcalibre3 calibre13 pcalibre4">bar</code>属性就是可以通过这种方法拿到了<code class="pcalibre3 calibre13 pcalibre4">module.exports</code>。</p>
+<p class="calibre6">下面是一些例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// b.js</span>
+<span class="hljs-number">module</span>.exports = <span class="hljs-number">null</span>;
+
+<span class="hljs-comment">// es.js</span>
+<span class="hljs-keyword">import</span> foo <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./b&#39;</span>;
+<span class="hljs-comment">// foo = null;</span>
+
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> bar <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./b&#39;</span>;
+<span class="hljs-comment">// bar = { default:null };</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">es.js</code>采用第二种写法时，要通过<code class="pcalibre3 calibre13 pcalibre4">bar.default</code>这样的写法，才能拿到<code class="pcalibre3 calibre13 pcalibre4">module.exports</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// c.js</span>
+<span class="hljs-number">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">two</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+};
+
+<span class="hljs-comment">// es.js</span>
+<span class="hljs-keyword">import</span> foo <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./c&#39;</span>;
+foo(); <span class="hljs-comment">// 2</span>
+
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> bar <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./c&#39;</span>;
+bar.default(); <span class="hljs-comment">// 2</span>
+bar(); <span class="hljs-comment">// throws, bar is not a function</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">bar</code>本身是一个对象，不能当作函数调用，只能通过<code class="pcalibre3 calibre13 pcalibre4">bar.default</code>调用。</p>
+<p class="calibre6">CommonJS 模块的输出缓存机制，在 ES6 加载方式下依然有效。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// foo.js</span>
+<span class="hljs-number">module</span>.exports = <span class="hljs-number">123</span>;
+setTimeout(_ =&gt; <span class="hljs-number">module</span>.exports = <span class="hljs-number">null</span>);
+</code></pre>
+<p class="calibre6">上面代码中，对于加载<code class="pcalibre3 calibre13 pcalibre4">foo.js</code>的脚本，<code class="pcalibre3 calibre13 pcalibre4">module.exports</code>将一直是<code class="pcalibre3 calibre13 pcalibre4">123</code>，而不会变成<code class="pcalibre3 calibre13 pcalibre4">null</code>。</p>
+<p class="calibre6">由于 ES6 模块是编译时确定输出接口，CommonJS 模块是运行时确定输出接口，所以采用<code class="pcalibre3 calibre13 pcalibre4">import</code>命令加载 CommonJS 模块时，不允许采用下面的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 不正确</span>
+<span class="hljs-keyword">import</span> { readfile } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;fs&#39;</span>;
+</code></pre>
+<p class="calibre6">上面的写法不正确，因为<code class="pcalibre3 calibre13 pcalibre4">fs</code>是 CommonJS 格式，只有在运行时才能确定<code class="pcalibre3 calibre13 pcalibre4">readfile</code>接口，而<code class="pcalibre3 calibre13 pcalibre4">import</code>命令要求编译时就确定这个接口。解决方法就是改为整体输入。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 正确的写法一</span>
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;express&#39;</span>;
+<span class="hljs-keyword">const</span> app = express.default();
+
+<span class="hljs-comment">// 正确的写法二</span>
+<span class="hljs-keyword">import</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;express&#39;</span>;
+<span class="hljs-keyword">const</span> app = express();
+</code></pre>
+<h3 id="commonjs-模块加载-es6-模块" class="calibre11">CommonJS 模块加载 ES6 模块</h3>
+<p class="calibre6">CommonJS 模块加载 ES6 模块，不能使用<code class="pcalibre3 calibre13 pcalibre4">require</code>命令，而要使用<code class="pcalibre3 calibre13 pcalibre4">import()</code>函数。ES6 模块的所有输出接口，会成为输入对象的属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// es.mjs</span>
+<span class="hljs-keyword">let</span> foo = { bar: <span class="hljs-string">&#39;my-default&#39;</span> };
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> foo;
+
+<span class="hljs-comment">// cjs.js</span>
+<span class="hljs-keyword">const</span> es_namespace = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#39;./es.mjs&#39;</span>);
+<span class="hljs-comment">// es_namespace = {</span>
+<span class="hljs-comment">//   get default() {</span>
+<span class="hljs-comment">//     ...</span>
+<span class="hljs-comment">//   }</span>
+<span class="hljs-comment">// }</span>
+<span class="hljs-number">console</span>.log(es_namespace.default);
+<span class="hljs-comment">// { bar:&#39;my-default&#39; }</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">default</code>接口变成了<code class="pcalibre3 calibre13 pcalibre4">es_namespace.default</code>属性。</p>
+<p class="calibre6">下面是另一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// es.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> foo = { bar:<span class="hljs-string">&#39;my-default&#39;</span> };
+<span class="hljs-keyword">export</span> { foo <span class="hljs-keyword">as</span> bar };
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{};
+<span class="hljs-keyword">export</span> <span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">c</span> </span>{};
+
+<span class="hljs-comment">// cjs.js</span>
+<span class="hljs-keyword">const</span> es_namespace = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#39;./es&#39;</span>);
+<span class="hljs-comment">// es_namespace = {</span>
+<span class="hljs-comment">//   get foo() {return foo;}</span>
+<span class="hljs-comment">//   get bar() {return foo;}</span>
+<span class="hljs-comment">//   get f() {return f;}</span>
+<span class="hljs-comment">//   get c() {return c;}</span>
+<span class="hljs-comment">// }</span>
+</code></pre>
+<h2 id="循环加载" class="calibre12">循环加载</h2>
+<p class="calibre6">“循环加载”（circular dependency）指的是，<code class="pcalibre3 calibre13 pcalibre4">a</code>脚本的执行依赖<code class="pcalibre3 calibre13 pcalibre4">b</code>脚本，而<code class="pcalibre3 calibre13 pcalibre4">b</code>脚本的执行又依赖<code class="pcalibre3 calibre13 pcalibre4">a</code>脚本。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// a.js</span>
+<span class="hljs-keyword">var</span> b = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;b&#39;</span>);
+
+<span class="hljs-comment">// b.js</span>
+<span class="hljs-keyword">var</span> a = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;a&#39;</span>);
+</code></pre>
+<p class="calibre6">通常，“循环加载”表示存在强耦合，如果处理不好，还可能导致递归加载，使得程序无法执行，因此应该避免出现。</p>
+<p class="calibre6">但是实际上，这是很难避免的，尤其是依赖关系复杂的大项目，很容易出现<code class="pcalibre3 calibre13 pcalibre4">a</code>依赖<code class="pcalibre3 calibre13 pcalibre4">b</code>，<code class="pcalibre3 calibre13 pcalibre4">b</code>依赖<code class="pcalibre3 calibre13 pcalibre4">c</code>，<code class="pcalibre3 calibre13 pcalibre4">c</code>又依赖<code class="pcalibre3 calibre13 pcalibre4">a</code>这样的情况。这意味着，模块加载机制必须考虑“循环加载”的情况。</p>
+<p class="calibre6">对于 JavaScript 语言来说，目前最常见的两种模块格式 CommonJS 和 ES6，处理“循环加载”的方法是不一样的，返回的结果也不一样。</p>
+<h3 id="commonjs-模块的加载原理" class="calibre11">CommonJS 模块的加载原理</h3>
+<p class="calibre6">介绍 ES6 如何处理“循环加载”之前，先介绍目前最流行的 CommonJS 模块格式的加载原理。</p>
+<p class="calibre6">CommonJS 的一个模块，就是一个脚本文件。<code class="pcalibre3 calibre13 pcalibre4">require</code>命令第一次加载该脚本，就会执行整个脚本，然后在内存生成一个对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">{
+  id: <span class="hljs-string">&#39;...&#39;</span>,
+  exports: { ... },
+  loaded: <span class="hljs-number">true</span>,
+  ...
+}
+</code></pre>
+<p class="calibre6">上面代码就是 Node 内部加载模块后生成的一个对象。该对象的<code class="pcalibre3 calibre13 pcalibre4">id</code>属性是模块名，<code class="pcalibre3 calibre13 pcalibre4">exports</code>属性是模块输出的各个接口，<code class="pcalibre3 calibre13 pcalibre4">loaded</code>属性是一个布尔值，表示该模块的脚本是否执行完毕。其他还有很多属性，这里都省略了。</p>
+<p class="calibre6">以后需要用到这个模块的时候，就会到<code class="pcalibre3 calibre13 pcalibre4">exports</code>属性上面取值。即使再次执行<code class="pcalibre3 calibre13 pcalibre4">require</code>命令，也不会再次执行该模块，而是到缓存之中取值。也就是说，CommonJS 模块无论加载多少次，都只会在第一次加载时运行一次，以后再加载，就返回第一次运行的结果，除非手动清除系统缓存。</p>
+<h3 id="commonjs-模块的循环加载" class="calibre11">CommonJS 模块的循环加载</h3>
+<p class="calibre6">CommonJS 模块的重要特性是加载时执行，即脚本代码在<code class="pcalibre3 calibre13 pcalibre4">require</code>的时候，就会全部执行。一旦出现某个模块被&#34;循环加载&#34;，就只输出已经执行的部分，还未执行的部分不会输出。</p>
+<p class="calibre6">让我们来看，Node <a href="https://nodejs.org/api/modules.html#modules_cycles" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">官方文档</a>里面的例子。脚本文件<code class="pcalibre3 calibre13 pcalibre4">a.js</code>代码如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">exports.done = <span class="hljs-number">false</span>;
+<span class="hljs-keyword">var</span> b = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;./b.js&#39;</span>);
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;在 a.js 之中，b.done = %j&#39;</span>, b.done);
+exports.done = <span class="hljs-number">true</span>;
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;a.js 执行完毕&#39;</span>);
+</code></pre>
+<p class="calibre6">上面代码之中，<code class="pcalibre3 calibre13 pcalibre4">a.js</code>脚本先输出一个<code class="pcalibre3 calibre13 pcalibre4">done</code>变量，然后加载另一个脚本文件<code class="pcalibre3 calibre13 pcalibre4">b.js</code>。注意，此时<code class="pcalibre3 calibre13 pcalibre4">a.js</code>代码就停在这里，等待<code class="pcalibre3 calibre13 pcalibre4">b.js</code>执行完毕，再往下执行。</p>
+<p class="calibre6">再看<code class="pcalibre3 calibre13 pcalibre4">b.js</code>的代码。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">exports.done = <span class="hljs-number">false</span>;
+<span class="hljs-keyword">var</span> a = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;./a.js&#39;</span>);
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;在 b.js 之中，a.done = %j&#39;</span>, a.done);
+exports.done = <span class="hljs-number">true</span>;
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;b.js 执行完毕&#39;</span>);
+</code></pre>
+<p class="calibre6">上面代码之中，<code class="pcalibre3 calibre13 pcalibre4">b.js</code>执行到第二行，就会去加载<code class="pcalibre3 calibre13 pcalibre4">a.js</code>，这时，就发生了“循环加载”。系统会去<code class="pcalibre3 calibre13 pcalibre4">a.js</code>模块对应对象的<code class="pcalibre3 calibre13 pcalibre4">exports</code>属性取值，可是因为<code class="pcalibre3 calibre13 pcalibre4">a.js</code>还没有执行完，从<code class="pcalibre3 calibre13 pcalibre4">exports</code>属性只能取回已经执行的部分，而不是最后的值。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">a.js</code>已经执行的部分，只有一行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">exports.done = <span class="hljs-number">false</span>;
+</code></pre>
+<p class="calibre6">因此，对于<code class="pcalibre3 calibre13 pcalibre4">b.js</code>来说，它从<code class="pcalibre3 calibre13 pcalibre4">a.js</code>只输入一个变量<code class="pcalibre3 calibre13 pcalibre4">done</code>，值为<code class="pcalibre3 calibre13 pcalibre4">false</code>。</p>
+<p class="calibre6">然后，<code class="pcalibre3 calibre13 pcalibre4">b.js</code>接着往下执行，等到全部执行完毕，再把执行权交还给<code class="pcalibre3 calibre13 pcalibre4">a.js</code>。于是，<code class="pcalibre3 calibre13 pcalibre4">a.js</code>接着往下执行，直到执行完毕。我们写一个脚本<code class="pcalibre3 calibre13 pcalibre4">main.js</code>，验证这个过程。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;./a.js&#39;</span>);
+<span class="hljs-keyword">var</span> b = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;./b.js&#39;</span>);
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;在 main.js 之中, a.done=%j, b.done=%j&#39;</span>, a.done, b.done);
+</code></pre>
+<p class="calibre6">执行<code class="pcalibre3 calibre13 pcalibre4">main.js</code>，运行结果如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ node main.js
+
+在 b.js 之中，a.done = <span class="hljs-number">false</span>
+b.js 执行完毕
+在 a.js 之中，b.done = <span class="hljs-number">true</span>
+a.js 执行完毕
+在 main.js 之中, a.done=<span class="hljs-number">true</span>, b.done=<span class="hljs-number">true</span>
+</code></pre>
+<p class="calibre6">上面的代码证明了两件事。一是，在<code class="pcalibre3 calibre13 pcalibre4">b.js</code>之中，<code class="pcalibre3 calibre13 pcalibre4">a.js</code>没有执行完毕，只执行了第一行。二是，<code class="pcalibre3 calibre13 pcalibre4">main.js</code>执行到第二行时，不会再次执行<code class="pcalibre3 calibre13 pcalibre4">b.js</code>，而是输出缓存的<code class="pcalibre3 calibre13 pcalibre4">b.js</code>的执行结果，即它的第四行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">exports.done = <span class="hljs-number">true</span>;
+</code></pre>
+<p class="calibre6">总之，CommonJS 输入的是被输出值的拷贝，不是引用。</p>
+<p class="calibre6">另外，由于 CommonJS 模块遇到循环加载时，返回的是当前已经执行的部分的值，而不是代码全部执行后的值，两者可能会有差异。所以，输入变量的时候，必须非常小心。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> a = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;a&#39;</span>); <span class="hljs-comment">// 安全的写法</span>
+<span class="hljs-keyword">var</span> foo = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;a&#39;</span>).foo; <span class="hljs-comment">// 危险的写法</span>
+
+exports.good = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">arg</span>) </span>{
+  <span class="hljs-keyword">return</span> a.foo(<span class="hljs-string">&#39;good&#39;</span>, arg); <span class="hljs-comment">// 使用的是 a.foo 的最新值</span>
+};
+
+exports.bad = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">arg</span>) </span>{
+  <span class="hljs-keyword">return</span> foo(<span class="hljs-string">&#39;bad&#39;</span>, arg); <span class="hljs-comment">// 使用的是一个部分加载时的值</span>
+};
+</code></pre>
+<p class="calibre6">上面代码中，如果发生循环加载，<code class="pcalibre3 calibre13 pcalibre4">require(&#39;a&#39;).foo</code>的值很可能后面会被改写，改用<code class="pcalibre3 calibre13 pcalibre4">require(&#39;a&#39;)</code>会更保险一点。</p>
+<h3 id="es6-模块的循环加载" class="calibre11">ES6 模块的循环加载</h3>
+<p class="calibre6">ES6 处理“循环加载”与 CommonJS 有本质的不同。ES6 模块是动态引用，如果使用<code class="pcalibre3 calibre13 pcalibre4">import</code>从一个模块加载变量（即<code class="pcalibre3 calibre13 pcalibre4">import foo from &#39;foo&#39;</code>），那些变量不会被缓存，而是成为一个指向被加载模块的引用，需要开发者自己保证，真正取值的时候能够取到值。</p>
+<p class="calibre6">请看下面这个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// a.mjs</span>
+<span class="hljs-keyword">import</span> {bar} <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./b&#39;</span>;
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;a.mjs&#39;</span>);
+<span class="hljs-number">console</span>.log(bar);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> foo = <span class="hljs-string">&#39;foo&#39;</span>;
+
+<span class="hljs-comment">// b.mjs</span>
+<span class="hljs-keyword">import</span> {foo} <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./a&#39;</span>;
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;b.mjs&#39;</span>);
+<span class="hljs-number">console</span>.log(foo);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> bar = <span class="hljs-string">&#39;bar&#39;</span>;
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">a.mjs</code>加载<code class="pcalibre3 calibre13 pcalibre4">b.mjs</code>，<code class="pcalibre3 calibre13 pcalibre4">b.mjs</code>又加载<code class="pcalibre3 calibre13 pcalibre4">a.mjs</code>，构成循环加载。执行<code class="pcalibre3 calibre13 pcalibre4">a.mjs</code>，结果如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ node --experimental-modules a.mjs
+b.mjs
+ReferenceError: foo is not defined
+</code></pre>
+<p class="calibre6">上面代码中，执行<code class="pcalibre3 calibre13 pcalibre4">a.mjs</code>以后会报错，<code class="pcalibre3 calibre13 pcalibre4">foo</code>变量未定义，这是为什么？</p>
+<p class="calibre6">让我们一行行来看，ES6 循环加载是怎么处理的。首先，执行<code class="pcalibre3 calibre13 pcalibre4">a.mjs</code>以后，引擎发现它加载了<code class="pcalibre3 calibre13 pcalibre4">b.mjs</code>，因此会优先执行<code class="pcalibre3 calibre13 pcalibre4">b.mjs</code>，然后再执行<code class="pcalibre3 calibre13 pcalibre4">a.mjs</code>。接着，执行<code class="pcalibre3 calibre13 pcalibre4">b.mjs</code>的时候，已知它从<code class="pcalibre3 calibre13 pcalibre4">a.mjs</code>输入了<code class="pcalibre3 calibre13 pcalibre4">foo</code>接口，这时不会去执行<code class="pcalibre3 calibre13 pcalibre4">a.mjs</code>，而是认为这个接口已经存在了，继续往下执行。执行到第三行<code class="pcalibre3 calibre13 pcalibre4">console.log(foo)</code>的时候，才发现这个接口根本没定义，因此报错。</p>
+<p class="calibre6">解决这个问题的方法，就是让<code class="pcalibre3 calibre13 pcalibre4">b.mjs</code>运行的时候，<code class="pcalibre3 calibre13 pcalibre4">foo</code>已经有定义了。这可以通过将<code class="pcalibre3 calibre13 pcalibre4">foo</code>写成函数来解决。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// a.mjs</span>
+<span class="hljs-keyword">import</span> {bar} <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./b&#39;</span>;
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;a.mjs&#39;</span>);
+<span class="hljs-number">console</span>.log(bar());
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;foo&#39;</span> }
+<span class="hljs-keyword">export</span> {foo};
+
+<span class="hljs-comment">// b.mjs</span>
+<span class="hljs-keyword">import</span> {foo} <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./a&#39;</span>;
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;b.mjs&#39;</span>);
+<span class="hljs-number">console</span>.log(foo());
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">bar</span>(<span class="hljs-number"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;bar&#39;</span> }
+<span class="hljs-keyword">export</span> {bar};
+</code></pre>
+<p class="calibre6">这时再执行<code class="pcalibre3 calibre13 pcalibre4">a.mjs</code>就可以得到预期结果。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ node --experimental-modules a.mjs
+b.mjs
+foo
+a.mjs
+bar
+</code></pre>
+<p class="calibre6">这是因为函数具有提升作用，在执行<code class="pcalibre3 calibre13 pcalibre4">import {bar} from &#39;./b&#39;</code>时，函数<code class="pcalibre3 calibre13 pcalibre4">foo</code>就已经有定义了，所以<code class="pcalibre3 calibre13 pcalibre4">b.mjs</code>加载的时候不会报错。这也意味着，如果把函数<code class="pcalibre3 calibre13 pcalibre4">foo</code>改写成函数表达式，也会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// a.mjs</span>
+<span class="hljs-keyword">import</span> {bar} <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./b&#39;</span>;
+<span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;a.mjs&#39;</span>);
+<span class="hljs-number">console</span>.log(bar());
+<span class="hljs-keyword">const</span> foo = () =&gt; <span class="hljs-string">&#39;foo&#39;</span>;
+<span class="hljs-keyword">export</span> {foo};
+</code></pre>
+<p class="calibre6">上面代码的第四行，改成了函数表达式，就不具有提升作用，执行就会报错。</p>
+<p class="calibre6">我们再来看 ES6 模块加载器<a href="https://github.com/ModuleLoader/es6-module-loader/blob/master/docs/circular-references-bindings.md" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">SystemJS</a>给出的一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// even.js</span>
+<span class="hljs-keyword">import</span> { odd } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./odd&#39;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> counter = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">even</span>(<span class="hljs-number">n</span>) </span>{
+  counter++;
+  <span class="hljs-keyword">return</span> n === <span class="hljs-number">0</span> || odd(n - <span class="hljs-number">1</span>);
+}
+
+<span class="hljs-comment">// odd.js</span>
+<span class="hljs-keyword">import</span> { even } <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./even&#39;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">odd</span>(<span class="hljs-number">n</span>) </span>{
+  <span class="hljs-keyword">return</span> n !== <span class="hljs-number">0</span> &amp;&amp; even(n - <span class="hljs-number">1</span>);
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">even.js</code>里面的函数<code class="pcalibre3 calibre13 pcalibre4">even</code>有一个参数<code class="pcalibre3 calibre13 pcalibre4">n</code>，只要不等于 0，就会减去 1，传入加载的<code class="pcalibre3 calibre13 pcalibre4">odd()</code>。<code class="pcalibre3 calibre13 pcalibre4">odd.js</code>也会做类似操作。</p>
+<p class="calibre6">运行上面这段代码，结果如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ babel-node
+&gt; <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> m <span class="hljs-keyword">from</span> <span class="hljs-string">&#39;./even.js&#39;</span>;
+&gt; m.even(<span class="hljs-number">10</span>);
+<span class="hljs-number">true</span>
+&gt; m.counter
+<span class="hljs-number">6</span>
+&gt; m.even(<span class="hljs-number">20</span>)
+<span class="hljs-number">true</span>
+&gt; m.counter
+<span class="hljs-number">17</span>
+</code></pre>
+<p class="calibre6">上面代码中，参数<code class="pcalibre3 calibre13 pcalibre4">n</code>从 10 变为 0 的过程中，<code class="pcalibre3 calibre13 pcalibre4">even()</code>一共会执行 6 次，所以变量<code class="pcalibre3 calibre13 pcalibre4">counter</code>等于 6。第二次调用<code class="pcalibre3 calibre13 pcalibre4">even()</code>时，参数<code class="pcalibre3 calibre13 pcalibre4">n</code>从 20 变为 0，<code class="pcalibre3 calibre13 pcalibre4">even()</code>一共会执行 11 次，加上前面的 6 次，所以变量<code class="pcalibre3 calibre13 pcalibre4">counter</code>等于 17。</p>
+<p class="calibre6">这个例子要是改写成 CommonJS，就根本无法执行，会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// even.js</span>
+<span class="hljs-keyword">var</span> odd = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;./odd&#39;</span>);
+<span class="hljs-keyword">var</span> counter = <span class="hljs-number">0</span>;
+exports.counter = counter;
+exports.even = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">n</span>) </span>{
+  counter++;
+  <span class="hljs-keyword">return</span> n == <span class="hljs-number">0</span> || odd(n - <span class="hljs-number">1</span>);
+}
+
+<span class="hljs-comment">// odd.js</span>
+<span class="hljs-keyword">var</span> even = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;./even&#39;</span>).even;
+<span class="hljs-number">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">n</span>) </span>{
+  <span class="hljs-keyword">return</span> n != <span class="hljs-number">0</span> &amp;&amp; even(n - <span class="hljs-number">1</span>);
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">even.js</code>加载<code class="pcalibre3 calibre13 pcalibre4">odd.js</code>，而<code class="pcalibre3 calibre13 pcalibre4">odd.js</code>又去加载<code class="pcalibre3 calibre13 pcalibre4">even.js</code>，形成“循环加载”。这时，执行引擎就会输出<code class="pcalibre3 calibre13 pcalibre4">even.js</code>已经执行的部分（不存在任何结果），所以在<code class="pcalibre3 calibre13 pcalibre4">odd.js</code>之中，变量<code class="pcalibre3 calibre13 pcalibre4">even</code>等于<code class="pcalibre3 calibre13 pcalibre4">null</code>，等到后面调用<code class="pcalibre3 calibre13 pcalibre4">even(n - 1)</code>就会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ node
+&gt; var m = require(<span class="hljs-string">&#39;./even&#39;</span>);
+&gt; m.even(10)
+TypeError: even is not a <span class="hljs-keyword">function</span>
+</code></pre>
+<h2 id="es6-模块的转码" class="calibre12">ES6 模块的转码</h2>
+<p class="calibre6">浏览器目前还不支持 ES6 模块，为了现在就能使用，可以将转为 ES5 的写法。除了 Babel 可以用来转码之外，还有以下两个方法，也可以用来转码。</p>
+<h3 id="es6-module-transpiler" class="calibre11">ES6 module transpiler</h3>
+<p class="calibre6"><a href="https://github.com/esnext/es6-module-transpiler" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">ES6 module transpiler</a>是 square 公司开源的一个转码器，可以将 ES6 模块转为 CommonJS 模块或 AMD 模块的写法，从而在浏览器中使用。</p>
+<p class="calibre6">首先，安装这个转码器。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ npm install -g es6-module-transpiler
+</code></pre>
+<p class="calibre6">然后，使用<code class="pcalibre3 calibre13 pcalibre4">compile-modules convert</code>命令，将 ES6 模块文件转码。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ compile-modules convert file1.js file2.js
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">-o</code>参数可以指定转码后的文件名。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ compile-modules convert -o out.js file1.js
+</code></pre>
+<h3 id="systemjs" class="calibre11">SystemJS</h3>
+<p class="calibre6">另一种解决方法是使用 <a href="https://github.com/systemjs/systemjs" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">SystemJS</a>。它是一个垫片库（polyfill），可以在浏览器内加载 ES6 模块、AMD 模块和 CommonJS 模块，将其转为 ES5 格式。它在后台调用的是 Google 的 Traceur 转码器。</p>
+<p class="calibre6">使用时，先在网页内载入<code class="pcalibre3 calibre13 pcalibre4">system.js</code>文件。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-tag">&lt;<span class="hljs-_">script</span> <span class="hljs-_">src</span>=<span class="hljs-string">&#34;system.js&#34;</span>&gt;</span><span class="hljs-_"></span><span class="hljs-tag">&lt;/<span class="hljs-_">script</span>&gt;</span>
+</code></pre>
+<p class="calibre6">然后，使用<code class="pcalibre3 calibre13 pcalibre4">System.import</code>方法加载模块文件。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-tag">&lt;<span class="hljs-_">script</span>&gt;</span><span class="hljs-_">
+  System.import(<span class="hljs-string">&#39;./app.js&#39;</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-_">script</span>&gt;</span>
+</code></pre>
+<p class="calibre6">上面代码中的<code class="pcalibre3 calibre13 pcalibre4">./app</code>，指的是当前目录下的 app.js 文件。它可以是 ES6 模块文件，<code class="pcalibre3 calibre13 pcalibre4">System.import</code>会自动将其转码。</p>
+<p class="calibre6">需要注意的是，<code class="pcalibre3 calibre13 pcalibre4">System.import</code>使用异步加载，返回一个 Promise 对象，可以针对这个对象编程。下面是一个模块文件。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// app/es6-file.js:</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">q</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">this</span>.es6 = <span class="hljs-string">&#39;hello&#39;</span>;
+  }
+}
+</code></pre>
+<p class="calibre6">然后，在网页内加载这个模块文件。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-tag">&lt;<span class="hljs-_">script</span>&gt;</span><span class="hljs-_">
+
+System.import(<span class="hljs-string">&#39;app/es6-file&#39;</span>).then(<span class="hljs-keyword"><span class="hljs-keyword">function</span>(<span class="hljs-number">m</span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-keyword">new</span> m.q().es6); <span class="hljs-comment">// hello</span>
+});
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-_">script</span>&gt;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">System.import</code>方法返回的是一个 Promise 对象，所以可以用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法指定回调函数。</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="module.html" class="navigation navigation-prev"
+           aria-label="Previous page: 25. Module 的语法">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="style.html" class="navigation navigation-next"
+           aria-label="Next page: 27. 编程风格">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "27. 编程风格",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "25. Module 的语法",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

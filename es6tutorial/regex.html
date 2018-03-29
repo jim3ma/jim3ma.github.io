@@ -1,0 +1,743 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>5. 正则的扩展</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="number.html"/>
+    <link rel="prev" href="string.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="regex.html">5. 正则的扩展</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_6">5. 正则的扩展</h1>
+        <div class="section">
+            <h1 id="正则的扩展" class="calibre5">正则的扩展</h1>
+<h2 id="regexp-构造函数" class="calibre16">RegExp 构造函数</h2>
+<p class="calibre6">在 ES5 中，<code class="pcalibre3 calibre13 pcalibre4">RegExp</code>构造函数的参数有两种情况。</p>
+<p class="calibre6">第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> regex = <span class="hljs-keyword">new</span> <span class="hljs-number">RegExp</span>(<span class="hljs-string">&#39;xyz&#39;</span>, <span class="hljs-string">&#39;i&#39;</span>);
+<span class="hljs-comment">// 等价于</span>
+<span class="hljs-keyword">var</span> regex = <span class="hljs-tag">/xyz/i</span>;
+</code></pre>
+<p class="calibre6">第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> regex = <span class="hljs-keyword">new</span> <span class="hljs-number">RegExp</span>(<span class="hljs-tag">/xyz/i</span>);
+<span class="hljs-comment">// 等价于</span>
+<span class="hljs-keyword">var</span> regex = <span class="hljs-tag">/xyz/i</span>;
+</code></pre>
+<p class="calibre6">但是，ES5 不允许此时使用第二个参数添加修饰符，否则会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> regex = <span class="hljs-keyword">new</span> <span class="hljs-number">RegExp</span>(<span class="hljs-tag">/xyz/</span>, <span class="hljs-string">&#39;i&#39;</span>);
+<span class="hljs-comment">// Uncaught TypeError: Cannot supply flags when constructing one RegExp from another</span>
+</code></pre>
+<p class="calibre6">ES6 改变了这种行为。如果<code class="pcalibre3 calibre13 pcalibre4">RegExp</code>构造函数第一个参数是一个正则对象，那么可以使用第二个参数指定修饰符。而且，返回的正则表达式会忽略原有的正则表达式的修饰符，只使用新指定的修饰符。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">new</span> <span class="hljs-number">RegExp</span>(<span class="hljs-tag">/abc/ig</span>, <span class="hljs-string">&#39;i&#39;</span>).flags
+<span class="hljs-comment">// &#34;i&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，原有正则对象的修饰符是<code class="pcalibre3 calibre13 pcalibre4">ig</code>，它会被第二个参数<code class="pcalibre3 calibre13 pcalibre4">i</code>覆盖。</p>
+<h2 id="字符串的正则方法" class="calibre12">字符串的正则方法</h2>
+<p class="calibre6">字符串对象共有 4 个方法，可以使用正则表达式：<code class="pcalibre3 calibre13 pcalibre4">match()</code>、<code class="pcalibre3 calibre13 pcalibre4">replace()</code>、<code class="pcalibre3 calibre13 pcalibre4">search()</code>和<code class="pcalibre3 calibre13 pcalibre4">split()</code>。</p>
+<p class="calibre6">ES6 将这 4 个方法，在语言内部全部调用<code class="pcalibre3 calibre13 pcalibre4">RegExp</code>的实例方法，从而做到所有与正则相关的方法，全都定义在<code class="pcalibre3 calibre13 pcalibre4">RegExp</code>对象上。</p>
+<ul class="calibre9">
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">String.prototype.match</code> 调用 <code class="pcalibre3 calibre13 pcalibre4">RegExp.prototype[Symbol.match]</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">String.prototype.replace</code> 调用 <code class="pcalibre3 calibre13 pcalibre4">RegExp.prototype[Symbol.replace]</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">String.prototype.search</code> 调用 <code class="pcalibre3 calibre13 pcalibre4">RegExp.prototype[Symbol.search]</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">String.prototype.split</code> 调用 <code class="pcalibre3 calibre13 pcalibre4">RegExp.prototype[Symbol.split]</code></li>
+</ul>
+<h2 id="u-修饰符" class="calibre12">u 修饰符</h2>
+<p class="calibre6">ES6 对正则表达式添加了<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符，含义为“Unicode 模式”，用来正确处理大于<code class="pcalibre3 calibre13 pcalibre4">\uFFFF</code>的 Unicode 字符。也就是说，会正确处理四个字节的 UTF-16 编码。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/^\uD83D/u.test(<span class="hljs-string">&#39;\uD83D\uDC2A&#39;</span>) <span class="hljs-comment">// false</span>
+/^\uD83D/.test(<span class="hljs-string">&#39;\uD83D\uDC2A&#39;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">\uD83D\uDC2A</code>是一个四个字节的 UTF-16 编码，代表一个字符。但是，ES5 不支持四个字节的 UTF-16 编码，会将其识别为两个字符，导致第二行代码结果为<code class="pcalibre3 calibre13 pcalibre4">true</code>。加了<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符以后，ES6 就会识别其为一个字符，所以第一行代码结果为<code class="pcalibre3 calibre13 pcalibre4">false</code>。</p>
+<p class="calibre6">一旦加上<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符号，就会修改下面这些正则表达式的行为。</p>
+<p class="calibre6"><strong class="calibre17">（1）点字符</strong></p>
+<p class="calibre6">点（<code class="pcalibre3 calibre13 pcalibre4">.</code>）字符在正则表达式中，含义是除了换行符以外的任意单个字符。对于码点大于<code class="pcalibre3 calibre13 pcalibre4">0xFFFF</code>的 Unicode 字符，点字符不能识别，必须加上<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> s = <span class="hljs-string">&#39;𠮷&#39;</span>;
+
+<span class="hljs-tag">/^.$/</span>.test(s) <span class="hljs-comment">// false</span>
+/^.$/u.test(s) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码表示，如果不添加<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符，正则表达式就会认为字符串为两个字符，从而匹配失败。</p>
+<p class="calibre6"><strong class="calibre17">（2）Unicode 字符表示法</strong></p>
+<p class="calibre6">ES6 新增了使用大括号表示 Unicode 字符，这种表示法在正则表达式中必须加上<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符，才能识别当中的大括号，否则会被解读为量词。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/\u{<span class="hljs-number">61</span>}/.test(<span class="hljs-string">&#39;a&#39;</span>) <span class="hljs-comment">// false</span>
+/\u{<span class="hljs-number">61</span>}/u.test(<span class="hljs-string">&#39;a&#39;</span>) <span class="hljs-comment">// true</span>
+/\u{<span class="hljs-number">20</span>BB7}/u.test(<span class="hljs-string">&#39;𠮷&#39;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码表示，如果不加<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符，正则表达式无法识别<code class="pcalibre3 calibre13 pcalibre4">\u{61}</code>这种表示法，只会认为这匹配 61 个连续的<code class="pcalibre3 calibre13 pcalibre4">u</code>。</p>
+<p class="calibre6"><strong class="calibre17">（3）量词</strong></p>
+<p class="calibre6">使用<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符后，所有量词都会正确识别码点大于<code class="pcalibre3 calibre13 pcalibre4">0xFFFF</code>的 Unicode 字符。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/a{<span class="hljs-number">2</span>}/.test(<span class="hljs-string">&#39;aa&#39;</span>) <span class="hljs-comment">// true</span>
+/a{<span class="hljs-number">2</span>}/u.test(<span class="hljs-string">&#39;aa&#39;</span>) <span class="hljs-comment">// true</span>
+/𠮷{<span class="hljs-number">2</span>}/.test(<span class="hljs-string">&#39;𠮷𠮷&#39;</span>) <span class="hljs-comment">// false</span>
+/𠮷{<span class="hljs-number">2</span>}/u.test(<span class="hljs-string">&#39;𠮷𠮷&#39;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6"><strong class="calibre17">（4）预定义模式</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符也影响到预定义模式，能否正确识别码点大于<code class="pcalibre3 calibre13 pcalibre4">0xFFFF</code>的 Unicode 字符。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/^\S$/.test(<span class="hljs-string">&#39;𠮷&#39;</span>) <span class="hljs-comment">// false</span>
+/^\S$/u.test(<span class="hljs-string">&#39;𠮷&#39;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码的<code class="pcalibre3 calibre13 pcalibre4">\S</code>是预定义模式，匹配所有非空白字符。只有加了<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符，它才能正确匹配码点大于<code class="pcalibre3 calibre13 pcalibre4">0xFFFF</code>的 Unicode 字符。</p>
+<p class="calibre6">利用这一点，可以写出一个正确返回字符串长度的函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">codePointLength</span>(<span class="hljs-number">text</span>) </span>{
+  <span class="hljs-keyword">var</span> result = text.match(<span class="hljs-tag">/[\s\S]/gu</span>);
+  <span class="hljs-keyword">return</span> result ? result.length : <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-keyword">var</span> s = <span class="hljs-string">&#39;𠮷𠮷&#39;</span>;
+
+s.length <span class="hljs-comment">// 4</span>
+codePointLength(s) <span class="hljs-comment">// 2</span>
+</code></pre>
+<p class="calibre6"><strong class="calibre17">（5）i 修饰符</strong></p>
+<p class="calibre6">有些 Unicode 字符的编码不同，但是字型很相近，比如，<code class="pcalibre3 calibre13 pcalibre4">\u004B</code>与<code class="pcalibre3 calibre13 pcalibre4">\u212A</code>都是大写的<code class="pcalibre3 calibre13 pcalibre4">K</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/[a-z]/i.test(<span class="hljs-string">&#39;\u212A&#39;</span>) <span class="hljs-comment">// false</span>
+/[a-z]/iu.test(<span class="hljs-string">&#39;\u212A&#39;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，不加<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符，就无法识别非规范的<code class="pcalibre3 calibre13 pcalibre4">K</code>字符。</p>
+<h2 id="y-修饰符" class="calibre12">y 修饰符</h2>
+<p class="calibre6">除了<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符，ES6 还为正则表达式添加了<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符，叫做“粘连”（sticky）修饰符。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符的作用与<code class="pcalibre3 calibre13 pcalibre4">g</code>修饰符类似，也是全局匹配，后一次匹配都从上一次匹配成功的下一个位置开始。不同之处在于，<code class="pcalibre3 calibre13 pcalibre4">g</code>修饰符只要剩余位置中存在匹配就可，而<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符确保匹配必须从剩余的第一个位置开始，这也就是“粘连”的涵义。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> s = <span class="hljs-string">&#39;aaa_aa_a&#39;</span>;
+<span class="hljs-keyword">var</span> r1 = <span class="hljs-tag">/a+/g</span>;
+<span class="hljs-keyword">var</span> r2 = <span class="hljs-tag">/a+/y</span>;
+
+r1.exec(s) <span class="hljs-comment">// [&#34;aaa&#34;]</span>
+r2.exec(s) <span class="hljs-comment">// [&#34;aaa&#34;]</span>
+
+r1.exec(s) <span class="hljs-comment">// [&#34;aa&#34;]</span>
+r2.exec(s) <span class="hljs-comment">// null</span>
+</code></pre>
+<p class="calibre6">上面代码有两个正则表达式，一个使用<code class="pcalibre3 calibre13 pcalibre4">g</code>修饰符，另一个使用<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符。这两个正则表达式各执行了两次，第一次执行的时候，两者行为相同，剩余字符串都是<code class="pcalibre3 calibre13 pcalibre4">_aa_a</code>。由于<code class="pcalibre3 calibre13 pcalibre4">g</code>修饰没有位置要求，所以第二次执行会返回结果，而<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符要求匹配必须从头部开始，所以返回<code class="pcalibre3 calibre13 pcalibre4">null</code>。</p>
+<p class="calibre6">如果改一下正则表达式，保证每次都能头部匹配，<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符就会返回结果了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> s = <span class="hljs-string">&#39;aaa_aa_a&#39;</span>;
+<span class="hljs-keyword">var</span> r = <span class="hljs-tag">/a+_/y</span>;
+
+r.exec(s) <span class="hljs-comment">// [&#34;aaa_&#34;]</span>
+r.exec(s) <span class="hljs-comment">// [&#34;aa_&#34;]</span>
+</code></pre>
+<p class="calibre6">上面代码每次匹配，都是从剩余字符串的头部开始。</p>
+<p class="calibre6">使用<code class="pcalibre3 calibre13 pcalibre4">lastIndex</code>属性，可以更好地说明<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> REGEX = <span class="hljs-tag">/a/g</span>;
+
+<span class="hljs-comment">// 指定从2号位置（y）开始匹配</span>
+REGEX.lastIndex = <span class="hljs-number">2</span>;
+
+<span class="hljs-comment">// 匹配成功</span>
+<span class="hljs-keyword">const</span> match = REGEX.exec(<span class="hljs-string">&#39;xaya&#39;</span>);
+
+<span class="hljs-comment">// 在3号位置匹配成功</span>
+match.index <span class="hljs-comment">// 3</span>
+
+<span class="hljs-comment">// 下一次匹配从4号位开始</span>
+REGEX.lastIndex <span class="hljs-comment">// 4</span>
+
+<span class="hljs-comment">// 4号位开始匹配失败</span>
+REGEX.exec(<span class="hljs-string">&#39;xaya&#39;</span>) <span class="hljs-comment">// null</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">lastIndex</code>属性指定每次搜索的开始位置，<code class="pcalibre3 calibre13 pcalibre4">g</code>修饰符从这个位置开始向后搜索，直到发现匹配为止。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符同样遵守<code class="pcalibre3 calibre13 pcalibre4">lastIndex</code>属性，但是要求必须在<code class="pcalibre3 calibre13 pcalibre4">lastIndex</code>指定的位置发现匹配。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> REGEX = <span class="hljs-tag">/a/y</span>;
+
+<span class="hljs-comment">// 指定从2号位置开始匹配</span>
+REGEX.lastIndex = <span class="hljs-number">2</span>;
+
+<span class="hljs-comment">// 不是粘连，匹配失败</span>
+REGEX.exec(<span class="hljs-string">&#39;xaya&#39;</span>) <span class="hljs-comment">// null</span>
+
+<span class="hljs-comment">// 指定从3号位置开始匹配</span>
+REGEX.lastIndex = <span class="hljs-number">3</span>;
+
+<span class="hljs-comment">// 3号位置是粘连，匹配成功</span>
+<span class="hljs-keyword">const</span> match = REGEX.exec(<span class="hljs-string">&#39;xaya&#39;</span>);
+match.index <span class="hljs-comment">// 3</span>
+REGEX.lastIndex <span class="hljs-comment">// 4</span>
+</code></pre>
+<p class="calibre6">实际上，<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符号隐含了头部匹配的标志<code class="pcalibre3 calibre13 pcalibre4">^</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/b/y.exec(<span class="hljs-string">&#39;aba&#39;</span>)
+<span class="hljs-comment">// null</span>
+</code></pre>
+<p class="calibre6">上面代码由于不能保证头部匹配，所以返回<code class="pcalibre3 calibre13 pcalibre4">null</code>。<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符的设计本意，就是让头部匹配的标志<code class="pcalibre3 calibre13 pcalibre4">^</code>在全局匹配中都有效。</p>
+<p class="calibre6">下面是字符串对象的<code class="pcalibre3 calibre13 pcalibre4">replace</code>方法的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> REGEX = <span class="hljs-tag">/a/gy</span>;
+<span class="hljs-string">&#39;aaxa&#39;</span>.replace(REGEX, <span class="hljs-string">&#39;-&#39;</span>) <span class="hljs-comment">// &#39;--xa&#39;</span>
+</code></pre>
+<p class="calibre6">上面代码中，最后一个<code class="pcalibre3 calibre13 pcalibre4">a</code>因为不是出现在下一次匹配的头部，所以不会被替换。</p>
+<p class="calibre6">单单一个<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符对<code class="pcalibre3 calibre13 pcalibre4">match</code>方法，只能返回第一个匹配，必须与<code class="pcalibre3 calibre13 pcalibre4">g</code>修饰符联用，才能返回所有匹配。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-string">&#39;a1a2a3&#39;</span>.match(<span class="hljs-tag">/a\d/y</span>) <span class="hljs-comment">// [&#34;a1&#34;]</span>
+<span class="hljs-string">&#39;a1a2a3&#39;</span>.match(<span class="hljs-tag">/a\d/gy</span>) <span class="hljs-comment">// [&#34;a1&#34;, &#34;a2&#34;, &#34;a3&#34;]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符的一个应用，是从字符串提取 token（词元），<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符确保了匹配之间不会有漏掉的字符。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> TOKEN_Y = <span class="hljs-tag">/\s*(\+|[0-9]+)\s*/y</span>;
+<span class="hljs-keyword">const</span> TOKEN_G  = <span class="hljs-tag">/\s*(\+|[0-9]+)\s*/g</span>;
+
+tokenize(TOKEN_Y, <span class="hljs-string">&#39;3 + 4&#39;</span>)
+<span class="hljs-comment">// [ &#39;3&#39;, &#39;+&#39;, &#39;4&#39; ]</span>
+tokenize(TOKEN_G, <span class="hljs-string">&#39;3 + 4&#39;</span>)
+<span class="hljs-comment">// [ &#39;3&#39;, &#39;+&#39;, &#39;4&#39; ]</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">tokenize</span>(<span class="hljs-number">TOKEN_REGEX, str</span>) </span>{
+  <span class="hljs-keyword">let</span> result = [];
+  <span class="hljs-keyword">let</span> match;
+  <span class="hljs-keyword">while</span> (match = TOKEN_REGEX.exec(str)) {
+    result.push(match[<span class="hljs-number">1</span>]);
+  }
+  <span class="hljs-keyword">return</span> result;
+}
+</code></pre>
+<p class="calibre6">上面代码中，如果字符串里面没有非法字符，<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符与<code class="pcalibre3 calibre13 pcalibre4">g</code>修饰符的提取结果是一样的。但是，一旦出现非法字符，两者的行为就不一样了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">tokenize(TOKEN_Y, <span class="hljs-string">&#39;3x + 4&#39;</span>)
+<span class="hljs-comment">// [ &#39;3&#39; ]</span>
+tokenize(TOKEN_G, <span class="hljs-string">&#39;3x + 4&#39;</span>)
+<span class="hljs-comment">// [ &#39;3&#39;, &#39;+&#39;, &#39;4&#39; ]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">g</code>修饰符会忽略非法字符，而<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符不会，这样就很容易发现错误。</p>
+<h2 id="sticky-属性" class="calibre12">sticky 属性</h2>
+<p class="calibre6">与<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符相匹配，ES6 的正则对象多了<code class="pcalibre3 calibre13 pcalibre4">sticky</code>属性，表示是否设置了<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> r = <span class="hljs-tag">/hello\d/y</span>;
+r.sticky <span class="hljs-comment">// true</span>
+</code></pre>
+<h2 id="flags-属性" class="calibre12">flags 属性</h2>
+<p class="calibre6">ES6 为正则表达式新增了<code class="pcalibre3 calibre13 pcalibre4">flags</code>属性，会返回正则表达式的修饰符。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// ES5 的 source 属性</span>
+<span class="hljs-comment">// 返回正则表达式的正文</span>
+/abc/ig.source
+<span class="hljs-comment">// &#34;abc&#34;</span>
+
+<span class="hljs-comment">// ES6 的 flags 属性</span>
+<span class="hljs-comment">// 返回正则表达式的修饰符</span>
+/abc/ig.flags
+<span class="hljs-comment">// &#39;gi&#39;</span>
+</code></pre>
+<h2 id="s-修饰符：dotall-模式" class="calibre12">s 修饰符：dotAll 模式</h2>
+<p class="calibre6">正则表达式中，点（<code class="pcalibre3 calibre13 pcalibre4">.</code>）是一个特殊字符，代表任意的单个字符，但是有两个例外。一个是四个字节的 UTF-16 字符，这个可以用<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符解决；另一个是行终止符（line terminator character）。</p>
+<p class="calibre6">所谓行终止符，就是该字符表示一行的终结。以下四个字符属于”行终止符“。</p>
+<ul class="calibre9">
+<li class="calibre10">U+000A 换行符（<code class="pcalibre3 calibre13 pcalibre4">\n</code>）</li>
+<li class="calibre10">U+000D 回车符（<code class="pcalibre3 calibre13 pcalibre4">\r</code>）</li>
+<li class="calibre10">U+2028 行分隔符（line separator）</li>
+<li class="calibre10">U+2029 段分隔符（paragraph separator）</li>
+</ul>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/foo.bar/.test(<span class="hljs-string">&#39;foo\nbar&#39;</span>)
+<span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">上面代码中，因为<code class="pcalibre3 calibre13 pcalibre4">.</code>不匹配<code class="pcalibre3 calibre13 pcalibre4">\n</code>，所以正则表达式返回<code class="pcalibre3 calibre13 pcalibre4">false</code>。</p>
+<p class="calibre6">但是，很多时候我们希望匹配的是任意单个字符，这时有一种变通的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/foo[^]bar/.test(<span class="hljs-string">&#39;foo\nbar&#39;</span>)
+<span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">这种解决方案毕竟不太符合直觉，ES2018 <a href="https://github.com/tc39/proposal-regexp-dotall-flag" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">引入</a><code class="pcalibre3 calibre13 pcalibre4">s</code>修饰符，使得<code class="pcalibre3 calibre13 pcalibre4">.</code>可以匹配任意单个字符。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/foo.bar/s.test(<span class="hljs-string">&#39;foo\nbar&#39;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">这被称为<code class="pcalibre3 calibre13 pcalibre4">dotAll</code>模式，即点（dot）代表一切字符。所以，正则表达式还引入了一个<code class="pcalibre3 calibre13 pcalibre4">dotAll</code>属性，返回一个布尔值，表示该正则表达式是否处在<code class="pcalibre3 calibre13 pcalibre4">dotAll</code>模式。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> re = <span class="hljs-tag">/foo.bar/</span>s;
+<span class="hljs-comment">// 另一种写法</span>
+<span class="hljs-comment">// const re = new RegExp(&#39;foo.bar&#39;, &#39;s&#39;);</span>
+
+re.test(<span class="hljs-string">&#39;foo\nbar&#39;</span>) <span class="hljs-comment">// true</span>
+re.dotAll <span class="hljs-comment">// true</span>
+re.flags <span class="hljs-comment">// &#39;s&#39;</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">/s</code>修饰符和多行修饰符<code class="pcalibre3 calibre13 pcalibre4">/m</code>不冲突，两者一起使用的情况下，<code class="pcalibre3 calibre13 pcalibre4">.</code>匹配所有字符，而<code class="pcalibre3 calibre13 pcalibre4">^</code>和<code class="pcalibre3 calibre13 pcalibre4">$</code>匹配每一行的行首和行尾。</p>
+<h2 id="后行断言" class="calibre12">后行断言</h2>
+<p class="calibre6">JavaScript 语言的正则表达式，只支持先行断言（lookahead）和先行否定断言（negative lookahead），不支持后行断言（lookbehind）和后行否定断言（negative lookbehind）。ES2018 引入<a href="https://github.com/tc39/proposal-regexp-lookbehind" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">后行断言</a>，V8 引擎 4.9 版（Chrome 62）已经支持。</p>
+<p class="calibre6">”先行断言“指的是，<code class="pcalibre3 calibre13 pcalibre4">x</code>只有在<code class="pcalibre3 calibre13 pcalibre4">y</code>前面才匹配，必须写成<code class="pcalibre3 calibre13 pcalibre4">/x(?=y)/</code>。比如，只匹配百分号之前的数字，要写成<code class="pcalibre3 calibre13 pcalibre4">/\d+(?=%)/</code>。”先行否定断言“指的是，<code class="pcalibre3 calibre13 pcalibre4">x</code>只有不在<code class="pcalibre3 calibre13 pcalibre4">y</code>前面才匹配，必须写成<code class="pcalibre3 calibre13 pcalibre4">/x(?!y)/</code>。比如，只匹配不在百分号之前的数字，要写成<code class="pcalibre3 calibre13 pcalibre4">/\d+(?!%)/</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/\d+(?=%)/.exec(<span class="hljs-string">&#39;100% of US presidents have been male&#39;</span>)  <span class="hljs-comment">// [&#34;100&#34;]</span>
+/\d+(?!%)/.exec(<span class="hljs-string">&#39;that’s all 44 of them&#39;</span>)                 <span class="hljs-comment">// [&#34;44&#34;]</span>
+</code></pre>
+<p class="calibre6">上面两个字符串，如果互换正则表达式，就不会得到相同结果。另外，还可以看到，”先行断言“括号之中的部分（<code class="pcalibre3 calibre13 pcalibre4">(?=%)</code>），是不计入返回结果的。</p>
+<p class="calibre6">“后行断言”正好与“先行断言”相反，<code class="pcalibre3 calibre13 pcalibre4">x</code>只有在<code class="pcalibre3 calibre13 pcalibre4">y</code>后面才匹配，必须写成<code class="pcalibre3 calibre13 pcalibre4">/(?&lt;=y)x/</code>。比如，只匹配美元符号之后的数字，要写成<code class="pcalibre3 calibre13 pcalibre4">/(?&lt;=\$)\d+/</code>。”后行否定断言“则与”先行否定断言“相反，<code class="pcalibre3 calibre13 pcalibre4">x</code>只有不在<code class="pcalibre3 calibre13 pcalibre4">y</code>后面才匹配，必须写成<code class="pcalibre3 calibre13 pcalibre4">/(?&lt;!y)x/</code>。比如，只匹配不在美元符号后面的数字，要写成<code class="pcalibre3 calibre13 pcalibre4">/(?&lt;!\$)\d+/</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/(?<span class="hljs-_"><span class="hljs-tag">&lt;<span class="hljs-_">=\$)\d+</span>/<span class="hljs-_">.exec</span>(&#39;<span class="hljs-_">Benjamin</span> <span class="hljs-_">Franklin</span> <span class="hljs-_">is</span> <span class="hljs-_">on</span> <span class="hljs-_">the</span> $<span class="hljs-_">100</span> <span class="hljs-_">bill</span>&#39;)  // [&#34;<span class="hljs-_">100</span>&#34;]
+/(?&lt;!\$)\<span class="hljs-_">d</span>+/<span class="hljs-_">.exec</span>(&#39;<span class="hljs-_">it</span>’<span class="hljs-_">s</span> <span class="hljs-_">is</span> <span class="hljs-_">worth</span> <span class="hljs-_">about</span> €<span class="hljs-_">90</span>&#39;)                // [&#34;<span class="hljs-_">90</span>&#34;]
+</span></span></code></pre>
+<p class="calibre6">上面的例子中，“后行断言”的括号之中的部分（<code class="pcalibre3 calibre13 pcalibre4">(?&lt;=\$)</code>），也是不计入返回结果。</p>
+<p class="calibre6">下面的例子是使用后行断言进行字符串替换。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> RE_DOLLAR_PREFIX = <span class="hljs-tag">/(?&lt;=\$)foo/g</span>;
+<span class="hljs-string">&#39;$foo %foo foo&#39;</span>.replace(RE_DOLLAR_PREFIX, <span class="hljs-string">&#39;bar&#39;</span>);
+<span class="hljs-comment">// &#39;$bar %foo foo&#39;</span>
+</code></pre>
+<p class="calibre6">上面代码中，只有在美元符号后面的<code class="pcalibre3 calibre13 pcalibre4">foo</code>才会被替换。</p>
+<p class="calibre6">“后行断言”的实现，需要先匹配<code class="pcalibre3 calibre13 pcalibre4">/(?&lt;=y)x/</code>的<code class="pcalibre3 calibre13 pcalibre4">x</code>，然后再回到左边，匹配<code class="pcalibre3 calibre13 pcalibre4">y</code>的部分。这种“先右后左”的执行顺序，与所有其他正则操作相反，导致了一些不符合预期的行为。</p>
+<p class="calibre6">首先，”后行断言“的组匹配，与正常情况下结果是不一样的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/(?<span class="hljs-_"><span class="hljs-tag">&lt;<span class="hljs-_">=(\d+)(\d+))$</span>/<span class="hljs-_">.exec</span>(&#39;<span class="hljs-_">1053</span>&#39;) // [&#34;&#34;, &#34;<span class="hljs-_">1</span>&#34;, &#34;<span class="hljs-_">053</span>&#34;]
+/^(\<span class="hljs-_">d</span>+)(\<span class="hljs-_">d</span>+)$/<span class="hljs-_">.exec</span>(&#39;<span class="hljs-_">1053</span>&#39;) // [&#34;<span class="hljs-_">1053</span>&#34;, &#34;<span class="hljs-_">105</span>&#34;, &#34;<span class="hljs-_">3</span>&#34;]
+</span></span></code></pre>
+<p class="calibre6">上面代码中，需要捕捉两个组匹配。没有“后行断言”时，第一个括号是贪婪模式，第二个括号只能捕获一个字符，所以结果是<code class="pcalibre3 calibre13 pcalibre4">105</code>和<code class="pcalibre3 calibre13 pcalibre4">3</code>。而“后行断言”时，由于执行顺序是从右到左，第二个括号是贪婪模式，第一个括号只能捕获一个字符，所以结果是<code class="pcalibre3 calibre13 pcalibre4">1</code>和<code class="pcalibre3 calibre13 pcalibre4">053</code>。</p>
+<p class="calibre6">其次，“后行断言”的反斜杠引用，也与通常的顺序相反，必须放在对应的那个括号之前。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">/(?<span class="hljs-_"><span class="hljs-tag">&lt;<span class="hljs-_">=(o)d\1)r</span>/<span class="hljs-_">.exec</span>(&#39;<span class="hljs-_">hodor</span>&#39;)  // <span class="hljs-_">null</span>
+/(?&lt;=<span class="hljs-string">\1d(o))r</span>/<span class="hljs-_">.exec</span>(&#39;<span class="hljs-_">hodor</span>&#39;)  // [&#34;<span class="hljs-_">r</span>&#34;, &#34;<span class="hljs-_">o</span>&#34;]
+</span></span></code></pre>
+<p class="calibre6">上面代码中，如果后行断言的反斜杠引用（<code class="pcalibre3 calibre13 pcalibre4">\1</code>）放在括号的后面，就不会得到匹配结果，必须放在前面才可以。因为后行断言是先从左到右扫描，发现匹配以后再回过头，从右到左完成反斜杠引用。</p>
+<h2 id="unicode-属性类" class="calibre12">Unicode 属性类</h2>
+<p class="calibre6">ES2018 <a href="https://github.com/tc39/proposal-regexp-unicode-property-escapes" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">引入</a>了一种新的类的写法<code class="pcalibre3 calibre13 pcalibre4">\p{...}</code>和<code class="pcalibre3 calibre13 pcalibre4">\P{...}</code>，允许正则表达式匹配符合 Unicode 某种属性的所有字符。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> regexGreekSymbol = <span class="hljs-tag">/\p{Script=Greek}/u</span>;
+regexGreekSymbol.test(<span class="hljs-string">&#39;π&#39;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">\p{Script=Greek}</code>指定匹配一个希腊文字母，所以匹配<code class="pcalibre3 calibre13 pcalibre4">π</code>成功。</p>
+<p class="calibre6">Unicode 属性类要指定属性名和属性值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">\p{UnicodePropertyName=UnicodePropertyValue}
+</code></pre>
+<p class="calibre6">对于某些属性，可以只写属性名，或者只写属性值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">\p{UnicodePropertyName}
+\p{UnicodePropertyValue}
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">\P{…}</code>是<code class="pcalibre3 calibre13 pcalibre4">\p{…}</code>的反向匹配，即匹配不满足条件的字符。</p>
+<p class="calibre6">注意，这两种类只对 Unicode 有效，所以使用的时候一定要加上<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符。如果不加<code class="pcalibre3 calibre13 pcalibre4">u</code>修饰符，正则表达式使用<code class="pcalibre3 calibre13 pcalibre4">\p</code>和<code class="pcalibre3 calibre13 pcalibre4">\P</code>会报错，ECMAScript 预留了这两个类。</p>
+<p class="calibre6">由于 Unicode 的各种属性非常多，所以这种新的类的表达能力非常强。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> regex = <span class="hljs-tag">/^\p{Decimal_Number}+$/u</span>;
+regex.test(<span class="hljs-string">&#39;𝟏𝟐𝟑𝟜𝟝𝟞𝟩𝟪𝟫𝟬𝟭𝟮𝟯𝟺𝟻𝟼&#39;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，属性类指定匹配所有十进制字符，可以看到各种字型的十进制字符都会匹配成功。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">\p{Number}</code>甚至能匹配罗马数字。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 匹配所有数字</span>
+<span class="hljs-keyword">const</span> regex = <span class="hljs-tag">/^\p{Number}+$/u</span>;
+regex.test(<span class="hljs-string">&#39;²³¹¼½¾&#39;</span>) <span class="hljs-comment">// true</span>
+regex.test(<span class="hljs-string">&#39;㉛㉜㉝&#39;</span>) <span class="hljs-comment">// true</span>
+regex.test(<span class="hljs-string">&#39;ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ&#39;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">下面是其他一些例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 匹配所有空格</span>
+\p{White_Space}
+
+<span class="hljs-comment">// 匹配各种文字的所有字母，等同于 Unicode 版的 \w</span>
+[\p{Alphabetic}\p{Mark}\p{Decimal_Number}\p{Connector_Punctuation}\p{Join_Control}]
+
+<span class="hljs-comment">// 匹配各种文字的所有非字母的字符，等同于 Unicode 版的 \W</span>
+[^\p{Alphabetic}\p{Mark}\p{Decimal_Number}\p{Connector_Punctuation}\p{Join_Control}]
+
+<span class="hljs-comment">// 匹配 Emoji</span>
+/\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu
+
+<span class="hljs-comment">// 匹配所有的箭头字符</span>
+<span class="hljs-keyword">const</span> regexArrows = <span class="hljs-tag">/^\p{Block=Arrows}+$/u</span>;
+regexArrows.test(<span class="hljs-string">&#39;←↑→↓↔↕↖↗↘↙⇏⇐⇑⇒⇓⇔⇕⇖⇗⇘⇙⇧⇩&#39;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<h2 id="具名组匹配" class="calibre12">具名组匹配</h2>
+<h3 id="简介" class="calibre11">简介</h3>
+<p class="calibre6">正则表达式使用圆括号进行组匹配。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> RE_DATE = <span class="hljs-tag">/(\d{4})-(\d{2})-(\d{2})/</span>;
+</code></pre>
+<p class="calibre6">上面代码中，正则表达式里面有三组圆括号。使用<code class="pcalibre3 calibre13 pcalibre4">exec</code>方法，就可以将这三组匹配结果提取出来。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> RE_DATE = <span class="hljs-tag">/(\d{4})-(\d{2})-(\d{2})/</span>;
+
+<span class="hljs-keyword">const</span> matchObj = RE_DATE.exec(<span class="hljs-string">&#39;1999-12-31&#39;</span>);
+<span class="hljs-keyword">const</span> year = matchObj[<span class="hljs-number">1</span>]; <span class="hljs-comment">// 1999</span>
+<span class="hljs-keyword">const</span> month = matchObj[<span class="hljs-number">2</span>]; <span class="hljs-comment">// 12</span>
+<span class="hljs-keyword">const</span> day = matchObj[<span class="hljs-number">3</span>]; <span class="hljs-comment">// 31</span>
+</code></pre>
+<p class="calibre6">组匹配的一个问题是，每一组的匹配含义不容易看出来，而且只能用数字序号（比如<code class="pcalibre3 calibre13 pcalibre4">matchObj[1]</code>）引用，要是组的顺序变了，引用的时候就必须修改序号。</p>
+<p class="calibre6">ES2018 引入了<a href="https://github.com/tc39/proposal-regexp-named-groups" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">具名组匹配</a>（Named Capture Groups），允许为每一个组匹配指定一个名字，既便于阅读代码，又便于引用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> RE_DATE = <span class="hljs-tag">/(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})-(?&lt;day&gt;\d{2})/</span>;
+
+<span class="hljs-keyword">const</span> matchObj = RE_DATE.exec(<span class="hljs-string">&#39;1999-12-31&#39;</span>);
+<span class="hljs-keyword">const</span> year = matchObj.groups.year; <span class="hljs-comment">// 1999</span>
+<span class="hljs-keyword">const</span> month = matchObj.groups.month; <span class="hljs-comment">// 12</span>
+<span class="hljs-keyword">const</span> day = matchObj.groups.day; <span class="hljs-comment">// 31</span>
+</code></pre>
+<p class="calibre6">上面代码中，“具名组匹配”在圆括号内部，模式的头部添加“问号 + 尖括号 + 组名”（<code class="pcalibre3 calibre13 pcalibre4">?&lt;year&gt;</code>），然后就可以在<code class="pcalibre3 calibre13 pcalibre4">exec</code>方法返回结果的<code class="pcalibre3 calibre13 pcalibre4">groups</code>属性上引用该组名。同时，数字序号（<code class="pcalibre3 calibre13 pcalibre4">matchObj[1]</code>）依然有效。</p>
+<p class="calibre6">具名组匹配等于为每一组匹配加上了 ID，便于描述匹配的目的。如果组的顺序变了，也不用改变匹配后的处理代码。</p>
+<p class="calibre6">如果具名组没有匹配，那么对应的<code class="pcalibre3 calibre13 pcalibre4">groups</code>对象属性会是<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> RE_OPT_A = <span class="hljs-tag">/^(?&lt;as&gt;a+)?$/</span>;
+<span class="hljs-keyword">const</span> matchObj = RE_OPT_A.exec(<span class="hljs-string">&#39;&#39;</span>);
+
+matchObj.groups.as <span class="hljs-comment">// undefined</span>
+<span class="hljs-string">&#39;as&#39;</span> <span class="hljs-keyword">in</span> matchObj.groups <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，具名组<code class="pcalibre3 calibre13 pcalibre4">as</code>没有找到匹配，那么<code class="pcalibre3 calibre13 pcalibre4">matchObj.groups.as</code>属性值就是<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，并且<code class="pcalibre3 calibre13 pcalibre4">as</code>这个键名在<code class="pcalibre3 calibre13 pcalibre4">groups</code>是始终存在的。</p>
+<h3 id="解构赋值和替换" class="calibre11">解构赋值和替换</h3>
+<p class="calibre6">有了具名组匹配以后，可以使用解构赋值直接从匹配结果上为变量赋值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> {groups: {one, two}} = <span class="hljs-tag">/^(?&lt;one&gt;.*):(?&lt;two&gt;.*)$/u</span>.exec(<span class="hljs-string">&#39;foo:bar&#39;</span>);
+one  <span class="hljs-comment">// foo</span>
+two  <span class="hljs-comment">// bar</span>
+</code></pre>
+<p class="calibre6">字符串替换时，使用<code class="pcalibre3 calibre13 pcalibre4">$&lt;组名&gt;</code>引用具名组。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> re = <span class="hljs-tag">/(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})-(?&lt;day&gt;\d{2})/u</span>;
+
+<span class="hljs-string">&#39;2015-01-02&#39;</span>.replace(re, <span class="hljs-string">&#39;$&lt;day&gt;/$&lt;month&gt;/$&lt;year&gt;&#39;</span>)
+<span class="hljs-comment">// &#39;02/01/2015&#39;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">replace</code>方法的第二个参数是一个字符串，而不是正则表达式。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">replace</code>方法的第二个参数也可以是函数，该函数的参数序列如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-string">&#39;2015-01-02&#39;</span>.replace(re, (
+   matched, <span class="hljs-comment">// 整个匹配结果 2015-01-02</span>
+   capture1, <span class="hljs-comment">// 第一个组匹配 2015</span>
+   capture2, <span class="hljs-comment">// 第二个组匹配 01</span>
+   capture3, <span class="hljs-comment">// 第三个组匹配 02</span>
+   position, <span class="hljs-comment">// 匹配开始的位置 0</span>
+   S, <span class="hljs-comment">// 原字符串 2015-01-02</span>
+   groups <span class="hljs-comment">// 具名组构成的一个对象 {year, month, day}</span>
+ ) =&gt; {
+ <span class="hljs-keyword">let</span> {day, month, year} = args[args.length - <span class="hljs-number">1</span>];
+ <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-_">${day}</span>/<span class="hljs-_">${month}</span>/<span class="hljs-_">${year}</span>`</span>;
+});
+</code></pre>
+<p class="calibre6">具名组匹配在原来的基础上，新增了最后一个函数参数：具名组构成的一个对象。函数内部可以直接对这个对象进行解构赋值。</p>
+<h3 id="引用" class="calibre11">引用</h3>
+<p class="calibre6">如果要在正则表达式内部引用某个“具名组匹配”，可以使用<code class="pcalibre3 calibre13 pcalibre4">\k&lt;组名&gt;</code>的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> RE_TWICE = <span class="hljs-tag">/^(?&lt;word&gt;[a-z]+)!\k&lt;word&gt;$/</span>;
+RE_TWICE.test(<span class="hljs-string">&#39;abc!abc&#39;</span>) <span class="hljs-comment">// true</span>
+RE_TWICE.test(<span class="hljs-string">&#39;abc!ab&#39;</span>) <span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">数字引用（<code class="pcalibre3 calibre13 pcalibre4">\1</code>）依然有效。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> RE_TWICE = <span class="hljs-tag">/^(?&lt;word&gt;[a-z]+)!\1$/</span>;
+RE_TWICE.test(<span class="hljs-string">&#39;abc!abc&#39;</span>) <span class="hljs-comment">// true</span>
+RE_TWICE.test(<span class="hljs-string">&#39;abc!ab&#39;</span>) <span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">这两种引用语法还可以同时使用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> RE_TWICE = <span class="hljs-tag">/^(?&lt;word&gt;[a-z]+)!\k&lt;word&gt;!\1$/</span>;
+RE_TWICE.test(<span class="hljs-string">&#39;abc!abc!abc&#39;</span>) <span class="hljs-comment">// true</span>
+RE_TWICE.test(<span class="hljs-string">&#39;abc!abc!ab&#39;</span>) <span class="hljs-comment">// false</span>
+</code></pre>
+<h2 id="stringprototypematchall" class="calibre12">String.prototype.matchAll</h2>
+<p class="calibre6">如果一个正则表达式在字符串里面有多个匹配，现在一般使用<code class="pcalibre3 calibre13 pcalibre4">g</code>修饰符或<code class="pcalibre3 calibre13 pcalibre4">y</code>修饰符，在循环里面逐一取出。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> regex = <span class="hljs-tag">/t(e)(st(\d?))/g</span>;
+<span class="hljs-keyword">var</span> string = <span class="hljs-string">&#39;test1test2test3&#39;</span>;
+
+<span class="hljs-keyword">var</span> matches = [];
+<span class="hljs-keyword">var</span> match;
+<span class="hljs-keyword">while</span> (match = regex.exec(string)) {
+  matches.push(match);
+}
+
+matches
+<span class="hljs-comment">// [</span>
+<span class="hljs-comment">//   [&#34;test1&#34;, &#34;e&#34;, &#34;st1&#34;, &#34;1&#34;, index: 0, input: &#34;test1test2test3&#34;],</span>
+<span class="hljs-comment">//   [&#34;test2&#34;, &#34;e&#34;, &#34;st2&#34;, &#34;2&#34;, index: 5, input: &#34;test1test2test3&#34;],</span>
+<span class="hljs-comment">//   [&#34;test3&#34;, &#34;e&#34;, &#34;st3&#34;, &#34;3&#34;, index: 10, input: &#34;test1test2test3&#34;]</span>
+<span class="hljs-comment">// ]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">while</code>循环取出每一轮的正则匹配，一共三轮。</p>
+<p class="calibre6">目前有一个<a href="https://github.com/tc39/proposal-string-matchall" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">提案</a>，增加了<code class="pcalibre3 calibre13 pcalibre4">String.prototype.matchAll</code>方法，可以一次性取出所有匹配。不过，它返回的是一个遍历器（Iterator），而不是数组。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> string = <span class="hljs-string">&#39;test1test2test3&#39;</span>;
+
+<span class="hljs-comment">// g 修饰符加不加都可以</span>
+<span class="hljs-keyword">const</span> regex = <span class="hljs-tag">/t(e)(st(\d?))/g</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> match <span class="hljs-keyword">of</span> string.matchAll(regex)) {
+  <span class="hljs-number">console</span>.log(match);
+}
+<span class="hljs-comment">// [&#34;test1&#34;, &#34;e&#34;, &#34;st1&#34;, &#34;1&#34;, index: 0, input: &#34;test1test2test3&#34;]</span>
+<span class="hljs-comment">// [&#34;test2&#34;, &#34;e&#34;, &#34;st2&#34;, &#34;2&#34;, index: 5, input: &#34;test1test2test3&#34;]</span>
+<span class="hljs-comment">// [&#34;test3&#34;, &#34;e&#34;, &#34;st3&#34;, &#34;3&#34;, index: 10, input: &#34;test1test2test3&#34;]</span>
+</code></pre>
+<p class="calibre6">上面代码中，由于<code class="pcalibre3 calibre13 pcalibre4">string.matchAll(regex)</code>返回的是遍历器，所以可以用<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环取出。相对于返回数组，返回遍历器的好处在于，如果匹配结果是一个很大的数组，那么遍历器比较节省资源。</p>
+<p class="calibre6">遍历器转为数组是非常简单的，使用<code class="pcalibre3 calibre13 pcalibre4">...</code>运算符和<code class="pcalibre3 calibre13 pcalibre4">Array.from</code>方法就可以了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 转为数组方法一</span>
+[...string.matchAll(regex)]
+
+<span class="hljs-comment">// 转为数组方法二</span>
+<span class="hljs-number">Array</span>.from(string.matchAll(regex));
+</code></pre>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="string.html" class="navigation navigation-prev"
+           aria-label="Previous page: 4. 字符串的扩展">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="number.html" class="navigation navigation-next"
+           aria-label="Next page: 6. 数值的扩展">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "6. 数值的扩展",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "4. 字符串的扩展",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

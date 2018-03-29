@@ -1,0 +1,799 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>6. 数值的扩展</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="function.html"/>
+    <link rel="prev" href="regex.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="number.html">6. 数值的扩展</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_7">6. 数值的扩展</h1>
+        <div class="section">
+            <h1 id="数值的扩展" class="calibre5">数值的扩展</h1>
+<h2 id="二进制和八进制表示法" class="calibre16">二进制和八进制表示法</h2>
+<p class="calibre6">ES6 提供了二进制和八进制数值的新的写法，分别用前缀<code class="pcalibre3 calibre13 pcalibre4">0b</code>（或<code class="pcalibre3 calibre13 pcalibre4">0B</code>）和<code class="pcalibre3 calibre13 pcalibre4">0o</code>（或<code class="pcalibre3 calibre13 pcalibre4">0O</code>）表示。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">0b111110111</span> === <span class="hljs-number">503</span> <span class="hljs-comment">// true</span>
+<span class="hljs-number">0o767</span> === <span class="hljs-number">503</span> <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">从 ES5 开始，在严格模式之中，八进制就不再允许使用前缀<code class="pcalibre3 calibre13 pcalibre4">0</code>表示，ES6 进一步明确，要使用前缀<code class="pcalibre3 calibre13 pcalibre4">0o</code>表示。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 非严格模式</span>
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>)</span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-number">0o11</span> === <span class="hljs-number">011</span>);
+})() <span class="hljs-comment">// true</span>
+
+<span class="hljs-comment">// 严格模式</span>
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>)</span>{
+<span class="hljs-_">  &#39;use strict&#39;</span>;
+  <span class="hljs-number">console</span>.log(<span class="hljs-number">0o11</span> === <span class="hljs-number">011</span>);
+})() <span class="hljs-comment">// Uncaught SyntaxError: Octal literals are not allowed in strict mode.</span>
+</code></pre>
+<p class="calibre6">如果要将<code class="pcalibre3 calibre13 pcalibre4">0b</code>和<code class="pcalibre3 calibre13 pcalibre4">0o</code>前缀的字符串数值转为十进制，要使用<code class="pcalibre3 calibre13 pcalibre4">Number</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>(<span class="hljs-string">&#39;0b111&#39;</span>)  <span class="hljs-comment">// 7</span>
+<span class="hljs-number">Number</span>(<span class="hljs-string">&#39;0o10&#39;</span>)  <span class="hljs-comment">// 8</span>
+</code></pre>
+<h2 id="numberisfinite-numberisnan" class="calibre12">Number.isFinite(), Number.isNaN()</h2>
+<p class="calibre6">ES6 在<code class="pcalibre3 calibre13 pcalibre4">Number</code>对象上，新提供了<code class="pcalibre3 calibre13 pcalibre4">Number.isFinite()</code>和<code class="pcalibre3 calibre13 pcalibre4">Number.isNaN()</code>两个方法。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Number.isFinite()</code>用来检查一个数值是否为有限的（finite），即不是<code class="pcalibre3 calibre13 pcalibre4">Infinity</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.isFinite(<span class="hljs-number">15</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isFinite(<span class="hljs-number">0.8</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isFinite(<span class="hljs-number">NaN</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isFinite(<span class="hljs-number">Infinity</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isFinite(-<span class="hljs-number">Infinity</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isFinite(<span class="hljs-string">&#39;foo&#39;</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isFinite(<span class="hljs-string">&#39;15&#39;</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isFinite(<span class="hljs-number">true</span>); <span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">注意，如果参数类型不是数值，<code class="pcalibre3 calibre13 pcalibre4">Number.isFinite</code>一律返回<code class="pcalibre3 calibre13 pcalibre4">false</code>。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Number.isNaN()</code>用来检查一个值是否为<code class="pcalibre3 calibre13 pcalibre4">NaN</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.isNaN(<span class="hljs-number">NaN</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isNaN(<span class="hljs-number">15</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isNaN(<span class="hljs-string">&#39;15&#39;</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isNaN(<span class="hljs-number">true</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isNaN(<span class="hljs-number">9</span>/<span class="hljs-number">NaN</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isNaN(<span class="hljs-string">&#39;true&#39;</span> / <span class="hljs-number">0</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isNaN(<span class="hljs-string">&#39;true&#39;</span> / <span class="hljs-string">&#39;true&#39;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">如果参数类型不是<code class="pcalibre3 calibre13 pcalibre4">NaN</code>，<code class="pcalibre3 calibre13 pcalibre4">Number.isNaN</code>一律返回<code class="pcalibre3 calibre13 pcalibre4">false</code>。</p>
+<p class="calibre6">它们与传统的全局方法<code class="pcalibre3 calibre13 pcalibre4">isFinite()</code>和<code class="pcalibre3 calibre13 pcalibre4">isNaN()</code>的区别在于，传统方法先调用<code class="pcalibre3 calibre13 pcalibre4">Number()</code>将非数值的值转为数值，再进行判断，而这两个新方法只对数值有效，<code class="pcalibre3 calibre13 pcalibre4">Number.isFinite()</code>对于非数值一律返回<code class="pcalibre3 calibre13 pcalibre4">false</code>, <code class="pcalibre3 calibre13 pcalibre4">Number.isNaN()</code>只有对于<code class="pcalibre3 calibre13 pcalibre4">NaN</code>才返回<code class="pcalibre3 calibre13 pcalibre4">true</code>，非<code class="pcalibre3 calibre13 pcalibre4">NaN</code>一律返回<code class="pcalibre3 calibre13 pcalibre4">false</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">isFinite</span>(<span class="hljs-number">25</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">isFinite</span>(<span class="hljs-string">&#34;25&#34;</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isFinite(<span class="hljs-number">25</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isFinite(<span class="hljs-string">&#34;25&#34;</span>) <span class="hljs-comment">// false</span>
+
+<span class="hljs-number">isNaN</span>(<span class="hljs-number">NaN</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">isNaN</span>(<span class="hljs-string">&#34;NaN&#34;</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isNaN(<span class="hljs-number">NaN</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isNaN(<span class="hljs-string">&#34;NaN&#34;</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isNaN(<span class="hljs-number">1</span>) <span class="hljs-comment">// false</span>
+</code></pre>
+<h2 id="numberparseint-numberparsefloat" class="calibre12">Number.parseInt(), Number.parseFloat()</h2>
+<p class="calibre6">ES6 将全局方法<code class="pcalibre3 calibre13 pcalibre4">parseInt()</code>和<code class="pcalibre3 calibre13 pcalibre4">parseFloat()</code>，移植到<code class="pcalibre3 calibre13 pcalibre4">Number</code>对象上面，行为完全保持不变。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// ES5的写法</span>
+<span class="hljs-number">parseInt</span>(<span class="hljs-string">&#39;12.34&#39;</span>) <span class="hljs-comment">// 12</span>
+<span class="hljs-number">parseFloat</span>(<span class="hljs-string">&#39;123.45#&#39;</span>) <span class="hljs-comment">// 123.45</span>
+
+<span class="hljs-comment">// ES6的写法</span>
+<span class="hljs-number">Number</span>.parseInt(<span class="hljs-string">&#39;12.34&#39;</span>) <span class="hljs-comment">// 12</span>
+<span class="hljs-number">Number</span>.parseFloat(<span class="hljs-string">&#39;123.45#&#39;</span>) <span class="hljs-comment">// 123.45</span>
+</code></pre>
+<p class="calibre6">这样做的目的，是逐步减少全局性方法，使得语言逐步模块化。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.parseInt === <span class="hljs-number">parseInt</span> <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.parseFloat === <span class="hljs-number">parseFloat</span> <span class="hljs-comment">// true</span>
+</code></pre>
+<h2 id="numberisinteger" class="calibre12">Number.isInteger()</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Number.isInteger()</code>用来判断一个数值是否为整数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.isInteger(<span class="hljs-number">25</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isInteger(<span class="hljs-number">25.1</span>) <span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">JavaScript 内部，整数和浮点数采用的是同样的储存方法，所以 25  和 25.0 被视为同一个值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.isInteger(<span class="hljs-number">25</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isInteger(<span class="hljs-number">25.0</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">如果参数不是数值，<code class="pcalibre3 calibre13 pcalibre4">Number.isInteger</code>返回<code class="pcalibre3 calibre13 pcalibre4">false</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.isInteger() <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isInteger(<span class="hljs-number">null</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isInteger(<span class="hljs-string">&#39;15&#39;</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isInteger(<span class="hljs-number">true</span>) <span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">注意，由于 JavaScript 采用 IEEE 754 标准，数值存储为64位双精度格式，数值精度最多可以达到 53 个二进制位（1 个隐藏位与 52 个有效位）。如果数值的精度超过这个限度，第54位及后面的位就会被丢弃，这种情况下，<code class="pcalibre3 calibre13 pcalibre4">Number.isInteger</code>可能会误判。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.isInteger(<span class="hljs-number">3.0000000000000002</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Number.isInteger</code>的参数明明不是整数，但是会返回<code class="pcalibre3 calibre13 pcalibre4">true</code>。原因就是这个小数的精度达到了小数点后16个十进制位，转成二进制位超过了53个二进制位，导致最后的那个<code class="pcalibre3 calibre13 pcalibre4">2</code>被丢弃了。</p>
+<p class="calibre6">类似的情况还有，如果一个数值的绝对值小于<code class="pcalibre3 calibre13 pcalibre4">Number.MIN_VALUE</code>（5E-324），即小于 JavaScript 能够分辨的最小值，会被自动转为 0。这时，<code class="pcalibre3 calibre13 pcalibre4">Number.isInteger</code>也会误判。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.isInteger(<span class="hljs-number">5E-324</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isInteger(<span class="hljs-number">5E-325</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">5E-325</code>由于值太小，会被自动转为0，因此返回<code class="pcalibre3 calibre13 pcalibre4">true</code>。</p>
+<p class="calibre6">总之，如果对数据精度的要求较高，不建议使用<code class="pcalibre3 calibre13 pcalibre4">Number.isInteger()</code>判断一个数值是否为整数。</p>
+<h2 id="numberepsilon" class="calibre12">Number.EPSILON</h2>
+<p class="calibre6">ES6 在<code class="pcalibre3 calibre13 pcalibre4">Number</code>对象上面，新增一个极小的常量<code class="pcalibre3 calibre13 pcalibre4">Number.EPSILON</code>。根据规格，它表示 1 与大于 1 的最小浮点数之间的差。</p>
+<p class="calibre6">对于 64 位浮点数来说，大于 1 的最小浮点数相当于二进制的<code class="pcalibre3 calibre13 pcalibre4">1.00..001</code>，小数点后面有连续 51 个零。这个值减去 1 之后，就等于 2 的 -52 次方。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.EPSILON === <span class="hljs-number">Math</span>.pow(<span class="hljs-number">2</span>, <span class="hljs-number">-52</span>)
+<span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.EPSILON
+<span class="hljs-comment">// 2.220446049250313e-16</span>
+<span class="hljs-number">Number</span>.EPSILON.toFixed(<span class="hljs-number">20</span>)
+<span class="hljs-comment">// &#34;0.00000000000000022204&#34;</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Number.EPSILON</code>实际上是 JavaScript 能够表示的最小精度。误差如果小于这个值，就可以认为已经没有意义了，即不存在误差了。</p>
+<p class="calibre6">引入一个这么小的量的目的，在于为浮点数计算，设置一个误差范围。我们知道浮点数计算是不精确的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">0.1</span> + <span class="hljs-number">0.2</span>
+<span class="hljs-comment">// 0.30000000000000004</span>
+
+<span class="hljs-number">0.1</span> + <span class="hljs-number">0.2</span> - <span class="hljs-number">0.3</span>
+<span class="hljs-comment">// 5.551115123125783e-17</span>
+
+<span class="hljs-number">5.551115123125783e-17</span>.toFixed(<span class="hljs-number">20</span>)
+<span class="hljs-comment">// &#39;0.00000000000000005551&#39;</span>
+</code></pre>
+<p class="calibre6">上面代码解释了，为什么比较<code class="pcalibre3 calibre13 pcalibre4">0.1 + 0.2</code>与<code class="pcalibre3 calibre13 pcalibre4">0.3</code>得到的结果是<code class="pcalibre3 calibre13 pcalibre4">false</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">0.1</span> + <span class="hljs-number">0.2</span> === <span class="hljs-number">0.3</span> <span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Number.EPSILON</code>可以用来设置“能够接受的误差范围”。比如，误差范围设为 2 的-50 次方（即<code class="pcalibre3 calibre13 pcalibre4">Number.EPSILON * Math.pow(2, 2)</code>），即如果两个浮点数的差小于这个值，我们就认为这两个浮点数相等。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">5.551115123125783e-17</span> &lt; <span class="hljs-number">Number</span>.EPSILON * <span class="hljs-number">Math</span>.pow(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)
+<span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">因此，<code class="pcalibre3 calibre13 pcalibre4">Number.EPSILON</code>的实质是一个可以接受的最小误差范围。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">withinErrorMargin</span> (<span class="hljs-number">left, right</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">Math</span>.abs(left - right) &lt; <span class="hljs-number">Number</span>.EPSILON * <span class="hljs-number">Math</span>.pow(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>);
+}
+
+<span class="hljs-number">0.1</span> + <span class="hljs-number">0.2</span> === <span class="hljs-number">0.3</span> <span class="hljs-comment">// false</span>
+withinErrorMargin(<span class="hljs-number">0.1</span> + <span class="hljs-number">0.2</span>, <span class="hljs-number">0.3</span>) <span class="hljs-comment">// true</span>
+
+<span class="hljs-number">1.1</span> + <span class="hljs-number">1.3</span> === <span class="hljs-number">2.4</span> <span class="hljs-comment">// false</span>
+withinErrorMargin(<span class="hljs-number">1.1</span> + <span class="hljs-number">1.3</span>, <span class="hljs-number">2.4</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面的代码为浮点数运算，部署了一个误差检查函数。</p>
+<h2 id="安全整数和-numberissafeinteger" class="calibre12">安全整数和 Number.isSafeInteger()</h2>
+<p class="calibre6">JavaScript 能够准确表示的整数范围在<code class="pcalibre3 calibre13 pcalibre4">-2^53</code>到<code class="pcalibre3 calibre13 pcalibre4">2^53</code>之间（不含两个端点），超过这个范围，无法精确表示这个值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.pow(<span class="hljs-number">2</span>, <span class="hljs-number">53</span>) <span class="hljs-comment">// 9007199254740992</span>
+
+<span class="hljs-number">9007199254740992</span>  <span class="hljs-comment">// 9007199254740992</span>
+<span class="hljs-number">9007199254740993</span>  <span class="hljs-comment">// 9007199254740992</span>
+
+<span class="hljs-number">Math</span>.pow(<span class="hljs-number">2</span>, <span class="hljs-number">53</span>) === <span class="hljs-number">Math</span>.pow(<span class="hljs-number">2</span>, <span class="hljs-number">53</span>) + <span class="hljs-number">1</span>
+<span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，超出 2 的 53 次方之后，一个数就不精确了。</p>
+<p class="calibre6">ES6 引入了<code class="pcalibre3 calibre13 pcalibre4">Number.MAX_SAFE_INTEGER</code>和<code class="pcalibre3 calibre13 pcalibre4">Number.MIN_SAFE_INTEGER</code>这两个常量，用来表示这个范围的上下限。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.MAX_SAFE_INTEGER === <span class="hljs-number">Math</span>.pow(<span class="hljs-number">2</span>, <span class="hljs-number">53</span>) - <span class="hljs-number">1</span>
+<span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.MAX_SAFE_INTEGER === <span class="hljs-number">9007199254740991</span>
+<span class="hljs-comment">// true</span>
+
+<span class="hljs-number">Number</span>.MIN_SAFE_INTEGER === -<span class="hljs-number">Number</span>.MAX_SAFE_INTEGER
+<span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.MIN_SAFE_INTEGER === <span class="hljs-number">-9007199254740991</span>
+<span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，可以看到 JavaScript 能够精确表示的极限。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Number.isSafeInteger()</code>则是用来判断一个整数是否落在这个范围之内。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-string">&#39;a&#39;</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">null</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">NaN</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">Infinity</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isSafeInteger(-<span class="hljs-number">Infinity</span>) <span class="hljs-comment">// false</span>
+
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">3</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">1.2</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">9007199254740990</span>) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">9007199254740992</span>) <span class="hljs-comment">// false</span>
+
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">Number</span>.MIN_SAFE_INTEGER - <span class="hljs-number">1</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">Number</span>.MIN_SAFE_INTEGER) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">Number</span>.MAX_SAFE_INTEGER) <span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">Number</span>.MAX_SAFE_INTEGER + <span class="hljs-number">1</span>) <span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">这个函数的实现很简单，就是跟安全整数的两个边界值比较一下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.isSafeInteger = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">n</span>) </span>{
+  <span class="hljs-keyword">return</span> (<span class="hljs-keyword">typeof</span> n === <span class="hljs-string">&#39;number&#39;</span> &amp;&amp;
+    <span class="hljs-number">Math</span>.round(n) === n &amp;&amp;
+    <span class="hljs-number">Number</span>.MIN_SAFE_INTEGER &lt;= n &amp;&amp;
+    n &lt;= <span class="hljs-number">Number</span>.MAX_SAFE_INTEGER);
+}
+</code></pre>
+<p class="calibre6">实际使用这个函数时，需要注意。验证运算结果是否落在安全整数的范围内，不要只验证运算结果，而要同时验证参与运算的每个值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">9007199254740993</span>)
+<span class="hljs-comment">// false</span>
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">990</span>)
+<span class="hljs-comment">// true</span>
+<span class="hljs-number">Number</span>.isSafeInteger(<span class="hljs-number">9007199254740993</span> - <span class="hljs-number">990</span>)
+<span class="hljs-comment">// true</span>
+<span class="hljs-number">9007199254740993</span> - <span class="hljs-number">990</span>
+<span class="hljs-comment">// 返回结果 9007199254740002</span>
+<span class="hljs-comment">// 正确答案应该是 9007199254740003</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">9007199254740993</code>不是一个安全整数，但是<code class="pcalibre3 calibre13 pcalibre4">Number.isSafeInteger</code>会返回结果，显示计算结果是安全的。这是因为，这个数超出了精度范围，导致在计算机内部，以<code class="pcalibre3 calibre13 pcalibre4">9007199254740992</code>的形式储存。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">9007199254740993</span> === <span class="hljs-number">9007199254740992</span>
+<span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">所以，如果只验证运算结果是否为安全整数，很可能得到错误结果。下面的函数可以同时验证两个运算数和运算结果。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">trusty</span> (<span class="hljs-number">left, right, result</span>) </span>{
+  <span class="hljs-keyword">if</span> (
+    <span class="hljs-number">Number</span>.isSafeInteger(left) &amp;&amp;
+    <span class="hljs-number">Number</span>.isSafeInteger(right) &amp;&amp;
+    <span class="hljs-number">Number</span>.isSafeInteger(result)
+  ) {
+    <span class="hljs-keyword">return</span> result;
+  }
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">RangeError</span>(<span class="hljs-string">&#39;Operation cannot be trusted!&#39;</span>);
+}
+
+trusty(<span class="hljs-number">9007199254740993</span>, <span class="hljs-number">990</span>, <span class="hljs-number">9007199254740993</span> - <span class="hljs-number">990</span>)
+<span class="hljs-comment">// RangeError: Operation cannot be trusted!</span>
+
+trusty(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+<span class="hljs-comment">// 3</span>
+</code></pre>
+<h2 id="math-对象的扩展" class="calibre12">Math 对象的扩展</h2>
+<p class="calibre6">ES6 在 Math 对象上新增了 17 个与数学相关的方法。所有这些方法都是静态方法，只能在 Math 对象上调用。</p>
+<h3 id="mathtrunc" class="calibre11">Math.trunc()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Math.trunc</code>方法用于去除一个数的小数部分，返回整数部分。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.trunc(<span class="hljs-number">4.1</span>) <span class="hljs-comment">// 4</span>
+<span class="hljs-number">Math</span>.trunc(<span class="hljs-number">4.9</span>) <span class="hljs-comment">// 4</span>
+<span class="hljs-number">Math</span>.trunc(<span class="hljs-number">-4.1</span>) <span class="hljs-comment">// -4</span>
+<span class="hljs-number">Math</span>.trunc(<span class="hljs-number">-4.9</span>) <span class="hljs-comment">// -4</span>
+<span class="hljs-number">Math</span>.trunc(<span class="hljs-number">-0.1234</span>) <span class="hljs-comment">// -0</span>
+</code></pre>
+<p class="calibre6">对于非数值，<code class="pcalibre3 calibre13 pcalibre4">Math.trunc</code>内部使用<code class="pcalibre3 calibre13 pcalibre4">Number</code>方法将其先转为数值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.trunc(<span class="hljs-string">&#39;123.456&#39;</span>) <span class="hljs-comment">// 123</span>
+<span class="hljs-number">Math</span>.trunc(<span class="hljs-number">true</span>) <span class="hljs-comment">//1</span>
+<span class="hljs-number">Math</span>.trunc(<span class="hljs-number">false</span>) <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.trunc(<span class="hljs-number">null</span>) <span class="hljs-comment">// 0</span>
+</code></pre>
+<p class="calibre6">对于空值和无法截取整数的值，返回<code class="pcalibre3 calibre13 pcalibre4">NaN</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.trunc(<span class="hljs-number">NaN</span>);      <span class="hljs-comment">// NaN</span>
+<span class="hljs-number">Math</span>.trunc(<span class="hljs-string">&#39;foo&#39;</span>);    <span class="hljs-comment">// NaN</span>
+<span class="hljs-number">Math</span>.trunc();         <span class="hljs-comment">// NaN</span>
+<span class="hljs-number">Math</span>.trunc(<span class="hljs-number">undefined</span>) <span class="hljs-comment">// NaN</span>
+</code></pre>
+<p class="calibre6">对于没有部署这个方法的环境，可以用下面的代码模拟。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.trunc = <span class="hljs-number">Math</span>.trunc || <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-keyword">return</span> x &lt; <span class="hljs-number">0</span> ? <span class="hljs-number">Math</span>.ceil(x) : <span class="hljs-number">Math</span>.floor(x);
+};
+</code></pre>
+<h3 id="mathsign" class="calibre11">Math.sign()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Math.sign</code>方法用来判断一个数到底是正数、负数、还是零。对于非数值，会先将其转换为数值。</p>
+<p class="calibre6">它会返回五种值。</p>
+<ul class="calibre9">
+<li class="calibre10">参数为正数，返回<code class="pcalibre3 calibre13 pcalibre4">+1</code>；</li>
+<li class="calibre10">参数为负数，返回<code class="pcalibre3 calibre13 pcalibre4">-1</code>；</li>
+<li class="calibre10">参数为 0，返回<code class="pcalibre3 calibre13 pcalibre4">0</code>；</li>
+<li class="calibre10">参数为-0，返回<code class="pcalibre3 calibre13 pcalibre4">-0</code>;</li>
+<li class="calibre10">其他值，返回<code class="pcalibre3 calibre13 pcalibre4">NaN</code>。</li>
+</ul>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.sign(<span class="hljs-number">-5</span>) <span class="hljs-comment">// -1</span>
+<span class="hljs-number">Math</span>.sign(<span class="hljs-number">5</span>) <span class="hljs-comment">// +1</span>
+<span class="hljs-number">Math</span>.sign(<span class="hljs-number">0</span>) <span class="hljs-comment">// +0</span>
+<span class="hljs-number">Math</span>.sign(<span class="hljs-number">-0</span>) <span class="hljs-comment">// -0</span>
+<span class="hljs-number">Math</span>.sign(<span class="hljs-number">NaN</span>) <span class="hljs-comment">// NaN</span>
+</code></pre>
+<p class="calibre6">如果参数是非数值，会自动转为数值。对于那些无法转为数值的值，会返回<code class="pcalibre3 calibre13 pcalibre4">NaN</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.sign(<span class="hljs-string">&#39;&#39;</span>)  <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.sign(<span class="hljs-number">true</span>)  <span class="hljs-comment">// +1</span>
+<span class="hljs-number">Math</span>.sign(<span class="hljs-number">false</span>)  <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.sign(<span class="hljs-number">null</span>)  <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.sign(<span class="hljs-string">&#39;9&#39;</span>)  <span class="hljs-comment">// +1</span>
+<span class="hljs-number">Math</span>.sign(<span class="hljs-string">&#39;foo&#39;</span>)  <span class="hljs-comment">// NaN</span>
+<span class="hljs-number">Math</span>.sign()  <span class="hljs-comment">// NaN</span>
+<span class="hljs-number">Math</span>.sign(<span class="hljs-number">undefined</span>)  <span class="hljs-comment">// NaN</span>
+</code></pre>
+<p class="calibre6">对于没有部署这个方法的环境，可以用下面的代码模拟。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.sign = <span class="hljs-number">Math</span>.sign || <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">x</span>) </span>{
+  x = +x; <span class="hljs-comment">// convert to a number</span>
+  <span class="hljs-keyword">if</span> (x === <span class="hljs-number">0</span> || <span class="hljs-number">isNaN</span>(x)) {
+    <span class="hljs-keyword">return</span> x;
+  }
+  <span class="hljs-keyword">return</span> x &gt; <span class="hljs-number">0</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">-1</span>;
+};
+</code></pre>
+<h3 id="mathcbrt" class="calibre11">Math.cbrt()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Math.cbrt</code>方法用于计算一个数的立方根。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.cbrt(<span class="hljs-number">-1</span>) <span class="hljs-comment">// -1</span>
+<span class="hljs-number">Math</span>.cbrt(<span class="hljs-number">0</span>)  <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.cbrt(<span class="hljs-number">1</span>)  <span class="hljs-comment">// 1</span>
+<span class="hljs-number">Math</span>.cbrt(<span class="hljs-number">2</span>)  <span class="hljs-comment">// 1.2599210498948734</span>
+</code></pre>
+<p class="calibre6">对于非数值，<code class="pcalibre3 calibre13 pcalibre4">Math.cbrt</code>方法内部也是先使用<code class="pcalibre3 calibre13 pcalibre4">Number</code>方法将其转为数值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.cbrt(<span class="hljs-string">&#39;8&#39;</span>) <span class="hljs-comment">// 2</span>
+<span class="hljs-number">Math</span>.cbrt(<span class="hljs-string">&#39;hello&#39;</span>) <span class="hljs-comment">// NaN</span>
+</code></pre>
+<p class="calibre6">对于没有部署这个方法的环境，可以用下面的代码模拟。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.cbrt = <span class="hljs-number">Math</span>.cbrt || <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-keyword">var</span> y = <span class="hljs-number">Math</span>.pow(<span class="hljs-number">Math</span>.abs(x), <span class="hljs-number">1</span>/<span class="hljs-number">3</span>);
+  <span class="hljs-keyword">return</span> x &lt; <span class="hljs-number">0</span> ? -y : y;
+};
+</code></pre>
+<h3 id="mathclz32" class="calibre11">Math.clz32()</h3>
+<p class="calibre6">JavaScript 的整数使用 32 位二进制形式表示，<code class="pcalibre3 calibre13 pcalibre4">Math.clz32</code>方法返回一个数的 32 位无符号整数形式有多少个前导 0。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.clz32(<span class="hljs-number">0</span>) <span class="hljs-comment">// 32</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">1</span>) <span class="hljs-comment">// 31</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">1000</span>) <span class="hljs-comment">// 22</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">0b01000000000000000000000000000000</span>) <span class="hljs-comment">// 1</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">0b00100000000000000000000000000000</span>) <span class="hljs-comment">// 2</span>
+</code></pre>
+<p class="calibre6">上面代码中，0 的二进制形式全为 0，所以有 32 个前导 0；1 的二进制形式是<code class="pcalibre3 calibre13 pcalibre4">0b1</code>，只占 1 位，所以 32 位之中有 31 个前导 0；1000 的二进制形式是<code class="pcalibre3 calibre13 pcalibre4">0b1111101000</code>，一共有 10 位，所以 32 位之中有 22 个前导 0。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">clz32</code>这个函数名就来自”count leading zero bits in 32-bit binary representation of a number“（计算一个数的 32 位二进制形式的前导 0 的个数）的缩写。</p>
+<p class="calibre6">左移运算符（<code class="pcalibre3 calibre13 pcalibre4">&lt;&lt;</code>）与<code class="pcalibre3 calibre13 pcalibre4">Math.clz32</code>方法直接相关。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.clz32(<span class="hljs-number">0</span>) <span class="hljs-comment">// 32</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">1</span>) <span class="hljs-comment">// 31</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">1</span>) <span class="hljs-comment">// 30</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">2</span>) <span class="hljs-comment">// 29</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">29</span>) <span class="hljs-comment">// 2</span>
+</code></pre>
+<p class="calibre6">对于小数，<code class="pcalibre3 calibre13 pcalibre4">Math.clz32</code>方法只考虑整数部分。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.clz32(<span class="hljs-number">3.2</span>) <span class="hljs-comment">// 30</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">3.9</span>) <span class="hljs-comment">// 30</span>
+</code></pre>
+<p class="calibre6">对于空值或其他类型的值，<code class="pcalibre3 calibre13 pcalibre4">Math.clz32</code>方法会将它们先转为数值，然后再计算。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.clz32() <span class="hljs-comment">// 32</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">NaN</span>) <span class="hljs-comment">// 32</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">Infinity</span>) <span class="hljs-comment">// 32</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">null</span>) <span class="hljs-comment">// 32</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-string">&#39;foo&#39;</span>) <span class="hljs-comment">// 32</span>
+<span class="hljs-number">Math</span>.clz32([]) <span class="hljs-comment">// 32</span>
+<span class="hljs-number">Math</span>.clz32({}) <span class="hljs-comment">// 32</span>
+<span class="hljs-number">Math</span>.clz32(<span class="hljs-number">true</span>) <span class="hljs-comment">// 31</span>
+</code></pre>
+<h3 id="mathimul" class="calibre11">Math.imul()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Math.imul</code>方法返回两个数以 32 位带符号整数形式相乘的结果，返回的也是一个 32 位的带符号整数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.imul(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>)   <span class="hljs-comment">// 8</span>
+<span class="hljs-number">Math</span>.imul(<span class="hljs-number">-1</span>, <span class="hljs-number">8</span>)  <span class="hljs-comment">// -8</span>
+<span class="hljs-number">Math</span>.imul(<span class="hljs-number">-2</span>, <span class="hljs-number">-2</span>) <span class="hljs-comment">// 4</span>
+</code></pre>
+<p class="calibre6">如果只考虑最后 32 位，大多数情况下，<code class="pcalibre3 calibre13 pcalibre4">Math.imul(a, b)</code>与<code class="pcalibre3 calibre13 pcalibre4">a * b</code>的结果是相同的，即该方法等同于<code class="pcalibre3 calibre13 pcalibre4">(a * b)|0</code>的效果（超过 32 位的部分溢出）。之所以需要部署这个方法，是因为 JavaScript 有精度限制，超过 2 的 53 次方的值无法精确表示。这就是说，对于那些很大的数的乘法，低位数值往往都是不精确的，<code class="pcalibre3 calibre13 pcalibre4">Math.imul</code>方法可以返回正确的低位数值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-number">0x7fffffff</span> * <span class="hljs-number">0x7fffffff</span>)|<span class="hljs-number">0</span> <span class="hljs-comment">// 0</span>
+</code></pre>
+<p class="calibre6">上面这个乘法算式，返回结果为 0。但是由于这两个二进制数的最低位都是 1，所以这个结果肯定是不正确的，因为根据二进制乘法，计算结果的二进制最低位应该也是 1。这个错误就是因为它们的乘积超过了 2 的 53 次方，JavaScript 无法保存额外的精度，就把低位的值都变成了 0。<code class="pcalibre3 calibre13 pcalibre4">Math.imul</code>方法可以返回正确的值 1。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.imul(<span class="hljs-number">0x7fffffff</span>, <span class="hljs-number">0x7fffffff</span>) <span class="hljs-comment">// 1</span>
+</code></pre>
+<h3 id="mathfround" class="calibre11">Math.fround()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Math.fround</code>方法返回一个数的32位单精度浮点数形式。</p>
+<p class="calibre6">对于32位单精度格式来说，数值精度是24个二进制位（1 位隐藏位与 23 位有效位），所以对于 -2<sup class="calibre18">24</sup> 至 2<sup class="calibre18">24</sup> 之间的整数（不含两个端点），返回结果与参数本身一致。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.fround(<span class="hljs-number">0</span>)   <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.fround(<span class="hljs-number">1</span>)   <span class="hljs-comment">// 1</span>
+<span class="hljs-number">Math</span>.fround(<span class="hljs-number">2</span> ** <span class="hljs-number">24</span> - <span class="hljs-number">1</span>)   <span class="hljs-comment">// 16777215</span>
+</code></pre>
+<p class="calibre6">如果参数的绝对值大于 2<sup class="calibre18">24</sup>，返回的结果便开始丢失精度。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.fround(<span class="hljs-number">2</span> ** <span class="hljs-number">24</span>)       <span class="hljs-comment">// 16777216</span>
+<span class="hljs-number">Math</span>.fround(<span class="hljs-number">2</span> ** <span class="hljs-number">24</span> + <span class="hljs-number">1</span>)   <span class="hljs-comment">// 16777216</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Math.fround</code>方法的主要作用，是将64位双精度浮点数转为32位单精度浮点数。如果小数的精度超过24个二进制位，返回值就会不同于原值，否则返回值不变（即与64位双精度值一致）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 未丢失有效精度</span>
+<span class="hljs-number">Math</span>.fround(<span class="hljs-number">1.125</span>) <span class="hljs-comment">// 1.125</span>
+<span class="hljs-number">Math</span>.fround(<span class="hljs-number">7.25</span>)  <span class="hljs-comment">// 7.25</span>
+
+<span class="hljs-comment">// 丢失精度</span>
+<span class="hljs-number">Math</span>.fround(<span class="hljs-number">0.3</span>)   <span class="hljs-comment">// 0.30000001192092896</span>
+<span class="hljs-number">Math</span>.fround(<span class="hljs-number">0.7</span>)   <span class="hljs-comment">// 0.699999988079071</span>
+<span class="hljs-number">Math</span>.fround(<span class="hljs-number">1.0000000123</span>) <span class="hljs-comment">// 1</span>
+</code></pre>
+<p class="calibre6">对于 <code class="pcalibre3 calibre13 pcalibre4">NaN</code> 和 <code class="pcalibre3 calibre13 pcalibre4">Infinity</code>，此方法返回原值。对于其它类型的非数值，<code class="pcalibre3 calibre13 pcalibre4">Math.fround</code> 方法会先将其转为数值，再返回单精度浮点数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.fround(<span class="hljs-number">NaN</span>)      <span class="hljs-comment">// NaN</span>
+<span class="hljs-number">Math</span>.fround(<span class="hljs-number">Infinity</span>) <span class="hljs-comment">// Infinity</span>
+
+<span class="hljs-number">Math</span>.fround(<span class="hljs-string">&#39;5&#39;</span>)      <span class="hljs-comment">// 5</span>
+<span class="hljs-number">Math</span>.fround(<span class="hljs-number">true</span>)     <span class="hljs-comment">// 1</span>
+<span class="hljs-number">Math</span>.fround(<span class="hljs-number">null</span>)     <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.fround([])       <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.fround({})       <span class="hljs-comment">// NaN</span>
+</code></pre>
+<p class="calibre6">对于没有部署这个方法的环境，可以用下面的代码模拟。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.fround = <span class="hljs-number">Math</span>.fround || <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Float32Array</span>([x])[<span class="hljs-number">0</span>];
+};
+</code></pre>
+<h3 id="mathhypot" class="calibre11">Math.hypot()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Math.hypot</code>方法返回所有参数的平方和的平方根。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.hypot(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>);        <span class="hljs-comment">// 5</span>
+<span class="hljs-number">Math</span>.hypot(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>);     <span class="hljs-comment">// 7.0710678118654755</span>
+<span class="hljs-number">Math</span>.hypot();            <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.hypot(<span class="hljs-number">NaN</span>);         <span class="hljs-comment">// NaN</span>
+<span class="hljs-number">Math</span>.hypot(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-string">&#39;foo&#39;</span>); <span class="hljs-comment">// NaN</span>
+<span class="hljs-number">Math</span>.hypot(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-string">&#39;5&#39;</span>);   <span class="hljs-comment">// 7.0710678118654755</span>
+<span class="hljs-number">Math</span>.hypot(<span class="hljs-number">-3</span>);          <span class="hljs-comment">// 3</span>
+</code></pre>
+<p class="calibre6">上面代码中，3 的平方加上 4 的平方，等于 5 的平方。</p>
+<p class="calibre6">如果参数不是数值，<code class="pcalibre3 calibre13 pcalibre4">Math.hypot</code>方法会将其转为数值。只要有一个参数无法转为数值，就会返回 NaN。</p>
+<h3 id="对数方法" class="calibre11">对数方法</h3>
+<p class="calibre6">ES6 新增了 4 个对数相关方法。</p>
+<p class="calibre6"><strong class="calibre17">（1） Math.expm1()</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Math.expm1(x)</code>返回 e<sup class="calibre18">x</sup> - 1，即<code class="pcalibre3 calibre13 pcalibre4">Math.exp(x) - 1</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.expm1(<span class="hljs-number">-1</span>) <span class="hljs-comment">// -0.6321205588285577</span>
+<span class="hljs-number">Math</span>.expm1(<span class="hljs-number">0</span>)  <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.expm1(<span class="hljs-number">1</span>)  <span class="hljs-comment">// 1.718281828459045</span>
+</code></pre>
+<p class="calibre6">对于没有部署这个方法的环境，可以用下面的代码模拟。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.expm1 = <span class="hljs-number">Math</span>.expm1 || <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">Math</span>.exp(x) - <span class="hljs-number">1</span>;
+};
+</code></pre>
+<p class="calibre6"><strong class="calibre17">（2）Math.log1p()</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Math.log1p(x)</code>方法返回<code class="pcalibre3 calibre13 pcalibre4">1 + x</code>的自然对数，即<code class="pcalibre3 calibre13 pcalibre4">Math.log(1 + x)</code>。如果<code class="pcalibre3 calibre13 pcalibre4">x</code>小于-1，返回<code class="pcalibre3 calibre13 pcalibre4">NaN</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.log1p(<span class="hljs-number">1</span>)  <span class="hljs-comment">// 0.6931471805599453</span>
+<span class="hljs-number">Math</span>.log1p(<span class="hljs-number">0</span>)  <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.log1p(<span class="hljs-number">-1</span>) <span class="hljs-comment">// -Infinity</span>
+<span class="hljs-number">Math</span>.log1p(<span class="hljs-number">-2</span>) <span class="hljs-comment">// NaN</span>
+</code></pre>
+<p class="calibre6">对于没有部署这个方法的环境，可以用下面的代码模拟。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.log1p = <span class="hljs-number">Math</span>.log1p || <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">Math</span>.log(<span class="hljs-number">1</span> + x);
+};
+</code></pre>
+<p class="calibre6"><strong class="calibre17">（3）Math.log10()</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Math.log10(x)</code>返回以 10 为底的<code class="pcalibre3 calibre13 pcalibre4">x</code>的对数。如果<code class="pcalibre3 calibre13 pcalibre4">x</code>小于 0，则返回 NaN。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.log10(<span class="hljs-number">2</span>)      <span class="hljs-comment">// 0.3010299956639812</span>
+<span class="hljs-number">Math</span>.log10(<span class="hljs-number">1</span>)      <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.log10(<span class="hljs-number">0</span>)      <span class="hljs-comment">// -Infinity</span>
+<span class="hljs-number">Math</span>.log10(<span class="hljs-number">-2</span>)     <span class="hljs-comment">// NaN</span>
+<span class="hljs-number">Math</span>.log10(<span class="hljs-number">100000</span>) <span class="hljs-comment">// 5</span>
+</code></pre>
+<p class="calibre6">对于没有部署这个方法的环境，可以用下面的代码模拟。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.log10 = <span class="hljs-number">Math</span>.log10 || <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">Math</span>.log(x) / <span class="hljs-number">Math</span>.LN10;
+};
+</code></pre>
+<p class="calibre6"><strong class="calibre17">（4）Math.log2()</strong></p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Math.log2(x)</code>返回以 2 为底的<code class="pcalibre3 calibre13 pcalibre4">x</code>的对数。如果<code class="pcalibre3 calibre13 pcalibre4">x</code>小于 0，则返回 NaN。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.log2(<span class="hljs-number">3</span>)       <span class="hljs-comment">// 1.584962500721156</span>
+<span class="hljs-number">Math</span>.log2(<span class="hljs-number">2</span>)       <span class="hljs-comment">// 1</span>
+<span class="hljs-number">Math</span>.log2(<span class="hljs-number">1</span>)       <span class="hljs-comment">// 0</span>
+<span class="hljs-number">Math</span>.log2(<span class="hljs-number">0</span>)       <span class="hljs-comment">// -Infinity</span>
+<span class="hljs-number">Math</span>.log2(<span class="hljs-number">-2</span>)      <span class="hljs-comment">// NaN</span>
+<span class="hljs-number">Math</span>.log2(<span class="hljs-number">1024</span>)    <span class="hljs-comment">// 10</span>
+<span class="hljs-number">Math</span>.log2(<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">29</span>) <span class="hljs-comment">// 29</span>
+</code></pre>
+<p class="calibre6">对于没有部署这个方法的环境，可以用下面的代码模拟。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.log2 = <span class="hljs-number">Math</span>.log2 || <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">Math</span>.log(x) / <span class="hljs-number">Math</span>.LN2;
+};
+</code></pre>
+<h3 id="双曲函数方法" class="calibre11">双曲函数方法</h3>
+<p class="calibre6">ES6 新增了 6 个双曲函数方法。</p>
+<ul class="calibre9">
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Math.sinh(x)</code> 返回<code class="pcalibre3 calibre13 pcalibre4">x</code>的双曲正弦（hyperbolic sine）</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Math.cosh(x)</code> 返回<code class="pcalibre3 calibre13 pcalibre4">x</code>的双曲余弦（hyperbolic cosine）</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Math.tanh(x)</code> 返回<code class="pcalibre3 calibre13 pcalibre4">x</code>的双曲正切（hyperbolic tangent）</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Math.asinh(x)</code> 返回<code class="pcalibre3 calibre13 pcalibre4">x</code>的反双曲正弦（inverse hyperbolic sine）</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Math.acosh(x)</code> 返回<code class="pcalibre3 calibre13 pcalibre4">x</code>的反双曲余弦（inverse hyperbolic cosine）</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Math.atanh(x)</code> 返回<code class="pcalibre3 calibre13 pcalibre4">x</code>的反双曲正切（inverse hyperbolic tangent）</li>
+</ul>
+<h2 id="指数运算符" class="calibre12">指数运算符</h2>
+<p class="calibre6">ES2016 新增了一个指数运算符（<code class="pcalibre3 calibre13 pcalibre4">**</code>）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">2</span> ** <span class="hljs-number">2</span> <span class="hljs-comment">// 4</span>
+<span class="hljs-number">2</span> ** <span class="hljs-number">3</span> <span class="hljs-comment">// 8</span>
+</code></pre>
+<p class="calibre6">指数运算符可以与等号结合，形成一个新的赋值运算符（<code class="pcalibre3 calibre13 pcalibre4">**=</code>）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> a = <span class="hljs-number">1.5</span>;
+a **= <span class="hljs-number">2</span>;
+<span class="hljs-comment">// 等同于 a = a * a;</span>
+
+<span class="hljs-keyword">let</span> b = <span class="hljs-number">4</span>;
+b **= <span class="hljs-number">3</span>;
+<span class="hljs-comment">// 等同于 b = b * b * b;</span>
+</code></pre>
+<p class="calibre6">注意，在 V8 引擎中，指数运算符与<code class="pcalibre3 calibre13 pcalibre4">Math.pow</code>的实现不相同，对于特别大的运算结果，两者会有细微的差异。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Math</span>.pow(<span class="hljs-number">99</span>, <span class="hljs-number">99</span>)
+<span class="hljs-comment">// 3.697296376497263e+197</span>
+
+<span class="hljs-number">99</span> ** <span class="hljs-number">99</span>
+<span class="hljs-comment">// 3.697296376497268e+197</span>
+</code></pre>
+<p class="calibre6">上面代码中，两个运算结果的最后一位有效数字是有差异的。</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="regex.html" class="navigation navigation-prev"
+           aria-label="Previous page: 5. 正则的扩展">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="function.html" class="navigation navigation-next"
+           aria-label="Next page: 7. 函数的扩展">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "7. 函数的扩展",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "5. 正则的扩展",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

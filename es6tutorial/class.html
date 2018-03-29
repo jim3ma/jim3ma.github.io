@@ -1,0 +1,1057 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>20. Class 的基本语法</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="class-extends.html"/>
+    <link rel="prev" href="async.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="class.html">20. Class 的基本语法</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_21">20. Class 的基本语法</h1>
+        <div class="section">
+            <h1 id="class-的基本语法" class="calibre5">Class 的基本语法</h1>
+<h2 id="简介" class="calibre16">简介</h2>
+<p class="calibre6">JavaScript 语言中，生成实例对象的传统方法是通过构造函数。下面是一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">Point</span>(<span class="hljs-number">x, y</span>) </span>{
+  <span class="hljs-keyword">this</span>.x = x;
+  <span class="hljs-keyword">this</span>.y = y;
+}
+
+Point.prototype.toString = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;(&#39;</span> + <span class="hljs-keyword">this</span>.x + <span class="hljs-string">&#39;, &#39;</span> + <span class="hljs-keyword">this</span>.y + <span class="hljs-string">&#39;)&#39;</span>;
+};
+
+<span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> Point(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+</code></pre>
+<p class="calibre6">上面这种写法跟传统的面向对象语言（比如 C++ 和 Java）差异很大，很容易让新学习这门语言的程序员感到困惑。</p>
+<p class="calibre6">ES6 提供了更接近传统语言的写法，引入了 Class（类）这个概念，作为对象的模板。通过<code class="pcalibre3 calibre13 pcalibre4">class</code>关键字，可以定义类。</p>
+<p class="calibre6">基本上，ES6 的<code class="pcalibre3 calibre13 pcalibre4">class</code>可以看作只是一个语法糖，它的绝大部分功能，ES5 都可以做到，新的<code class="pcalibre3 calibre13 pcalibre4">class</code>写法只是让对象原型的写法更加清晰、更像面向对象编程的语法而已。上面的代码用 ES6 的<code class="pcalibre3 calibre13 pcalibre4">class</code>改写，就是下面这样。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">//定义类</span>
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Point</span> </span>{
+  <span class="hljs-keyword">constructor</span>(x, y) {
+    <span class="hljs-keyword">this</span>.x = x;
+    <span class="hljs-keyword">this</span>.y = y;
+  }
+
+  toString() {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;(&#39;</span> + <span class="hljs-keyword">this</span>.x + <span class="hljs-string">&#39;, &#39;</span> + <span class="hljs-keyword">this</span>.y + <span class="hljs-string">&#39;)&#39;</span>;
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码定义了一个“类”，可以看到里面有一个<code class="pcalibre3 calibre13 pcalibre4">constructor</code>方法，这就是构造方法，而<code class="pcalibre3 calibre13 pcalibre4">this</code>关键字则代表实例对象。也就是说，ES5 的构造函数<code class="pcalibre3 calibre13 pcalibre4">Point</code>，对应 ES6 的<code class="pcalibre3 calibre13 pcalibre4">Point</code>类的构造方法。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Point</code>类除了构造方法，还定义了一个<code class="pcalibre3 calibre13 pcalibre4">toString</code>方法。注意，定义“类”的方法的时候，前面不需要加上<code class="pcalibre3 calibre13 pcalibre4">function</code>这个关键字，直接把函数定义放进去了就可以了。另外，方法之间不需要逗号分隔，加了会报错。</p>
+<p class="calibre6">ES6 的类，完全可以看作构造函数的另一种写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Point</span> </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">typeof</span> Point <span class="hljs-comment">// &#34;function&#34;</span>
+Point === Point.prototype.constructor <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码表明，类的数据类型就是函数，类本身就指向构造函数。</p>
+<p class="calibre6">使用的时候，也是直接对类使用<code class="pcalibre3 calibre13 pcalibre4">new</code>命令，跟构造函数的用法完全一致。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Bar</span> </span>{
+  doStuff() {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;stuff&#39;</span>);
+  }
+}
+
+<span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> Bar();
+b.doStuff() <span class="hljs-comment">// &#34;stuff&#34;</span>
+</code></pre>
+<p class="calibre6">构造函数的<code class="pcalibre3 calibre13 pcalibre4">prototype</code>属性，在 ES6 的“类”上面继续存在。事实上，类的所有方法都定义在类的<code class="pcalibre3 calibre13 pcalibre4">prototype</code>属性上面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Point</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  toString() {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  toValue() {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-comment">// 等同于</span>
+
+Point.prototype = {
+  <span class="hljs-keyword">constructor</span>() {},
+  toString() {},
+  toValue() {},
+};
+</code></pre>
+<p class="calibre6">在类的实例上面调用方法，其实就是调用原型上的方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">B</span> </span>{}
+<span class="hljs-keyword">let</span> b = <span class="hljs-keyword">new</span> B();
+
+b.constructor === B.prototype.constructor <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">b</code>是<code class="pcalibre3 calibre13 pcalibre4">B</code>类的实例，它的<code class="pcalibre3 calibre13 pcalibre4">constructor</code>方法就是<code class="pcalibre3 calibre13 pcalibre4">B</code>类原型的<code class="pcalibre3 calibre13 pcalibre4">constructor</code>方法。</p>
+<p class="calibre6">由于类的方法都定义在<code class="pcalibre3 calibre13 pcalibre4">prototype</code>对象上面，所以类的新方法可以添加在<code class="pcalibre3 calibre13 pcalibre4">prototype</code>对象上面。<code class="pcalibre3 calibre13 pcalibre4">Object.assign</code>方法可以很方便地一次向类添加多个方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Point</span> </span>{
+  <span class="hljs-keyword">constructor</span>(){
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-number">Object</span>.assign(Point.prototype, {
+  toString(){},
+  toValue(){}
+});
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">prototype</code>对象的<code class="pcalibre3 calibre13 pcalibre4">constructor</code>属性，直接指向“类”的本身，这与 ES5 的行为是一致的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">Point.prototype.constructor === Point <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">另外，类的内部所有定义的方法，都是不可枚举的（non-enumerable）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Point</span> </span>{
+  <span class="hljs-keyword">constructor</span>(x, y) {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  toString() {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-number">Object</span>.keys(Point.prototype)
+<span class="hljs-comment">// []</span>
+<span class="hljs-number">Object</span>.getOwnPropertyNames(Point.prototype)
+<span class="hljs-comment">// [&#34;constructor&#34;,&#34;toString&#34;]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">toString</code>方法是<code class="pcalibre3 calibre13 pcalibre4">Point</code>类内部定义的方法，它是不可枚举的。这一点与 ES5 的行为不一致。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> Point = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">x, y</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+};
+
+Point.prototype.toString = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+};
+
+<span class="hljs-number">Object</span>.keys(Point.prototype)
+<span class="hljs-comment">// [&#34;toString&#34;]</span>
+<span class="hljs-number">Object</span>.getOwnPropertyNames(Point.prototype)
+<span class="hljs-comment">// [&#34;constructor&#34;,&#34;toString&#34;]</span>
+</code></pre>
+<p class="calibre6">上面代码采用 ES5 的写法，<code class="pcalibre3 calibre13 pcalibre4">toString</code>方法就是可枚举的。</p>
+<p class="calibre6">类的属性名，可以采用表达式。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> methodName = <span class="hljs-string">&#39;getArea&#39;</span>;
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Square</span> </span>{
+  <span class="hljs-keyword">constructor</span>(length) {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  [methodName]() {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Square</code>类的方法名<code class="pcalibre3 calibre13 pcalibre4">getArea</code>，是从表达式得到的。</p>
+<h2 id="严格模式" class="calibre12">严格模式</h2>
+<p class="calibre6">类和模块的内部，默认就是严格模式，所以不需要使用<code class="pcalibre3 calibre13 pcalibre4">use strict</code>指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用。</p>
+<p class="calibre6">考虑到未来所有的代码，其实都是运行在模块之中，所以 ES6 实际上把整个语言升级到了严格模式。</p>
+<h2 id="constructor-方法" class="calibre12">constructor 方法</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">constructor</code>方法是类的默认方法，通过<code class="pcalibre3 calibre13 pcalibre4">new</code>命令生成对象实例时，自动调用该方法。一个类必须有<code class="pcalibre3 calibre13 pcalibre4">constructor</code>方法，如果没有显式定义，一个空的<code class="pcalibre3 calibre13 pcalibre4">constructor</code>方法会被默认添加。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Point</span> </span>{
+}
+
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Point</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {}
+}
+</code></pre>
+<p class="calibre6">上面代码中，定义了一个空的类<code class="pcalibre3 calibre13 pcalibre4">Point</code>，JavaScript 引擎会自动为它添加一个空的<code class="pcalibre3 calibre13 pcalibre4">constructor</code>方法。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">constructor</code>方法默认返回实例对象（即<code class="pcalibre3 calibre13 pcalibre4">this</code>），完全可以指定返回另外一个对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Foo</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">Object</span>.create(<span class="hljs-number">null</span>);
+  }
+}
+
+<span class="hljs-keyword">new</span> Foo() <span class="hljs-keyword">instanceof</span> Foo
+<span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">constructor</code>函数返回一个全新的对象，结果导致实例对象不是<code class="pcalibre3 calibre13 pcalibre4">Foo</code>类的实例。</p>
+<p class="calibre6">类必须使用<code class="pcalibre3 calibre13 pcalibre4">new</code>调用，否则会报错。这是它跟普通构造函数的一个主要区别，后者不用<code class="pcalibre3 calibre13 pcalibre4">new</code>也可以执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Foo</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">Object</span>.create(<span class="hljs-number">null</span>);
+  }
+}
+
+Foo()
+<span class="hljs-comment">// TypeError: Class constructor Foo cannot be invoked without &#39;new&#39;</span>
+</code></pre>
+<h2 id="类的实例对象" class="calibre12">类的实例对象</h2>
+<p class="calibre6">生成类的实例对象的写法，与 ES5 完全一样，也是使用<code class="pcalibre3 calibre13 pcalibre4">new</code>命令。前面说过，如果忘记加上<code class="pcalibre3 calibre13 pcalibre4">new</code>，像函数那样调用<code class="pcalibre3 calibre13 pcalibre4">Class</code>，将会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Point</span> </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// 报错</span>
+<span class="hljs-keyword">var</span> point = Point(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+
+<span class="hljs-comment">// 正确</span>
+<span class="hljs-keyword">var</span> point = <span class="hljs-keyword">new</span> Point(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+</code></pre>
+<p class="calibre6">与 ES5 一样，实例的属性除非显式定义在其本身（即定义在<code class="pcalibre3 calibre13 pcalibre4">this</code>对象上），否则都是定义在原型上（即定义在<code class="pcalibre3 calibre13 pcalibre4">class</code>上）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">//定义类</span>
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Point</span> </span>{
+
+  <span class="hljs-keyword">constructor</span>(x, y) {
+    <span class="hljs-keyword">this</span>.x = x;
+    <span class="hljs-keyword">this</span>.y = y;
+  }
+
+  toString() {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;(&#39;</span> + <span class="hljs-keyword">this</span>.x + <span class="hljs-string">&#39;, &#39;</span> + <span class="hljs-keyword">this</span>.y + <span class="hljs-string">&#39;)&#39;</span>;
+  }
+
+}
+
+<span class="hljs-keyword">var</span> point = <span class="hljs-keyword">new</span> Point(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+
+point.toString() <span class="hljs-comment">// (2, 3)</span>
+
+point.hasOwnProperty(<span class="hljs-string">&#39;x&#39;</span>) <span class="hljs-comment">// true</span>
+point.hasOwnProperty(<span class="hljs-string">&#39;y&#39;</span>) <span class="hljs-comment">// true</span>
+point.hasOwnProperty(<span class="hljs-string">&#39;toString&#39;</span>) <span class="hljs-comment">// false</span>
+point.__proto__.hasOwnProperty(<span class="hljs-string">&#39;toString&#39;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">x</code>和<code class="pcalibre3 calibre13 pcalibre4">y</code>都是实例对象<code class="pcalibre3 calibre13 pcalibre4">point</code>自身的属性（因为定义在<code class="pcalibre3 calibre13 pcalibre4">this</code>变量上），所以<code class="pcalibre3 calibre13 pcalibre4">hasOwnProperty</code>方法返回<code class="pcalibre3 calibre13 pcalibre4">true</code>，而<code class="pcalibre3 calibre13 pcalibre4">toString</code>是原型对象的属性（因为定义在<code class="pcalibre3 calibre13 pcalibre4">Point</code>类上），所以<code class="pcalibre3 calibre13 pcalibre4">hasOwnProperty</code>方法返回<code class="pcalibre3 calibre13 pcalibre4">false</code>。这些都与 ES5 的行为保持一致。</p>
+<p class="calibre6">与 ES5 一样，类的所有实例共享一个原型对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> p1 = <span class="hljs-keyword">new</span> Point(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>);
+<span class="hljs-keyword">var</span> p2 = <span class="hljs-keyword">new</span> Point(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>);
+
+p1.__proto__ === p2.__proto__
+<span class="hljs-comment">//true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">p1</code>和<code class="pcalibre3 calibre13 pcalibre4">p2</code>都是<code class="pcalibre3 calibre13 pcalibre4">Point</code>的实例，它们的原型都是<code class="pcalibre3 calibre13 pcalibre4">Point.prototype</code>，所以<code class="pcalibre3 calibre13 pcalibre4">__proto__</code>属性是相等的。</p>
+<p class="calibre6">这也意味着，可以通过实例的<code class="pcalibre3 calibre13 pcalibre4">__proto__</code>属性为“类”添加方法。</p>
+<blockquote class="calibre20">
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">__proto__</code> 并不是语言本身的特性，这是各大厂商具体实现时添加的私有属性，虽然目前很多现代浏览器的 JS 引擎中都提供了这个私有属性，但依旧不建议在生产中使用该属性，避免对环境产生依赖。生产环境中，我们可以使用 <code class="pcalibre3 calibre13 pcalibre4">Object.getPrototypeOf</code> 方法来获取实例对象的原型，然后再来为原型添加方法/属性。</p>
+</blockquote>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> p1 = <span class="hljs-keyword">new</span> Point(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>);
+<span class="hljs-keyword">var</span> p2 = <span class="hljs-keyword">new</span> Point(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>);
+
+p1.__proto__.printName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;Oops&#39;</span> };
+
+p1.printName() <span class="hljs-comment">// &#34;Oops&#34;</span>
+p2.printName() <span class="hljs-comment">// &#34;Oops&#34;</span>
+
+<span class="hljs-keyword">var</span> p3 = <span class="hljs-keyword">new</span> Point(<span class="hljs-number">4</span>,<span class="hljs-number">2</span>);
+p3.printName() <span class="hljs-comment">// &#34;Oops&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码在<code class="pcalibre3 calibre13 pcalibre4">p1</code>的原型上添加了一个<code class="pcalibre3 calibre13 pcalibre4">printName</code>方法，由于<code class="pcalibre3 calibre13 pcalibre4">p1</code>的原型就是<code class="pcalibre3 calibre13 pcalibre4">p2</code>的原型，因此<code class="pcalibre3 calibre13 pcalibre4">p2</code>也可以调用这个方法。而且，此后新建的实例<code class="pcalibre3 calibre13 pcalibre4">p3</code>也可以调用这个方法。这意味着，使用实例的<code class="pcalibre3 calibre13 pcalibre4">__proto__</code>属性改写原型，必须相当谨慎，不推荐使用，因为这会改变“类”的原始定义，影响到所有实例。</p>
+<h2 id="class-表达式" class="calibre12">Class 表达式</h2>
+<p class="calibre6">与函数一样，类也可以使用表达式的形式定义。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> MyClass = <span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Me</span> </span>{
+  getClassName() {
+    <span class="hljs-keyword">return</span> Me.name;
+  }
+};
+</code></pre>
+<p class="calibre6">上面代码使用表达式定义了一个类。需要注意的是，这个类的名字是<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>而不是<code class="pcalibre3 calibre13 pcalibre4">Me</code>，<code class="pcalibre3 calibre13 pcalibre4">Me</code>只在 Class 的内部代码可用，指代当前类。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> inst = <span class="hljs-keyword">new</span> MyClass();
+inst.getClassName() <span class="hljs-comment">// Me</span>
+Me.name <span class="hljs-comment">// ReferenceError: Me is not defined</span>
+</code></pre>
+<p class="calibre6">上面代码表示，<code class="pcalibre3 calibre13 pcalibre4">Me</code>只在 Class 内部有定义。</p>
+<p class="calibre6">如果类的内部没用到的话，可以省略<code class="pcalibre3 calibre13 pcalibre4">Me</code>，也就是可以写成下面的形式。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> MyClass = <span class="hljs-_"><span class="hljs-keyword">class</span> </span>{ <span class="hljs-comment">/* ... */</span> };
+</code></pre>
+<p class="calibre6">采用 Class 表达式，可以写出立即执行的 Class。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> person = <span class="hljs-keyword">new</span> <span class="hljs-_"><span class="hljs-keyword">class</span> </span>{
+  <span class="hljs-keyword">constructor</span>(name) {
+    <span class="hljs-keyword">this</span>.name = name;
+  }
+
+  sayName() {
+    <span class="hljs-number">console</span>.log(<span class="hljs-keyword">this</span>.name);
+  }
+}(<span class="hljs-string">&#39;张三&#39;</span>);
+
+person.sayName(); <span class="hljs-comment">// &#34;张三&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">person</code>是一个立即执行的类的实例。</p>
+<h2 id="不存在变量提升" class="calibre12">不存在变量提升</h2>
+<p class="calibre6">类不存在变量提升（hoist），这一点与 ES5 完全不同。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">new</span> Foo(); <span class="hljs-comment">// ReferenceError</span>
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Foo</span> </span>{}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Foo</code>类使用在前，定义在后，这样会报错，因为 ES6 不会把类的声明提升到代码头部。这种规定的原因与下文要提到的继承有关，必须保证子类在父类之后定义。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">{
+  <span class="hljs-keyword">let</span> Foo = <span class="hljs-_"><span class="hljs-keyword">class</span> </span>{};
+  <span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Bar</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">Foo</span> </span>{
+  }
+}
+</code></pre>
+<p class="calibre6">上面的代码不会报错，因为<code class="pcalibre3 calibre13 pcalibre4">Bar</code>继承<code class="pcalibre3 calibre13 pcalibre4">Foo</code>的时候，<code class="pcalibre3 calibre13 pcalibre4">Foo</code>已经有定义了。但是，如果存在<code class="pcalibre3 calibre13 pcalibre4">class</code>的提升，上面代码就会报错，因为<code class="pcalibre3 calibre13 pcalibre4">class</code>会被提升到代码头部，而<code class="pcalibre3 calibre13 pcalibre4">let</code>命令是不提升的，所以导致<code class="pcalibre3 calibre13 pcalibre4">Bar</code>继承<code class="pcalibre3 calibre13 pcalibre4">Foo</code>的时候，<code class="pcalibre3 calibre13 pcalibre4">Foo</code>还没有定义。</p>
+<h2 id="私有方法和私有属性" class="calibre12">私有方法和私有属性</h2>
+<h3 id="现有的方法" class="calibre11">现有的方法</h3>
+<p class="calibre6">私有方法是常见需求，但 ES6 不提供，只能通过变通方法模拟实现。</p>
+<p class="calibre6">一种做法是在命名上加以区别。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Widget</span> </span>{
+
+  <span class="hljs-comment">// 公有方法</span>
+  foo (baz) {
+    <span class="hljs-keyword">this</span>._bar(baz);
+  }
+
+  <span class="hljs-comment">// 私有方法</span>
+  _bar(baz) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.snaf = baz;
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">_bar</code>方法前面的下划线，表示这是一个只限于内部使用的私有方法。但是，这种命名是不保险的，在类的外部，还是可以调用到这个方法。</p>
+<p class="calibre6">另一种方法就是索性将私有方法移出模块，因为模块内部的所有方法都是对外可见的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Widget</span> </span>{
+  foo (baz) {
+    bar.call(<span class="hljs-keyword">this</span>, baz);
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">bar</span>(<span class="hljs-number">baz</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.snaf = baz;
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">foo</code>是公有方法，内部调用了<code class="pcalibre3 calibre13 pcalibre4">bar.call(this, baz)</code>。这使得<code class="pcalibre3 calibre13 pcalibre4">bar</code>实际上成为了当前模块的私有方法。</p>
+<p class="calibre6">还有一种方法是利用<code class="pcalibre3 calibre13 pcalibre4">Symbol</code>值的唯一性，将私有方法的名字命名为一个<code class="pcalibre3 calibre13 pcalibre4">Symbol</code>值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> bar = <span class="hljs-number">Symbol</span>(<span class="hljs-string">&#39;bar&#39;</span>);
+<span class="hljs-keyword">const</span> snaf = <span class="hljs-number">Symbol</span>(<span class="hljs-string">&#39;snaf&#39;</span>);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">myClass</span></span>{
+
+  <span class="hljs-comment">// 公有方法</span>
+  foo(baz) {
+    <span class="hljs-keyword">this</span>[bar](baz);
+  }
+
+  <span class="hljs-comment">// 私有方法</span>
+  [bar](baz) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>[snaf] = baz;
+  }
+
+  <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">bar</code>和<code class="pcalibre3 calibre13 pcalibre4">snaf</code>都是<code class="pcalibre3 calibre13 pcalibre4">Symbol</code>值，导致第三方无法获取到它们，因此达到了私有方法和私有属性的效果。</p>
+<h3 id="私有属性的提案" class="calibre11">私有属性的提案</h3>
+<p class="calibre6">与私有方法一样，ES6 不支持私有属性。目前，有一个<a href="https://github.com/tc39/proposal-private-methods" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">提案</a>，为<code class="pcalibre3 calibre13 pcalibre4">class</code>加了私有属性。方法是在属性名之前，使用<code class="pcalibre3 calibre13 pcalibre4">#</code>表示。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">class Point {
+  #x;
+
+  constructor(x = 0) {
+    #x = +x; // 写成 this.#x 亦可
+  }
+
+  get x() { return #x }
+  set x(value) { #x = +value }
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">#x</code>就表示私有属性<code class="pcalibre3 calibre13 pcalibre4">x</code>，在<code class="pcalibre3 calibre13 pcalibre4">Point</code>类之外是读取不到这个属性的。还可以看到，私有属性与实例的属性是可以同名的（比如，<code class="pcalibre3 calibre13 pcalibre4">#x</code>与<code class="pcalibre3 calibre13 pcalibre4">get x()</code>）。</p>
+<p class="calibre6">私有属性可以指定初始值，在构造函数执行时进行初始化。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">class Point {
+  #x = 0;
+  constructor() {
+    #x; // 0
+  }
+}
+</code></pre>
+<p class="calibre6">之所以要引入一个新的前缀<code class="pcalibre3 calibre13 pcalibre4">#</code>表示私有属性，而没有采用<code class="pcalibre3 calibre13 pcalibre4">private</code>关键字，是因为 JavaScript 是一门动态语言，使用独立的符号似乎是唯一的可靠方法，能够准确地区分一种属性是否为私有属性。另外，Ruby 语言使用<code class="pcalibre3 calibre13 pcalibre4">@</code>表示私有属性，ES6 没有用这个符号而使用<code class="pcalibre3 calibre13 pcalibre4">#</code>，是因为<code class="pcalibre3 calibre13 pcalibre4">@</code>已经被留给了 Decorator。</p>
+<p class="calibre6">该提案只规定了私有属性的写法。但是，很自然地，它也可以用来写私有方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">class Foo {
+  #a;
+  #b;
+  #sum() { return #a + #b; }
+  printSum() { console.log(#sum()); }
+  constructor(a, b) { #a = a; #b = b; }
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">#sum()</code>就是一个私有方法。</p>
+<p class="calibre6">另外，私有属性也可以设置 getter 和 setter 方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">class Counter {
+  #xValue = 0;
+
+  get #x() { return #xValue; }
+  set #x(value) {
+    this.#xValue = value;
+  }
+
+  constructor() {
+    super();
+    // ...
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">#x</code>是一个私有属性，它的读写都通过<code class="pcalibre3 calibre13 pcalibre4">get #x()</code>和<code class="pcalibre3 calibre13 pcalibre4">set #x()</code>来完成。</p>
+<h2 id="this-的指向" class="calibre12">this 的指向</h2>
+<p class="calibre6">类的方法内部如果含有<code class="pcalibre3 calibre13 pcalibre4">this</code>，它默认指向类的实例。但是，必须非常小心，一旦单独使用该方法，很可能报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Logger</span> </span>{
+  printName(name = <span class="hljs-string">&#39;there&#39;</span>) {
+    <span class="hljs-keyword">this</span>.print(<span class="hljs-string">`Hello <span class="hljs-_">${name}</span>`</span>);
+  }
+
+  print(text) {
+    <span class="hljs-number">console</span>.log(text);
+  }
+}
+
+<span class="hljs-keyword">const</span> logger = <span class="hljs-keyword">new</span> Logger();
+<span class="hljs-keyword">const</span> { printName } = logger;
+printName(); <span class="hljs-comment">// TypeError: Cannot read property &#39;print&#39; of undefined</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">printName</code>方法中的<code class="pcalibre3 calibre13 pcalibre4">this</code>，默认指向<code class="pcalibre3 calibre13 pcalibre4">Logger</code>类的实例。但是，如果将这个方法提取出来单独使用，<code class="pcalibre3 calibre13 pcalibre4">this</code>会指向该方法运行时所在的环境，因为找不到<code class="pcalibre3 calibre13 pcalibre4">print</code>方法而导致报错。</p>
+<p class="calibre6">一个比较简单的解决方法是，在构造方法中绑定<code class="pcalibre3 calibre13 pcalibre4">this</code>，这样就不会找不到<code class="pcalibre3 calibre13 pcalibre4">print</code>方法了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Logger</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">this</span>.printName = <span class="hljs-keyword">this</span>.printName.bind(<span class="hljs-keyword">this</span>);
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p class="calibre6">另一种解决方法是使用箭头函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Logger</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">this</span>.printName = (name = <span class="hljs-string">&#39;there&#39;</span>) =&gt; {
+      <span class="hljs-keyword">this</span>.print(<span class="hljs-string">`Hello <span class="hljs-_">${name}</span>`</span>);
+    };
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p class="calibre6">还有一种解决方法是使用<code class="pcalibre3 calibre13 pcalibre4">Proxy</code>，获取方法的时候，自动绑定<code class="pcalibre3 calibre13 pcalibre4">this</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">selfish</span> (<span class="hljs-number">target</span>) </span>{
+  <span class="hljs-keyword">const</span> cache = <span class="hljs-keyword">new</span> <span class="hljs-number">WeakMap</span>();
+  <span class="hljs-keyword">const</span> handler = {
+    get (target, key) {
+      <span class="hljs-keyword">const</span> value = <span class="hljs-number">Reflect</span>.get(target, key);
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> value !== <span class="hljs-string">&#39;function&#39;</span>) {
+        <span class="hljs-keyword">return</span> value;
+      }
+      <span class="hljs-keyword">if</span> (!cache.has(value)) {
+        cache.set(value, value.bind(target));
+      }
+      <span class="hljs-keyword">return</span> cache.get(value);
+    }
+  };
+  <span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+  <span class="hljs-keyword">return</span> proxy;
+}
+
+<span class="hljs-keyword">const</span> logger = selfish(<span class="hljs-keyword">new</span> Logger());
+</code></pre>
+<h2 id="name-属性" class="calibre12">name 属性</h2>
+<p class="calibre6">由于本质上，ES6 的类只是 ES5 的构造函数的一层包装，所以函数的许多特性都被<code class="pcalibre3 calibre13 pcalibre4">Class</code>继承，包括<code class="pcalibre3 calibre13 pcalibre4">name</code>属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Point</span> </span>{}
+Point.name <span class="hljs-comment">// &#34;Point&#34;</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">name</code>属性总是返回紧跟在<code class="pcalibre3 calibre13 pcalibre4">class</code>关键字后面的类名。</p>
+<h2 id="class-的取值函数（getter）和存值函数（setter）" class="calibre12">Class 的取值函数（getter）和存值函数（setter）</h2>
+<p class="calibre6">与 ES5 一样，在“类”的内部可以使用<code class="pcalibre3 calibre13 pcalibre4">get</code>和<code class="pcalibre3 calibre13 pcalibre4">set</code>关键字，对某个属性设置存值函数和取值函数，拦截该属性的存取行为。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-comment">// ...</span>
+  }
+  get prop() {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;getter&#39;</span>;
+  }
+  set prop(value) {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;setter: &#39;</span>+value);
+  }
+}
+
+<span class="hljs-keyword">let</span> inst = <span class="hljs-keyword">new</span> MyClass();
+
+inst.prop = <span class="hljs-number">123</span>;
+<span class="hljs-comment">// setter: 123</span>
+
+inst.prop
+<span class="hljs-comment">// &#39;getter&#39;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">prop</code>属性有对应的存值函数和取值函数，因此赋值和读取行为都被自定义了。</p>
+<p class="calibre6">存值函数和取值函数是设置在属性的 Descriptor 对象上的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">CustomHTMLElement</span> </span>{
+  <span class="hljs-keyword">constructor</span>(element) {
+    <span class="hljs-keyword">this</span>.element = element;
+  }
+
+  get html() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.element.innerHTML;
+  }
+
+  set html(value) {
+    <span class="hljs-keyword">this</span>.element.innerHTML = value;
+  }
+}
+
+<span class="hljs-keyword">var</span> descriptor = <span class="hljs-number">Object</span>.getOwnPropertyDescriptor(
+  CustomHTMLElement.prototype, <span class="hljs-string">&#34;html&#34;</span>
+);
+
+<span class="hljs-string">&#34;get&#34;</span> <span class="hljs-keyword">in</span> descriptor  <span class="hljs-comment">// true</span>
+<span class="hljs-string">&#34;set&#34;</span> <span class="hljs-keyword">in</span> descriptor  <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，存值函数和取值函数是定义在<code class="pcalibre3 calibre13 pcalibre4">html</code>属性的描述对象上面，这与 ES5 完全一致。</p>
+<h2 id="class-的-generator-方法" class="calibre12">Class 的 Generator 方法</h2>
+<p class="calibre6">如果某个方法之前加上星号（<code class="pcalibre3 calibre13 pcalibre4">*</code>），就表示该方法是一个 Generator 函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Foo</span> </span>{
+  <span class="hljs-keyword">constructor</span>(...args) {
+    <span class="hljs-keyword">this</span>.args = args;
+  }
+  * [<span class="hljs-number">Symbol</span>.iterator]() {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> arg <span class="hljs-keyword">of</span> <span class="hljs-keyword">this</span>.args) {
+      <span class="hljs-keyword">yield</span> arg;
+    }
+  }
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> x <span class="hljs-keyword">of</span> <span class="hljs-keyword">new</span> Foo(<span class="hljs-string">&#39;hello&#39;</span>, <span class="hljs-string">&#39;world&#39;</span>)) {
+  <span class="hljs-number">console</span>.log(x);
+}
+<span class="hljs-comment">// hello</span>
+<span class="hljs-comment">// world</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Foo</code>类的<code class="pcalibre3 calibre13 pcalibre4">Symbol.iterator</code>方法前有一个星号，表示该方法是一个 Generator 函数。<code class="pcalibre3 calibre13 pcalibre4">Symbol.iterator</code>方法返回一个<code class="pcalibre3 calibre13 pcalibre4">Foo</code>类的默认遍历器，<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环会自动调用这个遍历器。</p>
+<h2 id="class-的静态方法" class="calibre12">Class 的静态方法</h2>
+<p class="calibre6">类相当于实例的原型，所有在类中定义的方法，都会被实例继承。如果在一个方法前，加上<code class="pcalibre3 calibre13 pcalibre4">static</code>关键字，就表示该方法不会被实例继承，而是直接通过类来调用，这就称为“静态方法”。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Foo</span> </span>{
+  <span class="hljs-keyword">static</span> classMethod() {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;hello&#39;</span>;
+  }
+}
+
+Foo.classMethod() <span class="hljs-comment">// &#39;hello&#39;</span>
+
+<span class="hljs-keyword">var</span> foo = <span class="hljs-keyword">new</span> Foo();
+foo.classMethod()
+<span class="hljs-comment">// TypeError: foo.classMethod is not a function</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Foo</code>类的<code class="pcalibre3 calibre13 pcalibre4">classMethod</code>方法前有<code class="pcalibre3 calibre13 pcalibre4">static</code>关键字，表明该方法是一个静态方法，可以直接在<code class="pcalibre3 calibre13 pcalibre4">Foo</code>类上调用（<code class="pcalibre3 calibre13 pcalibre4">Foo.classMethod()</code>），而不是在<code class="pcalibre3 calibre13 pcalibre4">Foo</code>类的实例上调用。如果在实例上调用静态方法，会抛出一个错误，表示不存在该方法。</p>
+<p class="calibre6">注意，如果静态方法包含<code class="pcalibre3 calibre13 pcalibre4">this</code>关键字，这个<code class="pcalibre3 calibre13 pcalibre4">this</code>指的是类，而不是实例。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Foo</span> </span>{
+  <span class="hljs-keyword">static</span> bar () {
+    <span class="hljs-keyword">this</span>.baz();
+  }
+  <span class="hljs-keyword">static</span> baz () {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;hello&#39;</span>);
+  }
+  baz () {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;world&#39;</span>);
+  }
+}
+
+Foo.bar() <span class="hljs-comment">// hello</span>
+</code></pre>
+<p class="calibre6">上面代码中，静态方法<code class="pcalibre3 calibre13 pcalibre4">bar</code>调用了<code class="pcalibre3 calibre13 pcalibre4">this.baz</code>，这里的<code class="pcalibre3 calibre13 pcalibre4">this</code>指的是<code class="pcalibre3 calibre13 pcalibre4">Foo</code>类，而不是<code class="pcalibre3 calibre13 pcalibre4">Foo</code>的实例，等同于调用<code class="pcalibre3 calibre13 pcalibre4">Foo.baz</code>。另外，从这个例子还可以看出，静态方法可以与非静态方法重名。</p>
+<p class="calibre6">父类的静态方法，可以被子类继承。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Foo</span> </span>{
+  <span class="hljs-keyword">static</span> classMethod() {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;hello&#39;</span>;
+  }
+}
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Bar</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">Foo</span> </span>{
+}
+
+Bar.classMethod() <span class="hljs-comment">// &#39;hello&#39;</span>
+</code></pre>
+<p class="calibre6">上面代码中，父类<code class="pcalibre3 calibre13 pcalibre4">Foo</code>有一个静态方法，子类<code class="pcalibre3 calibre13 pcalibre4">Bar</code>可以调用这个方法。</p>
+<p class="calibre6">静态方法也是可以从<code class="pcalibre3 calibre13 pcalibre4">super</code>对象上调用的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Foo</span> </span>{
+  <span class="hljs-keyword">static</span> classMethod() {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;hello&#39;</span>;
+  }
+}
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Bar</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">Foo</span> </span>{
+  <span class="hljs-keyword">static</span> classMethod() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.classMethod() + <span class="hljs-string">&#39;, too&#39;</span>;
+  }
+}
+
+Bar.classMethod() <span class="hljs-comment">// &#34;hello, too&#34;</span>
+</code></pre>
+<h2 id="class-的静态属性和实例属性" class="calibre12">Class 的静态属性和实例属性</h2>
+<p class="calibre6">静态属性指的是 Class 本身的属性，即<code class="pcalibre3 calibre13 pcalibre4">Class.propName</code>，而不是定义在实例对象（<code class="pcalibre3 calibre13 pcalibre4">this</code>）上的属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Foo</span> </span>{
+}
+
+Foo.prop = <span class="hljs-number">1</span>;
+Foo.prop <span class="hljs-comment">// 1</span>
+</code></pre>
+<p class="calibre6">上面的写法为<code class="pcalibre3 calibre13 pcalibre4">Foo</code>类定义了一个静态属性<code class="pcalibre3 calibre13 pcalibre4">prop</code>。</p>
+<p class="calibre6">目前，只有这种写法可行，因为 ES6 明确规定，Class 内部只有静态方法，没有静态属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 以下两种写法都无效</span>
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Foo</span> </span>{
+  <span class="hljs-comment">// 写法一</span>
+  prop: <span class="hljs-number">2</span>
+
+  <span class="hljs-comment">// 写法二</span>
+  <span class="hljs-keyword">static</span> prop: <span class="hljs-number">2</span>
+}
+
+Foo.prop <span class="hljs-comment">// undefined</span>
+</code></pre>
+<p class="calibre6">目前有一个静态属性的<a href="https://github.com/tc39/proposal-class-fields" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">提案</a>，对实例属性和静态属性都规定了新的写法。</p>
+<p class="calibre6">（1）类的实例属性</p>
+<p class="calibre6">类的实例属性可以用等式，写入类的定义之中。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{
+  myProp = <span class="hljs-number">42</span>;
+
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-number">console</span>.log(<span class="hljs-keyword">this</span>.myProp); <span class="hljs-comment">// 42</span>
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">myProp</code>就是<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>的实例属性。在<code class="pcalibre3 calibre13 pcalibre4">MyClass</code>的实例上，可以读取这个属性。</p>
+<p class="calibre6">以前，我们定义实例属性，只能写在类的<code class="pcalibre3 calibre13 pcalibre4">constructor</code>方法里面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">ReactCounter</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">React</span>.<span class="hljs-comment">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      count: <span class="hljs-number">0</span>
+    };
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码中，构造方法<code class="pcalibre3 calibre13 pcalibre4">constructor</code>里面，定义了<code class="pcalibre3 calibre13 pcalibre4">this.state</code>属性。</p>
+<p class="calibre6">有了新的写法以后，可以不在<code class="pcalibre3 calibre13 pcalibre4">constructor</code>方法里面定义。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">ReactCounter</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">React</span>.<span class="hljs-comment">Component</span> </span>{
+  state = {
+    count: <span class="hljs-number">0</span>
+  };
+}
+</code></pre>
+<p class="calibre6">这种写法比以前更清晰。</p>
+<p class="calibre6">为了可读性的目的，对于那些在<code class="pcalibre3 calibre13 pcalibre4">constructor</code>里面已经定义的实例属性，新写法允许直接列出。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">ReactCounter</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">React</span>.<span class="hljs-comment">Component</span> </span>{
+  state;
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      count: <span class="hljs-number">0</span>
+    };
+  }
+}
+</code></pre>
+<p class="calibre6">（2）类的静态属性</p>
+<p class="calibre6">类的静态属性只要在上面的实例属性写法前面，加上<code class="pcalibre3 calibre13 pcalibre4">static</code>关键字就可以了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">MyClass</span> </span>{
+  <span class="hljs-keyword">static</span> myStaticProp = <span class="hljs-number">42</span>;
+
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-number">console</span>.log(MyClass.myStaticProp); <span class="hljs-comment">// 42</span>
+  }
+}
+</code></pre>
+<p class="calibre6">同样的，这个新写法大大方便了静态属性的表达。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 老写法</span>
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Foo</span> </span>{
+  <span class="hljs-comment">// ...</span>
+}
+Foo.prop = <span class="hljs-number">1</span>;
+
+<span class="hljs-comment">// 新写法</span>
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Foo</span> </span>{
+  <span class="hljs-keyword">static</span> prop = <span class="hljs-number">1</span>;
+}
+</code></pre>
+<p class="calibre6">上面代码中，老写法的静态属性定义在类的外部。整个类生成以后，再生成静态属性。这样让人很容易忽略这个静态属性，也不符合相关代码应该放在一起的代码组织原则。另外，新写法是显式声明（declarative），而不是赋值处理，语义更好。</p>
+<h2 id="newtarget-属性" class="calibre12">new.target 属性</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">new</code>是从构造函数生成实例对象的命令。ES6 为<code class="pcalibre3 calibre13 pcalibre4">new</code>命令引入了一个<code class="pcalibre3 calibre13 pcalibre4">new.target</code>属性，该属性一般用在构造函数之中，返回<code class="pcalibre3 calibre13 pcalibre4">new</code>命令作用于的那个构造函数。如果构造函数不是通过<code class="pcalibre3 calibre13 pcalibre4">new</code>命令调用的，<code class="pcalibre3 calibre13 pcalibre4">new.target</code>会返回<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，因此这个属性可以用来确定构造函数是怎么调用的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">Person</span>(<span class="hljs-number">name</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">new</span>.target !== <span class="hljs-number">undefined</span>) {
+    <span class="hljs-keyword">this</span>.name = name;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;必须使用 new 命令生成实例&#39;</span>);
+  }
+}
+
+<span class="hljs-comment">// 另一种写法</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">Person</span>(<span class="hljs-number">name</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">new</span>.target === Person) {
+    <span class="hljs-keyword">this</span>.name = name;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;必须使用 new 命令生成实例&#39;</span>);
+  }
+}
+
+<span class="hljs-keyword">var</span> person = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#39;张三&#39;</span>); <span class="hljs-comment">// 正确</span>
+<span class="hljs-keyword">var</span> notAPerson = Person.call(person, <span class="hljs-string">&#39;张三&#39;</span>);  <span class="hljs-comment">// 报错</span>
+</code></pre>
+<p class="calibre6">上面代码确保构造函数只能通过<code class="pcalibre3 calibre13 pcalibre4">new</code>命令调用。</p>
+<p class="calibre6">Class 内部调用<code class="pcalibre3 calibre13 pcalibre4">new.target</code>，返回当前 Class。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Rectangle</span> </span>{
+  <span class="hljs-keyword">constructor</span>(length, width) {
+    <span class="hljs-number">console</span>.log(<span class="hljs-keyword">new</span>.target === Rectangle);
+    <span class="hljs-keyword">this</span>.length = length;
+    <span class="hljs-keyword">this</span>.width = width;
+  }
+}
+
+<span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> Rectangle(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// 输出 true</span>
+</code></pre>
+<p class="calibre6">需要注意的是，子类继承父类时，<code class="pcalibre3 calibre13 pcalibre4">new.target</code>会返回子类。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Rectangle</span> </span>{
+  <span class="hljs-keyword">constructor</span>(length, width) {
+    <span class="hljs-number">console</span>.log(<span class="hljs-keyword">new</span>.target === Rectangle);
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Square</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">Rectangle</span> </span>{
+  <span class="hljs-keyword">constructor</span>(length) {
+    <span class="hljs-keyword">super</span>(length, length);
+  }
+}
+
+<span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> Square(<span class="hljs-number">3</span>); <span class="hljs-comment">// 输出 false</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">new.target</code>会返回子类。</p>
+<p class="calibre6">利用这个特点，可以写出不能独立使用、必须继承后才能使用的类。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Shape</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">new</span>.target === Shape) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;本类不能实例化&#39;</span>);
+    }
+  }
+}
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Rectangle</span> <span class="hljs-keyword">extends</span> <span class="hljs-comment">Shape</span> </span>{
+  <span class="hljs-keyword">constructor</span>(length, width) {
+    <span class="hljs-keyword">super</span>();
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-keyword">var</span> x = <span class="hljs-keyword">new</span> Shape();  <span class="hljs-comment">// 报错</span>
+<span class="hljs-keyword">var</span> y = <span class="hljs-keyword">new</span> Rectangle(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>);  <span class="hljs-comment">// 正确</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">Shape</code>类不能被实例化，只能用于继承。</p>
+<p class="calibre6">注意，在函数外部，使用<code class="pcalibre3 calibre13 pcalibre4">new.target</code>会报错。</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="async.html" class="navigation navigation-prev"
+           aria-label="Previous page: 19. async 函数">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="class-extends.html" class="navigation navigation-next"
+           aria-label="Next page: 21. Class 的继承">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "21. Class 的继承",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "19. async 函数",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

@@ -1,0 +1,1498 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>17. Generator 函数的语法</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="generator-async.html"/>
+    <link rel="prev" href="iterator.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="generator.html">17. Generator 函数的语法</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_18">17. Generator 函数的语法</h1>
+        <div class="section">
+            <h1 id="generator-函数的语法" class="calibre5">Generator 函数的语法</h1>
+<h2 id="简介" class="calibre16">简介</h2>
+<h3 id="基本概念" class="calibre11">基本概念</h3>
+<p class="calibre6">Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。本章详细介绍 Generator 函数的语法和 API，它的异步编程应用请看《Generator 函数的异步应用》一章。</p>
+<p class="calibre6">Generator 函数有多种理解角度。语法上，首先可以把它理解成，Generator 函数是一个状态机，封装了多个内部状态。</p>
+<p class="calibre6">执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。</p>
+<p class="calibre6">形式上，Generator 函数是一个普通函数，但是有两个特征。一是，<code class="pcalibre3 calibre13 pcalibre4">function</code>关键字与函数名之间有一个星号；二是，函数体内部使用<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式，定义不同的内部状态（<code class="pcalibre3 calibre13 pcalibre4">yield</code>在英语里的意思就是“产出”）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">helloWorldGenerator</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;hello&#39;</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;world&#39;</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;ending&#39;</span>;
+}
+
+<span class="hljs-keyword">var</span> hw = helloWorldGenerator();
+</code></pre>
+<p class="calibre6">上面代码定义了一个 Generator 函数<code class="pcalibre3 calibre13 pcalibre4">helloWorldGenerator</code>，它内部有两个<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式（<code class="pcalibre3 calibre13 pcalibre4">hello</code>和<code class="pcalibre3 calibre13 pcalibre4">world</code>），即该函数有三个状态：hello，world 和 return 语句（结束执行）。</p>
+<p class="calibre6">然后，Generator 函数的调用方法与普通函数一样，也是在函数名后面加上一对圆括号。不同的是，调用 Generator 函数后，该函数并不执行，返回的也不是函数运行结果，而是一个指向内部状态的指针对象，也就是上一章介绍的遍历器对象（Iterator Object）。</p>
+<p class="calibre6">下一步，必须调用遍历器对象的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，使得指针移向下一个状态。也就是说，每次调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，内部指针就从函数头部或上一次停下来的地方开始执行，直到遇到下一个<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式（或<code class="pcalibre3 calibre13 pcalibre4">return</code>语句）为止。换言之，Generator 函数是分段执行的，<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式是暂停执行的标记，而<code class="pcalibre3 calibre13 pcalibre4">next</code>方法可以恢复执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">hw.next()
+<span class="hljs-comment">// { value: &#39;hello&#39;, done: false }</span>
+
+hw.next()
+<span class="hljs-comment">// { value: &#39;world&#39;, done: false }</span>
+
+hw.next()
+<span class="hljs-comment">// { value: &#39;ending&#39;, done: true }</span>
+
+hw.next()
+<span class="hljs-comment">// { value: undefined, done: true }</span>
+</code></pre>
+<p class="calibre6">上面代码一共调用了四次<code class="pcalibre3 calibre13 pcalibre4">next</code>方法。</p>
+<p class="calibre6">第一次调用，Generator 函数开始执行，直到遇到第一个<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式为止。<code class="pcalibre3 calibre13 pcalibre4">next</code>方法返回一个对象，它的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性就是当前<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式的值<code class="pcalibre3 calibre13 pcalibre4">hello</code>，<code class="pcalibre3 calibre13 pcalibre4">done</code>属性的值<code class="pcalibre3 calibre13 pcalibre4">false</code>，表示遍历还没有结束。</p>
+<p class="calibre6">第二次调用，Generator 函数从上次<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式停下的地方，一直执行到下一个<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式。<code class="pcalibre3 calibre13 pcalibre4">next</code>方法返回的对象的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性就是当前<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式的值<code class="pcalibre3 calibre13 pcalibre4">world</code>，<code class="pcalibre3 calibre13 pcalibre4">done</code>属性的值<code class="pcalibre3 calibre13 pcalibre4">false</code>，表示遍历还没有结束。</p>
+<p class="calibre6">第三次调用，Generator 函数从上次<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式停下的地方，一直执行到<code class="pcalibre3 calibre13 pcalibre4">return</code>语句（如果没有<code class="pcalibre3 calibre13 pcalibre4">return</code>语句，就执行到函数结束）。<code class="pcalibre3 calibre13 pcalibre4">next</code>方法返回的对象的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性，就是紧跟在<code class="pcalibre3 calibre13 pcalibre4">return</code>语句后面的表达式的值（如果没有<code class="pcalibre3 calibre13 pcalibre4">return</code>语句，则<code class="pcalibre3 calibre13 pcalibre4">value</code>属性的值为<code class="pcalibre3 calibre13 pcalibre4">undefined</code>），<code class="pcalibre3 calibre13 pcalibre4">done</code>属性的值<code class="pcalibre3 calibre13 pcalibre4">true</code>，表示遍历已经结束。</p>
+<p class="calibre6">第四次调用，此时 Generator 函数已经运行完毕，<code class="pcalibre3 calibre13 pcalibre4">next</code>方法返回对象的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性为<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，<code class="pcalibre3 calibre13 pcalibre4">done</code>属性为<code class="pcalibre3 calibre13 pcalibre4">true</code>。以后再调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，返回的都是这个值。</p>
+<p class="calibre6">总结一下，调用 Generator 函数，返回一个遍历器对象，代表 Generator 函数的内部指针。以后，每次调用遍历器对象的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，就会返回一个有着<code class="pcalibre3 calibre13 pcalibre4">value</code>和<code class="pcalibre3 calibre13 pcalibre4">done</code>两个属性的对象。<code class="pcalibre3 calibre13 pcalibre4">value</code>属性表示当前的内部状态的值，是<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式后面那个表达式的值；<code class="pcalibre3 calibre13 pcalibre4">done</code>属性是一个布尔值，表示是否遍历结束。</p>
+<p class="calibre6">ES6 没有规定，<code class="pcalibre3 calibre13 pcalibre4">function</code>关键字与函数名之间的星号，写在哪个位置。这导致下面的写法都能通过。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> * <span class="hljs-comment">foo</span>(<span class="hljs-number">x, y</span>) </span>{ ··· }
+<span class="hljs-function"><span class="hljs-keyword">function</span> *<span class="hljs-comment">foo</span>(<span class="hljs-number">x, y</span>) </span>{ ··· }
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">foo</span>(<span class="hljs-number">x, y</span>) </span>{ ··· }
+<span class="hljs-function"><span class="hljs-keyword">function</span>*<span class="hljs-comment">foo</span>(<span class="hljs-number">x, y</span>) </span>{ ··· }
+</code></pre>
+<p class="calibre6">由于 Generator 函数仍然是普通函数，所以一般的写法是上面的第三种，即星号紧跟在<code class="pcalibre3 calibre13 pcalibre4">function</code>关键字后面。本书也采用这种写法。</p>
+<h3 id="yield-表达式" class="calibre11">yield 表达式</h3>
+<p class="calibre6">由于 Generator 函数返回的遍历器对象，只有调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法才会遍历下一个内部状态，所以其实提供了一种可以暂停执行的函数。<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式就是暂停标志。</p>
+<p class="calibre6">遍历器对象的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法的运行逻辑如下。</p>
+<p class="calibre6">（1）遇到<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式，就暂停执行后面的操作，并将紧跟在<code class="pcalibre3 calibre13 pcalibre4">yield</code>后面的那个表达式的值，作为返回的对象的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性值。</p>
+<p class="calibre6">（2）下一次调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法时，再继续往下执行，直到遇到下一个<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式。</p>
+<p class="calibre6">（3）如果没有再遇到新的<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式，就一直运行到函数结束，直到<code class="pcalibre3 calibre13 pcalibre4">return</code>语句为止，并将<code class="pcalibre3 calibre13 pcalibre4">return</code>语句后面的表达式的值，作为返回的对象的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性值。</p>
+<p class="calibre6">（4）如果该函数没有<code class="pcalibre3 calibre13 pcalibre4">return</code>语句，则返回的对象的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性值为<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。</p>
+<p class="calibre6">需要注意的是，<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式后面的表达式，只有当调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法、内部指针指向该语句时才会执行，因此等于为 JavaScript 提供了手动的“惰性求值”（Lazy Evaluation）的语法功能。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span>  <span class="hljs-number">123</span> + <span class="hljs-number">456</span>;
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">yield</code>后面的表达式<code class="pcalibre3 calibre13 pcalibre4">123 + 456</code>，不会立即求值，只会在<code class="pcalibre3 calibre13 pcalibre4">next</code>方法将指针移到这一句时，才会求值。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式与<code class="pcalibre3 calibre13 pcalibre4">return</code>语句既有相似之处，也有区别。相似之处在于，都能返回紧跟在语句后面的那个表达式的值。区别在于每次遇到<code class="pcalibre3 calibre13 pcalibre4">yield</code>，函数暂停执行，下一次再从该位置继续向后执行，而<code class="pcalibre3 calibre13 pcalibre4">return</code>语句不具备位置记忆的功能。一个函数里面，只能执行一次（或者说一个）<code class="pcalibre3 calibre13 pcalibre4">return</code>语句，但是可以执行多次（或者说多个）<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式。正常函数只能返回一个值，因为只能执行一次<code class="pcalibre3 calibre13 pcalibre4">return</code>；Generator 函数可以返回一系列的值，因为可以有任意多个<code class="pcalibre3 calibre13 pcalibre4">yield</code>。从另一个角度看，也可以说 Generator 生成了一系列的值，这也就是它的名称的来历（英语中，generator 这个词是“生成器”的意思）。</p>
+<p class="calibre6">Generator 函数可以不用<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式，这时就变成了一个单纯的暂缓执行函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;执行了！&#39;</span>)
+}
+
+<span class="hljs-keyword">var</span> generator = f();
+
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  generator.next()
+}, <span class="hljs-number">2000</span>);
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">f</code>如果是普通函数，在为变量<code class="pcalibre3 calibre13 pcalibre4">generator</code>赋值时就会执行。但是，函数<code class="pcalibre3 calibre13 pcalibre4">f</code>是一个 Generator 函数，就变成只有调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法时，函数<code class="pcalibre3 calibre13 pcalibre4">f</code>才会执行。</p>
+<p class="calibre6">另外需要注意，<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式只能用在 Generator 函数里面，用在其他地方都会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>)</span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span>;
+})()
+<span class="hljs-comment">// SyntaxError: Unexpected number</span>
+</code></pre>
+<p class="calibre6">上面代码在一个普通函数中使用<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式，结果产生一个句法错误。</p>
+<p class="calibre6">下面是另外一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, [[<span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>]];
+
+<span class="hljs-keyword">var</span> flat = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number">a</span>) </span>{
+  a.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">item</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> item !== <span class="hljs-string">&#39;number&#39;</span>) {
+      <span class="hljs-keyword">yield</span>* flat(item);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">yield</span> item;
+    }
+  });
+};
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> f <span class="hljs-keyword">of</span> flat(arr)){
+  <span class="hljs-number">console</span>.log(f);
+}
+</code></pre>
+<p class="calibre6">上面代码也会产生句法错误，因为<code class="pcalibre3 calibre13 pcalibre4">forEach</code>方法的参数是一个普通函数，但是在里面使用了<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式（这个函数里面还使用了<code class="pcalibre3 calibre13 pcalibre4">yield*</code>表达式，详细介绍见后文）。一种修改方法是改用<code class="pcalibre3 calibre13 pcalibre4">for</code>循环。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, [[<span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>]];
+
+<span class="hljs-keyword">var</span> flat = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number">a</span>) </span>{
+  <span class="hljs-keyword">var</span> length = a.length;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    <span class="hljs-keyword">var</span> item = a[i];
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> item !== <span class="hljs-string">&#39;number&#39;</span>) {
+      <span class="hljs-keyword">yield</span>* flat(item);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">yield</span> item;
+    }
+  }
+};
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> f <span class="hljs-keyword">of</span> flat(arr)) {
+  <span class="hljs-number">console</span>.log(f);
+}
+<span class="hljs-comment">// 1, 2, 3, 4, 5, 6</span>
+</code></pre>
+<p class="calibre6">另外，<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式如果用在另一个表达式之中，必须放在圆括号里面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">demo</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Hello&#39;</span> + <span class="hljs-keyword">yield</span>); <span class="hljs-comment">// SyntaxError</span>
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Hello&#39;</span> + <span class="hljs-keyword">yield</span> <span class="hljs-number">123</span>); <span class="hljs-comment">// SyntaxError</span>
+
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Hello&#39;</span> + (<span class="hljs-keyword">yield</span>)); <span class="hljs-comment">// OK</span>
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Hello&#39;</span> + (<span class="hljs-keyword">yield</span> <span class="hljs-number">123</span>)); <span class="hljs-comment">// OK</span>
+}
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式用作函数参数或放在赋值表达式的右边，可以不加括号。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">demo</span>(<span class="hljs-number"></span>) </span>{
+  foo(<span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;a&#39;</span>, <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;b&#39;</span>); <span class="hljs-comment">// OK</span>
+  <span class="hljs-keyword">let</span> input = <span class="hljs-keyword">yield</span>; <span class="hljs-comment">// OK</span>
+}
+</code></pre>
+<h3 id="与-iterator-接口的关系" class="calibre11">与 Iterator 接口的关系</h3>
+<p class="calibre6">上一章说过，任意一个对象的<code class="pcalibre3 calibre13 pcalibre4">Symbol.iterator</code>方法，等于该对象的遍历器生成函数，调用该函数会返回该对象的一个遍历器对象。</p>
+<p class="calibre6">由于 Generator 函数就是遍历器生成函数，因此可以把 Generator 赋值给对象的<code class="pcalibre3 calibre13 pcalibre4">Symbol.iterator</code>属性，从而使得该对象具有 Iterator 接口。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> myIterable = {};
+myIterable[<span class="hljs-number">Symbol</span>.iterator] = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">3</span>;
+};
+
+[...myIterable] <span class="hljs-comment">// [1, 2, 3]</span>
+</code></pre>
+<p class="calibre6">上面代码中，Generator 函数赋值给<code class="pcalibre3 calibre13 pcalibre4">Symbol.iterator</code>属性，从而使得<code class="pcalibre3 calibre13 pcalibre4">myIterable</code>对象具有了 Iterator 接口，可以被<code class="pcalibre3 calibre13 pcalibre4">...</code>运算符遍历了。</p>
+<p class="calibre6">Generator 函数执行后，返回一个遍历器对象。该对象本身也具有<code class="pcalibre3 calibre13 pcalibre4">Symbol.iterator</code>属性，执行后返回自身。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>)</span>{
+  <span class="hljs-comment">// some code</span>
+}
+
+<span class="hljs-keyword">var</span> g = gen();
+
+g[<span class="hljs-number">Symbol</span>.iterator]() === g
+<span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">gen</code>是一个 Generator 函数，调用它会生成一个遍历器对象<code class="pcalibre3 calibre13 pcalibre4">g</code>。它的<code class="pcalibre3 calibre13 pcalibre4">Symbol.iterator</code>属性，也是一个遍历器对象生成函数，执行后返回它自己。</p>
+<h2 id="next-方法的参数" class="calibre12">next 方法的参数</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式本身没有返回值，或者说总是返回<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。<code class="pcalibre3 calibre13 pcalibre4">next</code>方法可以带一个参数，该参数就会被当作上一个<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式的返回值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">f</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; <span class="hljs-number">true</span>; i++) {
+    <span class="hljs-keyword">var</span> reset = <span class="hljs-keyword">yield</span> i;
+    <span class="hljs-keyword">if</span>(reset) { i = <span class="hljs-number">-1</span>; }
+  }
+}
+
+<span class="hljs-keyword">var</span> g = f();
+
+g.next() <span class="hljs-comment">// { value: 0, done: false }</span>
+g.next() <span class="hljs-comment">// { value: 1, done: false }</span>
+g.next(<span class="hljs-number">true</span>) <span class="hljs-comment">// { value: 0, done: false }</span>
+</code></pre>
+<p class="calibre6">上面代码先定义了一个可以无限运行的 Generator 函数<code class="pcalibre3 calibre13 pcalibre4">f</code>，如果<code class="pcalibre3 calibre13 pcalibre4">next</code>方法没有参数，每次运行到<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式，变量<code class="pcalibre3 calibre13 pcalibre4">reset</code>的值总是<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。当<code class="pcalibre3 calibre13 pcalibre4">next</code>方法带一个参数<code class="pcalibre3 calibre13 pcalibre4">true</code>时，变量<code class="pcalibre3 calibre13 pcalibre4">reset</code>就被重置为这个参数（即<code class="pcalibre3 calibre13 pcalibre4">true</code>），因此<code class="pcalibre3 calibre13 pcalibre4">i</code>会等于<code class="pcalibre3 calibre13 pcalibre4">-1</code>，下一轮循环就会从<code class="pcalibre3 calibre13 pcalibre4">-1</code>开始递增。</p>
+<p class="calibre6">这个功能有很重要的语法意义。Generator 函数从暂停状态到恢复运行，它的上下文状态（context）是不变的。通过<code class="pcalibre3 calibre13 pcalibre4">next</code>方法的参数，就有办法在 Generator 函数开始运行之后，继续向函数体内部注入值。也就是说，可以在 Generator 函数运行的不同阶段，从外部向内部注入不同的值，从而调整函数行为。</p>
+<p class="calibre6">再看一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">foo</span>(<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-keyword">var</span> y = <span class="hljs-number">2</span> * (<span class="hljs-keyword">yield</span> (x + <span class="hljs-number">1</span>));
+  <span class="hljs-keyword">var</span> z = <span class="hljs-keyword">yield</span> (y / <span class="hljs-number">3</span>);
+  <span class="hljs-keyword">return</span> (x + y + z);
+}
+
+<span class="hljs-keyword">var</span> a = foo(<span class="hljs-number">5</span>);
+a.next() <span class="hljs-comment">// Object{value:6, done:false}</span>
+a.next() <span class="hljs-comment">// Object{value:NaN, done:false}</span>
+a.next() <span class="hljs-comment">// Object{value:NaN, done:true}</span>
+
+<span class="hljs-keyword">var</span> b = foo(<span class="hljs-number">5</span>);
+b.next() <span class="hljs-comment">// { value:6, done:false }</span>
+b.next(<span class="hljs-number">12</span>) <span class="hljs-comment">// { value:8, done:false }</span>
+b.next(<span class="hljs-number">13</span>) <span class="hljs-comment">// { value:42, done:true }</span>
+</code></pre>
+<p class="calibre6">上面代码中，第二次运行<code class="pcalibre3 calibre13 pcalibre4">next</code>方法的时候不带参数，导致 y 的值等于<code class="pcalibre3 calibre13 pcalibre4">2 * undefined</code>（即<code class="pcalibre3 calibre13 pcalibre4">NaN</code>），除以 3 以后还是<code class="pcalibre3 calibre13 pcalibre4">NaN</code>，因此返回对象的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性也等于<code class="pcalibre3 calibre13 pcalibre4">NaN</code>。第三次运行<code class="pcalibre3 calibre13 pcalibre4">Next</code>方法的时候不带参数，所以<code class="pcalibre3 calibre13 pcalibre4">z</code>等于<code class="pcalibre3 calibre13 pcalibre4">undefined</code>，返回对象的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性等于<code class="pcalibre3 calibre13 pcalibre4">5 + NaN + undefined</code>，即<code class="pcalibre3 calibre13 pcalibre4">NaN</code>。</p>
+<p class="calibre6">如果向<code class="pcalibre3 calibre13 pcalibre4">next</code>方法提供参数，返回结果就完全不一样了。上面代码第一次调用<code class="pcalibre3 calibre13 pcalibre4">b</code>的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法时，返回<code class="pcalibre3 calibre13 pcalibre4">x+1</code>的值<code class="pcalibre3 calibre13 pcalibre4">6</code>；第二次调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，将上一次<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式的值设为<code class="pcalibre3 calibre13 pcalibre4">12</code>，因此<code class="pcalibre3 calibre13 pcalibre4">y</code>等于<code class="pcalibre3 calibre13 pcalibre4">24</code>，返回<code class="pcalibre3 calibre13 pcalibre4">y / 3</code>的值<code class="pcalibre3 calibre13 pcalibre4">8</code>；第三次调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，将上一次<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式的值设为<code class="pcalibre3 calibre13 pcalibre4">13</code>，因此<code class="pcalibre3 calibre13 pcalibre4">z</code>等于<code class="pcalibre3 calibre13 pcalibre4">13</code>，这时<code class="pcalibre3 calibre13 pcalibre4">x</code>等于<code class="pcalibre3 calibre13 pcalibre4">5</code>，<code class="pcalibre3 calibre13 pcalibre4">y</code>等于<code class="pcalibre3 calibre13 pcalibre4">24</code>，所以<code class="pcalibre3 calibre13 pcalibre4">return</code>语句的值等于<code class="pcalibre3 calibre13 pcalibre4">42</code>。</p>
+<p class="calibre6">注意，由于<code class="pcalibre3 calibre13 pcalibre4">next</code>方法的参数表示上一个<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式的返回值，所以在第一次使用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法时，传递参数是无效的。V8 引擎直接忽略第一次使用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法时的参数，只有从第二次使用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法开始，参数才是有效的。从语义上讲，第一个<code class="pcalibre3 calibre13 pcalibre4">next</code>方法用来启动遍历器对象，所以不用带有参数。</p>
+<p class="calibre6">再看一个通过<code class="pcalibre3 calibre13 pcalibre4">next</code>方法的参数，向 Generator 函数内部输入值的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">dataConsumer</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Started&#39;</span>);
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">`1. <span class="hljs-_">${yield}</span>`</span>);
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">`2. <span class="hljs-_">${yield}</span>`</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;result&#39;</span>;
+}
+
+<span class="hljs-keyword">let</span> genObj = dataConsumer();
+genObj.next();
+<span class="hljs-comment">// Started</span>
+genObj.next(<span class="hljs-string">&#39;a&#39;</span>)
+<span class="hljs-comment">// 1. a</span>
+genObj.next(<span class="hljs-string">&#39;b&#39;</span>)
+<span class="hljs-comment">// 2. b</span>
+</code></pre>
+<p class="calibre6">上面代码是一个很直观的例子，每次通过<code class="pcalibre3 calibre13 pcalibre4">next</code>方法向 Generator 函数输入值，然后打印出来。</p>
+<p class="calibre6">如果想要第一次调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法时，就能够输入值，可以在 Generator 函数外面再包一层。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">wrapper</span>(<span class="hljs-number">generatorFunction</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">...args</span>) </span>{
+    <span class="hljs-keyword">let</span> generatorObject = generatorFunction(...args);
+    generatorObject.next();
+    <span class="hljs-keyword">return</span> generatorObject;
+  };
+}
+
+<span class="hljs-keyword">const</span> wrapped = wrapper(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">`First input: <span class="hljs-_">${yield}</span>`</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;DONE&#39;</span>;
+});
+
+wrapped().next(<span class="hljs-string">&#39;hello!&#39;</span>)
+<span class="hljs-comment">// First input: hello!</span>
+</code></pre>
+<p class="calibre6">上面代码中，Generator 函数如果不用<code class="pcalibre3 calibre13 pcalibre4">wrapper</code>先包一层，是无法第一次调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，就输入参数的。</p>
+<h2 id="forof-循环" class="calibre12">for...of 循环</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环可以自动遍历 Generator 函数时生成的<code class="pcalibre3 calibre13 pcalibre4">Iterator</code>对象，且此时不再需要调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">3</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">4</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">5</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-number">6</span>;
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> v <span class="hljs-keyword">of</span> foo()) {
+  <span class="hljs-number">console</span>.log(v);
+}
+<span class="hljs-comment">// 1 2 3 4 5</span>
+</code></pre>
+<p class="calibre6">上面代码使用<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环，依次显示 5 个<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式的值。这里需要注意，一旦<code class="pcalibre3 calibre13 pcalibre4">next</code>方法的返回对象的<code class="pcalibre3 calibre13 pcalibre4">done</code>属性为<code class="pcalibre3 calibre13 pcalibre4">true</code>，<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环就会中止，且不包含该返回对象，所以上面代码的<code class="pcalibre3 calibre13 pcalibre4">return</code>语句返回的<code class="pcalibre3 calibre13 pcalibre4">6</code>，不包括在<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环之中。</p>
+<p class="calibre6">下面是一个利用 Generator 函数和<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环，实现斐波那契数列的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">fibonacci</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">let</span> [prev, curr] = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>];
+  <span class="hljs-keyword">for</span> (;;) {
+    [prev, curr] = [curr, prev + curr];
+    <span class="hljs-keyword">yield</span> curr;
+  }
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> n <span class="hljs-keyword">of</span> fibonacci()) {
+  <span class="hljs-keyword">if</span> (n &gt; <span class="hljs-number">1000</span>) <span class="hljs-keyword">break</span>;
+  <span class="hljs-number">console</span>.log(n);
+}
+</code></pre>
+<p class="calibre6">从上面代码可见，使用<code class="pcalibre3 calibre13 pcalibre4">for...of</code>语句时不需要使用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法。</p>
+<p class="calibre6">利用<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环，可以写出遍历任意对象（object）的方法。原生的 JavaScript 对象没有遍历接口，无法使用<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环，通过 Generator 函数为它加上这个接口，就可以用了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">objectEntries</span>(<span class="hljs-number">obj</span>) </span>{
+  <span class="hljs-keyword">let</span> propKeys = <span class="hljs-number">Reflect</span>.ownKeys(obj);
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> propKey <span class="hljs-keyword">of</span> propKeys) {
+    <span class="hljs-keyword">yield</span> [propKey, obj[propKey]];
+  }
+}
+
+<span class="hljs-keyword">let</span> jane = { first: <span class="hljs-string">&#39;Jane&#39;</span>, last: <span class="hljs-string">&#39;Doe&#39;</span> };
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> [key, value] <span class="hljs-keyword">of</span> objectEntries(jane)) {
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">`<span class="hljs-_">${key}</span>: <span class="hljs-_">${value}</span>`</span>);
+}
+<span class="hljs-comment">// first: Jane</span>
+<span class="hljs-comment">// last: Doe</span>
+</code></pre>
+<p class="calibre6">上面代码中，对象<code class="pcalibre3 calibre13 pcalibre4">jane</code>原生不具备 Iterator 接口，无法用<code class="pcalibre3 calibre13 pcalibre4">for...of</code>遍历。这时，我们通过 Generator 函数<code class="pcalibre3 calibre13 pcalibre4">objectEntries</code>为它加上遍历器接口，就可以用<code class="pcalibre3 calibre13 pcalibre4">for...of</code>遍历了。加上遍历器接口的另一种写法是，将 Generator 函数加到对象的<code class="pcalibre3 calibre13 pcalibre4">Symbol.iterator</code>属性上面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">objectEntries</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">let</span> propKeys = <span class="hljs-number">Object</span>.keys(<span class="hljs-keyword">this</span>);
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> propKey <span class="hljs-keyword">of</span> propKeys) {
+    <span class="hljs-keyword">yield</span> [propKey, <span class="hljs-keyword">this</span>[propKey]];
+  }
+}
+
+<span class="hljs-keyword">let</span> jane = { first: <span class="hljs-string">&#39;Jane&#39;</span>, last: <span class="hljs-string">&#39;Doe&#39;</span> };
+
+jane[<span class="hljs-number">Symbol</span>.iterator] = objectEntries;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> [key, value] <span class="hljs-keyword">of</span> jane) {
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">`<span class="hljs-_">${key}</span>: <span class="hljs-_">${value}</span>`</span>);
+}
+<span class="hljs-comment">// first: Jane</span>
+<span class="hljs-comment">// last: Doe</span>
+</code></pre>
+<p class="calibre6">除了<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环以外，扩展运算符（<code class="pcalibre3 calibre13 pcalibre4">...</code>）、解构赋值和<code class="pcalibre3 calibre13 pcalibre4">Array.from</code>方法内部调用的，都是遍历器接口。这意味着，它们都可以将 Generator 函数返回的 Iterator 对象，作为参数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">numbers</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span>
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">2</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">4</span>
+}
+
+<span class="hljs-comment">// 扩展运算符</span>
+[...numbers()] <span class="hljs-comment">// [1, 2]</span>
+
+<span class="hljs-comment">// Array.from 方法</span>
+<span class="hljs-number">Array</span>.from(numbers()) <span class="hljs-comment">// [1, 2]</span>
+
+<span class="hljs-comment">// 解构赋值</span>
+<span class="hljs-keyword">let</span> [x, y] = numbers();
+x <span class="hljs-comment">// 1</span>
+y <span class="hljs-comment">// 2</span>
+
+<span class="hljs-comment">// for...of 循环</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> n <span class="hljs-keyword">of</span> numbers()) {
+  <span class="hljs-number">console</span>.log(n)
+}
+<span class="hljs-comment">// 1</span>
+<span class="hljs-comment">// 2</span>
+</code></pre>
+<h2 id="generatorprototypethrow" class="calibre12">Generator.prototype.throw()</h2>
+<p class="calibre6">Generator 函数返回的遍历器对象，都有一个<code class="pcalibre3 calibre13 pcalibre4">throw</code>方法，可以在函数体外抛出错误，然后在 Generator 函数体内捕获。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> g = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">yield</span>;
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;内部捕获&#39;</span>, e);
+  }
+};
+
+<span class="hljs-keyword">var</span> i = g();
+i.next();
+
+<span class="hljs-keyword">try</span> {
+  i.throw(<span class="hljs-string">&#39;a&#39;</span>);
+  i.throw(<span class="hljs-string">&#39;b&#39;</span>);
+} <span class="hljs-keyword">catch</span> (e) {
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;外部捕获&#39;</span>, e);
+}
+<span class="hljs-comment">// 内部捕获 a</span>
+<span class="hljs-comment">// 外部捕获 b</span>
+</code></pre>
+<p class="calibre6">上面代码中，遍历器对象<code class="pcalibre3 calibre13 pcalibre4">i</code>连续抛出两个错误。第一个错误被 Generator 函数体内的<code class="pcalibre3 calibre13 pcalibre4">catch</code>语句捕获。<code class="pcalibre3 calibre13 pcalibre4">i</code>第二次抛出错误，由于 Generator 函数内部的<code class="pcalibre3 calibre13 pcalibre4">catch</code>语句已经执行过了，不会再捕捉到这个错误了，所以这个错误就被抛出了 Generator 函数体，被函数体外的<code class="pcalibre3 calibre13 pcalibre4">catch</code>语句捕获。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">throw</code>方法可以接受一个参数，该参数会被<code class="pcalibre3 calibre13 pcalibre4">catch</code>语句接收，建议抛出<code class="pcalibre3 calibre13 pcalibre4">Error</code>对象的实例。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> g = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">yield</span>;
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-number">console</span>.log(e);
+  }
+};
+
+<span class="hljs-keyword">var</span> i = g();
+i.next();
+i.throw(<span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;出错了！&#39;</span>));
+<span class="hljs-comment">// Error: 出错了！(…)</span>
+</code></pre>
+<p class="calibre6">注意，不要混淆遍历器对象的<code class="pcalibre3 calibre13 pcalibre4">throw</code>方法和全局的<code class="pcalibre3 calibre13 pcalibre4">throw</code>命令。上面代码的错误，是用遍历器对象的<code class="pcalibre3 calibre13 pcalibre4">throw</code>方法抛出的，而不是用<code class="pcalibre3 calibre13 pcalibre4">throw</code>命令抛出的。后者只能被函数体外的<code class="pcalibre3 calibre13 pcalibre4">catch</code>语句捕获。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> g = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">while</span> (<span class="hljs-number">true</span>) {
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">yield</span>;
+    } <span class="hljs-keyword">catch</span> (e) {
+      <span class="hljs-keyword">if</span> (e != <span class="hljs-string">&#39;a&#39;</span>) <span class="hljs-keyword">throw</span> e;
+      <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;内部捕获&#39;</span>, e);
+    }
+  }
+};
+
+<span class="hljs-keyword">var</span> i = g();
+i.next();
+
+<span class="hljs-keyword">try</span> {
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;a&#39;</span>);
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;b&#39;</span>);
+} <span class="hljs-keyword">catch</span> (e) {
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;外部捕获&#39;</span>, e);
+}
+<span class="hljs-comment">// 外部捕获 [Error: a]</span>
+</code></pre>
+<p class="calibre6">上面代码之所以只捕获了<code class="pcalibre3 calibre13 pcalibre4">a</code>，是因为函数体外的<code class="pcalibre3 calibre13 pcalibre4">catch</code>语句块，捕获了抛出的<code class="pcalibre3 calibre13 pcalibre4">a</code>错误以后，就不会再继续<code class="pcalibre3 calibre13 pcalibre4">try</code>代码块里面剩余的语句了。</p>
+<p class="calibre6">如果 Generator 函数内部没有部署<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>代码块，那么<code class="pcalibre3 calibre13 pcalibre4">throw</code>方法抛出的错误，将被外部<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>代码块捕获。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> g = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">while</span> (<span class="hljs-number">true</span>) {
+    <span class="hljs-keyword">yield</span>;
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;内部捕获&#39;</span>, e);
+  }
+};
+
+<span class="hljs-keyword">var</span> i = g();
+i.next();
+
+<span class="hljs-keyword">try</span> {
+  i.throw(<span class="hljs-string">&#39;a&#39;</span>);
+  i.throw(<span class="hljs-string">&#39;b&#39;</span>);
+} <span class="hljs-keyword">catch</span> (e) {
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;外部捕获&#39;</span>, e);
+}
+<span class="hljs-comment">// 外部捕获 a</span>
+</code></pre>
+<p class="calibre6">上面代码中，Generator 函数<code class="pcalibre3 calibre13 pcalibre4">g</code>内部没有部署<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>代码块，所以抛出的错误直接被外部<code class="pcalibre3 calibre13 pcalibre4">catch</code>代码块捕获。</p>
+<p class="calibre6">如果 Generator 函数内部和外部，都没有部署<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>代码块，那么程序将报错，直接中断执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> gen = <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>)</span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;hello&#39;</span>);
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;world&#39;</span>);
+}
+
+<span class="hljs-keyword">var</span> g = gen();
+g.next();
+g.throw();
+<span class="hljs-comment">// hello</span>
+<span class="hljs-comment">// Uncaught undefined</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">g.throw</code>抛出错误以后，没有任何<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>代码块可以捕获这个错误，导致程序报错，中断执行。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">throw</code>方法被捕获以后，会附带执行下一条<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式。也就是说，会附带执行一次<code class="pcalibre3 calibre13 pcalibre4">next</code>方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> gen = <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>)</span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">yield</span> <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;a&#39;</span>);
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-comment">// ...</span>
+  }
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;b&#39;</span>);
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;c&#39;</span>);
+}
+
+<span class="hljs-keyword">var</span> g = gen();
+g.next() <span class="hljs-comment">// a</span>
+g.throw() <span class="hljs-comment">// b</span>
+g.next() <span class="hljs-comment">// c</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">g.throw</code>方法被捕获以后，自动执行了一次<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，所以会打印<code class="pcalibre3 calibre13 pcalibre4">b</code>。另外，也可以看到，只要 Generator 函数内部部署了<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>代码块，那么遍历器的<code class="pcalibre3 calibre13 pcalibre4">throw</code>方法抛出的错误，不影响下一次遍历。</p>
+<p class="calibre6">另外，<code class="pcalibre3 calibre13 pcalibre4">throw</code>命令与<code class="pcalibre3 calibre13 pcalibre4">g.throw</code>方法是无关的，两者互不影响。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> gen = <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>)</span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;hello&#39;</span>);
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;world&#39;</span>);
+}
+
+<span class="hljs-keyword">var</span> g = gen();
+g.next();
+
+<span class="hljs-keyword">try</span> {
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>();
+} <span class="hljs-keyword">catch</span> (e) {
+  g.next();
+}
+<span class="hljs-comment">// hello</span>
+<span class="hljs-comment">// world</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">throw</code>命令抛出的错误不会影响到遍历器的状态，所以两次执行<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，都进行了正确的操作。</p>
+<p class="calibre6">这种函数体内捕获错误的机制，大大方便了对错误的处理。多个<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式，可以只用一个<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>代码块来捕获错误。如果使用回调函数的写法，想要捕获多个错误，就不得不为每个函数内部写一个错误处理语句，现在只在 Generator 函数内部写一次<code class="pcalibre3 calibre13 pcalibre4">catch</code>语句就可以了。</p>
+<p class="calibre6">Generator 函数体外抛出的错误，可以在函数体内捕获；反过来，Generator 函数体内抛出的错误，也可以被函数体外的<code class="pcalibre3 calibre13 pcalibre4">catch</code>捕获。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">var</span> x = <span class="hljs-keyword">yield</span> <span class="hljs-number">3</span>;
+  <span class="hljs-keyword">var</span> y = x.toUpperCase();
+  <span class="hljs-keyword">yield</span> y;
+}
+
+<span class="hljs-keyword">var</span> it = foo();
+
+it.next(); <span class="hljs-comment">// { value:3, done:false }</span>
+
+<span class="hljs-keyword">try</span> {
+  it.next(<span class="hljs-number">42</span>);
+} <span class="hljs-keyword">catch</span> (err) {
+  <span class="hljs-number">console</span>.log(err);
+}
+</code></pre>
+<p class="calibre6">上面代码中，第二个<code class="pcalibre3 calibre13 pcalibre4">next</code>方法向函数体内传入一个参数 42，数值是没有<code class="pcalibre3 calibre13 pcalibre4">toUpperCase</code>方法的，所以会抛出一个 TypeError 错误，被函数体外的<code class="pcalibre3 calibre13 pcalibre4">catch</code>捕获。</p>
+<p class="calibre6">一旦 Generator 执行过程中抛出错误，且没有被内部捕获，就不会再执行下去了。如果此后还调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，将返回一个<code class="pcalibre3 calibre13 pcalibre4">value</code>属性等于<code class="pcalibre3 calibre13 pcalibre4">undefined</code>、<code class="pcalibre3 calibre13 pcalibre4">done</code>属性等于<code class="pcalibre3 calibre13 pcalibre4">true</code>的对象，即 JavaScript 引擎认为这个 Generator 已经运行结束了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">g</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span>;
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;throwing an exception&#39;</span>);
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;generator broke!&#39;</span>);
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">3</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">log</span>(<span class="hljs-number">generator</span>) </span>{
+  <span class="hljs-keyword">var</span> v;
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;starting generator&#39;</span>);
+  <span class="hljs-keyword">try</span> {
+    v = generator.next();
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;第一次运行next方法&#39;</span>, v);
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;捕捉错误&#39;</span>, v);
+  }
+  <span class="hljs-keyword">try</span> {
+    v = generator.next();
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;第二次运行next方法&#39;</span>, v);
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;捕捉错误&#39;</span>, v);
+  }
+  <span class="hljs-keyword">try</span> {
+    v = generator.next();
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;第三次运行next方法&#39;</span>, v);
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;捕捉错误&#39;</span>, v);
+  }
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;caller done&#39;</span>);
+}
+
+log(g());
+<span class="hljs-comment">// starting generator</span>
+<span class="hljs-comment">// 第一次运行next方法 { value: 1, done: false }</span>
+<span class="hljs-comment">// throwing an exception</span>
+<span class="hljs-comment">// 捕捉错误 { value: 1, done: false }</span>
+<span class="hljs-comment">// 第三次运行next方法 { value: undefined, done: true }</span>
+<span class="hljs-comment">// caller done</span>
+</code></pre>
+<p class="calibre6">上面代码一共三次运行<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，第二次运行的时候会抛出错误，然后第三次运行的时候，Generator 函数就已经结束了，不再执行下去了。</p>
+<h2 id="generatorprototypereturn" class="calibre12">Generator.prototype.return()</h2>
+<p class="calibre6">Generator 函数返回的遍历器对象，还有一个<code class="pcalibre3 calibre13 pcalibre4">return</code>方法，可以返回给定的值，并且终结遍历 Generator 函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">3</span>;
+}
+
+<span class="hljs-keyword">var</span> g = gen();
+
+g.next()        <span class="hljs-comment">// { value: 1, done: false }</span>
+g.return(<span class="hljs-string">&#39;foo&#39;</span>) <span class="hljs-comment">// { value: &#34;foo&#34;, done: true }</span>
+g.next()        <span class="hljs-comment">// { value: undefined, done: true }</span>
+</code></pre>
+<p class="calibre6">上面代码中，遍历器对象<code class="pcalibre3 calibre13 pcalibre4">g</code>调用<code class="pcalibre3 calibre13 pcalibre4">return</code>方法后，返回值的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性就是<code class="pcalibre3 calibre13 pcalibre4">return</code>方法的参数<code class="pcalibre3 calibre13 pcalibre4">foo</code>。并且，Generator 函数的遍历就终止了，返回值的<code class="pcalibre3 calibre13 pcalibre4">done</code>属性为<code class="pcalibre3 calibre13 pcalibre4">true</code>，以后再调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，<code class="pcalibre3 calibre13 pcalibre4">done</code>属性总是返回<code class="pcalibre3 calibre13 pcalibre4">true</code>。</p>
+<p class="calibre6">如果<code class="pcalibre3 calibre13 pcalibre4">return</code>方法调用时，不提供参数，则返回值的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性为<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">3</span>;
+}
+
+<span class="hljs-keyword">var</span> g = gen();
+
+g.next()        <span class="hljs-comment">// { value: 1, done: false }</span>
+g.return() <span class="hljs-comment">// { value: undefined, done: true }</span>
+</code></pre>
+<p class="calibre6">如果 Generator 函数内部有<code class="pcalibre3 calibre13 pcalibre4">try...finally</code>代码块，那么<code class="pcalibre3 calibre13 pcalibre4">return</code>方法会推迟到<code class="pcalibre3 calibre13 pcalibre4">finally</code>代码块执行完再执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">numbers</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">yield</span> <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">yield</span> <span class="hljs-number">3</span>;
+  } <span class="hljs-keyword">finally</span> {
+    <span class="hljs-keyword">yield</span> <span class="hljs-number">4</span>;
+    <span class="hljs-keyword">yield</span> <span class="hljs-number">5</span>;
+  }
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">6</span>;
+}
+<span class="hljs-keyword">var</span> g = numbers();
+g.next() <span class="hljs-comment">// { value: 1, done: false }</span>
+g.next() <span class="hljs-comment">// { value: 2, done: false }</span>
+g.return(<span class="hljs-number">7</span>) <span class="hljs-comment">// { value: 4, done: false }</span>
+g.next() <span class="hljs-comment">// { value: 5, done: false }</span>
+g.next() <span class="hljs-comment">// { value: 7, done: true }</span>
+</code></pre>
+<p class="calibre6">上面代码中，调用<code class="pcalibre3 calibre13 pcalibre4">return</code>方法后，就开始执行<code class="pcalibre3 calibre13 pcalibre4">finally</code>代码块，然后等到<code class="pcalibre3 calibre13 pcalibre4">finally</code>代码块执行完，再执行<code class="pcalibre3 calibre13 pcalibre4">return</code>方法。</p>
+<h2 id="next、throw、return-的共同点" class="calibre12">next()、throw()、return() 的共同点</h2>
+<p class="calibre6">网友 vision57 提出，<code class="pcalibre3 calibre13 pcalibre4">next()</code>、<code class="pcalibre3 calibre13 pcalibre4">throw()</code>、<code class="pcalibre3 calibre13 pcalibre4">return()</code>这三个方法本质上是同一件事，可以放在一起理解。它们的作用都是让 Generator 函数恢复执行，并且使用不同的语句替换<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">next()</code>是将<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式替换成一个值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> g = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number">x, y</span>) </span>{
+  <span class="hljs-keyword">let</span> result = <span class="hljs-keyword">yield</span> x + y;
+  <span class="hljs-keyword">return</span> result;
+};
+
+<span class="hljs-keyword">const</span> gen = g(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+gen.next(); <span class="hljs-comment">// Object {value: 3, done: false}</span>
+
+gen.next(<span class="hljs-number">1</span>); <span class="hljs-comment">// Object {value: 1, done: true}</span>
+<span class="hljs-comment">// 相当于将 let result = yield x + y</span>
+<span class="hljs-comment">// 替换成 let result = 1;</span>
+</code></pre>
+<p class="calibre6">上面代码中，第二个<code class="pcalibre3 calibre13 pcalibre4">next(1)</code>方法就相当于将<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式替换成一个值<code class="pcalibre3 calibre13 pcalibre4">1</code>。如果<code class="pcalibre3 calibre13 pcalibre4">next</code>方法没有参数，就相当于替换成<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">throw()</code>是将<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式替换成一个<code class="pcalibre3 calibre13 pcalibre4">throw</code>语句。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">gen.throw(<span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;出错了&#39;</span>)); <span class="hljs-comment">// Uncaught Error: 出错了</span>
+<span class="hljs-comment">// 相当于将 let result = yield x + y</span>
+<span class="hljs-comment">// 替换成 let result = throw(new Error(&#39;出错了&#39;));</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">return()</code>是将<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式替换成一个<code class="pcalibre3 calibre13 pcalibre4">return</code>语句。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">gen.return(<span class="hljs-number">2</span>); <span class="hljs-comment">// Object {value: 2, done: true}</span>
+<span class="hljs-comment">// 相当于将 let result = yield x + y</span>
+<span class="hljs-comment">// 替换成 let result = return 2;</span>
+</code></pre>
+<h2 class="calibre12">yield* 表达式</h2>
+<p class="calibre6">如果在 Generator 函数内部，调用另一个 Generator 函数，默认情况下是没有效果的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;a&#39;</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;b&#39;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">bar</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;x&#39;</span>;
+  foo();
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;y&#39;</span>;
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> v <span class="hljs-keyword">of</span> bar()){
+  <span class="hljs-number">console</span>.log(v);
+}
+<span class="hljs-comment">// &#34;x&#34;</span>
+<span class="hljs-comment">// &#34;y&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">foo</code>和<code class="pcalibre3 calibre13 pcalibre4">bar</code>都是 Generator 函数，在<code class="pcalibre3 calibre13 pcalibre4">bar</code>里面调用<code class="pcalibre3 calibre13 pcalibre4">foo</code>，是不会有效果的。</p>
+<p class="calibre6">这个就需要用到<code class="pcalibre3 calibre13 pcalibre4">yield*</code>表达式，用来在一个 Generator 函数里面执行另一个 Generator 函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">bar</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;x&#39;</span>;
+  <span class="hljs-keyword">yield</span>* foo();
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;y&#39;</span>;
+}
+
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">bar</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;x&#39;</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;a&#39;</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;b&#39;</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;y&#39;</span>;
+}
+
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">bar</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;x&#39;</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> v <span class="hljs-keyword">of</span> foo()) {
+    <span class="hljs-keyword">yield</span> v;
+  }
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;y&#39;</span>;
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> v <span class="hljs-keyword">of</span> bar()){
+  <span class="hljs-number">console</span>.log(v);
+}
+<span class="hljs-comment">// &#34;x&#34;</span>
+<span class="hljs-comment">// &#34;a&#34;</span>
+<span class="hljs-comment">// &#34;b&#34;</span>
+<span class="hljs-comment">// &#34;y&#34;</span>
+</code></pre>
+<p class="calibre6">再来看一个对比的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">inner</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;hello!&#39;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">outer1</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;open&#39;</span>;
+  <span class="hljs-keyword">yield</span> inner();
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;close&#39;</span>;
+}
+
+<span class="hljs-keyword">var</span> gen = outer1()
+gen.next().value <span class="hljs-comment">// &#34;open&#34;</span>
+gen.next().value <span class="hljs-comment">// 返回一个遍历器对象</span>
+gen.next().value <span class="hljs-comment">// &#34;close&#34;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">outer2</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;open&#39;</span>
+  <span class="hljs-keyword">yield</span>* inner()
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;close&#39;</span>
+}
+
+<span class="hljs-keyword">var</span> gen = outer2()
+gen.next().value <span class="hljs-comment">// &#34;open&#34;</span>
+gen.next().value <span class="hljs-comment">// &#34;hello!&#34;</span>
+gen.next().value <span class="hljs-comment">// &#34;close&#34;</span>
+</code></pre>
+<p class="calibre6">上面例子中，<code class="pcalibre3 calibre13 pcalibre4">outer2</code>使用了<code class="pcalibre3 calibre13 pcalibre4">yield*</code>，<code class="pcalibre3 calibre13 pcalibre4">outer1</code>没使用。结果就是，<code class="pcalibre3 calibre13 pcalibre4">outer1</code>返回一个遍历器对象，<code class="pcalibre3 calibre13 pcalibre4">outer2</code>返回该遍历器对象的内部值。</p>
+<p class="calibre6">从语法角度看，如果<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式后面跟的是一个遍历器对象，需要在<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式后面加上星号，表明它返回的是一个遍历器对象。这被称为<code class="pcalibre3 calibre13 pcalibre4">yield*</code>表达式。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> delegatedIterator = (<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;Hello!&#39;</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;Bye!&#39;</span>;
+}());
+
+<span class="hljs-keyword">let</span> delegatingIterator = (<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;Greetings!&#39;</span>;
+  <span class="hljs-keyword">yield</span>* delegatedIterator;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;Ok, bye.&#39;</span>;
+}());
+
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> value <span class="hljs-keyword">of</span> delegatingIterator) {
+  <span class="hljs-number">console</span>.log(value);
+}
+<span class="hljs-comment">// &#34;Greetings!</span>
+<span class="hljs-comment">// &#34;Hello!&#34;</span>
+<span class="hljs-comment">// &#34;Bye!&#34;</span>
+<span class="hljs-comment">// &#34;Ok, bye.&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">delegatingIterator</code>是代理者，<code class="pcalibre3 calibre13 pcalibre4">delegatedIterator</code>是被代理者。由于<code class="pcalibre3 calibre13 pcalibre4">yield* delegatedIterator</code>语句得到的值，是一个遍历器，所以要用星号表示。运行结果就是使用一个遍历器，遍历了多个 Generator 函数，有递归的效果。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">yield*</code>后面的 Generator 函数（没有<code class="pcalibre3 calibre13 pcalibre4">return</code>语句时），等同于在 Generator 函数内部，部署一个<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">concat</span>(<span class="hljs-number">iter1, iter2</span>) </span>{
+  <span class="hljs-keyword">yield</span>* iter1;
+  <span class="hljs-keyword">yield</span>* iter2;
+}
+
+<span class="hljs-comment">// 等同于</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">concat</span>(<span class="hljs-number">iter1, iter2</span>) </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> value <span class="hljs-keyword">of</span> iter1) {
+    <span class="hljs-keyword">yield</span> value;
+  }
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> value <span class="hljs-keyword">of</span> iter2) {
+    <span class="hljs-keyword">yield</span> value;
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码说明，<code class="pcalibre3 calibre13 pcalibre4">yield*</code>后面的 Generator 函数（没有<code class="pcalibre3 calibre13 pcalibre4">return</code>语句时），不过是<code class="pcalibre3 calibre13 pcalibre4">for...of</code>的一种简写形式，完全可以用后者替代前者。反之，在有<code class="pcalibre3 calibre13 pcalibre4">return</code>语句时，则需要用<code class="pcalibre3 calibre13 pcalibre4">var value = yield* iterator</code>的形式获取<code class="pcalibre3 calibre13 pcalibre4">return</code>语句的值。</p>
+<p class="calibre6">如果<code class="pcalibre3 calibre13 pcalibre4">yield*</code>后面跟着一个数组，由于数组原生支持遍历器，因此就会遍历数组成员。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>)</span>{
+  <span class="hljs-keyword">yield</span>* [<span class="hljs-string">&#34;a&#34;</span>, <span class="hljs-string">&#34;b&#34;</span>, <span class="hljs-string">&#34;c&#34;</span>];
+}
+
+gen().next() <span class="hljs-comment">// { value:&#34;a&#34;, done:false }</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令后面如果不加星号，返回的是整个数组，加了星号就表示返回的是数组的遍历器对象。</p>
+<p class="calibre6">实际上，任何数据结构只要有 Iterator 接口，就可以被<code class="pcalibre3 calibre13 pcalibre4">yield*</code>遍历。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> read = (<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;hello&#39;</span>;
+  <span class="hljs-keyword">yield</span>* <span class="hljs-string">&#39;hello&#39;</span>;
+})();
+
+read.next().value <span class="hljs-comment">// &#34;hello&#34;</span>
+read.next().value <span class="hljs-comment">// &#34;h&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式返回整个字符串，<code class="pcalibre3 calibre13 pcalibre4">yield*</code>语句返回单个字符。因为字符串具有 Iterator 接口，所以被<code class="pcalibre3 calibre13 pcalibre4">yield*</code>遍历。</p>
+<p class="calibre6">如果被代理的 Generator 函数有<code class="pcalibre3 calibre13 pcalibre4">return</code>语句，那么就可以向代理它的 Generator 函数返回数据。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">foo</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">3</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&#34;foo&#34;</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">bar</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">var</span> v = <span class="hljs-keyword">yield</span>* foo();
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#34;v: &#34;</span> + v);
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">4</span>;
+}
+
+<span class="hljs-keyword">var</span> it = bar();
+
+it.next()
+<span class="hljs-comment">// {value: 1, done: false}</span>
+it.next()
+<span class="hljs-comment">// {value: 2, done: false}</span>
+it.next()
+<span class="hljs-comment">// {value: 3, done: false}</span>
+it.next();
+<span class="hljs-comment">// &#34;v: foo&#34;</span>
+<span class="hljs-comment">// {value: 4, done: false}</span>
+it.next()
+<span class="hljs-comment">// {value: undefined, done: true}</span>
+</code></pre>
+<p class="calibre6">上面代码在第四次调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法的时候，屏幕上会有输出，这是因为函数<code class="pcalibre3 calibre13 pcalibre4">foo</code>的<code class="pcalibre3 calibre13 pcalibre4">return</code>语句，向函数<code class="pcalibre3 calibre13 pcalibre4">bar</code>提供了返回值。</p>
+<p class="calibre6">再看一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">genFuncWithReturn</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;a&#39;</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#39;b&#39;</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;The result&#39;</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">logReturned</span>(<span class="hljs-number">genObj</span>) </span>{
+  <span class="hljs-keyword">let</span> result = <span class="hljs-keyword">yield</span>* genObj;
+  <span class="hljs-number">console</span>.log(result);
+}
+
+[...logReturned(genFuncWithReturn())]
+<span class="hljs-comment">// The result</span>
+<span class="hljs-comment">// 值为 [ &#39;a&#39;, &#39;b&#39; ]</span>
+</code></pre>
+<p class="calibre6">上面代码中，存在两次遍历。第一次是扩展运算符遍历函数<code class="pcalibre3 calibre13 pcalibre4">logReturned</code>返回的遍历器对象，第二次是<code class="pcalibre3 calibre13 pcalibre4">yield*</code>语句遍历函数<code class="pcalibre3 calibre13 pcalibre4">genFuncWithReturn</code>返回的遍历器对象。这两次遍历的效果是叠加的，最终表现为扩展运算符遍历函数<code class="pcalibre3 calibre13 pcalibre4">genFuncWithReturn</code>返回的遍历器对象。所以，最后的数据表达式得到的值等于<code class="pcalibre3 calibre13 pcalibre4">[ &#39;a&#39;, &#39;b&#39; ]</code>。但是，函数<code class="pcalibre3 calibre13 pcalibre4">genFuncWithReturn</code>的<code class="pcalibre3 calibre13 pcalibre4">return</code>语句的返回值<code class="pcalibre3 calibre13 pcalibre4">The result</code>，会返回给函数<code class="pcalibre3 calibre13 pcalibre4">logReturned</code>内部的<code class="pcalibre3 calibre13 pcalibre4">result</code>变量，因此会有终端输出。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">yield*</code>命令可以很方便地取出嵌套数组的所有成员。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">iterTree</span>(<span class="hljs-number">tree</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-number">Array</span>.isArray(tree)) {
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>; i &lt; tree.length; i++) {
+      <span class="hljs-keyword">yield</span>* iterTree(tree[i]);
+    }
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">yield</span> tree;
+  }
+}
+
+<span class="hljs-keyword">const</span> tree = [ <span class="hljs-string">&#39;a&#39;</span>, [<span class="hljs-string">&#39;b&#39;</span>, <span class="hljs-string">&#39;c&#39;</span>], [<span class="hljs-string">&#39;d&#39;</span>, <span class="hljs-string">&#39;e&#39;</span>] ];
+
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> x <span class="hljs-keyword">of</span> iterTree(tree)) {
+  <span class="hljs-number">console</span>.log(x);
+}
+<span class="hljs-comment">// a</span>
+<span class="hljs-comment">// b</span>
+<span class="hljs-comment">// c</span>
+<span class="hljs-comment">// d</span>
+<span class="hljs-comment">// e</span>
+</code></pre>
+<p class="calibre6">下面是一个稍微复杂的例子，使用<code class="pcalibre3 calibre13 pcalibre4">yield*</code>语句遍历完全二叉树。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 下面是二叉树的构造函数，</span>
+<span class="hljs-comment">// 三个参数分别是左树、当前节点和右树</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">Tree</span>(<span class="hljs-number">left, label, right</span>) </span>{
+  <span class="hljs-keyword">this</span>.left = left;
+  <span class="hljs-keyword">this</span>.label = label;
+  <span class="hljs-keyword">this</span>.right = right;
+}
+
+<span class="hljs-comment">// 下面是中序（inorder）遍历函数。</span>
+<span class="hljs-comment">// 由于返回的是一个遍历器，所以要用generator函数。</span>
+<span class="hljs-comment">// 函数体内采用递归算法，所以左树和右树要用yield*遍历</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">inorder</span>(<span class="hljs-number">t</span>) </span>{
+  <span class="hljs-keyword">if</span> (t) {
+    <span class="hljs-keyword">yield</span>* inorder(t.left);
+    <span class="hljs-keyword">yield</span> t.label;
+    <span class="hljs-keyword">yield</span>* inorder(t.right);
+  }
+}
+
+<span class="hljs-comment">// 下面生成二叉树</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">make</span>(<span class="hljs-number">array</span>) </span>{
+  <span class="hljs-comment">// 判断是否为叶节点</span>
+  <span class="hljs-keyword">if</span> (array.length == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Tree(<span class="hljs-number">null</span>, array[<span class="hljs-number">0</span>], <span class="hljs-number">null</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Tree(make(array[<span class="hljs-number">0</span>]), array[<span class="hljs-number">1</span>], make(array[<span class="hljs-number">2</span>]));
+}
+<span class="hljs-keyword">let</span> tree = make([[[<span class="hljs-string">&#39;a&#39;</span>], <span class="hljs-string">&#39;b&#39;</span>, [<span class="hljs-string">&#39;c&#39;</span>]], <span class="hljs-string">&#39;d&#39;</span>, [[<span class="hljs-string">&#39;e&#39;</span>], <span class="hljs-string">&#39;f&#39;</span>, [<span class="hljs-string">&#39;g&#39;</span>]]]);
+
+<span class="hljs-comment">// 遍历二叉树</span>
+<span class="hljs-keyword">var</span> result = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> node <span class="hljs-keyword">of</span> inorder(tree)) {
+  result.push(node);
+}
+
+result
+<span class="hljs-comment">// [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]</span>
+</code></pre>
+<h2 id="作为对象属性的-generator-函数" class="calibre12">作为对象属性的 Generator 函数</h2>
+<p class="calibre6">如果一个对象的属性是 Generator 函数，可以简写成下面的形式。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> obj = {
+  * myGeneratorMethod() {
+    ···
+  }
+};
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">myGeneratorMethod</code>属性前面有一个星号，表示这个属性是一个 Generator 函数。</p>
+<p class="calibre6">它的完整形式如下，与上面的写法是等价的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> obj = {
+  myGeneratorMethod: <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+    <span class="hljs-comment">// ···</span>
+  }
+};
+</code></pre>
+<h2 id="generator-函数的this" class="calibre12">Generator 函数的<code class="pcalibre3 pcalibre4 calibre19">this</code></h2>
+<p class="calibre6">Generator 函数总是返回一个遍历器，ES6 规定这个遍历器是 Generator 函数的实例，也继承了 Generator 函数的<code class="pcalibre3 calibre13 pcalibre4">prototype</code>对象上的方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">g</span>(<span class="hljs-number"></span>) </span>{}
+
+g.prototype.hello = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;hi!&#39;</span>;
+};
+
+<span class="hljs-keyword">let</span> obj = g();
+
+obj <span class="hljs-keyword">instanceof</span> g <span class="hljs-comment">// true</span>
+obj.hello() <span class="hljs-comment">// &#39;hi!&#39;</span>
+</code></pre>
+<p class="calibre6">上面代码表明，Generator 函数<code class="pcalibre3 calibre13 pcalibre4">g</code>返回的遍历器<code class="pcalibre3 calibre13 pcalibre4">obj</code>，是<code class="pcalibre3 calibre13 pcalibre4">g</code>的实例，而且继承了<code class="pcalibre3 calibre13 pcalibre4">g.prototype</code>。但是，如果把<code class="pcalibre3 calibre13 pcalibre4">g</code>当作普通的构造函数，并不会生效，因为<code class="pcalibre3 calibre13 pcalibre4">g</code>返回的总是遍历器对象，而不是<code class="pcalibre3 calibre13 pcalibre4">this</code>对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">g</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">this</span>.a = <span class="hljs-number">11</span>;
+}
+
+<span class="hljs-keyword">let</span> obj = g();
+obj.next();
+obj.a <span class="hljs-comment">// undefined</span>
+</code></pre>
+<p class="calibre6">上面代码中，Generator 函数<code class="pcalibre3 calibre13 pcalibre4">g</code>在<code class="pcalibre3 calibre13 pcalibre4">this</code>对象上面添加了一个属性<code class="pcalibre3 calibre13 pcalibre4">a</code>，但是<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象拿不到这个属性。</p>
+<p class="calibre6">Generator 函数也不能跟<code class="pcalibre3 calibre13 pcalibre4">new</code>命令一起用，会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">F</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.x = <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.y = <span class="hljs-number">3</span>;
+}
+
+<span class="hljs-keyword">new</span> F()
+<span class="hljs-comment">// TypeError: F is not a constructor</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">new</code>命令跟构造函数<code class="pcalibre3 calibre13 pcalibre4">F</code>一起使用，结果报错，因为<code class="pcalibre3 calibre13 pcalibre4">F</code>不是构造函数。</p>
+<p class="calibre6">那么，有没有办法让 Generator 函数返回一个正常的对象实例，既可以用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，又可以获得正常的<code class="pcalibre3 calibre13 pcalibre4">this</code>？</p>
+<p class="calibre6">下面是一个变通方法。首先，生成一个空对象，使用<code class="pcalibre3 calibre13 pcalibre4">call</code>方法绑定 Generator 函数内部的<code class="pcalibre3 calibre13 pcalibre4">this</code>。这样，构造函数调用以后，这个空对象就是 Generator 函数的实例对象了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">F</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">this</span>.a = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.b = <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.c = <span class="hljs-number">3</span>;
+}
+<span class="hljs-keyword">var</span> obj = {};
+<span class="hljs-keyword">var</span> f = F.call(obj);
+
+f.next();  <span class="hljs-comment">// Object {value: 2, done: false}</span>
+f.next();  <span class="hljs-comment">// Object {value: 3, done: false}</span>
+f.next();  <span class="hljs-comment">// Object {value: undefined, done: true}</span>
+
+obj.a <span class="hljs-comment">// 1</span>
+obj.b <span class="hljs-comment">// 2</span>
+obj.c <span class="hljs-comment">// 3</span>
+</code></pre>
+<p class="calibre6">上面代码中，首先是<code class="pcalibre3 calibre13 pcalibre4">F</code>内部的<code class="pcalibre3 calibre13 pcalibre4">this</code>对象绑定<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象，然后调用它，返回一个 Iterator 对象。这个对象执行三次<code class="pcalibre3 calibre13 pcalibre4">next</code>方法（因为<code class="pcalibre3 calibre13 pcalibre4">F</code>内部有两个<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式），完成 F 内部所有代码的运行。这时，所有内部属性都绑定在<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象上了，因此<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象也就成了<code class="pcalibre3 calibre13 pcalibre4">F</code>的实例。</p>
+<p class="calibre6">上面代码中，执行的是遍历器对象<code class="pcalibre3 calibre13 pcalibre4">f</code>，但是生成的对象实例是<code class="pcalibre3 calibre13 pcalibre4">obj</code>，有没有办法将这两个对象统一呢？</p>
+<p class="calibre6">一个办法就是将<code class="pcalibre3 calibre13 pcalibre4">obj</code>换成<code class="pcalibre3 calibre13 pcalibre4">F.prototype</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">F</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">this</span>.a = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.b = <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.c = <span class="hljs-number">3</span>;
+}
+<span class="hljs-keyword">var</span> f = F.call(F.prototype);
+
+f.next();  <span class="hljs-comment">// Object {value: 2, done: false}</span>
+f.next();  <span class="hljs-comment">// Object {value: 3, done: false}</span>
+f.next();  <span class="hljs-comment">// Object {value: undefined, done: true}</span>
+
+f.a <span class="hljs-comment">// 1</span>
+f.b <span class="hljs-comment">// 2</span>
+f.c <span class="hljs-comment">// 3</span>
+</code></pre>
+<p class="calibre6">再将<code class="pcalibre3 calibre13 pcalibre4">F</code>改成构造函数，就可以对它执行<code class="pcalibre3 calibre13 pcalibre4">new</code>命令了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">this</span>.a = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.b = <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.c = <span class="hljs-number">3</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">F</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> gen.call(gen.prototype);
+}
+
+<span class="hljs-keyword">var</span> f = <span class="hljs-keyword">new</span> F();
+
+f.next();  <span class="hljs-comment">// Object {value: 2, done: false}</span>
+f.next();  <span class="hljs-comment">// Object {value: 3, done: false}</span>
+f.next();  <span class="hljs-comment">// Object {value: undefined, done: true}</span>
+
+f.a <span class="hljs-comment">// 1</span>
+f.b <span class="hljs-comment">// 2</span>
+f.c <span class="hljs-comment">// 3</span>
+</code></pre>
+<h2 id="含义" class="calibre12">含义</h2>
+<h3 id="generator-与状态机" class="calibre11">Generator 与状态机</h3>
+<p class="calibre6">Generator 是实现状态机的最佳结构。比如，下面的<code class="pcalibre3 calibre13 pcalibre4">clock</code>函数就是一个状态机。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> ticking = <span class="hljs-number">true</span>;
+<span class="hljs-keyword">var</span> clock = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">if</span> (ticking)
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Tick!&#39;</span>);
+  <span class="hljs-keyword">else</span>
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Tock!&#39;</span>);
+  ticking = !ticking;
+}
+</code></pre>
+<p class="calibre6">上面代码的<code class="pcalibre3 calibre13 pcalibre4">clock</code>函数一共有两种状态（<code class="pcalibre3 calibre13 pcalibre4">Tick</code>和<code class="pcalibre3 calibre13 pcalibre4">Tock</code>），每运行一次，就改变一次状态。这个函数如果用 Generator 实现，就是下面这样。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> clock = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">while</span> (<span class="hljs-number">true</span>) {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Tick!&#39;</span>);
+    <span class="hljs-keyword">yield</span>;
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Tock!&#39;</span>);
+    <span class="hljs-keyword">yield</span>;
+  }
+};
+</code></pre>
+<p class="calibre6">上面的 Generator 实现与 ES5 实现对比，可以看到少了用来保存状态的外部变量<code class="pcalibre3 calibre13 pcalibre4">ticking</code>，这样就更简洁，更安全（状态不会被非法篡改）、更符合函数式编程的思想，在写法上也更优雅。Generator 之所以可以不用外部变量保存状态，是因为它本身就包含了一个状态信息，即目前是否处于暂停态。</p>
+<h3 id="generator-与协程" class="calibre11">Generator 与协程</h3>
+<p class="calibre6">协程（coroutine）是一种程序运行的方式，可以理解成“协作的线程”或“协作的函数”。协程既可以用单线程实现，也可以用多线程实现。前者是一种特殊的子例程，后者是一种特殊的线程。</p>
+<p class="calibre6"><strong class="calibre17">（1）协程与子例程的差异</strong></p>
+<p class="calibre6">传统的“子例程”（subroutine）采用堆栈式“后进先出”的执行方式，只有当调用的子函数完全执行完毕，才会结束执行父函数。协程与其不同，多个线程（单线程情况下，即多个函数）可以并行执行，但是只有一个线程（或函数）处于正在运行的状态，其他线程（或函数）都处于暂停态（suspended），线程（或函数）之间可以交换执行权。也就是说，一个线程（或函数）执行到一半，可以暂停执行，将执行权交给另一个线程（或函数），等到稍后收回执行权的时候，再恢复执行。这种可以并行执行、交换执行权的线程（或函数），就称为协程。</p>
+<p class="calibre6">从实现上看，在内存中，子例程只使用一个栈（stack），而协程是同时存在多个栈，但只有一个栈是在运行状态，也就是说，协程是以多占用内存为代价，实现多任务的并行。</p>
+<p class="calibre6"><strong class="calibre17">（2）协程与普通线程的差异</strong></p>
+<p class="calibre6">不难看出，协程适合用于多任务运行的环境。在这个意义上，它与普通的线程很相似，都有自己的执行上下文、可以分享全局变量。它们的不同之处在于，同一时间可以有多个线程处于运行状态，但是运行的协程只能有一个，其他协程都处于暂停状态。此外，普通的线程是抢先式的，到底哪个线程优先得到资源，必须由运行环境决定，但是协程是合作式的，执行权由协程自己分配。</p>
+<p class="calibre6">由于 JavaScript 是单线程语言，只能保持一个调用栈。引入协程以后，每个任务可以保持自己的调用栈。这样做的最大好处，就是抛出错误的时候，可以找到原始的调用栈。不至于像异步操作的回调函数那样，一旦出错，原始的调用栈早就结束。</p>
+<p class="calibre6">Generator 函数是 ES6 对协程的实现，但属于不完全实现。Generator 函数被称为“半协程”（semi-coroutine），意思是只有 Generator 函数的调用者，才能将程序的执行权还给 Generator 函数。如果是完全执行的协程，任何函数都可以让暂停的协程继续执行。</p>
+<p class="calibre6">如果将 Generator 函数当作协程，完全可以将多个需要互相协作的任务写成 Generator 函数，它们之间使用<code class="pcalibre3 calibre13 pcalibre4">yield</code>表示式交换控制权。</p>
+<h3 id="generator-与上下文" class="calibre11">Generator 与上下文</h3>
+<p class="calibre6">JavaScript 代码运行时，会产生一个全局的上下文环境（context，又称运行环境），包含了当前所有的变量和对象。然后，执行函数（或块级代码）的时候，又会在当前上下文环境的上层，产生一个函数运行的上下文，变成当前（active）的上下文，由此形成一个上下文环境的堆栈（context stack）。</p>
+<p class="calibre6">这个堆栈是“后进先出”的数据结构，最后产生的上下文环境首先执行完成，退出堆栈，然后再执行完成它下层的上下文，直至所有代码执行完成，堆栈清空。</p>
+<p class="calibre6">Generator 函数不是这样，它执行产生的上下文环境，一旦遇到<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令，就会暂时退出堆栈，但是并不消失，里面的所有变量和对象会冻结在当前状态。等到对它执行<code class="pcalibre3 calibre13 pcalibre4">next</code>命令时，这个上下文环境又会重新加入调用栈，冻结的变量和对象恢复执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+}
+
+<span class="hljs-keyword">let</span> g = gen();
+
+<span class="hljs-number">console</span>.log(
+  g.next().value,
+  g.next().value,
+);
+</code></pre>
+<p class="calibre6">上面代码中，第一次执行<code class="pcalibre3 calibre13 pcalibre4">g.next()</code>时，Generator 函数<code class="pcalibre3 calibre13 pcalibre4">gen</code>的上下文会加入堆栈，即开始运行<code class="pcalibre3 calibre13 pcalibre4">gen</code>内部的代码。等遇到<code class="pcalibre3 calibre13 pcalibre4">yield 1</code>时，<code class="pcalibre3 calibre13 pcalibre4">gen</code>上下文退出堆栈，内部状态冻结。第二次执行<code class="pcalibre3 calibre13 pcalibre4">g.next()</code>时，<code class="pcalibre3 calibre13 pcalibre4">gen</code>上下文重新加入堆栈，变成当前的上下文，重新恢复执行。</p>
+<h2 id="应用" class="calibre12">应用</h2>
+<p class="calibre6">Generator 可以暂停函数执行，返回任意表达式的值。这种特点使得 Generator 有多种应用场景。</p>
+<h3 id="（1）异步操作的同步化表达" class="calibre11">（1）异步操作的同步化表达</h3>
+<p class="calibre6">Generator 函数的暂停执行的效果，意味着可以把异步操作写在<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式里面，等到调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法时再往后执行。这实际上等同于不需要写回调函数了，因为异步操作的后续操作可以放在<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式下面，反正要等到调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法时再执行。所以，Generator 函数的一个重要实际意义就是用来处理异步操作，改写回调函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">loadUI</span>(<span class="hljs-number"></span>) </span>{
+  showLoadingScreen();
+  <span class="hljs-keyword">yield</span> loadUIDataAsynchronously();
+  hideLoadingScreen();
+}
+<span class="hljs-keyword">var</span> loader = loadUI();
+<span class="hljs-comment">// 加载UI</span>
+loader.next()
+
+<span class="hljs-comment">// 卸载UI</span>
+loader.next()
+</code></pre>
+<p class="calibre6">上面代码中，第一次调用<code class="pcalibre3 calibre13 pcalibre4">loadUI</code>函数时，该函数不会执行，仅返回一个遍历器。下一次对该遍历器调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，则会显示<code class="pcalibre3 calibre13 pcalibre4">Loading</code>界面（<code class="pcalibre3 calibre13 pcalibre4">showLoadingScreen</code>），并且异步加载数据（<code class="pcalibre3 calibre13 pcalibre4">loadUIDataAsynchronously</code>）。等到数据加载完成，再一次使用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，则会隐藏<code class="pcalibre3 calibre13 pcalibre4">Loading</code>界面。可以看到，这种写法的好处是所有<code class="pcalibre3 calibre13 pcalibre4">Loading</code>界面的逻辑，都被封装在一个函数，按部就班非常清晰。</p>
+<p class="calibre6">Ajax 是典型的异步操作，通过 Generator 函数部署 Ajax 操作，可以用同步的方式表达。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">main</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">var</span> result = <span class="hljs-keyword">yield</span> request(<span class="hljs-string">&#34;http://some.url&#34;</span>);
+  <span class="hljs-keyword">var</span> resp = <span class="hljs-number">JSON</span>.parse(result);
+    <span class="hljs-number">console</span>.log(resp.value);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">request</span>(<span class="hljs-number">url</span>) </span>{
+  makeAjaxCall(url, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">response</span>)</span>{
+    it.next(response);
+  });
+}
+
+<span class="hljs-keyword">var</span> it = main();
+it.next();
+</code></pre>
+<p class="calibre6">上面代码的<code class="pcalibre3 calibre13 pcalibre4">main</code>函数，就是通过 Ajax 操作获取数据。可以看到，除了多了一个<code class="pcalibre3 calibre13 pcalibre4">yield</code>，它几乎与同步操作的写法完全一样。注意，<code class="pcalibre3 calibre13 pcalibre4">makeAjaxCall</code>函数中的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，必须加上<code class="pcalibre3 calibre13 pcalibre4">response</code>参数，因为<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式，本身是没有值的，总是等于<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。</p>
+<p class="calibre6">下面是另一个例子，通过 Generator 函数逐行读取文本文件。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">numbers</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">let</span> file = <span class="hljs-keyword">new</span> FileReader(<span class="hljs-string">&#34;numbers.txt&#34;</span>);
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">while</span>(!file.eof) {
+      <span class="hljs-keyword">yield</span> <span class="hljs-number">parseInt</span>(file.readLine(), <span class="hljs-number">10</span>);
+    }
+  } <span class="hljs-keyword">finally</span> {
+    file.close();
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码打开文本文件，使用<code class="pcalibre3 calibre13 pcalibre4">yield</code>表达式可以手动逐行读取文件。</p>
+<h3 id="（2）控制流管理" class="calibre11">（2）控制流管理</h3>
+<p class="calibre6">如果有一个多步操作非常耗时，采用回调函数，可能会写成下面这样。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">step1(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">value1</span>) </span>{
+  step2(value1, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">value2</span>) </span>{
+    step3(value2, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">value3</span>) </span>{
+      step4(value3, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">value4</span>) </span>{
+        <span class="hljs-comment">// Do something with value4</span>
+      });
+    });
+  });
+});
+</code></pre>
+<p class="calibre6">采用 Promise 改写上面的代码。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Promise</span>.resolve(step1)
+  .then(step2)
+  .then(step3)
+  .then(step4)
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">value4</span>) </span>{
+    <span class="hljs-comment">// Do something with value4</span>
+  }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">error</span>) </span>{
+    <span class="hljs-comment">// Handle any error from step1 through step4</span>
+  })
+  .done();
+</code></pre>
+<p class="calibre6">上面代码已经把回调函数，改成了直线执行的形式，但是加入了大量 Promise 的语法。Generator 函数可以进一步改善代码运行流程。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">longRunningTask</span>(<span class="hljs-number">value1</span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">var</span> value2 = <span class="hljs-keyword">yield</span> step1(value1);
+    <span class="hljs-keyword">var</span> value3 = <span class="hljs-keyword">yield</span> step2(value2);
+    <span class="hljs-keyword">var</span> value4 = <span class="hljs-keyword">yield</span> step3(value3);
+    <span class="hljs-keyword">var</span> value5 = <span class="hljs-keyword">yield</span> step4(value4);
+    <span class="hljs-comment">// Do something with value4</span>
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-comment">// Handle any error from step1 through step4</span>
+  }
+}
+</code></pre>
+<p class="calibre6">然后，使用一个函数，按次序自动执行所有步骤。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">scheduler(longRunningTask(initialValue));
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">scheduler</span>(<span class="hljs-number">task</span>) </span>{
+  <span class="hljs-keyword">var</span> taskObj = task.next(task.value);
+  <span class="hljs-comment">// 如果Generator函数未结束，就继续调用</span>
+  <span class="hljs-keyword">if</span> (!taskObj.done) {
+    task.value = taskObj.value
+    scheduler(task);
+  }
+}
+</code></pre>
+<p class="calibre6">注意，上面这种做法，只适合同步操作，即所有的<code class="pcalibre3 calibre13 pcalibre4">task</code>都必须是同步的，不能有异步操作。因为这里的代码一得到返回值，就继续往下执行，没有判断异步操作何时完成。如果要控制异步的操作流程，详见后面的《异步操作》一章。</p>
+<p class="calibre6">下面，利用<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环会自动依次执行<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令的特性，提供一种更一般的控制流管理的方法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> steps = [step1Func, step2Func, step3Func];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">iterateSteps</span>(<span class="hljs-number">steps</span>)</span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt; steps.length; i++){
+    <span class="hljs-keyword">var</span> step = steps[i];
+    <span class="hljs-keyword">yield</span> step();
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码中，数组<code class="pcalibre3 calibre13 pcalibre4">steps</code>封装了一个任务的多个步骤，Generator 函数<code class="pcalibre3 calibre13 pcalibre4">iterateSteps</code>则是依次为这些步骤加上<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令。</p>
+<p class="calibre6">将任务分解成步骤之后，还可以将项目分解成多个依次执行的任务。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> jobs = [job1, job2, job3];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">iterateJobs</span>(<span class="hljs-number">jobs</span>)</span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt; jobs.length; i++){
+    <span class="hljs-keyword">var</span> job = jobs[i];
+    <span class="hljs-keyword">yield</span>* iterateSteps(job.steps);
+  }
+}
+</code></pre>
+<p class="calibre6">上面代码中，数组<code class="pcalibre3 calibre13 pcalibre4">jobs</code>封装了一个项目的多个任务，Generator 函数<code class="pcalibre3 calibre13 pcalibre4">iterateJobs</code>则是依次为这些任务加上<code class="pcalibre3 calibre13 pcalibre4">yield*</code>命令。</p>
+<p class="calibre6">最后，就可以用<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环一次性依次执行所有任务的所有步骤。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> step <span class="hljs-keyword">of</span> iterateJobs(jobs)){
+  <span class="hljs-number">console</span>.log(step.id);
+}
+</code></pre>
+<p class="calibre6">再次提醒，上面的做法只能用于所有步骤都是同步操作的情况，不能有异步操作的步骤。如果想要依次执行异步的步骤，必须使用后面的《异步操作》一章介绍的方法。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">for...of</code>的本质是一个<code class="pcalibre3 calibre13 pcalibre4">while</code>循环，所以上面的代码实质上执行的是下面的逻辑。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> it = iterateJobs(jobs);
+<span class="hljs-keyword">var</span> res = it.next();
+
+<span class="hljs-keyword">while</span> (!res.done){
+  <span class="hljs-keyword">var</span> result = res.value;
+  <span class="hljs-comment">// ...</span>
+  res = it.next();
+}
+</code></pre>
+<h3 id="（3）部署-iterator-接口" class="calibre11">（3）部署 Iterator 接口</h3>
+<p class="calibre6">利用 Generator 函数，可以在任意对象上部署 Iterator 接口。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">iterEntries</span>(<span class="hljs-number">obj</span>) </span>{
+  <span class="hljs-keyword">let</span> keys = <span class="hljs-number">Object</span>.keys(obj);
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>; i &lt; keys.length; i++) {
+    <span class="hljs-keyword">let</span> key = keys[i];
+    <span class="hljs-keyword">yield</span> [key, obj[key]];
+  }
+}
+
+<span class="hljs-keyword">let</span> myObj = { foo: <span class="hljs-number">3</span>, bar: <span class="hljs-number">7</span> };
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> [key, value] <span class="hljs-keyword">of</span> iterEntries(myObj)) {
+  <span class="hljs-number">console</span>.log(key, value);
+}
+
+<span class="hljs-comment">// foo 3</span>
+<span class="hljs-comment">// bar 7</span>
+</code></pre>
+<p class="calibre6">上述代码中，<code class="pcalibre3 calibre13 pcalibre4">myObj</code>是一个普通对象，通过<code class="pcalibre3 calibre13 pcalibre4">iterEntries</code>函数，就有了 Iterator 接口。也就是说，可以在任意对象上部署<code class="pcalibre3 calibre13 pcalibre4">next</code>方法。</p>
+<p class="calibre6">下面是一个对数组部署 Iterator 接口的例子，尽管数组原生具有这个接口。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">makeSimpleGenerator</span>(<span class="hljs-number">array</span>)</span>{
+  <span class="hljs-keyword">var</span> nextIndex = <span class="hljs-number">0</span>;
+
+  <span class="hljs-keyword">while</span>(nextIndex &lt; array.length){
+    <span class="hljs-keyword">yield</span> array[nextIndex++];
+  }
+}
+
+<span class="hljs-keyword">var</span> gen = makeSimpleGenerator([<span class="hljs-string">&#39;yo&#39;</span>, <span class="hljs-string">&#39;ya&#39;</span>]);
+
+gen.next().value <span class="hljs-comment">// &#39;yo&#39;</span>
+gen.next().value <span class="hljs-comment">// &#39;ya&#39;</span>
+gen.next().done  <span class="hljs-comment">// true</span>
+</code></pre>
+<h3 id="（4）作为数据结构" class="calibre11">（4）作为数据结构</h3>
+<p class="calibre6">Generator 可以看作是数据结构，更确切地说，可以看作是一个数组结构，因为 Generator 函数可以返回一系列的值，这意味着它可以对任意表达式，提供类似数组的接口。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">doStuff</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">yield</span> fs.readFile.bind(<span class="hljs-number">null</span>, <span class="hljs-string">&#39;hello.txt&#39;</span>);
+  <span class="hljs-keyword">yield</span> fs.readFile.bind(<span class="hljs-number">null</span>, <span class="hljs-string">&#39;world.txt&#39;</span>);
+  <span class="hljs-keyword">yield</span> fs.readFile.bind(<span class="hljs-number">null</span>, <span class="hljs-string">&#39;and-such.txt&#39;</span>);
+}
+</code></pre>
+<p class="calibre6">上面代码就是依次返回三个函数，但是由于使用了 Generator 函数，导致可以像处理数组那样，处理这三个返回的函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">for</span> (task <span class="hljs-keyword">of</span> doStuff()) {
+  <span class="hljs-comment">// task是一个函数，可以像回调函数那样使用它</span>
+}
+</code></pre>
+<p class="calibre6">实际上，如果用 ES5 表达，完全可以用数组模拟 Generator 的这种用法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">doStuff</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> [
+    fs.readFile.bind(<span class="hljs-number">null</span>, <span class="hljs-string">&#39;hello.txt&#39;</span>),
+    fs.readFile.bind(<span class="hljs-number">null</span>, <span class="hljs-string">&#39;world.txt&#39;</span>),
+    fs.readFile.bind(<span class="hljs-number">null</span>, <span class="hljs-string">&#39;and-such.txt&#39;</span>)
+  ];
+}
+</code></pre>
+<p class="calibre6">上面的函数，可以用一模一样的<code class="pcalibre3 calibre13 pcalibre4">for...of</code>循环处理！两相一比较，就不难看出 Generator 使得数据或者操作，具备了类似数组的接口。</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="iterator.html" class="navigation navigation-prev"
+           aria-label="Previous page: 16. Iterator 和 for...of 循环">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="generator-async.html" class="navigation navigation-next"
+           aria-label="Next page: 18. Generator 函数的异步应用">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "18. Generator 函数的异步应用",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "16. Iterator 和 for...of 循环",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

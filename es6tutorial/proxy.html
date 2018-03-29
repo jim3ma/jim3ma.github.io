@@ -1,0 +1,1183 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>13. Proxy</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="reflect.html"/>
+    <link rel="prev" href="set-map.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="proxy.html">13. Proxy</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_14">13. Proxy</h1>
+        <div class="section">
+            <h1 id="proxy" class="calibre5">Proxy</h1>
+<h2 id="概述" class="calibre16">概述</h2>
+<p class="calibre6">Proxy 用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（meta programming），即对编程语言进行编程。</p>
+<p class="calibre6">Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。Proxy 这个词的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">target, key, receiver</span>) </span>{
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">`getting <span class="hljs-_">${key}</span>!`</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">Reflect</span>.get(target, key, receiver);
+  },
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">target, key, value, receiver</span>) </span>{
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">`setting <span class="hljs-_">${key}</span>!`</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">Reflect</span>.set(target, key, value, receiver);
+  }
+});
+</code></pre>
+<p class="calibre6">上面代码对一个空对象架设了一层拦截，重定义了属性的读取（<code class="pcalibre3 calibre13 pcalibre4">get</code>）和设置（<code class="pcalibre3 calibre13 pcalibre4">set</code>）行为。这里暂时先不解释具体的语法，只看运行结果。对设置了拦截行为的对象<code class="pcalibre3 calibre13 pcalibre4">obj</code>，去读写它的属性，就会得到下面的结果。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">obj.count = <span class="hljs-number">1</span>
+<span class="hljs-comment">//  setting count!</span>
+++obj.count
+<span class="hljs-comment">//  getting count!</span>
+<span class="hljs-comment">//  setting count!</span>
+<span class="hljs-comment">//  2</span>
+</code></pre>
+<p class="calibre6">上面代码说明，Proxy 实际上重载（overload）了点运算符，即用自己的定义覆盖了语言的原始定义。</p>
+<p class="calibre6">ES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+</code></pre>
+<p class="calibre6">Proxy 对象的所有用法，都是上面这种形式，不同的只是<code class="pcalibre3 calibre13 pcalibre4">handler</code>参数的写法。其中，<code class="pcalibre3 calibre13 pcalibre4">new Proxy()</code>表示生成一个<code class="pcalibre3 calibre13 pcalibre4">Proxy</code>实例，<code class="pcalibre3 calibre13 pcalibre4">target</code>参数表示所要拦截的目标对象，<code class="pcalibre3 calibre13 pcalibre4">handler</code>参数也是一个对象，用来定制拦截行为。</p>
+<p class="calibre6">下面是另一个拦截读取属性行为的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target, property</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">35</span>;
+  }
+});
+
+proxy.time <span class="hljs-comment">// 35</span>
+proxy.name <span class="hljs-comment">// 35</span>
+proxy.title <span class="hljs-comment">// 35</span>
+</code></pre>
+<p class="calibre6">上面代码中，作为构造函数，<code class="pcalibre3 calibre13 pcalibre4">Proxy</code>接受两个参数。第一个参数是所要代理的目标对象（上例是一个空对象），即如果没有<code class="pcalibre3 calibre13 pcalibre4">Proxy</code>的介入，操作原来要访问的就是这个对象；第二个参数是一个配置对象，对于每一个被代理的操作，需要提供一个对应的处理函数，该函数将拦截对应的操作。比如，上面代码中，配置对象有一个<code class="pcalibre3 calibre13 pcalibre4">get</code>方法，用来拦截对目标对象属性的访问请求。<code class="pcalibre3 calibre13 pcalibre4">get</code>方法的两个参数分别是目标对象和所要访问的属性。可以看到，由于拦截函数总是返回<code class="pcalibre3 calibre13 pcalibre4">35</code>，所以访问任何属性都得到<code class="pcalibre3 calibre13 pcalibre4">35</code>。</p>
+<p class="calibre6">注意，要使得<code class="pcalibre3 calibre13 pcalibre4">Proxy</code>起作用，必须针对<code class="pcalibre3 calibre13 pcalibre4">Proxy</code>实例（上例是<code class="pcalibre3 calibre13 pcalibre4">proxy</code>对象）进行操作，而不是针对目标对象（上例是空对象）进行操作。</p>
+<p class="calibre6">如果<code class="pcalibre3 calibre13 pcalibre4">handler</code>没有设置任何拦截，那就等同于直接通向原对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> target = {};
+<span class="hljs-keyword">var</span> handler = {};
+<span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+proxy.a = <span class="hljs-string">&#39;b&#39;</span>;
+target.a <span class="hljs-comment">// &#34;b&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">handler</code>是一个空对象，没有任何拦截效果，访问<code class="pcalibre3 calibre13 pcalibre4">proxy</code>就等同于访问<code class="pcalibre3 calibre13 pcalibre4">target</code>。</p>
+<p class="calibre6">一个技巧是将 Proxy 对象，设置到<code class="pcalibre3 calibre13 pcalibre4">object.proxy</code>属性，从而可以在<code class="pcalibre3 calibre13 pcalibre4">object</code>对象上调用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> object = { proxy: <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler) };
+</code></pre>
+<p class="calibre6">Proxy 实例也可以作为其他对象的原型对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target, property</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">35</span>;
+  }
+});
+
+<span class="hljs-keyword">let</span> obj = <span class="hljs-number">Object</span>.create(proxy);
+obj.time <span class="hljs-comment">// 35</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">proxy</code>对象是<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象的原型，<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象本身并没有<code class="pcalibre3 calibre13 pcalibre4">time</code>属性，所以根据原型链，会在<code class="pcalibre3 calibre13 pcalibre4">proxy</code>对象上读取该属性，导致被拦截。</p>
+<p class="calibre6">同一个拦截器函数，可以设置拦截多个操作。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> handler = {
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target, name</span>) </span>{
+    <span class="hljs-keyword">if</span> (name === <span class="hljs-string">&#39;prototype&#39;</span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-number">Object</span>.prototype;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;Hello, &#39;</span> + name;
+  },
+
+  apply: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target, thisBinding, args</span>) </span>{
+    <span class="hljs-keyword">return</span> args[<span class="hljs-number">0</span>];
+  },
+
+  construct: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target, args</span>) </span>{
+    <span class="hljs-keyword">return</span> {value: args[<span class="hljs-number">1</span>]};
+  }
+};
+
+<span class="hljs-keyword">var</span> fproxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">x, y</span>) </span>{
+  <span class="hljs-keyword">return</span> x + y;
+}, handler);
+
+fproxy(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// 1</span>
+<span class="hljs-keyword">new</span> fproxy(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// {value: 2}</span>
+fproxy.prototype === <span class="hljs-number">Object</span>.prototype <span class="hljs-comment">// true</span>
+fproxy.foo === <span class="hljs-string">&#34;Hello, foo&#34;</span> <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">对于可以设置、但没有设置拦截的操作，则直接落在目标对象上，按照原先的方式产生结果。</p>
+<p class="calibre6">下面是 Proxy 支持的拦截操作一览，一共 13 种。</p>
+<ul class="calibre9">
+<li class="calibre10"><strong class="calibre17">get(target, propKey, receiver)</strong>：拦截对象属性的读取，比如<code class="pcalibre3 calibre13 pcalibre4">proxy.foo</code>和<code class="pcalibre3 calibre13 pcalibre4">proxy[&#39;foo&#39;]</code>。</li>
+<li class="calibre10"><strong class="calibre17">set(target, propKey, value, receiver)</strong>：拦截对象属性的设置，比如<code class="pcalibre3 calibre13 pcalibre4">proxy.foo = v</code>或<code class="pcalibre3 calibre13 pcalibre4">proxy[&#39;foo&#39;] = v</code>，返回一个布尔值。</li>
+<li class="calibre10"><strong class="calibre17">has(target, propKey)</strong>：拦截<code class="pcalibre3 calibre13 pcalibre4">propKey in proxy</code>的操作，返回一个布尔值。</li>
+<li class="calibre10"><strong class="calibre17">deleteProperty(target, propKey)</strong>：拦截<code class="pcalibre3 calibre13 pcalibre4">delete proxy[propKey]</code>的操作，返回一个布尔值。</li>
+<li class="calibre10"><strong class="calibre17">ownKeys(target)</strong>：拦截<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyNames(proxy)</code>、<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertySymbols(proxy)</code>、<code class="pcalibre3 calibre13 pcalibre4">Object.keys(proxy)</code>，返回一个数组。该方法返回目标对象所有自身的属性的属性名，而<code class="pcalibre3 calibre13 pcalibre4">Object.keys()</code>的返回结果仅包括目标对象自身的可遍历属性。</li>
+<li class="calibre10"><strong class="calibre17">getOwnPropertyDescriptor(target, propKey)</strong>：拦截<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyDescriptor(proxy, propKey)</code>，返回属性的描述对象。</li>
+<li class="calibre10"><strong class="calibre17">defineProperty(target, propKey, propDesc)</strong>：拦截<code class="pcalibre3 calibre13 pcalibre4">Object.defineProperty(proxy, propKey, propDesc）</code>、<code class="pcalibre3 calibre13 pcalibre4">Object.defineProperties(proxy, propDescs)</code>，返回一个布尔值。</li>
+<li class="calibre10"><strong class="calibre17">preventExtensions(target)</strong>：拦截<code class="pcalibre3 calibre13 pcalibre4">Object.preventExtensions(proxy)</code>，返回一个布尔值。</li>
+<li class="calibre10"><strong class="calibre17">getPrototypeOf(target)</strong>：拦截<code class="pcalibre3 calibre13 pcalibre4">Object.getPrototypeOf(proxy)</code>，返回一个对象。</li>
+<li class="calibre10"><strong class="calibre17">isExtensible(target)</strong>：拦截<code class="pcalibre3 calibre13 pcalibre4">Object.isExtensible(proxy)</code>，返回一个布尔值。</li>
+<li class="calibre10"><strong class="calibre17">setPrototypeOf(target, proto)</strong>：拦截<code class="pcalibre3 calibre13 pcalibre4">Object.setPrototypeOf(proxy, proto)</code>，返回一个布尔值。如果目标对象是函数，那么还有两种额外操作可以拦截。</li>
+<li class="calibre10"><strong class="calibre17">apply(target, object, args)</strong>：拦截 Proxy 实例作为函数调用的操作，比如<code class="pcalibre3 calibre13 pcalibre4">proxy(...args)</code>、<code class="pcalibre3 calibre13 pcalibre4">proxy.call(object, ...args)</code>、<code class="pcalibre3 calibre13 pcalibre4">proxy.apply(...)</code>。</li>
+<li class="calibre10"><strong class="calibre17">construct(target, args)</strong>：拦截 Proxy 实例作为构造函数调用的操作，比如<code class="pcalibre3 calibre13 pcalibre4">new proxy(...args)</code>。</li>
+</ul>
+<h2 id="proxy-实例的方法" class="calibre12">Proxy 实例的方法</h2>
+<p class="calibre6">下面是上面这些拦截方法的详细介绍。</p>
+<h3 id="get" class="calibre11">get()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">get</code>方法用于拦截某个属性的读取操作，可以接受三个参数，依次为目标对象、属性名和 proxy 实例本身（严格地说，是操作行为所针对的对象），其中最后一个参数可选。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">get</code>方法的用法，上文已经有一个例子，下面是另一个拦截读取操作的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> person = {
+  name: <span class="hljs-string">&#34;张三&#34;</span>
+};
+
+<span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(person, {
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target, property</span>) </span>{
+    <span class="hljs-keyword">if</span> (property <span class="hljs-keyword">in</span> target) {
+      <span class="hljs-keyword">return</span> target[property];
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">ReferenceError</span>(<span class="hljs-string">&#34;Property \&#34;&#34;</span> + property + <span class="hljs-string">&#34;\&#34; does not exist.&#34;</span>);
+    }
+  }
+});
+
+proxy.name <span class="hljs-comment">// &#34;张三&#34;</span>
+proxy.age <span class="hljs-comment">// 抛出一个错误</span>
+</code></pre>
+<p class="calibre6">上面代码表示，如果访问目标对象不存在的属性，会抛出一个错误。如果没有这个拦截函数，访问不存在的属性，只会返回<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">get</code>方法可以继承。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> proto = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+  get(target, propertyKey, receiver) {
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;GET &#39;</span> + propertyKey);
+    <span class="hljs-keyword">return</span> target[propertyKey];
+  }
+});
+
+<span class="hljs-keyword">let</span> obj = <span class="hljs-number">Object</span>.create(proto);
+obj.foo <span class="hljs-comment">// &#34;GET foo&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，拦截操作定义在<code class="pcalibre3 calibre13 pcalibre4">Prototype</code>对象上面，所以如果读取<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象继承的属性时，拦截会生效。</p>
+<p class="calibre6">下面的例子使用<code class="pcalibre3 calibre13 pcalibre4">get</code>拦截，实现数组读取负数的索引。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">createArray</span>(<span class="hljs-number">...elements</span>) </span>{
+  <span class="hljs-keyword">let</span> handler = {
+    get(target, propKey, receiver) {
+      <span class="hljs-keyword">let</span> index = <span class="hljs-number">Number</span>(propKey);
+      <span class="hljs-keyword">if</span> (index &lt; <span class="hljs-number">0</span>) {
+        propKey = <span class="hljs-number">String</span>(target.length + index);
+      }
+      <span class="hljs-keyword">return</span> <span class="hljs-number">Reflect</span>.get(target, propKey, receiver);
+    }
+  };
+
+  <span class="hljs-keyword">let</span> target = [];
+  target.push(...elements);
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+}
+
+<span class="hljs-keyword">let</span> arr = createArray(<span class="hljs-string">&#39;a&#39;</span>, <span class="hljs-string">&#39;b&#39;</span>, <span class="hljs-string">&#39;c&#39;</span>);
+arr[<span class="hljs-number">-1</span>] <span class="hljs-comment">// c</span>
+</code></pre>
+<p class="calibre6">上面代码中，数组的位置参数是<code class="pcalibre3 calibre13 pcalibre4">-1</code>，就会输出数组的倒数第一个成员。</p>
+<p class="calibre6">利用 Proxy，可以将读取属性的操作（<code class="pcalibre3 calibre13 pcalibre4">get</code>），转变为执行某个函数，从而实现属性的链式操作。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> pipe = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">value</span>) </span>{
+    <span class="hljs-keyword">var</span> funcStack = [];
+    <span class="hljs-keyword">var</span> oproxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({} , {
+      get : <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">pipeObject, fnName</span>) </span>{
+        <span class="hljs-keyword">if</span> (fnName === <span class="hljs-string">&#39;get&#39;</span>) {
+          <span class="hljs-keyword">return</span> funcStack.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">val, fn</span>) </span>{
+            <span class="hljs-keyword">return</span> fn(val);
+          },value);
+        }
+        funcStack.push(<span class="hljs-number">window</span>[fnName]);
+        <span class="hljs-keyword">return</span> oproxy;
+      }
+    });
+
+    <span class="hljs-keyword">return</span> oproxy;
+  }
+}());
+
+<span class="hljs-keyword">var</span> double = n =&gt; n * <span class="hljs-number">2</span>;
+<span class="hljs-keyword">var</span> pow    = n =&gt; n * n;
+<span class="hljs-keyword">var</span> reverseInt = n =&gt; n.toString().split(<span class="hljs-string">&#34;&#34;</span>).reverse().join(<span class="hljs-string">&#34;&#34;</span>) | <span class="hljs-number">0</span>;
+
+pipe(<span class="hljs-number">3</span>).double.pow.reverseInt.get; <span class="hljs-comment">// 63</span>
+</code></pre>
+<p class="calibre6">上面代码设置 Proxy 以后，达到了将函数名链式使用的效果。</p>
+<p class="calibre6">下面的例子则是利用<code class="pcalibre3 calibre13 pcalibre4">get</code>拦截，实现一个生成各种 DOM 节点的通用函数<code class="pcalibre3 calibre13 pcalibre4">dom</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> dom = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+  get(target, property) {
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">attrs = {}, ...children</span>) </span>{
+      <span class="hljs-keyword">const</span> el = <span class="hljs-number">document</span>.createElement(property);
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> prop <span class="hljs-keyword">of</span> <span class="hljs-number">Object</span>.keys(attrs)) {
+        el.setAttribute(prop, attrs[prop]);
+      }
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> child <span class="hljs-keyword">of</span> children) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> child === <span class="hljs-string">&#39;string&#39;</span>) {
+          child = <span class="hljs-number">document</span>.createTextNode(child);
+        }
+        el.appendChild(child);
+      }
+      <span class="hljs-keyword">return</span> el;
+    }
+  }
+});
+
+<span class="hljs-keyword">const</span> el = dom.div({},
+  <span class="hljs-string">&#39;Hello, my name is &#39;</span>,
+  dom.a({href: <span class="hljs-string">&#39;//example.com&#39;</span>}, <span class="hljs-string">&#39;Mark&#39;</span>),
+  <span class="hljs-string">&#39;. I like:&#39;</span>,
+  dom.ul({},
+    dom.li({}, <span class="hljs-string">&#39;The web&#39;</span>),
+    dom.li({}, <span class="hljs-string">&#39;Food&#39;</span>),
+    dom.li({}, <span class="hljs-string">&#39;…actually that\&#39;s it&#39;</span>)
+  )
+);
+
+<span class="hljs-number">document</span>.body.appendChild(el);
+</code></pre>
+<p class="calibre6">下面是一个<code class="pcalibre3 calibre13 pcalibre4">get</code>方法的第三个参数的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target, property, receiver</span>) </span>{
+    <span class="hljs-keyword">return</span> receiver;
+  }
+});
+proxy.getReceiver === proxy <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">get</code>方法的第三个参数<code class="pcalibre3 calibre13 pcalibre4">receiver</code>，总是为当前的 Proxy 实例。</p>
+<p class="calibre6">如果一个属性不可配置（configurable）和不可写（writable），则该属性不能被代理，通过 Proxy 对象访问该属性会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> target = <span class="hljs-number">Object</span>.defineProperties({}, {
+  foo: {
+    value: <span class="hljs-number">123</span>,
+    writable: <span class="hljs-number">false</span>,
+    configurable: <span class="hljs-number">false</span>
+  },
+});
+
+<span class="hljs-keyword">const</span> handler = {
+  get(target, propKey) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;abc&#39;</span>;
+  }
+};
+
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+
+proxy.foo
+<span class="hljs-comment">// TypeError: Invariant check failed</span>
+</code></pre>
+<h3 id="set" class="calibre11">set()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">set</code>方法用来拦截某个属性的赋值操作，可以接受四个参数，依次为目标对象、属性名、属性值和 Proxy 实例本身，其中最后一个参数可选。</p>
+<p class="calibre6">假定<code class="pcalibre3 calibre13 pcalibre4">Person</code>对象有一个<code class="pcalibre3 calibre13 pcalibre4">age</code>属性，该属性应该是一个不大于 200 的整数，那么可以使用<code class="pcalibre3 calibre13 pcalibre4">Proxy</code>保证<code class="pcalibre3 calibre13 pcalibre4">age</code>的属性值符合要求。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> validator = {
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">obj, prop, value</span>) </span>{
+    <span class="hljs-keyword">if</span> (prop === <span class="hljs-string">&#39;age&#39;</span>) {
+      <span class="hljs-keyword">if</span> (!<span class="hljs-number">Number</span>.isInteger(value)) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">TypeError</span>(<span class="hljs-string">&#39;The age is not an integer&#39;</span>);
+      }
+      <span class="hljs-keyword">if</span> (value &gt; <span class="hljs-number">200</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">RangeError</span>(<span class="hljs-string">&#39;The age seems invalid&#39;</span>);
+      }
+    }
+
+    <span class="hljs-comment">// 对于满足条件的 age 属性以及其他属性，直接保存</span>
+    obj[prop] = value;
+  }
+};
+
+<span class="hljs-keyword">let</span> person = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, validator);
+
+person.age = <span class="hljs-number">100</span>;
+
+person.age <span class="hljs-comment">// 100</span>
+person.age = <span class="hljs-string">&#39;young&#39;</span> <span class="hljs-comment">// 报错</span>
+person.age = <span class="hljs-number">300</span> <span class="hljs-comment">// 报错</span>
+</code></pre>
+<p class="calibre6">上面代码中，由于设置了存值函数<code class="pcalibre3 calibre13 pcalibre4">set</code>，任何不符合要求的<code class="pcalibre3 calibre13 pcalibre4">age</code>属性赋值，都会抛出一个错误，这是数据验证的一种实现方法。利用<code class="pcalibre3 calibre13 pcalibre4">set</code>方法，还可以数据绑定，即每当对象发生变化时，会自动更新 DOM。</p>
+<p class="calibre6">有时，我们会在对象上面设置内部属性，属性名的第一个字符使用下划线开头，表示这些属性不应该被外部使用。结合<code class="pcalibre3 calibre13 pcalibre4">get</code>和<code class="pcalibre3 calibre13 pcalibre4">set</code>方法，就可以做到防止这些内部属性被外部读写。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> handler = {
+  get (target, key) {
+    invariant(key, <span class="hljs-string">&#39;get&#39;</span>);
+    <span class="hljs-keyword">return</span> target[key];
+  },
+  set (target, key, value) {
+    invariant(key, <span class="hljs-string">&#39;set&#39;</span>);
+    target[key] = value;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">true</span>;
+  }
+};
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">invariant</span> (<span class="hljs-number">key, action</span>) </span>{
+  <span class="hljs-keyword">if</span> (key[<span class="hljs-number">0</span>] === <span class="hljs-string">&#39;_&#39;</span>) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">`Invalid attempt to <span class="hljs-_">${action}</span> private &#34;<span class="hljs-_">${key}</span>&#34; property`</span>);
+  }
+}
+<span class="hljs-keyword">const</span> target = {};
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+proxy._prop
+<span class="hljs-comment">// Error: Invalid attempt to get private &#34;_prop&#34; property</span>
+proxy._prop = <span class="hljs-string">&#39;c&#39;</span>
+<span class="hljs-comment">// Error: Invalid attempt to set private &#34;_prop&#34; property</span>
+</code></pre>
+<p class="calibre6">上面代码中，只要读写的属性名的第一个字符是下划线，一律抛错，从而达到禁止读写内部属性的目的。</p>
+<p class="calibre6">下面是<code class="pcalibre3 calibre13 pcalibre4">set</code>方法第四个参数的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> handler = {
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">obj, prop, value, receiver</span>) </span>{
+    obj[prop] = receiver;
+  }
+};
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, handler);
+proxy.foo = <span class="hljs-string">&#39;bar&#39;</span>;
+proxy.foo === proxy <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">set</code>方法的第四个参数<code class="pcalibre3 calibre13 pcalibre4">receiver</code>，指的是操作行为所在的那个对象，一般情况下是<code class="pcalibre3 calibre13 pcalibre4">proxy</code>实例本身，请看下面的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> handler = {
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">obj, prop, value, receiver</span>) </span>{
+    obj[prop] = receiver;
+  }
+};
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, handler);
+<span class="hljs-keyword">const</span> myObj = {};
+<span class="hljs-number">Object</span>.setPrototypeOf(myObj, proxy);
+
+myObj.foo = <span class="hljs-string">&#39;bar&#39;</span>;
+myObj.foo === myObj <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，设置<code class="pcalibre3 calibre13 pcalibre4">myObj.foo</code>属性的值时，<code class="pcalibre3 calibre13 pcalibre4">myObj</code>并没有<code class="pcalibre3 calibre13 pcalibre4">foo</code>属性，因此引擎会到<code class="pcalibre3 calibre13 pcalibre4">myObj</code>的原型链去找<code class="pcalibre3 calibre13 pcalibre4">foo</code>属性。<code class="pcalibre3 calibre13 pcalibre4">myObj</code>的原型对象<code class="pcalibre3 calibre13 pcalibre4">proxy</code>是一个 Proxy 实例，设置它的<code class="pcalibre3 calibre13 pcalibre4">foo</code>属性会触发<code class="pcalibre3 calibre13 pcalibre4">set</code>方法。这时，第四个参数<code class="pcalibre3 calibre13 pcalibre4">receiver</code>就指向原始赋值行为所在的对象<code class="pcalibre3 calibre13 pcalibre4">myObj</code>。</p>
+<p class="calibre6">注意，如果目标对象自身的某个属性，不可写或不可配置，那么<code class="pcalibre3 calibre13 pcalibre4">set</code>方法将不起作用。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> obj = {};
+<span class="hljs-number">Object</span>.defineProperty(obj, <span class="hljs-string">&#39;foo&#39;</span>, {
+  value: <span class="hljs-string">&#39;bar&#39;</span>,
+  writable: <span class="hljs-number">false</span>,
+});
+
+<span class="hljs-keyword">const</span> handler = {
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">obj, prop, value, receiver</span>) </span>{
+    obj[prop] = <span class="hljs-string">&#39;baz&#39;</span>;
+  }
+};
+
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(obj, handler);
+proxy.foo = <span class="hljs-string">&#39;baz&#39;</span>;
+proxy.foo <span class="hljs-comment">// &#34;bar&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">obj.foo</code>属性不可写，Proxy 对这个属性的<code class="pcalibre3 calibre13 pcalibre4">set</code>代理将不会生效。</p>
+<h3 id="apply" class="calibre11">apply()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">apply</code>方法拦截函数的调用、<code class="pcalibre3 calibre13 pcalibre4">call</code>和<code class="pcalibre3 calibre13 pcalibre4">apply</code>操作。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">apply</code>方法可以接受三个参数，分别是目标对象、目标对象的上下文对象（<code class="pcalibre3 calibre13 pcalibre4">this</code>）和目标对象的参数数组。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> handler = {
+  apply (target, ctx, args) {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">Reflect</span>.apply(...arguments);
+  }
+};
+</code></pre>
+<p class="calibre6">下面是一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> target = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;I am the target&#39;</span>; };
+<span class="hljs-keyword">var</span> handler = {
+  apply: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#39;I am the proxy&#39;</span>;
+  }
+};
+
+<span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+
+p()
+<span class="hljs-comment">// &#34;I am the proxy&#34;</span>
+</code></pre>
+<p class="calibre6">上面代码中，变量<code class="pcalibre3 calibre13 pcalibre4">p</code>是 Proxy 的实例，当它作为函数调用时（<code class="pcalibre3 calibre13 pcalibre4">p()</code>），就会被<code class="pcalibre3 calibre13 pcalibre4">apply</code>方法拦截，返回一个字符串。</p>
+<p class="calibre6">下面是另外一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> twice = {
+  apply (target, ctx, args) {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">Reflect</span>.apply(...arguments) * <span class="hljs-number">2</span>;
+  }
+};
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">sum</span> (<span class="hljs-number">left, right</span>) </span>{
+  <span class="hljs-keyword">return</span> left + right;
+};
+<span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(sum, twice);
+proxy(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// 6</span>
+proxy.call(<span class="hljs-number">null</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>) <span class="hljs-comment">// 22</span>
+proxy.apply(<span class="hljs-number">null</span>, [<span class="hljs-number">7</span>, <span class="hljs-number">8</span>]) <span class="hljs-comment">// 30</span>
+</code></pre>
+<p class="calibre6">上面代码中，每当执行<code class="pcalibre3 calibre13 pcalibre4">proxy</code>函数（直接调用或<code class="pcalibre3 calibre13 pcalibre4">call</code>和<code class="pcalibre3 calibre13 pcalibre4">apply</code>调用），就会被<code class="pcalibre3 calibre13 pcalibre4">apply</code>方法拦截。</p>
+<p class="calibre6">另外，直接调用<code class="pcalibre3 calibre13 pcalibre4">Reflect.apply</code>方法，也会被拦截。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Reflect</span>.apply(proxy, <span class="hljs-number">null</span>, [<span class="hljs-number">9</span>, <span class="hljs-number">10</span>]) <span class="hljs-comment">// 38</span>
+</code></pre>
+<h3 id="has" class="calibre11">has()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">has</code>方法用来拦截<code class="pcalibre3 calibre13 pcalibre4">HasProperty</code>操作，即判断对象是否具有某个属性时，这个方法会生效。典型的操作就是<code class="pcalibre3 calibre13 pcalibre4">in</code>运算符。</p>
+<p class="calibre6">下面的例子使用<code class="pcalibre3 calibre13 pcalibre4">has</code>方法隐藏某些属性，不被<code class="pcalibre3 calibre13 pcalibre4">in</code>运算符发现。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> handler = {
+  has (target, key) {
+    <span class="hljs-keyword">if</span> (key[<span class="hljs-number">0</span>] === <span class="hljs-string">&#39;_&#39;</span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-number">false</span>;
+    }
+    <span class="hljs-keyword">return</span> key <span class="hljs-keyword">in</span> target;
+  }
+};
+<span class="hljs-keyword">var</span> target = { _prop: <span class="hljs-string">&#39;foo&#39;</span>, prop: <span class="hljs-string">&#39;foo&#39;</span> };
+<span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+<span class="hljs-string">&#39;_prop&#39;</span> <span class="hljs-keyword">in</span> proxy <span class="hljs-comment">// false</span>
+</code></pre>
+<p class="calibre6">上面代码中，如果原对象的属性名的第一个字符是下划线，<code class="pcalibre3 calibre13 pcalibre4">proxy.has</code>就会返回<code class="pcalibre3 calibre13 pcalibre4">false</code>，从而不会被<code class="pcalibre3 calibre13 pcalibre4">in</code>运算符发现。</p>
+<p class="calibre6">如果原对象不可配置或者禁止扩展，这时<code class="pcalibre3 calibre13 pcalibre4">has</code>拦截会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> obj = { a: <span class="hljs-number">10</span> };
+<span class="hljs-number">Object</span>.preventExtensions(obj);
+
+<span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(obj, {
+  has: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target, prop</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">false</span>;
+  }
+});
+
+<span class="hljs-string">&#39;a&#39;</span> <span class="hljs-keyword">in</span> p <span class="hljs-comment">// TypeError is thrown</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象禁止扩展，结果使用<code class="pcalibre3 calibre13 pcalibre4">has</code>拦截就会报错。也就是说，如果某个属性不可配置（或者目标对象不可扩展），则<code class="pcalibre3 calibre13 pcalibre4">has</code>方法就不得“隐藏”（即返回<code class="pcalibre3 calibre13 pcalibre4">false</code>）目标对象的该属性。</p>
+<p class="calibre6">值得注意的是，<code class="pcalibre3 calibre13 pcalibre4">has</code>方法拦截的是<code class="pcalibre3 calibre13 pcalibre4">HasProperty</code>操作，而不是<code class="pcalibre3 calibre13 pcalibre4">HasOwnProperty</code>操作，即<code class="pcalibre3 calibre13 pcalibre4">has</code>方法不判断一个属性是对象自身的属性，还是继承的属性。</p>
+<p class="calibre6">另外，虽然<code class="pcalibre3 calibre13 pcalibre4">for...in</code>循环也用到了<code class="pcalibre3 calibre13 pcalibre4">in</code>运算符，但是<code class="pcalibre3 calibre13 pcalibre4">has</code>拦截对<code class="pcalibre3 calibre13 pcalibre4">for...in</code>循环不生效。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> stu1 = {name: <span class="hljs-string">&#39;张三&#39;</span>, score: <span class="hljs-number">59</span>};
+<span class="hljs-keyword">let</span> stu2 = {name: <span class="hljs-string">&#39;李四&#39;</span>, score: <span class="hljs-number">99</span>};
+
+<span class="hljs-keyword">let</span> handler = {
+  has(target, prop) {
+    <span class="hljs-keyword">if</span> (prop === <span class="hljs-string">&#39;score&#39;</span> &amp;&amp; target[prop] &lt; <span class="hljs-number">60</span>) {
+      <span class="hljs-number">console</span>.log(<span class="hljs-string">`<span class="hljs-_">${target.name}</span> 不及格`</span>);
+      <span class="hljs-keyword">return</span> <span class="hljs-number">false</span>;
+    }
+    <span class="hljs-keyword">return</span> prop <span class="hljs-keyword">in</span> target;
+  }
+}
+
+<span class="hljs-keyword">let</span> oproxy1 = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(stu1, handler);
+<span class="hljs-keyword">let</span> oproxy2 = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(stu2, handler);
+
+<span class="hljs-string">&#39;score&#39;</span> <span class="hljs-keyword">in</span> oproxy1
+<span class="hljs-comment">// 张三 不及格</span>
+<span class="hljs-comment">// false</span>
+
+<span class="hljs-string">&#39;score&#39;</span> <span class="hljs-keyword">in</span> oproxy2
+<span class="hljs-comment">// true</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> a <span class="hljs-keyword">in</span> oproxy1) {
+  <span class="hljs-number">console</span>.log(oproxy1[a]);
+}
+<span class="hljs-comment">// 张三</span>
+<span class="hljs-comment">// 59</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> b <span class="hljs-keyword">in</span> oproxy2) {
+  <span class="hljs-number">console</span>.log(oproxy2[b]);
+}
+<span class="hljs-comment">// 李四</span>
+<span class="hljs-comment">// 99</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">has</code>拦截只对<code class="pcalibre3 calibre13 pcalibre4">in</code>运算符生效，对<code class="pcalibre3 calibre13 pcalibre4">for...in</code>循环不生效，导致不符合要求的属性没有被排除在<code class="pcalibre3 calibre13 pcalibre4">for...in</code>循环之外。</p>
+<h3 id="construct" class="calibre11">construct()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">construct</code>方法用于拦截<code class="pcalibre3 calibre13 pcalibre4">new</code>命令，下面是拦截对象的写法。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> handler = {
+  construct (target, args, newTarget) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> target(...args);
+  }
+};
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">construct</code>方法可以接受两个参数。</p>
+<ul class="calibre9">
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">target</code>: 目标对象</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">args</code>：构建函数的参数对象</li>
+</ul>
+<p class="calibre6">下面是一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{}, {
+  construct: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target, args</span>) </span>{
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;called: &#39;</span> + args.join(<span class="hljs-string">&#39;, &#39;</span>));
+    <span class="hljs-keyword">return</span> { value: args[<span class="hljs-number">0</span>] * <span class="hljs-number">10</span> };
+  }
+});
+
+(<span class="hljs-keyword">new</span> p(<span class="hljs-number">1</span>)).value
+<span class="hljs-comment">// &#34;called: 1&#34;</span>
+<span class="hljs-comment">// 10</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">construct</code>方法返回的必须是一个对象，否则会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{}, {
+  construct: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target, argumentsList</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+  }
+});
+
+<span class="hljs-keyword">new</span> p() <span class="hljs-comment">// 报错</span>
+</code></pre>
+<h3 id="deleteproperty" class="calibre11">deleteProperty()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">deleteProperty</code>方法用于拦截<code class="pcalibre3 calibre13 pcalibre4">delete</code>操作，如果这个方法抛出错误或者返回<code class="pcalibre3 calibre13 pcalibre4">false</code>，当前属性就无法被<code class="pcalibre3 calibre13 pcalibre4">delete</code>命令删除。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> handler = {
+  deleteProperty (target, key) {
+    invariant(key, <span class="hljs-string">&#39;delete&#39;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">true</span>;
+  }
+};
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">invariant</span> (<span class="hljs-number">key, action</span>) </span>{
+  <span class="hljs-keyword">if</span> (key[<span class="hljs-number">0</span>] === <span class="hljs-string">&#39;_&#39;</span>) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">`Invalid attempt to <span class="hljs-_">${action}</span> private &#34;<span class="hljs-_">${key}</span>&#34; property`</span>);
+  }
+}
+
+<span class="hljs-keyword">var</span> target = { _prop: <span class="hljs-string">&#39;foo&#39;</span> };
+<span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+<span class="hljs-keyword">delete</span> proxy._prop
+<span class="hljs-comment">// Error: Invalid attempt to delete private &#34;_prop&#34; property</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">deleteProperty</code>方法拦截了<code class="pcalibre3 calibre13 pcalibre4">delete</code>操作符，删除第一个字符为下划线的属性会报错。</p>
+<p class="calibre6">注意，目标对象自身的不可配置（configurable）的属性，不能被<code class="pcalibre3 calibre13 pcalibre4">deleteProperty</code>方法删除，否则报错。</p>
+<h3 id="defineproperty" class="calibre11">defineProperty()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">defineProperty</code>方法拦截了<code class="pcalibre3 calibre13 pcalibre4">Object.defineProperty</code>操作。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> handler = {
+  defineProperty (target, key, descriptor) {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">false</span>;
+  }
+};
+<span class="hljs-keyword">var</span> target = {};
+<span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+proxy.foo = <span class="hljs-string">&#39;bar&#39;</span>
+<span class="hljs-comment">// TypeError: proxy defineProperty handler returned false for property &#39;&#34;foo&#34;&#39;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">defineProperty</code>方法返回<code class="pcalibre3 calibre13 pcalibre4">false</code>，导致添加新属性会抛出错误。</p>
+<p class="calibre6">注意，如果目标对象不可扩展（extensible），则<code class="pcalibre3 calibre13 pcalibre4">defineProperty</code>不能增加目标对象上不存在的属性，否则会报错。另外，如果目标对象的某个属性不可写（writable）或不可配置（configurable），则<code class="pcalibre3 calibre13 pcalibre4">defineProperty</code>方法不得改变这两个设置。</p>
+<h3 id="getownpropertydescriptor" class="calibre11">getOwnPropertyDescriptor()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">getOwnPropertyDescriptor</code>方法拦截<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyDescriptor()</code>，返回一个属性描述对象或者<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> handler = {
+  getOwnPropertyDescriptor (target, key) {
+    <span class="hljs-keyword">if</span> (key[<span class="hljs-number">0</span>] === <span class="hljs-string">&#39;_&#39;</span>) {
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">Object</span>.getOwnPropertyDescriptor(target, key);
+  }
+};
+<span class="hljs-keyword">var</span> target = { _foo: <span class="hljs-string">&#39;bar&#39;</span>, baz: <span class="hljs-string">&#39;tar&#39;</span> };
+<span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+<span class="hljs-number">Object</span>.getOwnPropertyDescriptor(proxy, <span class="hljs-string">&#39;wat&#39;</span>)
+<span class="hljs-comment">// undefined</span>
+<span class="hljs-number">Object</span>.getOwnPropertyDescriptor(proxy, <span class="hljs-string">&#39;_foo&#39;</span>)
+<span class="hljs-comment">// undefined</span>
+<span class="hljs-number">Object</span>.getOwnPropertyDescriptor(proxy, <span class="hljs-string">&#39;baz&#39;</span>)
+<span class="hljs-comment">// { value: &#39;tar&#39;, writable: true, enumerable: true, configurable: true }</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">handler.getOwnPropertyDescriptor</code>方法对于第一个字符为下划线的属性名会返回<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。</p>
+<h3 id="getprototypeof" class="calibre11">getPrototypeOf()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">getPrototypeOf</code>方法主要用来拦截获取对象原型。具体来说，拦截下面这些操作。</p>
+<ul class="calibre9">
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Object.prototype.__proto__</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Object.prototype.isPrototypeOf()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Object.getPrototypeOf()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Reflect.getPrototypeOf()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">instanceof</code></li>
+</ul>
+<p class="calibre6">下面是一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> proto = {};
+<span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+  getPrototypeOf(target) {
+    <span class="hljs-keyword">return</span> proto;
+  }
+});
+<span class="hljs-number">Object</span>.getPrototypeOf(p) === proto <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">getPrototypeOf</code>方法拦截<code class="pcalibre3 calibre13 pcalibre4">Object.getPrototypeOf()</code>，返回<code class="pcalibre3 calibre13 pcalibre4">proto</code>对象。</p>
+<p class="calibre6">注意，<code class="pcalibre3 calibre13 pcalibre4">getPrototypeOf</code>方法的返回值必须是对象或者<code class="pcalibre3 calibre13 pcalibre4">null</code>，否则报错。另外，如果目标对象不可扩展（extensible）， <code class="pcalibre3 calibre13 pcalibre4">getPrototypeOf</code>方法必须返回目标对象的原型对象。</p>
+<h3 id="isextensible" class="calibre11">isExtensible()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">isExtensible</code>方法拦截<code class="pcalibre3 calibre13 pcalibre4">Object.isExtensible</code>操作。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+  isExtensible: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target</span>) </span>{
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#34;called&#34;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">true</span>;
+  }
+});
+
+<span class="hljs-number">Object</span>.isExtensible(p)
+<span class="hljs-comment">// &#34;called&#34;</span>
+<span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码设置了<code class="pcalibre3 calibre13 pcalibre4">isExtensible</code>方法，在调用<code class="pcalibre3 calibre13 pcalibre4">Object.isExtensible</code>时会输出<code class="pcalibre3 calibre13 pcalibre4">called</code>。</p>
+<p class="calibre6">注意，该方法只能返回布尔值，否则返回值会被自动转为布尔值。</p>
+<p class="calibre6">这个方法有一个强限制，它的返回值必须与目标对象的<code class="pcalibre3 calibre13 pcalibre4">isExtensible</code>属性保持一致，否则就会抛出错误。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-number">Object</span>.isExtensible(proxy) === <span class="hljs-number">Object</span>.isExtensible(target)
+</code></pre>
+<p class="calibre6">下面是一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+  isExtensible: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">false</span>;
+  }
+});
+
+<span class="hljs-number">Object</span>.isExtensible(p) <span class="hljs-comment">// 报错</span>
+</code></pre>
+<h3 id="ownkeys" class="calibre11">ownKeys()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">ownKeys</code>方法用来拦截对象自身属性的读取操作。具体来说，拦截以下操作。</p>
+<ul class="calibre9">
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyNames()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertySymbols()</code></li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">Object.keys()</code></li>
+</ul>
+<p class="calibre6">下面是拦截<code class="pcalibre3 calibre13 pcalibre4">Object.keys()</code>的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> target = {
+  a: <span class="hljs-number">1</span>,
+  b: <span class="hljs-number">2</span>,
+  c: <span class="hljs-number">3</span>
+};
+
+<span class="hljs-keyword">let</span> handler = {
+  ownKeys(target) {
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">&#39;a&#39;</span>];
+  }
+};
+
+<span class="hljs-keyword">let</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+
+<span class="hljs-number">Object</span>.keys(proxy)
+<span class="hljs-comment">// [ &#39;a&#39; ]</span>
+</code></pre>
+<p class="calibre6">上面代码拦截了对于<code class="pcalibre3 calibre13 pcalibre4">target</code>对象的<code class="pcalibre3 calibre13 pcalibre4">Object.keys()</code>操作，只返回<code class="pcalibre3 calibre13 pcalibre4">a</code>、<code class="pcalibre3 calibre13 pcalibre4">b</code>、<code class="pcalibre3 calibre13 pcalibre4">c</code>三个属性之中的<code class="pcalibre3 calibre13 pcalibre4">a</code>属性。</p>
+<p class="calibre6">下面的例子是拦截第一个字符为下划线的属性名。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> target = {
+  _bar: <span class="hljs-string">&#39;foo&#39;</span>,
+  _prop: <span class="hljs-string">&#39;bar&#39;</span>,
+  prop: <span class="hljs-string">&#39;baz&#39;</span>
+};
+
+<span class="hljs-keyword">let</span> handler = {
+  ownKeys (target) {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">Reflect</span>.ownKeys(target).filter(key =&gt; key[<span class="hljs-number">0</span>] !== <span class="hljs-string">&#39;_&#39;</span>);
+  }
+};
+
+<span class="hljs-keyword">let</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">of</span> <span class="hljs-number">Object</span>.keys(proxy)) {
+  <span class="hljs-number">console</span>.log(target[key]);
+}
+<span class="hljs-comment">// &#34;baz&#34;</span>
+</code></pre>
+<p class="calibre6">注意，使用<code class="pcalibre3 calibre13 pcalibre4">Object.keys</code>方法时，有三类属性会被<code class="pcalibre3 calibre13 pcalibre4">ownKeys</code>方法自动过滤，不会返回。</p>
+<ul class="calibre9">
+<li class="calibre10">目标对象上不存在的属性</li>
+<li class="calibre10">属性名为 Symbol 值</li>
+<li class="calibre10">不可遍历（<code class="pcalibre3 calibre13 pcalibre4">enumerable</code>）的属性</li>
+</ul>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> target = {
+  a: <span class="hljs-number">1</span>,
+  b: <span class="hljs-number">2</span>,
+  c: <span class="hljs-number">3</span>,
+  [<span class="hljs-number">Symbol</span>.for(<span class="hljs-string">&#39;secret&#39;</span>)]: <span class="hljs-string">&#39;4&#39;</span>,
+};
+
+<span class="hljs-number">Object</span>.defineProperty(target, <span class="hljs-string">&#39;key&#39;</span>, {
+  enumerable: <span class="hljs-number">false</span>,
+  configurable: <span class="hljs-number">true</span>,
+  writable: <span class="hljs-number">true</span>,
+  value: <span class="hljs-string">&#39;static&#39;</span>
+});
+
+<span class="hljs-keyword">let</span> handler = {
+  ownKeys(target) {
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">&#39;a&#39;</span>, <span class="hljs-string">&#39;d&#39;</span>, <span class="hljs-number">Symbol</span>.for(<span class="hljs-string">&#39;secret&#39;</span>), <span class="hljs-string">&#39;key&#39;</span>];
+  }
+};
+
+<span class="hljs-keyword">let</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+
+<span class="hljs-number">Object</span>.keys(proxy)
+<span class="hljs-comment">// [&#39;a&#39;]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">ownKeys</code>方法之中，显式返回不存在的属性（<code class="pcalibre3 calibre13 pcalibre4">d</code>）、Symbol 值（<code class="pcalibre3 calibre13 pcalibre4">Symbol.for(&#39;secret&#39;)</code>）、不可遍历的属性（<code class="pcalibre3 calibre13 pcalibre4">key</code>），结果都被自动过滤掉。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">ownKeys</code>方法还可以拦截<code class="pcalibre3 calibre13 pcalibre4">Object.getOwnPropertyNames()</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+  ownKeys: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target</span>) </span>{
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">&#39;a&#39;</span>, <span class="hljs-string">&#39;b&#39;</span>, <span class="hljs-string">&#39;c&#39;</span>];
+  }
+});
+
+<span class="hljs-number">Object</span>.getOwnPropertyNames(p)
+<span class="hljs-comment">// [ &#39;a&#39;, &#39;b&#39;, &#39;c&#39; ]</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">ownKeys</code>方法返回的数组成员，只能是字符串或 Symbol 值。如果有其他类型的值，或者返回的根本不是数组，就会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> obj = {};
+
+<span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(obj, {
+  ownKeys: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target</span>) </span>{
+    <span class="hljs-keyword">return</span> [<span class="hljs-number">123</span>, <span class="hljs-number">true</span>, <span class="hljs-number">undefined</span>, <span class="hljs-number">null</span>, {}, []];
+  }
+});
+
+<span class="hljs-number">Object</span>.getOwnPropertyNames(p)
+<span class="hljs-comment">// Uncaught TypeError: 123 is not a valid property name</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">ownKeys</code>方法虽然返回一个数组，但是每一个数组成员都不是字符串或 Symbol 值，因此就报错了。</p>
+<p class="calibre6">如果目标对象自身包含不可配置的属性，则该属性必须被<code class="pcalibre3 calibre13 pcalibre4">ownKeys</code>方法返回，否则报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> obj = {};
+<span class="hljs-number">Object</span>.defineProperty(obj, <span class="hljs-string">&#39;a&#39;</span>, {
+  configurable: <span class="hljs-number">false</span>,
+  enumerable: <span class="hljs-number">true</span>,
+  value: <span class="hljs-number">10</span> }
+);
+
+<span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(obj, {
+  ownKeys: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target</span>) </span>{
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">&#39;b&#39;</span>];
+  }
+});
+
+<span class="hljs-number">Object</span>.getOwnPropertyNames(p)
+<span class="hljs-comment">// Uncaught TypeError: &#39;ownKeys&#39; on proxy: trap result did not include &#39;a&#39;</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象的<code class="pcalibre3 calibre13 pcalibre4">a</code>属性是不可配置的，这时<code class="pcalibre3 calibre13 pcalibre4">ownKeys</code>方法返回的数组之中，必须包含<code class="pcalibre3 calibre13 pcalibre4">a</code>，否则会报错。</p>
+<p class="calibre6">另外，如果目标对象是不可扩展的（non-extensition），这时<code class="pcalibre3 calibre13 pcalibre4">ownKeys</code>方法返回的数组之中，必须包含原对象的所有属性，且不能包含多余的属性，否则报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> obj = {
+  a: <span class="hljs-number">1</span>
+};
+
+<span class="hljs-number">Object</span>.preventExtensions(obj);
+
+<span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(obj, {
+  ownKeys: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target</span>) </span>{
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">&#39;a&#39;</span>, <span class="hljs-string">&#39;b&#39;</span>];
+  }
+});
+
+<span class="hljs-number">Object</span>.getOwnPropertyNames(p)
+<span class="hljs-comment">// Uncaught TypeError: &#39;ownKeys&#39; on proxy: trap returned extra keys but proxy target is non-extensible</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象是不可扩展的，这时<code class="pcalibre3 calibre13 pcalibre4">ownKeys</code>方法返回的数组之中，包含了<code class="pcalibre3 calibre13 pcalibre4">obj</code>对象的多余属性<code class="pcalibre3 calibre13 pcalibre4">b</code>，所以导致了报错。</p>
+<h3 id="preventextensions" class="calibre11">preventExtensions()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">preventExtensions</code>方法拦截<code class="pcalibre3 calibre13 pcalibre4">Object.preventExtensions()</code>。该方法必须返回一个布尔值，否则会被自动转为布尔值。</p>
+<p class="calibre6">这个方法有一个限制，只有目标对象不可扩展时（即<code class="pcalibre3 calibre13 pcalibre4">Object.isExtensible(proxy)</code>为<code class="pcalibre3 calibre13 pcalibre4">false</code>），<code class="pcalibre3 calibre13 pcalibre4">proxy.preventExtensions</code>才能返回<code class="pcalibre3 calibre13 pcalibre4">true</code>，否则会报错。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+  preventExtensions: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">true</span>;
+  }
+});
+
+<span class="hljs-number">Object</span>.preventExtensions(p) <span class="hljs-comment">// 报错</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">proxy.preventExtensions</code>方法返回<code class="pcalibre3 calibre13 pcalibre4">true</code>，但这时<code class="pcalibre3 calibre13 pcalibre4">Object.isExtensible(proxy)</code>会返回<code class="pcalibre3 calibre13 pcalibre4">true</code>，因此报错。</p>
+<p class="calibre6">为了防止出现这个问题，通常要在<code class="pcalibre3 calibre13 pcalibre4">proxy.preventExtensions</code>方法里面，调用一次<code class="pcalibre3 calibre13 pcalibre4">Object.preventExtensions</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+  preventExtensions: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">target</span>) </span>{
+    <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;called&#39;</span>);
+    <span class="hljs-number">Object</span>.preventExtensions(target);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">true</span>;
+  }
+});
+
+<span class="hljs-number">Object</span>.preventExtensions(p)
+<span class="hljs-comment">// &#34;called&#34;</span>
+<span class="hljs-comment">// true</span>
+</code></pre>
+<h3 id="setprototypeof" class="calibre11">setPrototypeOf()</h3>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">setPrototypeOf</code>方法主要用来拦截<code class="pcalibre3 calibre13 pcalibre4">Object.setPrototypeOf</code>方法。</p>
+<p class="calibre6">下面是一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> handler = {
+  setPrototypeOf (target, proto) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Error</span>(<span class="hljs-string">&#39;Changing the prototype is forbidden&#39;</span>);
+  }
+};
+<span class="hljs-keyword">var</span> proto = {};
+<span class="hljs-keyword">var</span> target = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{};
+<span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+<span class="hljs-number">Object</span>.setPrototypeOf(proxy, proto);
+<span class="hljs-comment">// Error: Changing the prototype is forbidden</span>
+</code></pre>
+<p class="calibre6">上面代码中，只要修改<code class="pcalibre3 calibre13 pcalibre4">target</code>的原型对象，就会报错。</p>
+<p class="calibre6">注意，该方法只能返回布尔值，否则会被自动转为布尔值。另外，如果目标对象不可扩展（extensible），<code class="pcalibre3 calibre13 pcalibre4">setPrototypeOf</code>方法不得改变目标对象的原型。</p>
+<h2 id="proxyrevocable" class="calibre12">Proxy.revocable()</h2>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Proxy.revocable</code>方法返回一个可取消的 Proxy 实例。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> target = {};
+<span class="hljs-keyword">let</span> handler = {};
+
+<span class="hljs-keyword">let</span> {proxy, revoke} = <span class="hljs-number">Proxy</span>.revocable(target, handler);
+
+proxy.foo = <span class="hljs-number">123</span>;
+proxy.foo <span class="hljs-comment">// 123</span>
+
+revoke();
+proxy.foo <span class="hljs-comment">// TypeError: Revoked</span>
+</code></pre>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Proxy.revocable</code>方法返回一个对象，该对象的<code class="pcalibre3 calibre13 pcalibre4">proxy</code>属性是<code class="pcalibre3 calibre13 pcalibre4">Proxy</code>实例，<code class="pcalibre3 calibre13 pcalibre4">revoke</code>属性是一个函数，可以取消<code class="pcalibre3 calibre13 pcalibre4">Proxy</code>实例。上面代码中，当执行<code class="pcalibre3 calibre13 pcalibre4">revoke</code>函数之后，再访问<code class="pcalibre3 calibre13 pcalibre4">Proxy</code>实例，就会抛出一个错误。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">Proxy.revocable</code>的一个使用场景是，目标对象不允许直接访问，必须通过代理访问，一旦访问结束，就收回代理权，不允许再次访问。</p>
+<h2 id="this-问题" class="calibre12">this 问题</h2>
+<p class="calibre6">虽然 Proxy 可以代理针对目标对象的访问，但它不是目标对象的透明代理，即不做任何拦截的情况下，也无法保证与目标对象的行为一致。主要原因就是在 Proxy 代理的情况下，目标对象内部的<code class="pcalibre3 calibre13 pcalibre4">this</code>关键字会指向 Proxy 代理。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> target = {
+  m: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+    <span class="hljs-number">console</span>.log(<span class="hljs-keyword">this</span> === proxy);
+  }
+};
+<span class="hljs-keyword">const</span> handler = {};
+
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+
+target.m() <span class="hljs-comment">// false</span>
+proxy.m()  <span class="hljs-comment">// true</span>
+</code></pre>
+<p class="calibre6">上面代码中，一旦<code class="pcalibre3 calibre13 pcalibre4">proxy</code>代理<code class="pcalibre3 calibre13 pcalibre4">target.m</code>，后者内部的<code class="pcalibre3 calibre13 pcalibre4">this</code>就是指向<code class="pcalibre3 calibre13 pcalibre4">proxy</code>，而不是<code class="pcalibre3 calibre13 pcalibre4">target</code>。</p>
+<p class="calibre6">下面是一个例子，由于<code class="pcalibre3 calibre13 pcalibre4">this</code>指向的变化，导致 Proxy 无法代理目标对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> _name = <span class="hljs-keyword">new</span> <span class="hljs-number">WeakMap</span>();
+
+<span class="hljs-_"><span class="hljs-keyword">class</span> <span class="hljs-comment">Person</span> </span>{
+  <span class="hljs-keyword">constructor</span>(name) {
+    _name.set(<span class="hljs-keyword">this</span>, name);
+  }
+  get name() {
+    <span class="hljs-keyword">return</span> _name.get(<span class="hljs-keyword">this</span>);
+  }
+}
+
+<span class="hljs-keyword">const</span> jane = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#39;Jane&#39;</span>);
+jane.name <span class="hljs-comment">// &#39;Jane&#39;</span>
+
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(jane, {});
+proxy.name <span class="hljs-comment">// undefined</span>
+</code></pre>
+<p class="calibre6">上面代码中，目标对象<code class="pcalibre3 calibre13 pcalibre4">jane</code>的<code class="pcalibre3 calibre13 pcalibre4">name</code>属性，实际保存在外部<code class="pcalibre3 calibre13 pcalibre4">WeakMap</code>对象<code class="pcalibre3 calibre13 pcalibre4">_name</code>上面，通过<code class="pcalibre3 calibre13 pcalibre4">this</code>键区分。由于通过<code class="pcalibre3 calibre13 pcalibre4">proxy.name</code>访问时，<code class="pcalibre3 calibre13 pcalibre4">this</code>指向<code class="pcalibre3 calibre13 pcalibre4">proxy</code>，导致无法取到值，所以返回<code class="pcalibre3 calibre13 pcalibre4">undefined</code>。</p>
+<p class="calibre6">此外，有些原生对象的内部属性，只有通过正确的<code class="pcalibre3 calibre13 pcalibre4">this</code>才能拿到，所以 Proxy 也无法代理这些原生对象的属性。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> target = <span class="hljs-keyword">new</span> <span class="hljs-number">Date</span>();
+<span class="hljs-keyword">const</span> handler = {};
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+
+proxy.getDate();
+<span class="hljs-comment">// TypeError: this is not a Date object.</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">getDate</code>方法只能在<code class="pcalibre3 calibre13 pcalibre4">Date</code>对象实例上面拿到，如果<code class="pcalibre3 calibre13 pcalibre4">this</code>不是<code class="pcalibre3 calibre13 pcalibre4">Date</code>对象实例就会报错。这时，<code class="pcalibre3 calibre13 pcalibre4">this</code>绑定原始对象，就可以解决这个问题。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> target = <span class="hljs-keyword">new</span> <span class="hljs-number">Date</span>(<span class="hljs-string">&#39;2015-01-01&#39;</span>);
+<span class="hljs-keyword">const</span> handler = {
+  get(target, prop) {
+    <span class="hljs-keyword">if</span> (prop === <span class="hljs-string">&#39;getDate&#39;</span>) {
+      <span class="hljs-keyword">return</span> target.getDate.bind(target);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">Reflect</span>.get(target, prop);
+  }
+};
+<span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>(target, handler);
+
+proxy.getDate() <span class="hljs-comment">// 1</span>
+</code></pre>
+<h2 id="实例：web-服务的客户端" class="calibre12">实例：Web 服务的客户端</h2>
+<p class="calibre6">Proxy 对象可以拦截目标对象的任意属性，这使得它很合适用来写 Web 服务的客户端。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> service = createWebService(<span class="hljs-string">&#39;http://example.com/data&#39;</span>);
+
+service.employees().then(json =&gt; {
+  <span class="hljs-keyword">const</span> employees = <span class="hljs-number">JSON</span>.parse(json);
+  <span class="hljs-comment">// ···</span>
+});
+</code></pre>
+<p class="calibre6">上面代码新建了一个 Web 服务的接口，这个接口返回各种数据。Proxy 可以拦截这个对象的任意属性，所以不用为每一种数据写一个适配方法，只要写一个 Proxy 拦截就可以了。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">createWebService</span>(<span class="hljs-number">baseUrl</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Proxy</span>({}, {
+    get(target, propKey, receiver) {
+      <span class="hljs-keyword">return</span> () =&gt; httpGet(baseUrl+<span class="hljs-string">&#39;/&#39;</span> + propKey);
+    }
+  });
+}
+</code></pre>
+<p class="calibre6">同理，Proxy 也可以用来实现数据库的 ORM 层。</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="set-map.html" class="navigation navigation-prev"
+           aria-label="Previous page: 12. Set 和 Map 数据结构">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="reflect.html" class="navigation navigation-next"
+           aria-label="Next page: 14. Reflect">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "14. Reflect",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "12. Set 和 Map 数据结构",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

@@ -1,0 +1,908 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>18. Generator 函数的异步应用</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="async.html"/>
+    <link rel="prev" href="generator.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_19">18. Generator 函数的异步应用</h1>
+        <div class="section">
+            <h1 id="generator-函数的异步应用" class="calibre5">Generator 函数的异步应用</h1>
+<p class="calibre6">异步编程对 JavaScript 语言太重要。Javascript 语言的执行环境是“单线程”的，如果没有异步编程，根本没法用，非卡死不可。本章主要介绍 Generator 函数如何完成异步操作。</p>
+<h2 id="传统方法" class="calibre12">传统方法</h2>
+<p class="calibre6">ES6 诞生以前，异步编程的方法，大概有下面四种。</p>
+<ul class="calibre9">
+<li class="calibre10">回调函数</li>
+<li class="calibre10">事件监听</li>
+<li class="calibre10">发布/订阅</li>
+<li class="calibre10">Promise 对象</li>
+</ul>
+<p class="calibre6">Generator 函数将 JavaScript 异步编程带入了一个全新的阶段。</p>
+<h2 id="基本概念" class="calibre12">基本概念</h2>
+<h3 id="异步" class="calibre11">异步</h3>
+<p class="calibre6">所谓&#34;异步&#34;，简单说就是一个任务不是连续完成的，可以理解成该任务被人为分成两段，先执行第一段，然后转而执行其他任务，等做好了准备，再回过头执行第二段。</p>
+<p class="calibre6">比如，有一个任务是读取文件进行处理，任务的第一段是向操作系统发出请求，要求读取文件。然后，程序执行其他任务，等到操作系统返回文件，再接着执行任务的第二段（处理文件）。这种不连续的执行，就叫做异步。</p>
+<p class="calibre6">相应地，连续的执行就叫做同步。由于是连续执行，不能插入其他任务，所以操作系统从硬盘读取文件的这段时间，程序只能干等着。</p>
+<h3 id="回调函数" class="calibre11">回调函数</h3>
+<p class="calibre6">JavaScript 语言对异步编程的实现，就是回调函数。所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。回调函数的英语名字<code class="pcalibre3 calibre13 pcalibre4">callback</code>，直译过来就是&#34;重新调用&#34;。</p>
+<p class="calibre6">读取文件进行处理，是这样写的。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">fs.readFile(<span class="hljs-string">&#39;/etc/passwd&#39;</span>, <span class="hljs-string">&#39;utf-8&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">err, data</span>) </span>{
+  <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">throw</span> err;
+  <span class="hljs-number">console</span>.log(data);
+});
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">readFile</code>函数的第三个参数，就是回调函数，也就是任务的第二段。等到操作系统返回了<code class="pcalibre3 calibre13 pcalibre4">/etc/passwd</code>这个文件以后，回调函数才会执行。</p>
+<p class="calibre6">一个有趣的问题是，为什么 Node 约定，回调函数的第一个参数，必须是错误对象<code class="pcalibre3 calibre13 pcalibre4">err</code>（如果没有错误，该参数就是<code class="pcalibre3 calibre13 pcalibre4">null</code>）？</p>
+<p class="calibre6">原因是执行分成两段，第一段执行完以后，任务所在的上下文环境就已经结束了。在这以后抛出的错误，原来的上下文环境已经无法捕捉，只能当作参数，传入第二段。</p>
+<h3 id="promise" class="calibre11">Promise</h3>
+<p class="calibre6">回调函数本身并没有问题，它的问题出现在多个回调函数嵌套。假定读取<code class="pcalibre3 calibre13 pcalibre4">A</code>文件之后，再读取<code class="pcalibre3 calibre13 pcalibre4">B</code>文件，代码如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">fs.readFile(fileA, <span class="hljs-string">&#39;utf-8&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">err, data</span>) </span>{
+  fs.readFile(fileB, <span class="hljs-string">&#39;utf-8&#39;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">err, data</span>) </span>{
+    <span class="hljs-comment">// ...</span>
+  });
+});
+</code></pre>
+<p class="calibre6">不难想象，如果依次读取两个以上的文件，就会出现多重嵌套。代码不是纵向发展，而是横向发展，很快就会乱成一团，无法管理。因为多个异步操作形成了强耦合，只要有一个操作需要修改，它的上层回调函数和下层回调函数，可能都要跟着修改。这种情况就称为&#34;回调函数地狱&#34;（callback hell）。</p>
+<p class="calibre6">Promise 对象就是为了解决这个问题而提出的。它不是新的语法功能，而是一种新的写法，允许将回调函数的嵌套，改成链式调用。采用 Promise，连续读取多个文件，写法如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> readFile = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;fs-readfile-promise&#39;</span>);
+
+readFile(fileA)
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">data</span>) </span>{
+  <span class="hljs-number">console</span>.log(data.toString());
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> readFile(fileB);
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">data</span>) </span>{
+  <span class="hljs-number">console</span>.log(data.toString());
+})
+.catch(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">err</span>) </span>{
+  <span class="hljs-number">console</span>.log(err);
+});
+</code></pre>
+<p class="calibre6">上面代码中，我使用了<code class="pcalibre3 calibre13 pcalibre4">fs-readfile-promise</code>模块，它的作用就是返回一个 Promise 版本的<code class="pcalibre3 calibre13 pcalibre4">readFile</code>函数。Promise 提供<code class="pcalibre3 calibre13 pcalibre4">then</code>方法加载回调函数，<code class="pcalibre3 calibre13 pcalibre4">catch</code>方法捕捉执行过程中抛出的错误。</p>
+<p class="calibre6">可以看到，Promise 的写法只是回调函数的改进，使用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法以后，异步任务的两段执行看得更清楚了，除此以外，并无新意。</p>
+<p class="calibre6">Promise 的最大问题是代码冗余，原来的任务被 Promise 包装了一下，不管什么操作，一眼看去都是一堆<code class="pcalibre3 calibre13 pcalibre4">then</code>，原来的语义变得很不清楚。</p>
+<p class="calibre6">那么，有没有更好的写法呢？</p>
+<h2 id="generator-函数" class="calibre12">Generator 函数</h2>
+<h3 id="协程" class="calibre11">协程</h3>
+<p class="calibre6">传统的编程语言，早有异步编程的解决方案（其实是多任务的解决方案）。其中有一种叫做&#34;协程&#34;（coroutine），意思是多个线程互相协作，完成异步任务。</p>
+<p class="calibre6">协程有点像函数，又有点像线程。它的运行流程大致如下。</p>
+<ul class="calibre9">
+<li class="calibre10">第一步，协程<code class="pcalibre3 calibre13 pcalibre4">A</code>开始执行。</li>
+<li class="calibre10">第二步，协程<code class="pcalibre3 calibre13 pcalibre4">A</code>执行到一半，进入暂停，执行权转移到协程<code class="pcalibre3 calibre13 pcalibre4">B</code>。</li>
+<li class="calibre10">第三步，（一段时间后）协程<code class="pcalibre3 calibre13 pcalibre4">B</code>交还执行权。</li>
+<li class="calibre10">第四步，协程<code class="pcalibre3 calibre13 pcalibre4">A</code>恢复执行。</li>
+</ul>
+<p class="calibre6">上面流程的协程<code class="pcalibre3 calibre13 pcalibre4">A</code>，就是异步任务，因为它分成两段（或多段）执行。</p>
+<p class="calibre6">举例来说，读取文件的协程写法如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">asyncJob</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-comment">// ...其他代码</span>
+  <span class="hljs-keyword">var</span> f = <span class="hljs-keyword">yield</span> readFile(fileA);
+  <span class="hljs-comment">// ...其他代码</span>
+}
+</code></pre>
+<p class="calibre6">上面代码的函数<code class="pcalibre3 calibre13 pcalibre4">asyncJob</code>是一个协程，它的奥妙就在其中的<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令。它表示执行到此处，执行权将交给其他协程。也就是说，<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令是异步两个阶段的分界线。</p>
+<p class="calibre6">协程遇到<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令就暂停，等到执行权返回，再从暂停的地方继续往后执行。它的最大优点，就是代码的写法非常像同步操作，如果去除<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令，简直一模一样。</p>
+<h3 id="协程的-generator-函数实现" class="calibre11">协程的 Generator 函数实现</h3>
+<p class="calibre6">Generator 函数是协程在 ES6 的实现，最大特点就是可以交出函数的执行权（即暂停执行）。</p>
+<p class="calibre6">整个 Generator 函数就是一个封装的异步任务，或者说是异步任务的容器。异步操作需要暂停的地方，都用<code class="pcalibre3 calibre13 pcalibre4">yield</code>语句注明。Generator 函数的执行方法如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-keyword">var</span> y = <span class="hljs-keyword">yield</span> x + <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">return</span> y;
+}
+
+<span class="hljs-keyword">var</span> g = gen(<span class="hljs-number">1</span>);
+g.next() <span class="hljs-comment">// { value: 3, done: false }</span>
+g.next() <span class="hljs-comment">// { value: undefined, done: true }</span>
+</code></pre>
+<p class="calibre6">上面代码中，调用 Generator 函数，会返回一个内部指针（即遍历器）<code class="pcalibre3 calibre13 pcalibre4">g</code>。这是 Generator 函数不同于普通函数的另一个地方，即执行它不会返回结果，返回的是指针对象。调用指针<code class="pcalibre3 calibre13 pcalibre4">g</code>的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，会移动内部指针（即执行异步任务的第一段），指向第一个遇到的<code class="pcalibre3 calibre13 pcalibre4">yield</code>语句，上例是执行到<code class="pcalibre3 calibre13 pcalibre4">x + 2</code>为止。</p>
+<p class="calibre6">换言之，<code class="pcalibre3 calibre13 pcalibre4">next</code>方法的作用是分阶段执行<code class="pcalibre3 calibre13 pcalibre4">Generator</code>函数。每次调用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，会返回一个对象，表示当前阶段的信息（<code class="pcalibre3 calibre13 pcalibre4">value</code>属性和<code class="pcalibre3 calibre13 pcalibre4">done</code>属性）。<code class="pcalibre3 calibre13 pcalibre4">value</code>属性是<code class="pcalibre3 calibre13 pcalibre4">yield</code>语句后面表达式的值，表示当前阶段的值；<code class="pcalibre3 calibre13 pcalibre4">done</code>属性是一个布尔值，表示 Generator 函数是否执行完毕，即是否还有下一个阶段。</p>
+<h3 id="generator-函数的数据交换和错误处理" class="calibre11">Generator 函数的数据交换和错误处理</h3>
+<p class="calibre6">Generator 函数可以暂停执行和恢复执行，这是它能封装异步任务的根本原因。除此之外，它还有两个特性，使它可以作为异步编程的完整解决方案：函数体内外的数据交换和错误处理机制。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">next</code>返回值的 value 属性，是 Generator 函数向外输出数据；<code class="pcalibre3 calibre13 pcalibre4">next</code>方法还可以接受参数，向 Generator 函数体内输入数据。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number">x</span>)</span>{
+  <span class="hljs-keyword">var</span> y = <span class="hljs-keyword">yield</span> x + <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">return</span> y;
+}
+
+<span class="hljs-keyword">var</span> g = gen(<span class="hljs-number">1</span>);
+g.next() <span class="hljs-comment">// { value: 3, done: false }</span>
+g.next(<span class="hljs-number">2</span>) <span class="hljs-comment">// { value: 2, done: true }</span>
+</code></pre>
+<p class="calibre6">上面代码中，第一个<code class="pcalibre3 calibre13 pcalibre4">next</code>方法的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性，返回表达式<code class="pcalibre3 calibre13 pcalibre4">x + 2</code>的值<code class="pcalibre3 calibre13 pcalibre4">3</code>。第二个<code class="pcalibre3 calibre13 pcalibre4">next</code>方法带有参数<code class="pcalibre3 calibre13 pcalibre4">2</code>，这个参数可以传入 Generator 函数，作为上个阶段异步任务的返回结果，被函数体内的变量<code class="pcalibre3 calibre13 pcalibre4">y</code>接收。因此，这一步的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性，返回的就是<code class="pcalibre3 calibre13 pcalibre4">2</code>（变量<code class="pcalibre3 calibre13 pcalibre4">y</code>的值）。</p>
+<p class="calibre6">Generator 函数内部还可以部署错误处理代码，捕获函数体外抛出的错误。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number">x</span>)</span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">var</span> y = <span class="hljs-keyword">yield</span> x + <span class="hljs-number">2</span>;
+  } <span class="hljs-keyword">catch</span> (e){
+    <span class="hljs-number">console</span>.log(e);
+  }
+  <span class="hljs-keyword">return</span> y;
+}
+
+<span class="hljs-keyword">var</span> g = gen(<span class="hljs-number">1</span>);
+g.next();
+g.throw(<span class="hljs-string">&#39;出错了&#39;</span>);
+<span class="hljs-comment">// 出错了</span>
+</code></pre>
+<p class="calibre6">上面代码的最后一行，Generator 函数体外，使用指针对象的<code class="pcalibre3 calibre13 pcalibre4">throw</code>方法抛出的错误，可以被函数体内的<code class="pcalibre3 calibre13 pcalibre4">try...catch</code>代码块捕获。这意味着，出错的代码与处理错误的代码，实现了时间和空间上的分离，这对于异步编程无疑是很重要的。</p>
+<h3 id="异步任务的封装" class="calibre11">异步任务的封装</h3>
+<p class="calibre6">下面看看如何使用 Generator 函数，执行一个真实的异步任务。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> fetch = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;node-fetch&#39;</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>)</span>{
+  <span class="hljs-keyword">var</span> url = <span class="hljs-string">&#39;https://api.github.com/users/github&#39;</span>;
+  <span class="hljs-keyword">var</span> result = <span class="hljs-keyword">yield</span> fetch(url);
+  <span class="hljs-number">console</span>.log(result.bio);
+}
+</code></pre>
+<p class="calibre6">上面代码中，Generator 函数封装了一个异步操作，该操作先读取一个远程接口，然后从 JSON 格式的数据解析信息。就像前面说过的，这段代码非常像同步操作，除了加上了<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令。</p>
+<p class="calibre6">执行这段代码的方法如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> g = gen();
+<span class="hljs-keyword">var</span> result = g.next();
+
+result.value.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">data</span>)</span>{
+  <span class="hljs-keyword">return</span> data.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">data</span>)</span>{
+  g.next(data);
+});
+</code></pre>
+<p class="calibre6">上面代码中，首先执行 Generator 函数，获取遍历器对象，然后使用<code class="pcalibre3 calibre13 pcalibre4">next</code>方法（第二行），执行异步任务的第一阶段。由于<code class="pcalibre3 calibre13 pcalibre4">Fetch</code>模块返回的是一个 Promise 对象，因此要用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法调用下一个<code class="pcalibre3 calibre13 pcalibre4">next</code>方法。</p>
+<p class="calibre6">可以看到，虽然 Generator 函数将异步操作表示得很简洁，但是流程管理却不方便（即何时执行第一阶段、何时执行第二阶段）。</p>
+<h2 id="thunk-函数" class="calibre12">Thunk 函数</h2>
+<p class="calibre6">Thunk 函数是自动执行 Generator 函数的一种方法。</p>
+<h3 id="参数的求值策略" class="calibre11">参数的求值策略</h3>
+<p class="calibre6">Thunk 函数早在上个世纪 60 年代就诞生了。</p>
+<p class="calibre6">那时，编程语言刚刚起步，计算机学家还在研究，编译器怎么写比较好。一个争论的焦点是&#34;求值策略&#34;，即函数的参数到底应该何时求值。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">m</span>) </span>{
+  <span class="hljs-keyword">return</span> m * <span class="hljs-number">2</span>;
+}
+
+f(x + <span class="hljs-number">5</span>)
+</code></pre>
+<p class="calibre6">上面代码先定义函数<code class="pcalibre3 calibre13 pcalibre4">f</code>，然后向它传入表达式<code class="pcalibre3 calibre13 pcalibre4">x + 5</code>。请问，这个表达式应该何时求值？</p>
+<p class="calibre6">一种意见是&#34;传值调用&#34;（call by value），即在进入函数体之前，就计算<code class="pcalibre3 calibre13 pcalibre4">x + 5</code>的值（等于 6），再将这个值传入函数<code class="pcalibre3 calibre13 pcalibre4">f</code>。C 语言就采用这种策略。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">f(x + <span class="hljs-number">5</span>)
+<span class="hljs-comment">// 传值调用时，等同于</span>
+f(<span class="hljs-number">6</span>)
+</code></pre>
+<p class="calibre6">另一种意见是“传名调用”（call by name），即直接将表达式<code class="pcalibre3 calibre13 pcalibre4">x + 5</code>传入函数体，只在用到它的时候求值。Haskell 语言采用这种策略。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">f(x + <span class="hljs-number">5</span>)
+<span class="hljs-comment">// 传名调用时，等同于</span>
+(x + <span class="hljs-number">5</span>) * <span class="hljs-number">2</span>
+</code></pre>
+<p class="calibre6">传值调用和传名调用，哪一种比较好？</p>
+<p class="calibre6">回答是各有利弊。传值调用比较简单，但是对参数求值的时候，实际上还没用到这个参数，有可能造成性能损失。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">a, b</span>)</span>{
+  <span class="hljs-keyword">return</span> b;
+}
+
+f(<span class="hljs-number">3</span> * x * x - <span class="hljs-number">2</span> * x - <span class="hljs-number">1</span>, x);
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">f</code>的第一个参数是一个复杂的表达式，但是函数体内根本没用到。对这个参数求值，实际上是不必要的。因此，有一些计算机学家倾向于&#34;传名调用&#34;，即只在执行时求值。</p>
+<h3 id="thunk-函数的含义" class="calibre11">Thunk 函数的含义</h3>
+<p class="calibre6">编译器的“传名调用”实现，往往是将参数放到一个临时函数之中，再将这个临时函数传入函数体。这个临时函数就叫做 Thunk 函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">m</span>) </span>{
+  <span class="hljs-keyword">return</span> m * <span class="hljs-number">2</span>;
+}
+
+f(x + <span class="hljs-number">5</span>);
+
+<span class="hljs-comment">// 等同于</span>
+
+<span class="hljs-keyword">var</span> thunk = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">return</span> x + <span class="hljs-number">5</span>;
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">thunk</span>) </span>{
+  <span class="hljs-keyword">return</span> thunk() * <span class="hljs-number">2</span>;
+}
+</code></pre>
+<p class="calibre6">上面代码中，函数 f 的参数<code class="pcalibre3 calibre13 pcalibre4">x + 5</code>被一个函数替换了。凡是用到原参数的地方，对<code class="pcalibre3 calibre13 pcalibre4">Thunk</code>函数求值即可。</p>
+<p class="calibre6">这就是 Thunk 函数的定义，它是“传名调用”的一种实现策略，用来替换某个表达式。</p>
+<h3 id="javascript-语言的-thunk-函数" class="calibre11">JavaScript 语言的 Thunk 函数</h3>
+<p class="calibre6">JavaScript 语言是传值调用，它的 Thunk 函数含义有所不同。在 JavaScript 语言中，Thunk 函数替换的不是表达式，而是多参数函数，将其替换成一个只接受回调函数作为参数的单参数函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 正常版本的readFile（多参数版本）</span>
+fs.readFile(fileName, callback);
+
+<span class="hljs-comment">// Thunk版本的readFile（单参数版本）</span>
+<span class="hljs-keyword">var</span> Thunk = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">fileName</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">callback</span>) </span>{
+    <span class="hljs-keyword">return</span> fs.readFile(fileName, callback);
+  };
+};
+
+<span class="hljs-keyword">var</span> readFileThunk = Thunk(fileName);
+readFileThunk(callback);
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">fs</code>模块的<code class="pcalibre3 calibre13 pcalibre4">readFile</code>方法是一个多参数函数，两个参数分别为文件名和回调函数。经过转换器处理，它变成了一个单参数函数，只接受回调函数作为参数。这个单参数版本，就叫做 Thunk 函数。</p>
+<p class="calibre6">任何函数，只要参数有回调函数，就能写成 Thunk 函数的形式。下面是一个简单的 Thunk 函数转换器。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// ES5版本</span>
+<span class="hljs-keyword">var</span> Thunk = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">fn</span>)</span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>)</span>{
+    <span class="hljs-keyword">var</span> args = <span class="hljs-number">Array</span>.prototype.slice.call(<span class="hljs-number">arguments</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">callback</span>)</span>{
+      args.push(callback);
+      <span class="hljs-keyword">return</span> fn.apply(<span class="hljs-keyword">this</span>, args);
+    }
+  };
+};
+
+<span class="hljs-comment">// ES6版本</span>
+<span class="hljs-keyword">const</span> Thunk = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">fn</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">...args</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">callback</span>) </span>{
+      <span class="hljs-keyword">return</span> fn.call(<span class="hljs-keyword">this</span>, ...args, callback);
+    }
+  };
+};
+</code></pre>
+<p class="calibre6">使用上面的转换器，生成<code class="pcalibre3 calibre13 pcalibre4">fs.readFile</code>的 Thunk 函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> readFileThunk = Thunk(fs.readFile);
+readFileThunk(fileA)(callback);
+</code></pre>
+<p class="calibre6">下面是另一个完整的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">a, cb</span>) </span>{
+  cb(a);
+}
+<span class="hljs-keyword">const</span> ft = Thunk(f);
+
+ft(<span class="hljs-number">1</span>)(<span class="hljs-number">console</span>.log) <span class="hljs-comment">// 1</span>
+</code></pre>
+<h3 id="thunkify-模块" class="calibre11">Thunkify 模块</h3>
+<p class="calibre6">生产环境的转换器，建议使用 Thunkify 模块。</p>
+<p class="calibre6">首先是安装。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">$ npm install thunkify
+</code></pre>
+<p class="calibre6">使用方式如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> thunkify = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;thunkify&#39;</span>);
+<span class="hljs-keyword">var</span> fs = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;fs&#39;</span>);
+
+<span class="hljs-keyword">var</span> read = thunkify(fs.readFile);
+read(<span class="hljs-string">&#39;package.json&#39;</span>)(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">err, str</span>)</span>{
+  <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<p class="calibre6">Thunkify 的源码与上一节那个简单的转换器非常像。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">thunkify</span>(<span class="hljs-number">fn</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number"></span>) </span>{
+    <span class="hljs-keyword">var</span> args = <span class="hljs-keyword">new</span> <span class="hljs-number">Array</span>(<span class="hljs-number">arguments</span>.length);
+    <span class="hljs-keyword">var</span> ctx = <span class="hljs-keyword">this</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; args.length; ++i) {
+      args[i] = <span class="hljs-number">arguments</span>[i];
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">done</span>) </span>{
+      <span class="hljs-keyword">var</span> called;
+
+      args.push(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>) </span>{
+        <span class="hljs-keyword">if</span> (called) <span class="hljs-keyword">return</span>;
+        called = <span class="hljs-number">true</span>;
+        done.apply(<span class="hljs-number">null</span>, <span class="hljs-number">arguments</span>);
+      });
+
+      <span class="hljs-keyword">try</span> {
+        fn.apply(ctx, args);
+      } <span class="hljs-keyword">catch</span> (err) {
+        done(err);
+      }
+    }
+  }
+};
+</code></pre>
+<p class="calibre6">它的源码主要多了一个检查机制，变量<code class="pcalibre3 calibre13 pcalibre4">called</code>确保回调函数只运行一次。这样的设计与下文的 Generator 函数相关。请看下面的例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">f</span>(<span class="hljs-number">a, b, callback</span>)</span>{
+  <span class="hljs-keyword">var</span> sum = a + b;
+  callback(sum);
+  callback(sum);
+}
+
+<span class="hljs-keyword">var</span> ft = thunkify(f);
+<span class="hljs-keyword">var</span> print = <span class="hljs-number">console</span>.log.bind(<span class="hljs-number">console</span>);
+ft(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)(print);
+<span class="hljs-comment">// 3</span>
+</code></pre>
+<p class="calibre6">上面代码中，由于<code class="pcalibre3 calibre13 pcalibre4">thunkify</code>只允许回调函数执行一次，所以只输出一行结果。</p>
+<h3 id="generator-函数的流程管理" class="calibre11">Generator 函数的流程管理</h3>
+<p class="calibre6">你可能会问， Thunk 函数有什么用？回答是以前确实没什么用，但是 ES6 有了 Generator 函数，Thunk 函数现在可以用于 Generator 函数的自动流程管理。</p>
+<p class="calibre6">Generator 函数可以自动执行。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">gen</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">var</span> g = gen();
+<span class="hljs-keyword">var</span> res = g.next();
+
+<span class="hljs-keyword">while</span>(!res.done){
+  <span class="hljs-number">console</span>.log(res.value);
+  res = g.next();
+}
+</code></pre>
+<p class="calibre6">上面代码中，Generator 函数<code class="pcalibre3 calibre13 pcalibre4">gen</code>会自动执行完所有步骤。</p>
+<p class="calibre6">但是，这不适合异步操作。如果必须保证前一步执行完，才能执行后一步，上面的自动执行就不可行。这时，Thunk 函数就能派上用处。以读取文件为例。下面的 Generator 函数封装了两个异步操作。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> fs = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;fs&#39;</span>);
+<span class="hljs-keyword">var</span> thunkify = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;thunkify&#39;</span>);
+<span class="hljs-keyword">var</span> readFileThunk = thunkify(fs.readFile);
+
+<span class="hljs-keyword">var</span> gen = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>)</span>{
+  <span class="hljs-keyword">var</span> r1 = <span class="hljs-keyword">yield</span> readFileThunk(<span class="hljs-string">&#39;/etc/fstab&#39;</span>);
+  <span class="hljs-number">console</span>.log(r1.toString());
+  <span class="hljs-keyword">var</span> r2 = <span class="hljs-keyword">yield</span> readFileThunk(<span class="hljs-string">&#39;/etc/shells&#39;</span>);
+  <span class="hljs-number">console</span>.log(r2.toString());
+};
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令用于将程序的执行权移出 Generator 函数，那么就需要一种方法，将执行权再交还给 Generator 函数。</p>
+<p class="calibre6">这种方法就是 Thunk 函数，因为它可以在回调函数里，将执行权交还给 Generator 函数。为了便于理解，我们先看如何手动执行上面这个 Generator 函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> g = gen();
+
+<span class="hljs-keyword">var</span> r1 = g.next();
+r1.value(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">err, data</span>) </span>{
+  <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">throw</span> err;
+  <span class="hljs-keyword">var</span> r2 = g.next(data);
+  r2.value(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">err, data</span>) </span>{
+    <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">throw</span> err;
+    g.next(data);
+  });
+});
+</code></pre>
+<p class="calibre6">上面代码中，变量<code class="pcalibre3 calibre13 pcalibre4">g</code>是 Generator 函数的内部指针，表示目前执行到哪一步。<code class="pcalibre3 calibre13 pcalibre4">next</code>方法负责将指针移动到下一步，并返回该步的信息（<code class="pcalibre3 calibre13 pcalibre4">value</code>属性和<code class="pcalibre3 calibre13 pcalibre4">done</code>属性）。</p>
+<p class="calibre6">仔细查看上面的代码，可以发现 Generator 函数的执行过程，其实是将同一个回调函数，反复传入<code class="pcalibre3 calibre13 pcalibre4">next</code>方法的<code class="pcalibre3 calibre13 pcalibre4">value</code>属性。这使得我们可以用递归来自动完成这个过程。</p>
+<h3 id="thunk-函数的自动流程管理" class="calibre11">Thunk 函数的自动流程管理</h3>
+<p class="calibre6">Thunk 函数真正的威力，在于可以自动执行 Generator 函数。下面就是一个基于 Thunk 函数的 Generator 执行器。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">run</span>(<span class="hljs-number">fn</span>) </span>{
+  <span class="hljs-keyword">var</span> gen = fn();
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">next</span>(<span class="hljs-number">err, data</span>) </span>{
+    <span class="hljs-keyword">var</span> result = gen.next(data);
+    <span class="hljs-keyword">if</span> (result.done) <span class="hljs-keyword">return</span>;
+    result.value(next);
+  }
+
+  next();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">g</span>(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+run(g);
+</code></pre>
+<p class="calibre6">上面代码的<code class="pcalibre3 calibre13 pcalibre4">run</code>函数，就是一个 Generator 函数的自动执行器。内部的<code class="pcalibre3 calibre13 pcalibre4">next</code>函数就是 Thunk 的回调函数。<code class="pcalibre3 calibre13 pcalibre4">next</code>函数先将指针移到 Generator 函数的下一步（<code class="pcalibre3 calibre13 pcalibre4">gen.next</code>方法），然后判断 Generator 函数是否结束（<code class="pcalibre3 calibre13 pcalibre4">result.done</code>属性），如果没结束，就将<code class="pcalibre3 calibre13 pcalibre4">next</code>函数再传入 Thunk 函数（<code class="pcalibre3 calibre13 pcalibre4">result.value</code>属性），否则就直接退出。</p>
+<p class="calibre6">有了这个执行器，执行 Generator 函数方便多了。不管内部有多少个异步操作，直接把 Generator 函数传入<code class="pcalibre3 calibre13 pcalibre4">run</code>函数即可。当然，前提是每一个异步操作，都要是 Thunk 函数，也就是说，跟在<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令后面的必须是 Thunk 函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> g = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>)</span>{
+  <span class="hljs-keyword">var</span> f1 = <span class="hljs-keyword">yield</span> readFileThunk(<span class="hljs-string">&#39;fileA&#39;</span>);
+  <span class="hljs-keyword">var</span> f2 = <span class="hljs-keyword">yield</span> readFileThunk(<span class="hljs-string">&#39;fileB&#39;</span>);
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">var</span> fn = <span class="hljs-keyword">yield</span> readFileThunk(<span class="hljs-string">&#39;fileN&#39;</span>);
+};
+
+run(g);
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">g</code>封装了<code class="pcalibre3 calibre13 pcalibre4">n</code>个异步的读取文件操作，只要执行<code class="pcalibre3 calibre13 pcalibre4">run</code>函数，这些操作就会自动完成。这样一来，异步操作不仅可以写得像同步操作，而且一行代码就可以执行。</p>
+<p class="calibre6">Thunk 函数并不是 Generator 函数自动执行的唯一方案。因为自动执行的关键是，必须有一种机制，自动控制 Generator 函数的流程，接收和交还程序的执行权。回调函数可以做到这一点，Promise 对象也可以做到这一点。</p>
+<h2 id="co-模块" class="calibre12">co 模块</h2>
+<h3 id="基本用法" class="calibre11">基本用法</h3>
+<p class="calibre6"><a href="https://github.com/tj/co" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">co 模块</a>是著名程序员 TJ Holowaychuk 于 2013 年 6 月发布的一个小工具，用于 Generator 函数的自动执行。</p>
+<p class="calibre6">下面是一个 Generator 函数，用于依次读取两个文件。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> gen = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">var</span> f1 = <span class="hljs-keyword">yield</span> readFile(<span class="hljs-string">&#39;/etc/fstab&#39;</span>);
+  <span class="hljs-keyword">var</span> f2 = <span class="hljs-keyword">yield</span> readFile(<span class="hljs-string">&#39;/etc/shells&#39;</span>);
+  <span class="hljs-number">console</span>.log(f1.toString());
+  <span class="hljs-number">console</span>.log(f2.toString());
+};
+</code></pre>
+<p class="calibre6">co 模块可以让你不用编写 Generator 函数的执行器。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> co = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;co&#39;</span>);
+co(gen);
+</code></pre>
+<p class="calibre6">上面代码中，Generator 函数只要传入<code class="pcalibre3 calibre13 pcalibre4">co</code>函数，就会自动执行。</p>
+<p class="calibre6"><code class="pcalibre3 calibre13 pcalibre4">co</code>函数返回一个<code class="pcalibre3 calibre13 pcalibre4">Promise</code>对象，因此可以用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法添加回调函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">co(gen).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number"></span>)</span>{
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;Generator 函数执行完成&#39;</span>);
+});
+</code></pre>
+<p class="calibre6">上面代码中，等到 Generator 函数执行结束，就会输出一行提示。</p>
+<h3 id="co-模块的原理" class="calibre11">co 模块的原理</h3>
+<p class="calibre6">为什么 co 可以自动执行 Generator 函数？</p>
+<p class="calibre6">前面说过，Generator 就是一个异步操作的容器。它的自动执行需要一种机制，当异步操作有了结果，能够自动交回执行权。</p>
+<p class="calibre6">两种方法可以做到这一点。</p>
+<p class="calibre6">（1）回调函数。将异步操作包装成 Thunk 函数，在回调函数里面交回执行权。</p>
+<p class="calibre6">（2）Promise 对象。将异步操作包装成 Promise 对象，用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法交回执行权。</p>
+<p class="calibre6">co 模块其实就是将两种自动执行器（Thunk 函数和 Promise 对象），包装成一个模块。使用 co 的前提条件是，Generator 函数的<code class="pcalibre3 calibre13 pcalibre4">yield</code>命令后面，只能是 Thunk 函数或 Promise 对象。如果数组或对象的成员，全部都是 Promise 对象，也可以使用 co，详见后文的例子。</p>
+<p class="calibre6">上一节已经介绍了基于 Thunk 函数的自动执行器。下面来看，基于 Promise 对象的自动执行器。这是理解 co 模块必须的。</p>
+<h3 id="基于-promise-对象的自动执行" class="calibre11">基于 Promise 对象的自动执行</h3>
+<p class="calibre6">还是沿用上面的例子。首先，把<code class="pcalibre3 calibre13 pcalibre4">fs</code>模块的<code class="pcalibre3 calibre13 pcalibre4">readFile</code>方法包装成一个 Promise 对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> fs = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;fs&#39;</span>);
+
+<span class="hljs-keyword">var</span> readFile = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">fileName</span>)</span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">resolve, reject</span>)</span>{
+    fs.readFile(fileName, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">error, data</span>)</span>{
+      <span class="hljs-keyword">if</span> (error) <span class="hljs-keyword">return</span> reject(error);
+      resolve(data);
+    });
+  });
+};
+
+<span class="hljs-keyword">var</span> gen = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>)</span>{
+  <span class="hljs-keyword">var</span> f1 = <span class="hljs-keyword">yield</span> readFile(<span class="hljs-string">&#39;/etc/fstab&#39;</span>);
+  <span class="hljs-keyword">var</span> f2 = <span class="hljs-keyword">yield</span> readFile(<span class="hljs-string">&#39;/etc/shells&#39;</span>);
+  <span class="hljs-number">console</span>.log(f1.toString());
+  <span class="hljs-number">console</span>.log(f2.toString());
+};
+</code></pre>
+<p class="calibre6">然后，手动执行上面的 Generator 函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> g = gen();
+
+g.next().value.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">data</span>)</span>{
+  g.next(data).value.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">data</span>)</span>{
+    g.next(data);
+  });
+});
+</code></pre>
+<p class="calibre6">手动执行其实就是用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法，层层添加回调函数。理解了这一点，就可以写出一个自动执行器。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">run</span>(<span class="hljs-number">gen</span>)</span>{
+  <span class="hljs-keyword">var</span> g = gen();
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">next</span>(<span class="hljs-number">data</span>)</span>{
+    <span class="hljs-keyword">var</span> result = g.next(data);
+    <span class="hljs-keyword">if</span> (result.done) <span class="hljs-keyword">return</span> result.value;
+    result.value.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">data</span>)</span>{
+      next(data);
+    });
+  }
+
+  next();
+}
+
+run(gen);
+</code></pre>
+<p class="calibre6">上面代码中，只要 Generator 函数还没执行到最后一步，<code class="pcalibre3 calibre13 pcalibre4">next</code>函数就调用自身，以此实现自动执行。</p>
+<h3 id="co-模块的源码" class="calibre11">co 模块的源码</h3>
+<p class="calibre6">co 就是上面那个自动执行器的扩展，它的源码只有几十行，非常简单。</p>
+<p class="calibre6">首先，co 函数接受 Generator 函数作为参数，返回一个 Promise 对象。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">co</span>(<span class="hljs-number">gen</span>) </span>{
+  <span class="hljs-keyword">var</span> ctx = <span class="hljs-keyword">this</span>;
+
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+  });
+}
+</code></pre>
+<p class="calibre6">在返回的 Promise 对象里面，co 先检查参数<code class="pcalibre3 calibre13 pcalibre4">gen</code>是否为 Generator 函数。如果是，就执行该函数，得到一个内部指针对象；如果不是就返回，并将 Promise 对象的状态改为<code class="pcalibre3 calibre13 pcalibre4">resolved</code>。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">co</span>(<span class="hljs-number">gen</span>) </span>{
+  <span class="hljs-keyword">var</span> ctx = <span class="hljs-keyword">this</span>;
+
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> gen === <span class="hljs-string">&#39;function&#39;</span>) gen = gen.call(ctx);
+    <span class="hljs-keyword">if</span> (!gen || <span class="hljs-keyword">typeof</span> gen.next !== <span class="hljs-string">&#39;function&#39;</span>) <span class="hljs-keyword">return</span> resolve(gen);
+  });
+}
+</code></pre>
+<p class="calibre6">接着，co 将 Generator 函数的内部指针对象的<code class="pcalibre3 calibre13 pcalibre4">next</code>方法，包装成<code class="pcalibre3 calibre13 pcalibre4">onFulfilled</code>函数。这主要是为了能够捕捉抛出的错误。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">co</span>(<span class="hljs-number">gen</span>) </span>{
+  <span class="hljs-keyword">var</span> ctx = <span class="hljs-keyword">this</span>;
+
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-number">resolve, reject</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> gen === <span class="hljs-string">&#39;function&#39;</span>) gen = gen.call(ctx);
+    <span class="hljs-keyword">if</span> (!gen || <span class="hljs-keyword">typeof</span> gen.next !== <span class="hljs-string">&#39;function&#39;</span>) <span class="hljs-keyword">return</span> resolve(gen);
+
+    onFulfilled();
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">onFulfilled</span>(<span class="hljs-number">res</span>) </span>{
+      <span class="hljs-keyword">var</span> ret;
+      <span class="hljs-keyword">try</span> {
+        ret = gen.next(res);
+      } <span class="hljs-keyword">catch</span> (e) {
+        <span class="hljs-keyword">return</span> reject(e);
+      }
+      next(ret);
+    }
+  });
+}
+</code></pre>
+<p class="calibre6">最后，就是关键的<code class="pcalibre3 calibre13 pcalibre4">next</code>函数，它会反复调用自身。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">next</span>(<span class="hljs-number">ret</span>) </span>{
+  <span class="hljs-keyword">if</span> (ret.done) <span class="hljs-keyword">return</span> resolve(ret.value);
+  <span class="hljs-keyword">var</span> value = toPromise.call(ctx, ret.value);
+  <span class="hljs-keyword">if</span> (value &amp;&amp; isPromise(value)) <span class="hljs-keyword">return</span> value.then(onFulfilled, onRejected);
+  <span class="hljs-keyword">return</span> onRejected(
+    <span class="hljs-keyword">new</span> <span class="hljs-number">TypeError</span>(
+      <span class="hljs-string">&#39;You may only yield a function, promise, generator, array, or object, &#39;</span>
+      + <span class="hljs-string">&#39;but the following object was passed: &#34;&#39;</span>
+      + <span class="hljs-number">String</span>(ret.value)
+      + <span class="hljs-string">&#39;&#34;&#39;</span>
+    )
+  );
+}
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">next</code>函数的内部代码，一共只有四行命令。</p>
+<p class="calibre6">第一行，检查当前是否为 Generator 函数的最后一步，如果是就返回。</p>
+<p class="calibre6">第二行，确保每一步的返回值，是 Promise 对象。</p>
+<p class="calibre6">第三行，使用<code class="pcalibre3 calibre13 pcalibre4">then</code>方法，为返回值加上回调函数，然后通过<code class="pcalibre3 calibre13 pcalibre4">onFulfilled</code>函数再次调用<code class="pcalibre3 calibre13 pcalibre4">next</code>函数。</p>
+<p class="calibre6">第四行，在参数不符合要求的情况下（参数非 Thunk 函数和 Promise 对象），将 Promise 对象的状态改为<code class="pcalibre3 calibre13 pcalibre4">rejected</code>，从而终止执行。</p>
+<h3 id="处理并发的异步操作" class="calibre11">处理并发的异步操作</h3>
+<p class="calibre6">co 支持并发的异步操作，即允许某些操作同时进行，等到它们全部完成，才进行下一步。</p>
+<p class="calibre6">这时，要把并发的操作都放在数组或对象里面，跟在<code class="pcalibre3 calibre13 pcalibre4">yield</code>语句后面。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-comment">// 数组的写法</span>
+co(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">var</span> res = <span class="hljs-keyword">yield</span> [
+    <span class="hljs-number">Promise</span>.resolve(<span class="hljs-number">1</span>),
+    <span class="hljs-number">Promise</span>.resolve(<span class="hljs-number">2</span>)
+  ];
+  <span class="hljs-number">console</span>.log(res);
+}).catch(onerror);
+
+<span class="hljs-comment">// 对象的写法</span>
+co(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">var</span> res = <span class="hljs-keyword">yield</span> {
+    <span class="hljs-number">1</span>: <span class="hljs-number">Promise</span>.resolve(<span class="hljs-number">1</span>),
+    <span class="hljs-number">2</span>: <span class="hljs-number">Promise</span>.resolve(<span class="hljs-number">2</span>),
+  };
+  <span class="hljs-number">console</span>.log(res);
+}).catch(onerror);
+</code></pre>
+<p class="calibre6">下面是另一个例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">co(<span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">var</span> values = [n1, n2, n3];
+  <span class="hljs-keyword">yield</span> values.map(somethingAsync);
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-comment">somethingAsync</span>(<span class="hljs-number">x</span>) </span>{
+  <span class="hljs-comment">// do something async</span>
+  <span class="hljs-keyword">return</span> y
+}
+</code></pre>
+<p class="calibre6">上面的代码允许并发三个<code class="pcalibre3 calibre13 pcalibre4">somethingAsync</code>异步操作，等到它们全部完成，才会进行下一步。</p>
+<h3 id="实例：处理-stream" class="calibre11">实例：处理 Stream</h3>
+<p class="calibre6">Node 提供 Stream 模式读写数据，特点是一次只处理数据的一部分，数据分成一块块依次处理，就好像“数据流”一样。这对于处理大规模数据非常有利。Stream 模式使用 EventEmitter API，会释放三个事件。</p>
+<ul class="calibre9">
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">data</code>事件：下一块数据块已经准备好了。</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">end</code>事件：整个“数据流”处理“完了。</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">error</code>事件：发生错误。</li>
+</ul>
+<p class="calibre6">使用<code class="pcalibre3 calibre13 pcalibre4">Promise.race()</code>函数，可以判断这三个事件之中哪一个最先发生，只有当<code class="pcalibre3 calibre13 pcalibre4">data</code>事件最先发生时，才进入下一个数据块的处理。从而，我们可以通过一个<code class="pcalibre3 calibre13 pcalibre4">while</code>循环，完成所有数据的读取。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> co = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;co&#39;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-number">require</span>(<span class="hljs-string">&#39;fs&#39;</span>);
+
+<span class="hljs-keyword">const</span> stream = fs.createReadStream(<span class="hljs-string">&#39;./les_miserables.txt&#39;</span>);
+<span class="hljs-keyword">let</span> valjeanCount = <span class="hljs-number">0</span>;
+
+co(<span class="hljs-function"><span class="hljs-keyword">function</span>*(<span class="hljs-number"></span>) </span>{
+  <span class="hljs-keyword">while</span>(<span class="hljs-number">true</span>) {
+    <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">yield</span> <span class="hljs-number">Promise</span>.race([
+      <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(resolve =&gt; stream.once(<span class="hljs-string">&#39;data&#39;</span>, resolve)),
+      <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>(resolve =&gt; stream.once(<span class="hljs-string">&#39;end&#39;</span>, resolve)),
+      <span class="hljs-keyword">new</span> <span class="hljs-number">Promise</span>((resolve, reject) =&gt; stream.once(<span class="hljs-string">&#39;error&#39;</span>, reject))
+    ]);
+    <span class="hljs-keyword">if</span> (!res) {
+      <span class="hljs-keyword">break</span>;
+    }
+    stream.removeAllListeners(<span class="hljs-string">&#39;data&#39;</span>);
+    stream.removeAllListeners(<span class="hljs-string">&#39;end&#39;</span>);
+    stream.removeAllListeners(<span class="hljs-string">&#39;error&#39;</span>);
+    valjeanCount += (res.toString().match(<span class="hljs-tag">/valjean/ig</span>) || []).length;
+  }
+  <span class="hljs-number">console</span>.log(<span class="hljs-string">&#39;count:&#39;</span>, valjeanCount); <span class="hljs-comment">// count: 1120</span>
+});
+</code></pre>
+<p class="calibre6">上面代码采用 Stream 模式读取《悲惨世界》的文本文件，对于每个数据块都使用<code class="pcalibre3 calibre13 pcalibre4">stream.once</code>方法，在<code class="pcalibre3 calibre13 pcalibre4">data</code>、<code class="pcalibre3 calibre13 pcalibre4">end</code>、<code class="pcalibre3 calibre13 pcalibre4">error</code>三个事件上添加一次性回调函数。变量<code class="pcalibre3 calibre13 pcalibre4">res</code>只有在<code class="pcalibre3 calibre13 pcalibre4">data</code>事件发生时才有值，然后累加每个数据块之中<code class="pcalibre3 calibre13 pcalibre4">valjean</code>这个词出现的次数。</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="generator.html" class="navigation navigation-prev"
+           aria-label="Previous page: 17. Generator 函数的语法">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="async.html" class="navigation navigation-next"
+           aria-label="Next page: 19. async 函数">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "19. async 函数",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "17. Generator 函数的语法",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>

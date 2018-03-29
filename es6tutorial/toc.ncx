@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="zh-CN">
+  <head>
+    <meta content="dfffde91-08ea-4aac-b3c3-e24da7f4c4cc" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (3.15.0)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>ECMAScript 6 入门</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="uzEODaLhWtqWXChCCXbcHg9" playOrder="1">
+      <navLabel>
+        <text>0. 前言</text>
+      </navLabel>
+      <content src="index.html"/>
+    </navPoint>
+    <navPoint id="uLzSQyQVgHvc26OgFX64CE6" playOrder="2">
+      <navLabel>
+        <text>1. ECMAScript 6简介</text>
+      </navLabel>
+      <content src="intro.html"/>
+    </navPoint>
+    <navPoint id="u3RAWL43nIWoQ4Pr3dxFdO5" playOrder="3">
+      <navLabel>
+        <text>2. let 和 const 命令</text>
+      </navLabel>
+      <content src="let.html"/>
+    </navPoint>
+    <navPoint id="uez4borqzJnOWfi7dPLX8MF" playOrder="4">
+      <navLabel>
+        <text>3. 变量的解构赋值</text>
+      </navLabel>
+      <content src="destructuring.html"/>
+    </navPoint>
+    <navPoint id="ubOjlPOffEu4QnbKEho86LF" playOrder="5">
+      <navLabel>
+        <text>4. 字符串的扩展</text>
+      </navLabel>
+      <content src="string.html"/>
+    </navPoint>
+    <navPoint id="uFKPUp2w2ckdonIfuzcZXDA" playOrder="6">
+      <navLabel>
+        <text>5. 正则的扩展</text>
+      </navLabel>
+      <content src="regex.html"/>
+    </navPoint>
+    <navPoint id="ueicvPYYS9ZxKhbCWUnVhD7" playOrder="7">
+      <navLabel>
+        <text>6. 数值的扩展</text>
+      </navLabel>
+      <content src="number.html"/>
+    </navPoint>
+    <navPoint id="uEuKgYgRMyLhqQICEk2jaEB" playOrder="8">
+      <navLabel>
+        <text>7. 函数的扩展</text>
+      </navLabel>
+      <content src="function.html"/>
+    </navPoint>
+    <navPoint id="umTKKAH2Bbz8iiOjoVJUly4" playOrder="9">
+      <navLabel>
+        <text>8. 函数式编程</text>
+      </navLabel>
+      <content src="fp.html"/>
+    </navPoint>
+    <navPoint id="uKv3KzjroLzHoVebK7EMAh8" playOrder="10">
+      <navLabel>
+        <text>9. 数组的扩展</text>
+      </navLabel>
+      <content src="array.html"/>
+    </navPoint>
+    <navPoint id="uBbSvD2MSLlN2bnvVXzopIG" playOrder="11">
+      <navLabel>
+        <text>10. 对象的扩展</text>
+      </navLabel>
+      <content src="object.html"/>
+    </navPoint>
+    <navPoint id="ullhaS7SpFyQ6a8YjitQJc8" playOrder="12">
+      <navLabel>
+        <text>11. Symbol</text>
+      </navLabel>
+      <content src="symbol.html"/>
+    </navPoint>
+    <navPoint id="uZxQQwxGrQvsUbuPDZTRe9D" playOrder="13">
+      <navLabel>
+        <text>12. Set 和 Map 数据结构</text>
+      </navLabel>
+      <content src="set-map.html"/>
+    </navPoint>
+    <navPoint id="uBaPNS8ZSbgYdz5aajkoEN7" playOrder="14">
+      <navLabel>
+        <text>13. Proxy</text>
+      </navLabel>
+      <content src="proxy.html"/>
+    </navPoint>
+    <navPoint id="ukuvBIZ3z6AGfqf3DxdyQqB" playOrder="15">
+      <navLabel>
+        <text>14. Reflect</text>
+      </navLabel>
+      <content src="reflect.html"/>
+    </navPoint>
+    <navPoint id="uB54mB9Wpji5AIVxtQRLB79" playOrder="16">
+      <navLabel>
+        <text>15. Promise 对象</text>
+      </navLabel>
+      <content src="promise.html"/>
+    </navPoint>
+    <navPoint id="udxfB2QgJ7JCmaJR9Xp9ik5" playOrder="17">
+      <navLabel>
+        <text>16. Iterator 和 for...of 循环</text>
+      </navLabel>
+      <content src="iterator.html"/>
+    </navPoint>
+    <navPoint id="uuaCJxUKjKY7SaCVGpymKkD" playOrder="18">
+      <navLabel>
+        <text>17. Generator 函数的语法</text>
+      </navLabel>
+      <content src="generator.html"/>
+    </navPoint>
+    <navPoint id="uQBoCvbvqwXNFaA8sBpSukG" playOrder="19">
+      <navLabel>
+        <text>18. Generator 函数的异步应用</text>
+      </navLabel>
+      <content src="generator-async.html"/>
+    </navPoint>
+    <navPoint id="u87Rnix4Uv3ThnqQsiZVhEA" playOrder="20">
+      <navLabel>
+        <text>19. async 函数</text>
+      </navLabel>
+      <content src="async.html"/>
+    </navPoint>
+    <navPoint id="urWImlfIireb92A96Abr9r8" playOrder="21">
+      <navLabel>
+        <text>20. Class 的基本语法</text>
+      </navLabel>
+      <content src="class.html"/>
+    </navPoint>
+    <navPoint id="uazTR8thOIF7l8epAdt7Ak2" playOrder="22">
+      <navLabel>
+        <text>21. Class 的继承</text>
+      </navLabel>
+      <content src="class-extends.html"/>
+    </navPoint>
+    <navPoint id="uowkdoizfN79VSr8njClM28" playOrder="23">
+      <navLabel>
+        <text>22. Mixin</text>
+      </navLabel>
+      <content src="mixin.html"/>
+    </navPoint>
+    <navPoint id="uKnb4PObXUeH3hTHYqf8AVG" playOrder="24">
+      <navLabel>
+        <text>23. SIMD</text>
+      </navLabel>
+      <content src="simd.html"/>
+    </navPoint>
+    <navPoint id="uhPHqxAPJXxEEVoqEvFxXz2" playOrder="25">
+      <navLabel>
+        <text>24. Decorator</text>
+      </navLabel>
+      <content src="decorator.html"/>
+    </navPoint>
+    <navPoint id="ux8e6cyQitNSeKOKpanLMd8" playOrder="26">
+      <navLabel>
+        <text>25. Module 的语法</text>
+      </navLabel>
+      <content src="module.html"/>
+    </navPoint>
+    <navPoint id="uLLHVxuVWczdp9l6XyYwe44" playOrder="27">
+      <navLabel>
+        <text>26. Module 的加载实现</text>
+      </navLabel>
+      <content src="module-loader.html"/>
+    </navPoint>
+    <navPoint id="ulWYu7s73OnA3O23ccq6t8F" playOrder="28">
+      <navLabel>
+        <text>27. 编程风格</text>
+      </navLabel>
+      <content src="style.html"/>
+    </navPoint>
+    <navPoint id="uggZNPkjwuihzWaEbLEUz6H" playOrder="29">
+      <navLabel>
+        <text>28. 读懂规格</text>
+      </navLabel>
+      <content src="spec.html"/>
+    </navPoint>
+    <navPoint id="u7ADPM2uYxwceJFhrkabhs7" playOrder="30">
+      <navLabel>
+        <text>29. ArrayBuffer</text>
+      </navLabel>
+      <content src="arraybuffer.html"/>
+    </navPoint>
+    <navPoint id="uDnKS36G3yJ7pju2QMfeaOA" playOrder="31">
+      <navLabel>
+        <text>30. 最新提案</text>
+      </navLabel>
+      <content src="proposals.html"/>
+    </navPoint>
+    <navPoint id="uZHD28lQAlHjvxIU2Gwc6q8" playOrder="32">
+      <navLabel>
+        <text>31. 参考链接</text>
+      </navLabel>
+      <content src="reference.html"/>
+    </navPoint>
+  </navMap>
+</ncx>

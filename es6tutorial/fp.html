@@ -1,0 +1,476 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>8. 函数式编程</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/style.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-highlight/website.css">
+    <!--
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/website.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+    <link rel="stylesheet" href="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.css">
+    <link href="page_styles.css" rel="stylesheet" type="text/css"><link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="https://cdn.jim.plus/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://cdn.jim.plus/gitbook/images/favicon.ico" type="image/x-icon">
+    <link rel="next" href="array.html"/>
+    <link rel="prev" href="function.html"/>
+</head>
+<body>
+<div class="book">
+    <div class="book-summary">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search"/>
+        </div>
+    <nav role="navigation">
+    <ul class="summary">
+<li class="chapter" data-level="1" data-path="titlepage.html">
+    <a href="titlepage.html">Cover</a>
+</li>
+<li class="chapter" data-level="2" data-path="SUMMARY.html">
+    <a href="SUMMARY.html">Table of Contents</a>
+</li>
+<li class="chapter" data-level="3" data-path="index.html">
+    <a href="index.html">0. 前言</a>
+</li>
+<li class="chapter" data-level="4" data-path="intro.html">
+    <a href="intro.html">1. ECMAScript 6简介</a>
+</li>
+<li class="chapter" data-level="5" data-path="let.html">
+    <a href="let.html">2. let 和 const 命令</a>
+</li>
+<li class="chapter" data-level="6" data-path="destructuring.html">
+    <a href="destructuring.html">3. 变量的解构赋值</a>
+</li>
+<li class="chapter" data-level="7" data-path="string.html">
+    <a href="string.html">4. 字符串的扩展</a>
+</li>
+<li class="chapter" data-level="8" data-path="regex.html">
+    <a href="regex.html">5. 正则的扩展</a>
+</li>
+<li class="chapter" data-level="9" data-path="number.html">
+    <a href="number.html">6. 数值的扩展</a>
+</li>
+<li class="chapter" data-level="10" data-path="function.html">
+    <a href="function.html">7. 函数的扩展</a>
+</li>
+<li class="chapter" data-level="11" data-path="fp.html">
+    <a href="fp.html">8. 函数式编程</a>
+</li>
+<li class="chapter" data-level="12" data-path="array.html">
+    <a href="array.html">9. 数组的扩展</a>
+</li>
+<li class="chapter" data-level="13" data-path="object.html">
+    <a href="object.html">10. 对象的扩展</a>
+</li>
+<li class="chapter" data-level="14" data-path="symbol.html">
+    <a href="symbol.html">11. Symbol</a>
+</li>
+<li class="chapter" data-level="15" data-path="set-map.html">
+    <a href="set-map.html">12. Set 和 Map 数据结构</a>
+</li>
+<li class="chapter" data-level="16" data-path="proxy.html">
+    <a href="proxy.html">13. Proxy</a>
+</li>
+<li class="chapter" data-level="17" data-path="reflect.html">
+    <a href="reflect.html">14. Reflect</a>
+</li>
+<li class="chapter" data-level="18" data-path="promise.html">
+    <a href="promise.html">15. Promise 对象</a>
+</li>
+<li class="chapter" data-level="19" data-path="iterator.html">
+    <a href="iterator.html">16. Iterator 和 for...of 循环</a>
+</li>
+<li class="chapter" data-level="20" data-path="generator.html">
+    <a href="generator.html">17. Generator 函数的语法</a>
+</li>
+<li class="chapter" data-level="21" data-path="generator-async.html">
+    <a href="generator-async.html">18. Generator 函数的异步应用</a>
+</li>
+<li class="chapter" data-level="22" data-path="async.html">
+    <a href="async.html">19. async 函数</a>
+</li>
+<li class="chapter" data-level="23" data-path="class.html">
+    <a href="class.html">20. Class 的基本语法</a>
+</li>
+<li class="chapter" data-level="24" data-path="class-extends.html">
+    <a href="class-extends.html">21. Class 的继承</a>
+</li>
+<li class="chapter" data-level="25" data-path="mixin.html">
+    <a href="mixin.html">22. Mixin</a>
+</li>
+<li class="chapter" data-level="26" data-path="simd.html">
+    <a href="simd.html">23. SIMD</a>
+</li>
+<li class="chapter" data-level="27" data-path="decorator.html">
+    <a href="decorator.html">24. Decorator</a>
+</li>
+<li class="chapter" data-level="28" data-path="module.html">
+    <a href="module.html">25. Module 的语法</a>
+</li>
+<li class="chapter" data-level="29" data-path="module-loader.html">
+    <a href="module-loader.html">26. Module 的加载实现</a>
+</li>
+<li class="chapter" data-level="30" data-path="style.html">
+    <a href="style.html">27. 编程风格</a>
+</li>
+<li class="chapter" data-level="31" data-path="spec.html">
+    <a href="spec.html">28. 读懂规格</a>
+</li>
+<li class="chapter" data-level="32" data-path="arraybuffer.html">
+    <a href="arraybuffer.html">29. ArrayBuffer</a>
+</li>
+<li class="chapter" data-level="33" data-path="proposals.html">
+    <a href="proposals.html">30. 最新提案</a>
+</li>
+<li class="chapter" data-level="34" data-path="reference.html">
+    <a href="reference.html">31. 参考链接</a>
+</li>
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="fp.html">8. 函数式编程</a>
+                </h1>
+            </div>
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+                            <section class="normal markdown-section">
+                            <div class="page">
+    
+        <h1 class="book-chapter" id="calibre_toc_9">8. 函数式编程</h1>
+        <div class="section">
+            <h1 id="函数式编程" class="calibre5">函数式编程</h1>
+<p class="calibre6">JavaScript 语言从一诞生，就具有函数式编程的烙印。它将函数作为一种独立的数据类型，与其他数据类型处于完全平等的地位。在 JavaScript 语言中，你可以采用面向对象编程，也可以采用函数式编程。有人甚至说，JavaScript 是有史以来第一种被大规模采用的函数式编程语言。</p>
+<p class="calibre6">ES6 的种种新增功能，使得函数式编程变得更方便、更强大。本章介绍 ES6 如何进行函数式编程。</p>
+<h2 id="柯里化" class="calibre12">柯里化</h2>
+<p class="calibre6">柯里化（currying）指的是将一个多参数的函数拆分成一系列函数，每个拆分后的函数都只接受一个参数（unary）。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">add</span> (<span class="hljs-number">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+
+add(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>) <span class="hljs-comment">// 2</span>
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">add</code>接受两个参数<code class="pcalibre3 calibre13 pcalibre4">a</code>和<code class="pcalibre3 calibre13 pcalibre4">b</code>。</p>
+<p class="calibre6">柯里化就是将上面的函数拆分成两个函数，每个函数都只接受一个参数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-comment">add</span> (<span class="hljs-number">a</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-number">b</span>) </span>{
+    <span class="hljs-keyword">return</span> a + b;
+  }
+}
+<span class="hljs-comment">// 或者采用箭头函数写法</span>
+<span class="hljs-keyword">const</span> add = x =&gt; y =&gt; x + y;
+
+<span class="hljs-keyword">const</span> f = add(<span class="hljs-number">1</span>);
+f(<span class="hljs-number">1</span>) <span class="hljs-comment">// 2</span>
+</code></pre>
+<p class="calibre6">上面代码中，函数<code class="pcalibre3 calibre13 pcalibre4">add</code>只接受一个参数<code class="pcalibre3 calibre13 pcalibre4">a</code>，返回一个函数<code class="pcalibre3 calibre13 pcalibre4">f</code>。函数<code class="pcalibre3 calibre13 pcalibre4">f</code>也只接受一个参数<code class="pcalibre3 calibre13 pcalibre4">b</code>。</p>
+<h2 id="函数合成" class="calibre12">函数合成</h2>
+<p class="calibre6">函数合成（function composition）指的是，将多个函数合成一个函数。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">const</span> compose = f =&gt; g =&gt; x =&gt; f(g(x));
+
+<span class="hljs-keyword">const</span> f = compose (x =&gt; x * <span class="hljs-number">4</span>) (x =&gt; x + <span class="hljs-number">3</span>);
+f(<span class="hljs-number">2</span>) <span class="hljs-comment">// 20</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">compose</code>就是一个函数合成器，用于将两个函数合成一个函数。</p>
+<p class="calibre6">可以发现，柯里化与函数合成有着密切的联系。前者用于将一个函数拆成多个函数，后者用于将多个函数合并成一个函数。</p>
+<h2 id="参数倒置" class="calibre12">参数倒置</h2>
+<p class="calibre6">参数倒置（flip）指的是改变函数前两个参数的顺序。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">var</span> divide = (a, b) =&gt; a / b;
+<span class="hljs-keyword">var</span> flip = f.flip(divide);
+
+flip(<span class="hljs-number">10</span>, <span class="hljs-number">5</span>) <span class="hljs-comment">// 0.5</span>
+flip(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>) <span class="hljs-comment">// 10</span>
+
+<span class="hljs-keyword">var</span> three = (a, b, c) =&gt; [a, b, c];
+<span class="hljs-keyword">var</span> flip = f.flip(three);
+flip(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// =&gt; [2, 1, 3]</span>
+</code></pre>
+<p class="calibre6">上面代码中，如果按照正常的参数顺序，10 除以 5 等于 2。但是，参数倒置以后得到的新函数，结果就是 5 除以 10，结果得到 0.5。如果原函数有 3 个参数，则只颠倒前两个参数的位置。</p>
+<p class="calibre6">参数倒置的代码非常简单。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> f = {};
+f.flip =
+  fn =&gt;
+    (a, b, ...args) =&gt; fn(b, a, ...args.reverse());
+</code></pre>
+<h2 id="执行边界" class="calibre12">执行边界</h2>
+<p class="calibre6">执行边界（until）指的是函数执行到满足条件为止。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> condition = x =&gt; x &gt; <span class="hljs-number">100</span>;
+<span class="hljs-keyword">let</span> inc = x =&gt; x + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">let</span> until = f.until(condition, inc);
+
+until(<span class="hljs-number">0</span>) <span class="hljs-comment">// 101</span>
+
+condition = x =&gt; x === <span class="hljs-number">5</span>;
+until = f.until(condition, inc);
+
+until(<span class="hljs-number">3</span>) <span class="hljs-comment">// 5</span>
+</code></pre>
+<p class="calibre6">上面代码中，第一段的条件是执行到<code class="pcalibre3 calibre13 pcalibre4">x</code>大于 100 为止，所以<code class="pcalibre3 calibre13 pcalibre4">x</code>初值为 0 时，会一直执行到 101。第二段的条件是执行到等于 5 为止，所以<code class="pcalibre3 calibre13 pcalibre4">x</code>最后的值是 5。</p>
+<p class="calibre6">执行边界的实现如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> f = {};
+f.until = (condition, f) =&gt;
+  (...args) =&gt; {
+    <span class="hljs-keyword">var</span> r = f.apply(<span class="hljs-number">null</span>, args);
+    <span class="hljs-keyword">return</span> condition(r) ? r : f.until(condition, f)(r);
+  };
+</code></pre>
+<p class="calibre6">上面代码的关键就是，如果满足条件就返回结果，否则不断递归执行。</p>
+<h2 id="队列操作" class="calibre12">队列操作</h2>
+<p class="calibre6">队列（list）操作包括以下几种。</p>
+<ul class="calibre9">
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">head</code>： 取出队列的第一个非空成员。</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">last</code>： 取出有限队列的最后一个非空成员。</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">tail</code>： 取出除了“队列头”以外的其他非空成员。</li>
+<li class="calibre10"><code class="pcalibre3 calibre13 pcalibre4">init</code>： 取出除了“队列尾”以外的其他非空成员。</li>
+</ul>
+<p class="calibre6">下面是例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">f.head(<span class="hljs-number">5</span>, <span class="hljs-number">27</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>) <span class="hljs-comment">// 5</span>
+f.last(<span class="hljs-number">5</span>, <span class="hljs-number">27</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>) <span class="hljs-comment">// 1</span>
+f.tail(<span class="hljs-number">5</span>, <span class="hljs-number">27</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>) <span class="hljs-comment">// [27, 3, 1]</span>
+f.init(<span class="hljs-number">5</span>, <span class="hljs-number">27</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>) <span class="hljs-comment">// [5, 27, 3]</span>
+</code></pre>
+<p class="calibre6">这些方法的实现如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> f = {};
+f.head = (...xs) =&gt; xs[<span class="hljs-number">0</span>];
+f.last = (...xs) =&gt; xs.slice(<span class="hljs-number">-1</span>);
+f.tail = (...xs) =&gt; <span class="hljs-number">Array</span>.prototype.slice.call(xs, <span class="hljs-number">1</span>);
+f.init = (...xs) =&gt; xs.slice(<span class="hljs-number">0</span>, <span class="hljs-number">-1</span>);
+</code></pre>
+<h2 id="合并操作" class="calibre12">合并操作</h2>
+<p class="calibre6">合并操作分为<code class="pcalibre3 calibre13 pcalibre4">concat</code>和<code class="pcalibre3 calibre13 pcalibre4">concatMap</code>两种。前者就是将多个数组合成一个，后者则是先处理一下参数，然后再将处理结果合成一个数组。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6">f.concat([<span class="hljs-number">5</span>], [<span class="hljs-number">27</span>], [<span class="hljs-number">3</span>]) <span class="hljs-comment">// [5, 27, 3]</span>
+f.concatMap(x =&gt; <span class="hljs-string">&#39;hi &#39;</span> + x, <span class="hljs-number">1</span>, [[<span class="hljs-number">2</span>]], <span class="hljs-number">3</span>) <span class="hljs-comment">// [&#39;hi 1&#39;, &#39;hi 2&#39;, &#39;hi 3&#39;]</span>
+</code></pre>
+<p class="calibre6">这两种方法的实现代码如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> f = {};
+f.concat =
+  (...xs) =&gt; xs.reduce((a, b) =&gt; a.concat(b));
+f.concatMap =
+  (f, ...xs) =&gt; f.concat(xs.map(f));
+</code></pre>
+<h2 id="配对操作" class="calibre12">配对操作</h2>
+<p class="calibre6">配对操作分为<code class="pcalibre3 calibre13 pcalibre4">zip</code>和<code class="pcalibre3 calibre13 pcalibre4">zipWith</code>两种方法。<code class="pcalibre3 calibre13 pcalibre4">zip</code>操作将两个队列的成员，一一配对，合成一个新的队列。如果两个队列不等长，较长的那个队列多出来的成员，会被忽略。<code class="pcalibre3 calibre13 pcalibre4">zipWith</code>操作的第一个参数是一个函数，然后会将后面的队列成员一一配对，输入该函数，返回值就组成一个新的队列。</p>
+<p class="calibre6">下面是例子。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> a = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>];
+<span class="hljs-keyword">let</span> b = [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">let</span> c = [<span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>];
+
+f.zip(a, b) <span class="hljs-comment">// [[0, 3], [1, 4], [2, 5]]</span>
+f.zipWith((a, b) =&gt; a + b, a, b, c) <span class="hljs-comment">// [9, 12, 15]</span>
+</code></pre>
+<p class="calibre6">上面代码中，<code class="pcalibre3 calibre13 pcalibre4">zipWith</code>方法的第一个参数是一个求和函数，它将后面三个队列的成员，一一配对进行相加。</p>
+<p class="calibre6">这两个方法的实现如下。</p>
+<pre class="calibre14"><code class="pcalibre5 lang-bash pcalibre6"><span class="hljs-keyword">let</span> f = {};
+
+f.zip = (...xs) =&gt; {
+  <span class="hljs-keyword">let</span> r = [];
+  <span class="hljs-keyword">let</span> nple = [];
+  <span class="hljs-keyword">let</span> length = <span class="hljs-number">Math</span>.min.apply(<span class="hljs-number">null</span>, xs.map(x =&gt; x.length));
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    xs.forEach(
+      x =&gt; nple.push(x[i])
+    );
+
+    r.push(nple);
+    nple = [];
+  }
+
+  <span class="hljs-keyword">return</span> r;
+};
+
+f.zipWith = (op, ...xs) =&gt;
+  f.zip.apply(<span class="hljs-number">null</span>, xs).map(
+    (x) =&gt; x.reduce(op)
+  );
+</code></pre>
+<h2 id="参考链接" class="calibre12">参考链接</h2>
+<ul class="calibre9">
+<li class="calibre10">Mateo Gianolio, <a href="http://casualjavascript.com/?1" target="_blank" class="pcalibre pcalibre1 pcalibre2 calibre7">Haskell in ES6: Part 1</a></li>
+</ul>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+
+
+                            </section>
+                            <!--
+                            <footer class="page-footer">
+                                    <span class="copyright">
+                                        Copyright © jim.plus 2017-2018 all right reserved, powered by Gitbook
+                                    </span>
+                                    <span class="footer-modification">
+                                        Updated at 2018-03-29T13:58:14+08:00
+                                    </span>
+                            </footer>
+                            -->
+                        </div>
+                        <div class="search-results">
+                            <div class="has-results">
+                                <h1 class="search-results-title">
+                                    <span class='search-results-count'></span>
+                                    results matching "<span class='search-query'></span>"
+                                </h1>
+                                <ul class="search-results-list"></ul>
+                            </div>
+                            <div class="no-results">
+                                <h1 class="search-results-title">
+                                    No results matching "<span class='search-query'></span>"
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="function.html" class="navigation navigation-prev"
+           aria-label="Previous page: 7. 函数的扩展">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="array.html" class="navigation navigation-next"
+           aria-label="Next page: 9. 数组的扩展">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+
+    <div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up"></i></div>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged({
+                "page": {
+                    "title": "Changes",
+                    "level": "2.1",
+                    "depth": 1,
+                    "next": {
+                        "title": "9. 数组的扩展",
+                        "level": "2.2",
+                        "depth": 1,
+                        "path": "next.md",
+                        "ref": "next.md",
+                        "articles": []
+                    },
+                    "previous": {
+                        "title": "7. 函数的扩展",
+                        "level": "1.1",
+                        "depth": 1,
+                        "path": "prev.md",
+                        "ref": "prev.md",
+                        "articles": []
+                    },
+                    "dir": "ltr"
+                },
+                "config": {
+                    "gitbook": "*",
+                    "theme": "default",
+                    "variables": {},
+                    "plugins": [],
+                    "pluginsConfig": {
+                        "highlight": {},
+                        "search": {},
+                        "lunr": {"maxIndexSize": 1000000, "ignoreSpecialCharacters": false},
+                        "sharing": {
+                            "facebook": true,
+                            "twitter": true,
+                            "google": false,
+                            "weibo": false,
+                            "instapaper": false,
+                            "vk": false,
+                            "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                        },
+                        "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                        "theme-default": {
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            }, "showLevel": false
+                        }
+                    },
+                    "structure": {
+                        "langs": "LANGS.md",
+                        "readme": "README.md",
+                        "glossary": "GLOSSARY.md",
+                        "summary": "SUMMARY.md"
+                    },
+                    "pdf": {
+                        "pageNumbers": true,
+                        "fontSize": 12,
+                        "fontFamily": "Arial",
+                        "paperSize": "a4",
+                        "chapterMark": "pagebreak",
+                        "pageBreaksBefore": "/",
+                        "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                    },
+                    "styles": {
+                        "website": "styles/website.css",
+                        "pdf": "styles/pdf.css",
+                        "epub": "styles/epub.css",
+                        "mobi": "styles/mobi.css",
+                        "ebook": "styles/ebook.css",
+                        "print": "styles/print.css"
+                    }
+                },
+                "file": {"path": "content.md", "mtime": "2018-03-02T08:30:36.677Z", "type": "markdown"},
+                "gitbook": {"version": "3.2.3", "time": "2018-03-02T08:32:31.453Z"},
+                "basePath": ".",
+                "book": {"language": ""}
+            });
+        });
+    </script>
+</div>
+<script src="https://cdn.jim.plus/gitbook/gitbook.js"></script>
+<script src="https://cdn.jim.plus/gitbook/theme.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+<!--
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+-->
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+<script src="https://cdn.jim.plus/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+</body>
+</html>
