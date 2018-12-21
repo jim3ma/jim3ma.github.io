@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>简介</title>
+    <title>12. 后向引用</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="description" content="">
     <meta name="generator" content="GitBook 3.2.3">
@@ -27,8 +27,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152"
           href="gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
-    <link rel="next" href="1.%20Ru%20He%20Shi%20Yong%20Ben%20Jiao%20Cheng%20.html"/>
-    <link rel="prev" href="SUMMARY.html"/>
+    <link rel="next" href="13.%20Ling%20Kuan%20Duan%20Yan%20.html"/>
+    <link rel="prev" href="11.%20Fan%20Yi%20.html"/>
 </head>
 <body>
 <div class="book">
@@ -128,7 +128,7 @@
                 <!-- Title -->
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
-                    <a href="index.html">简介</a>
+                    <a href="12. Hou Xiang Yin Yong .html">12. 后向引用</a>
                 </h1>
             </div>
             <div class="page-wrapper" tabindex="-1" role="main">
@@ -138,23 +138,72 @@
                             <section class="normal markdown-section">
                             <div class="page">
     
-        <h1 class="book-chapter" id="calibre_toc_1">简介</h1>
+        <h1 class="book-chapter" id="calibre_toc_13">12. 后向引用</h1>
         <div class="section">
-            <h1 id="正则表达式30分钟入门教程" class="calibre5">正则表达式30分钟入门教程</h1>
-<h2 id="本文目标" class="calibre6">本文目标</h2>
-<p class="calibre7">30分钟内让你明白正则表达式是什么，并对它有一些基本的了解，让你可以在自己的程序或网页里使用它。</p>
-<h2 id="声明" class="calibre8">声明</h2>
-<p class="calibre7">本文非原创，是改编自<a href="http://deerchao.net/tutorials/regex/regex.htm#mission" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">《正则表达式30分钟入门教程》</a>，因为原作者的排版个人不是很喜欢，而且内容上个人觉得有些地方需要改进，所以在 gitbook 上开了一本书。</p>
-<h2 id="附加声明" class="calibre8">附加声明</h2>
-<p class="calibre7">本文是从 <code class="pcalibre3 calibre10 pcalibre4">luke0922</code> 的 <a href="https://legacy.gitbook.com/book/luke0922/learnregularexpressionin30minutes/details" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">GitBook</a> 上复制下来，再次修改的，主要是方便自己修改其中的错误，并且同步原作者的一些修改。</p>
-<h2 id="电子书下载" class="calibre8">电子书下载</h2>
-<p class="calibre7">可以从 <a href="https://legacy.gitbook.com/book/jim3ma/learn-regular-expression-in-30-minutes/details" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">GitBook</a> 上下载本书的电子版，包含 <code class="pcalibre3 calibre10 pcalibre4">epub</code>、<code class="pcalibre3 calibre10 pcalibre4">pdf</code>、<code class="pcalibre3 calibre10 pcalibre4">mobi</code> 格式。</p>
-<h2 id="参与贡献" class="calibre8">参与贡献</h2>
-<p class="calibre7">时间仓促，错误在所难免，如果发现有任何错误的地方，您可以直接点击左上角的<code class="pcalibre3 calibre10 pcalibre4">编辑本页</code>，进行编辑，提交修改。</p>
-<p class="calibre7">如果觉得您本文还不错，可以<a href="https://github.com/jim3ma/learn-regular-expression-in-30-minutes/" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">点击这里</a>前往 Github star 一下本文。</p>
-<h2 id="联系我" class="calibre8">联系我</h2>
-<p class="calibre7">主页：<a href="https://blog.jim.plus" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">https://blog.jim.plus</a></p>
-<p class="calibre7">邮箱：<a href="mailto:majinjing3@gmail.com" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">majinjing3@gmail.com</a></p>
+            <h1 id="后向引用" class="calibre5">后向引用</h1>
+<p class="calibre7">使用小括号指定一个子表达式后，匹配这个子表达式的文本(也就是此分组捕获的内容)可以在表达式或其它程序中作进一步的处理。默认情况下，每个分组会自动拥有一个组号，规则是：从左向右，以分组的左括号为标志，第一个出现的分组的组号为1，第二个为2，以此类推。</p>
+<p class="calibre7">后向引用用于重复搜索前面某个分组匹配的文本。例如，<code class="pcalibre3 calibre10 pcalibre4">\1</code> 代表分组1匹配的文本。难以理解？请看示例：</p>
+<pre class="calibre13"><code class="calibre14 pcalibre6 pcalibre5">\b(\w+)\b\s+\1\b
+</code></pre><p class="calibre7">可以用来匹配重复的单词，像 <code class="pcalibre3 calibre10 pcalibre4">go go</code>, 或者 <code class="pcalibre3 calibre10 pcalibre4">kitty kitty</code>。</p>
+<p class="calibre7">这个表达式首先是一个单词，也就是单词开始处和结束处之间的多于一个的字母或数字 <code class="pcalibre3 calibre10 pcalibre4">(\b(\w+)\b)</code> ，这个单词会被捕获到编号为1的分组中，然后是1个或几个空白符 <code class="pcalibre3 calibre10 pcalibre4">(\s+)</code>，最后是分组1中捕获的内容（也就是前面匹配的那个单词）<code class="pcalibre3 calibre10 pcalibre4">(\1)</code>。</p>
+<p class="calibre7">你也可以自己指定子表达式的组名。要指定一个子表达式的组名，请使用这样的语法：<code class="pcalibre3 calibre10 pcalibre4">(?&lt;Word&gt;\w+)</code>(或者把尖括号换成&#39;也行： <code class="pcalibre3 calibre10 pcalibre4">(?&#39;Word&#39;\w+))</code>，这样就把 <code class="pcalibre3 calibre10 pcalibre4">\w+</code> 的组名指定为 <code class="pcalibre3 calibre10 pcalibre4">Word</code> 了。要反向引用这个分组捕获的内容，你可以使用 <code class="pcalibre3 calibre10 pcalibre4">\k&lt;Word&gt;</code>,所以上一个例子也可以写成这样：</p>
+<pre class="calibre13"><code class="calibre14 pcalibre6 pcalibre5">\b(?&lt;Word&gt;\w+)\b\s+\k&lt;Word&gt;\b。
+</code></pre><p class="calibre7">使用小括号的时候，还有很多特定用途的语法。下面列出了最常用的一些：</p>
+<p class="calibre7"><strong class="calibre12">表4.常用分组语法</strong></p>
+<table class="calibre17">
+<thead class="calibre18">
+<tr class="calibre19">
+<th class="calibre20">分类</th>
+<th class="calibre20">代码/语法</th>
+<th class="calibre20">说明</th>
+</tr>
+</thead>
+<tbody class="calibre21">
+<tr class="calibre19">
+<td class="calibre22">捕获</td>
+<td class="calibre22">(exp)</td>
+<td class="calibre22">匹配exp,并捕获文本到自动命名的组里</td>
+</tr>
+<tr class="calibre23">
+<td class="calibre22">
+</td><td class="calibre22">(?exp)</td>
+<td class="calibre22">匹配exp,并捕获文本到名称为name的组里，也可以写成(?&#39;name&#39;exp)</td>
+</tr>
+<tr class="calibre19">
+<td class="calibre22">
+</td><td class="calibre22">(?:exp)</td>
+<td class="calibre22">匹配exp,不捕获匹配的文本，也不给此分组分配组号</td>
+</tr>
+<tr class="calibre23">
+<td class="calibre22">零宽断言</td>
+<td class="calibre22">(?=exp)</td>
+<td class="calibre22">匹配exp前面的位置</td>
+</tr>
+<tr class="calibre19">
+<td class="calibre22">
+</td><td class="calibre22">(?&lt;=exp)</td>
+<td class="calibre22">匹配exp后面的位置</td>
+</tr>
+<tr class="calibre23">
+<td class="calibre22">
+</td><td class="calibre22">(?!exp)</td>
+<td class="calibre22">匹配后面跟的不是exp的位置</td>
+</tr>
+<tr class="calibre19">
+<td class="calibre22">
+</td><td class="calibre22">(?&lt;!exp)</td>
+<td class="calibre22">匹配前面不是exp的位置</td>
+</tr>
+<tr class="calibre23">
+<td class="calibre22">注释</td>
+<td class="calibre22">(?#comment)</td>
+<td class="calibre22">这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读</td>
+</tr>
+</tbody>
+</table>
+<p class="calibre7">我们已经讨论了前两种语法。</p>
+<p class="calibre7">第三个 <code class="pcalibre3 calibre10 pcalibre4">(?:exp)</code> 不会改变正则表达式的处理方式，只是这样的组匹配的内容 <em class="calibre11">不会像前两种那样被捕获到某个组里面，也不会拥有组号</em>。</p>
+<p class="calibre7">“我为什么会想要这样做？”——好问题，你觉得为什么呢？</p>
 
         </div>
     
@@ -196,12 +245,12 @@
                 </div>
             </div>
         </div>
-        <a href="SUMMARY.html" class="navigation navigation-prev"
-           aria-label="Previous page: Table of Contents">
+        <a href="11.%20Fan%20Yi%20.html" class="navigation navigation-prev"
+           aria-label="Previous page: 11. 反义">
             <i class="fa fa-angle-left"></i>
         </a>
-        <a href="1.%20Ru%20He%20Shi%20Yong%20Ben%20Jiao%20Cheng%20.html" class="navigation navigation-next"
-           aria-label="Next page: 1. 如何使用本教程">
+        <a href="13.%20Ling%20Kuan%20Duan%20Yan%20.html" class="navigation navigation-next"
+           aria-label="Next page: 13. 零宽断言">
             <i class="fa fa-angle-right"></i>
         </a>
     </div>
@@ -216,7 +265,7 @@
                     "level": "2.1",
                     "depth": 1,
                     "next": {
-                        "title": "1. 如何使用本教程",
+                        "title": "13. 零宽断言",
                         "level": "2.2",
                         "depth": 1,
                         "path": "next.md",
@@ -224,7 +273,7 @@
                         "articles": []
                     },
                     "previous": {
-                        "title": "Table of Contents",
+                        "title": "11. 反义",
                         "level": "1.1",
                         "depth": 1,
                         "path": "prev.md",

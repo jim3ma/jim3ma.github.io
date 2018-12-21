@@ -1,0 +1,296 @@
+.book-chapter {
+    display: none;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.2;
+    page-break-before: always;
+    margin: 0.67em 0
+    }
+.calibre {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    color: #000;
+    display: block;
+    font-family: serif;
+    font-size: 1em;
+    padding-left: 0;
+    padding-right: 0;
+    text-size-adjust: 100%;
+    margin: 0 5pt
+    }
+.calibre1 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.2;
+    page-break-after: avoid;
+    page-break-before: always;
+    text-align: center;
+    margin: 1.2em 0 0.8em
+    }
+.calibre2 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1em;
+    list-style-type: decimal;
+    margin-bottom: 0.8em;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-top: 0
+    }
+.calibre3 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: list-item;
+    font-size: 1em;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none
+    }
+.calibre4 {
+    -webkit-box-sizing: border-box;
+    background: 0 0;
+    box-sizing: border-box;
+    color: #4183c4;
+    font-size: 1em;
+    margin-bottom: -1px;
+    padding-right: 5px;
+    text-decoration: none;
+    border-bottom: #fff solid 1px
+    }
+.calibre5 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1em;
+    list-style-type: lower-roman;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-top: 0
+    }
+.calibre6 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.2;
+    page-break-after: avoid;
+    page-break-before: always;
+    margin: 1.2em 0 0.8em
+    }
+.calibre7 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1em;
+    orphans: 3;
+    widows: 3;
+    margin: 0 0 0.8em
+    }
+.calibre8 {
+    -webkit-box-sizing: border-box;
+    background: 0 0;
+    box-sizing: border-box;
+    color: #4183c4;
+    font-size: 1em;
+    text-decoration: none
+    }
+.calibre9 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1.41667em;
+    font-weight: 700;
+    line-height: 1.2;
+    orphans: 3;
+    page-break-after: avoid;
+    widows: 3;
+    margin: 1.2em 0 0.8em
+    }
+.calibre10 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-weight: 700
+    }
+.calibre11 {
+    -webkit-box-sizing: border-box;
+    background: #f7f7f7;
+    box-sizing: border-box;
+    color: inherit;
+    direction: ltr;
+    display: block;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 1em;
+    overflow: auto;
+    page-break-inside: avoid;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border: currentColor none medium;
+    padding: 0.85em 1em;
+    margin: 0 0 1.2em
+    }
+.calibre12 {
+    -webkit-box-sizing: border-box;
+    background: 0 0;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+    color: inherit;
+    direction: ltr;
+    display: inline;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.75em;
+    line-height: inherit;
+    max-width: initial;
+    overflow: initial;
+    page-break-inside: avoid;
+    white-space: pre-wrap;
+    border: currentColor none medium;
+    padding: 0;
+    margin: 0
+    }
+.calibre13 {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: border-box;
+    background-color: #e7e7e7;
+    box-sizing: border-box;
+    color: gray;
+    display: block;
+    font-size: 1em;
+    height: 4px;
+    overflow: hidden;
+    border: currentColor none medium;
+    padding: 0;
+    margin: 1.6em 0
+    }
+.calibre14 {
+    -webkit-box-sizing: border-box;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+    color: inherit;
+    direction: ltr;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.75em;
+    page-break-inside: avoid;
+    border: currentColor none medium;
+    padding: 0.2em;
+    margin: 0
+    }
+.calibre15 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-style: italic
+    }
+.calibre16 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1em;
+    list-style-type: disc;
+    margin-bottom: 0.8em;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-top: 0
+    }
+.calibre17 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: list-item;
+    font-size: 1em
+    }
+.calibre18 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1em
+    }
+.calibre19 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 1em;
+    height: auto;
+    max-width: 100%;
+    page-break-inside: avoid;
+    width: auto;
+    border: currentColor none 0
+    }
+.inner {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1em;
+    margin-bottom: 4px;
+    border-bottom: #eee dotted 1px
+    }
+.page {
+    display: block
+    }
+.page1 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    float: right;
+    font-size: 1em;
+    margin-bottom: -1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: #fff solid 1px
+    }
+.section {
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    color: #000;
+    display: block;
+    line-height: 1.6;
+    overflow: hidden;
+    text-size-adjust: 100%;
+    word-wrap: break-word
+    }
+.pcalibre1:focus {
+    outline: 0;
+    text-decoration: underline
+    }
+.pcalibre3:before {
+    content: normal;
+    letter-spacing: -0.2em
+    }
+.pcalibre5:before {
+    content: " ";
+    display: table
+    }
+.pcalibre7:before {
+    content: " ";
+    letter-spacing: -0.2em
+    }
+.pcalibre4:after {
+    content: normal;
+    letter-spacing: -0.2em
+    }
+.pcalibre6:after {
+    clear: both;
+    content: " ";
+    display: table
+    }
+.pcalibre8:after {
+    content: " ";
+    letter-spacing: -0.2em
+    }
+.pcalibre2:hover {
+    outline: 0;
+    text-decoration: underline
+    }
+.pcalibre:active {
+    outline: 0;
+    text-decoration: underline
+    }

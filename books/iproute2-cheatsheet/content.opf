@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+  <metadata xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dc:title>iproute2 cheatsheet</dc:title>
+    <dc:creator opf:role="aut" opf:file-as="Baturin, Daniil">Daniil Baturin</dc:creator>
+    <dc:publisher>GitBook</dc:publisher>
+    <dc:contributor opf:role="bkp">GitBook</dc:contributor>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">d71805dd-f6a8-45ac-9061-68b60f1f8b83</dc:identifier>
+    <dc:description>iproute2 command reference</dc:description>
+    <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+    <dc:language>zh</dc:language>
+    <dc:identifier opf:scheme="calibre">aac18aaa-bbda-4b2f-bdbd-c5423a332ecc</dc:identifier>
+    <meta name="cover" content="cover"/>
+    <meta name="calibre:timestamp" content="2018-11-01T12:45:41.333044+00:00"/>
+    <meta name="calibre:title_sort" content="iproute2 cheatsheet"/>
+    <meta name="calibre:author_link_map" content="{&quot;Daniil Baturin&quot;: &quot;&quot;}"/>
+  </metadata>
+  <manifest>
+    <item href="titlepage.xhtml" id="titlepage" media-type="application/xhtml+xml"/>
+    <item href="SUMMARY.html" id="html" media-type="application/xhtml+xml"/>
+    <item href="index.html" id="html1" media-type="application/xhtml+xml"/>
+    <item href="iproute2-cheatsheet.html" id="html2" media-type="application/xhtml+xml"/>
+    <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="c904adad.png" id="added2" media-type="image/png"/>
+    <item href="cover.jpg" id="cover" media-type="image/jpeg"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="titlepage"/>
+    <itemref idref="html"/>
+    <itemref idref="html1"/>
+    <itemref idref="html2"/>
+  </spine>
+  <guide>
+    <reference href="titlepage.xhtml" title="Title Page" type="cover"/>
+  </guide>
+</package>

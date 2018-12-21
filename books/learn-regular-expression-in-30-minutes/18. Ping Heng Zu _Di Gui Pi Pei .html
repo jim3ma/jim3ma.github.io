@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>简介</title>
+    <title>18. 平衡组:递归匹配</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="description" content="">
     <meta name="generator" content="GitBook 3.2.3">
@@ -27,8 +27,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152"
           href="gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
-    <link rel="next" href="1.%20Ru%20He%20Shi%20Yong%20Ben%20Jiao%20Cheng%20.html"/>
-    <link rel="prev" href="SUMMARY.html"/>
+    <link rel="next" href="19.%20Ben%20Wen%20Wei%20Ti%20Dao%20De%20Nei%20Rong%20.html"/>
+    <link rel="prev" href="17.%20Chu%20Li%20Xuan%20Xiang%20.html"/>
 </head>
 <body>
 <div class="book">
@@ -128,7 +128,7 @@
                 <!-- Title -->
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
-                    <a href="index.html">简介</a>
+                    <a href="18. Ping Heng Zu _Di Gui Pi Pei .html">18. 平衡组:递归匹配</a>
                 </h1>
             </div>
             <div class="page-wrapper" tabindex="-1" role="main">
@@ -138,24 +138,43 @@
                             <section class="normal markdown-section">
                             <div class="page">
     
-        <h1 class="book-chapter" id="calibre_toc_1">简介</h1>
+        <h1 class="book-chapter" id="calibre_toc_19">18. 平衡组:递归匹配</h1>
         <div class="section">
-            <h1 id="正则表达式30分钟入门教程" class="calibre5">正则表达式30分钟入门教程</h1>
-<h2 id="本文目标" class="calibre6">本文目标</h2>
-<p class="calibre7">30分钟内让你明白正则表达式是什么，并对它有一些基本的了解，让你可以在自己的程序或网页里使用它。</p>
-<h2 id="声明" class="calibre8">声明</h2>
-<p class="calibre7">本文非原创，是改编自<a href="http://deerchao.net/tutorials/regex/regex.htm#mission" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">《正则表达式30分钟入门教程》</a>，因为原作者的排版个人不是很喜欢，而且内容上个人觉得有些地方需要改进，所以在 gitbook 上开了一本书。</p>
-<h2 id="附加声明" class="calibre8">附加声明</h2>
-<p class="calibre7">本文是从 <code class="pcalibre3 calibre10 pcalibre4">luke0922</code> 的 <a href="https://legacy.gitbook.com/book/luke0922/learnregularexpressionin30minutes/details" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">GitBook</a> 上复制下来，再次修改的，主要是方便自己修改其中的错误，并且同步原作者的一些修改。</p>
-<h2 id="电子书下载" class="calibre8">电子书下载</h2>
-<p class="calibre7">可以从 <a href="https://legacy.gitbook.com/book/jim3ma/learn-regular-expression-in-30-minutes/details" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">GitBook</a> 上下载本书的电子版，包含 <code class="pcalibre3 calibre10 pcalibre4">epub</code>、<code class="pcalibre3 calibre10 pcalibre4">pdf</code>、<code class="pcalibre3 calibre10 pcalibre4">mobi</code> 格式。</p>
-<h2 id="参与贡献" class="calibre8">参与贡献</h2>
-<p class="calibre7">时间仓促，错误在所难免，如果发现有任何错误的地方，您可以直接点击左上角的<code class="pcalibre3 calibre10 pcalibre4">编辑本页</code>，进行编辑，提交修改。</p>
-<p class="calibre7">如果觉得您本文还不错，可以<a href="https://github.com/jim3ma/learn-regular-expression-in-30-minutes/" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">点击这里</a>前往 Github star 一下本文。</p>
-<h2 id="联系我" class="calibre8">联系我</h2>
-<p class="calibre7">主页：<a href="https://blog.jim.plus" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">https://blog.jim.plus</a></p>
-<p class="calibre7">邮箱：<a href="mailto:majinjing3@gmail.com" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">majinjing3@gmail.com</a></p>
+            <h1 id="平衡组递归匹配" class="calibre5">平衡组/递归匹配</h1>
+<p class="calibre7">有时我们需要匹配像<code class="pcalibre3 calibre10 pcalibre4">( 100 * ( 50 + 15 ) )</code>这样的可嵌套的层次性结构，这时简单地使用<code class="pcalibre3 calibre10 pcalibre4">\(.+\)</code>则只会匹配到最左边的左括号和最右边的右括号之间的内容(这里我们讨论的是贪婪模式，懒惰模式也有下面的问题)。假如原来的字符串里的左括号和右括号出现的次数不相等，比如<code class="pcalibre3 calibre10 pcalibre4">( 5 / ( 3 + 2 ) ) )</code>，那我们的匹配结果里两者的个数也不会相等。有没有办法在这样的字符串里匹配到最长的，配对的括号之间的内容呢？</p>
+<p class="calibre7">为了避免(和(把你的大脑彻底搞糊涂，我们还是用尖括号代替圆括号吧。现在我们的问题变成了如何把<code class="pcalibre3 calibre10 pcalibre4">xx &lt;aa &lt;bbb&gt; &lt;bbb&gt; aa&gt; yy</code>这样的字符串里，最长的配对的尖括号内的内容捕获出来？</p>
+<p class="calibre7">这里需要用到以下的语法构造：</p>
+<ul class="calibre24">
+<li class="calibre25"><p class="calibre7"><code class="pcalibre3 calibre10 pcalibre4">(?&#39;group&#39;)</code>
+把捕获的内容命名为group,并压入堆栈(Stack)</p>
+</li>
+<li class="calibre25"><p class="calibre7"><code class="pcalibre3 calibre10 pcalibre4">(?&#39;-group&#39;)</code>
+从堆栈上弹出最后压入堆栈的名为group的捕获内容，如果堆栈本来为空，则本分组的匹配失败</p>
+</li>
+<li class="calibre25"><code class="pcalibre3 calibre10 pcalibre4">(?(group)yes|no)</code>
+如果堆栈上存在以名为group的捕获内容的话，继续匹配yes部分的表达式，否则继续匹配no部分</li>
+<li class="calibre25"><code class="pcalibre3 calibre10 pcalibre4">(?!)</code>
+零宽负向先行断言，由于没有后缀表达式，试图匹配总是失败</li>
+</ul>
+<p class="calibre7">我们需要做的是每碰到了左括号，就在压入一个&#34;Open&#34;,每碰到一个右括号，就弹出一个，到了最后就看看堆栈是否为空－－如果不为空那就证明左括号比右括号多，那匹配就应该失败。正则表达式引擎会进行回溯(放弃最前面或最后面的一些字符)，尽量使整个表达式得到匹配。</p>
+<pre class="calibre13"><code class="calibre14 pcalibre6 pcalibre5">&lt;                     #最外层的左括号
+[^&lt;&gt;]*                #最外层的左括号后面的不是括号的内容
+(
+    (
+        (?&#39;Open&#39;&lt;)    #碰到了左括号，在黑板上写一个&#34;Open&#34;
+        [^&lt;&gt;]*        #匹配左括号后面的不是括号的内容
+    )+
+    (
+        (?&#39;-Open&#39;&gt;)   #碰到了右括号，擦掉一个&#34;Open&#34;
+        [^&lt;&gt;]*        #匹配右括号后面不是括号的内容
+    )+
+)*
+(?(Open)(?!))         #在遇到最外层的右括号前面，判断黑板上还有没有没擦掉的&#34;Open&#34;；如果还有，则匹配失败
 
+&gt;                     #最外层的右括号
+</code></pre><p class="calibre7">平衡组的一个最常见的应用就是匹配HTML,下面这个例子可以匹配嵌套的</p><div class="calibre26">标签：</div><p class="calibre7"></p>
+<pre class="calibre13"><code class="calibre14 pcalibre6 pcalibre5">&lt;div[^&gt;]*&gt;[^&lt;&gt;]*(((?&#39;Open&#39;&lt;div[^&gt;]*&gt;)[^&lt;&gt;]*)+((?&#39;-Open&#39;&lt;/div&gt;)[^&lt;&gt;]*)+)*(?(Open)(?!))&lt;/div&gt;
+</code></pre>
         </div>
     
 </div>
@@ -196,12 +215,12 @@
                 </div>
             </div>
         </div>
-        <a href="SUMMARY.html" class="navigation navigation-prev"
-           aria-label="Previous page: Table of Contents">
+        <a href="17.%20Chu%20Li%20Xuan%20Xiang%20.html" class="navigation navigation-prev"
+           aria-label="Previous page: 17. 处理选项">
             <i class="fa fa-angle-left"></i>
         </a>
-        <a href="1.%20Ru%20He%20Shi%20Yong%20Ben%20Jiao%20Cheng%20.html" class="navigation navigation-next"
-           aria-label="Next page: 1. 如何使用本教程">
+        <a href="19.%20Ben%20Wen%20Wei%20Ti%20Dao%20De%20Nei%20Rong%20.html" class="navigation navigation-next"
+           aria-label="Next page: 19. 本文未提到的内容">
             <i class="fa fa-angle-right"></i>
         </a>
     </div>
@@ -216,7 +235,7 @@
                     "level": "2.1",
                     "depth": 1,
                     "next": {
-                        "title": "1. 如何使用本教程",
+                        "title": "19. 本文未提到的内容",
                         "level": "2.2",
                         "depth": 1,
                         "path": "next.md",
@@ -224,7 +243,7 @@
                         "articles": []
                     },
                     "previous": {
-                        "title": "Table of Contents",
+                        "title": "17. 处理选项",
                         "level": "1.1",
                         "depth": 1,
                         "path": "prev.md",

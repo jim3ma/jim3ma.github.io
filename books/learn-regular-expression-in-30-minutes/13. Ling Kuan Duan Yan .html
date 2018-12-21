@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>简介</title>
+    <title>13. 零宽断言</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="description" content="">
     <meta name="generator" content="GitBook 3.2.3">
@@ -27,8 +27,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152"
           href="gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
-    <link rel="next" href="1.%20Ru%20He%20Shi%20Yong%20Ben%20Jiao%20Cheng%20.html"/>
-    <link rel="prev" href="SUMMARY.html"/>
+    <link rel="next" href="14.%20Fu%20Xiang%20Ling%20Kuan%20Duan%20Yan%20.html"/>
+    <link rel="prev" href="12.%20Hou%20Xiang%20Yin%20Yong%20.html"/>
 </head>
 <body>
 <div class="book">
@@ -128,7 +128,7 @@
                 <!-- Title -->
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
-                    <a href="index.html">简介</a>
+                    <a href="13. Ling Kuan Duan Yan .html">13. 零宽断言</a>
                 </h1>
             </div>
             <div class="page-wrapper" tabindex="-1" role="main">
@@ -138,23 +138,21 @@
                             <section class="normal markdown-section">
                             <div class="page">
     
-        <h1 class="book-chapter" id="calibre_toc_1">简介</h1>
+        <h1 class="book-chapter" id="calibre_toc_14">13. 零宽断言</h1>
         <div class="section">
-            <h1 id="正则表达式30分钟入门教程" class="calibre5">正则表达式30分钟入门教程</h1>
-<h2 id="本文目标" class="calibre6">本文目标</h2>
-<p class="calibre7">30分钟内让你明白正则表达式是什么，并对它有一些基本的了解，让你可以在自己的程序或网页里使用它。</p>
-<h2 id="声明" class="calibre8">声明</h2>
-<p class="calibre7">本文非原创，是改编自<a href="http://deerchao.net/tutorials/regex/regex.htm#mission" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">《正则表达式30分钟入门教程》</a>，因为原作者的排版个人不是很喜欢，而且内容上个人觉得有些地方需要改进，所以在 gitbook 上开了一本书。</p>
-<h2 id="附加声明" class="calibre8">附加声明</h2>
-<p class="calibre7">本文是从 <code class="pcalibre3 calibre10 pcalibre4">luke0922</code> 的 <a href="https://legacy.gitbook.com/book/luke0922/learnregularexpressionin30minutes/details" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">GitBook</a> 上复制下来，再次修改的，主要是方便自己修改其中的错误，并且同步原作者的一些修改。</p>
-<h2 id="电子书下载" class="calibre8">电子书下载</h2>
-<p class="calibre7">可以从 <a href="https://legacy.gitbook.com/book/jim3ma/learn-regular-expression-in-30-minutes/details" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">GitBook</a> 上下载本书的电子版，包含 <code class="pcalibre3 calibre10 pcalibre4">epub</code>、<code class="pcalibre3 calibre10 pcalibre4">pdf</code>、<code class="pcalibre3 calibre10 pcalibre4">mobi</code> 格式。</p>
-<h2 id="参与贡献" class="calibre8">参与贡献</h2>
-<p class="calibre7">时间仓促，错误在所难免，如果发现有任何错误的地方，您可以直接点击左上角的<code class="pcalibre3 calibre10 pcalibre4">编辑本页</code>，进行编辑，提交修改。</p>
-<p class="calibre7">如果觉得您本文还不错，可以<a href="https://github.com/jim3ma/learn-regular-expression-in-30-minutes/" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">点击这里</a>前往 Github star 一下本文。</p>
-<h2 id="联系我" class="calibre8">联系我</h2>
-<p class="calibre7">主页：<a href="https://blog.jim.plus" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">https://blog.jim.plus</a></p>
-<p class="calibre7">邮箱：<a href="mailto:majinjing3@gmail.com" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">majinjing3@gmail.com</a></p>
+            <h1 id="零宽断言" class="calibre5">零宽断言</h1>
+<p class="calibre7">接下来的四个用于查找在某些内容(但并不包括这些内容)之前或之后的东西，也就是说它们像 <strong class="calibre12">\b</strong>, <strong class="calibre12">\^</strong>, <strong class="calibre12">$</strong> 那样用于指定一个位置，这个位置应该满足一定的条件(即断言)，因此它们也被称为零宽断言。</p>
+<p class="calibre7">最好还是拿例子来说明吧：</p>
+<pre class="calibre13"><code class="calibre14 pcalibre6 pcalibre5">(?=exp)
+</code></pre><p class="calibre7">也叫<strong class="calibre12">零宽度正预测先行断言</strong>，它断言自身出现的位置的后面能匹配表达式 <em class="calibre11">exp</em>。比如 <code class="pcalibre3 calibre10 pcalibre4">\b\w+(?=ing\b)</code>，匹配以ing结尾的单词的前面部分(除了 <code class="pcalibre3 calibre10 pcalibre4">ing</code> 以外的部分)，如查找 <code class="pcalibre3 calibre10 pcalibre4">I&#39;m singing while you&#39;re dancing.</code> 时，它会匹配 <code class="pcalibre3 calibre10 pcalibre4">sing</code> 和 <code class="pcalibre3 calibre10 pcalibre4">danc</code>。</p>
+<pre class="calibre13"><code class="calibre14 pcalibre6 pcalibre5">(?&lt;=exp)
+</code></pre><p class="calibre7">也叫<strong class="calibre12">零宽度正回顾后发断言</strong>，它断言自身出现的位置的前面能匹配表达式<em class="calibre11">exp</em>。比如 <code class="pcalibre3 calibre10 pcalibre4">(?&lt;=\bre)\w+\b</code> 会匹配以 <code class="pcalibre3 calibre10 pcalibre4">re</code> 开头的单词的后半部分(除了 <code class="pcalibre3 calibre10 pcalibre4">re</code> 以外的部分)，例如在查找 <code class="pcalibre3 calibre10 pcalibre4">reading a book</code> 时，它匹配 <code class="pcalibre3 calibre10 pcalibre4">ading</code> 。</p>
+<p class="calibre7">假如你想要给一个很长的数字中每三位间加一个逗号(当然是从右边加起了)，你可以这样查找需要在前面和里面添加逗号的部分：</p>
+<pre class="calibre13"><code class="calibre14 pcalibre6 pcalibre5">((?&lt;=\d)\d{3})+\b
+</code></pre><p class="calibre7">用它对 1234567890 进行查找时结果是 234567890 。</p>
+<p class="calibre7">下面这个例子同时使用了这两种断言：</p>
+<pre class="calibre13"><code class="calibre14 pcalibre6 pcalibre5">(?&lt;=\s)\d+(?=\s)
+</code></pre><p class="calibre7">匹配以空白符间隔的数字(再次强调，不包括这些空白符)。</p>
 
         </div>
     
@@ -196,12 +194,12 @@
                 </div>
             </div>
         </div>
-        <a href="SUMMARY.html" class="navigation navigation-prev"
-           aria-label="Previous page: Table of Contents">
+        <a href="12.%20Hou%20Xiang%20Yin%20Yong%20.html" class="navigation navigation-prev"
+           aria-label="Previous page: 12. 后向引用">
             <i class="fa fa-angle-left"></i>
         </a>
-        <a href="1.%20Ru%20He%20Shi%20Yong%20Ben%20Jiao%20Cheng%20.html" class="navigation navigation-next"
-           aria-label="Next page: 1. 如何使用本教程">
+        <a href="14.%20Fu%20Xiang%20Ling%20Kuan%20Duan%20Yan%20.html" class="navigation navigation-next"
+           aria-label="Next page: 14. 负向零宽断言">
             <i class="fa fa-angle-right"></i>
         </a>
     </div>
@@ -216,7 +214,7 @@
                     "level": "2.1",
                     "depth": 1,
                     "next": {
-                        "title": "1. 如何使用本教程",
+                        "title": "14. 负向零宽断言",
                         "level": "2.2",
                         "depth": 1,
                         "path": "next.md",
@@ -224,7 +222,7 @@
                         "articles": []
                     },
                     "previous": {
-                        "title": "Table of Contents",
+                        "title": "12. 后向引用",
                         "level": "1.1",
                         "depth": 1,
                         "path": "prev.md",

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>简介</title>
+    <title>3. 入门</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="description" content="">
     <meta name="generator" content="GitBook 3.2.3">
@@ -27,8 +27,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152"
           href="gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
-    <link rel="next" href="1.%20Ru%20He%20Shi%20Yong%20Ben%20Jiao%20Cheng%20.html"/>
-    <link rel="prev" href="SUMMARY.html"/>
+    <link rel="next" href="4.%20Ce%20Shi%20Zheng%20Ze%20Biao%20Da%20Shi%20.html"/>
+    <link rel="prev" href="2.%20Zheng%20Ze%20Biao%20Da%20Shi%20Dao%20Di%20Shi%20Shi%20Yao%20Dong%20Xi%20_.html"/>
 </head>
 <body>
 <div class="book">
@@ -128,7 +128,7 @@
                 <!-- Title -->
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
-                    <a href="index.html">简介</a>
+                    <a href="3. Ru Men .html">3. 入门</a>
                 </h1>
             </div>
             <div class="page-wrapper" tabindex="-1" role="main">
@@ -138,23 +138,29 @@
                             <section class="normal markdown-section">
                             <div class="page">
     
-        <h1 class="book-chapter" id="calibre_toc_1">简介</h1>
+        <h1 class="book-chapter" id="calibre_toc_4">3. 入门</h1>
         <div class="section">
-            <h1 id="正则表达式30分钟入门教程" class="calibre5">正则表达式30分钟入门教程</h1>
-<h2 id="本文目标" class="calibre6">本文目标</h2>
-<p class="calibre7">30分钟内让你明白正则表达式是什么，并对它有一些基本的了解，让你可以在自己的程序或网页里使用它。</p>
-<h2 id="声明" class="calibre8">声明</h2>
-<p class="calibre7">本文非原创，是改编自<a href="http://deerchao.net/tutorials/regex/regex.htm#mission" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">《正则表达式30分钟入门教程》</a>，因为原作者的排版个人不是很喜欢，而且内容上个人觉得有些地方需要改进，所以在 gitbook 上开了一本书。</p>
-<h2 id="附加声明" class="calibre8">附加声明</h2>
-<p class="calibre7">本文是从 <code class="pcalibre3 calibre10 pcalibre4">luke0922</code> 的 <a href="https://legacy.gitbook.com/book/luke0922/learnregularexpressionin30minutes/details" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">GitBook</a> 上复制下来，再次修改的，主要是方便自己修改其中的错误，并且同步原作者的一些修改。</p>
-<h2 id="电子书下载" class="calibre8">电子书下载</h2>
-<p class="calibre7">可以从 <a href="https://legacy.gitbook.com/book/jim3ma/learn-regular-expression-in-30-minutes/details" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">GitBook</a> 上下载本书的电子版，包含 <code class="pcalibre3 calibre10 pcalibre4">epub</code>、<code class="pcalibre3 calibre10 pcalibre4">pdf</code>、<code class="pcalibre3 calibre10 pcalibre4">mobi</code> 格式。</p>
-<h2 id="参与贡献" class="calibre8">参与贡献</h2>
-<p class="calibre7">时间仓促，错误在所难免，如果发现有任何错误的地方，您可以直接点击左上角的<code class="pcalibre3 calibre10 pcalibre4">编辑本页</code>，进行编辑，提交修改。</p>
-<p class="calibre7">如果觉得您本文还不错，可以<a href="https://github.com/jim3ma/learn-regular-expression-in-30-minutes/" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">点击这里</a>前往 Github star 一下本文。</p>
-<h2 id="联系我" class="calibre8">联系我</h2>
-<p class="calibre7">主页：<a href="https://blog.jim.plus" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">https://blog.jim.plus</a></p>
-<p class="calibre7">邮箱：<a href="mailto:majinjing3@gmail.com" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">majinjing3@gmail.com</a></p>
+            <h1 id="入门" class="calibre5">入门</h1>
+<p class="calibre7">学习正则表达式的最好方法是从例子开始，理解例子之后再自己对例子进行修改，实验。下面给出了不少简单的例子，并对它们作了详细的说明。</p>
+<p class="calibre7">假设你在一篇英文小说里查找hi，你可以使用正则表达式 &#34; <strong class="calibre12">hi</strong> &#34;。</p>
+<p class="calibre7">这几乎是最简单的正则表达式了，它可以精确匹配这样的字符串：由两个字符组成，前一个字符是 <strong class="calibre12">h</strong>, 后一个是 <strong class="calibre12">i</strong>。</p>
+<p class="calibre7">通常，处理正则表达式的工具会提供一个忽略大小写的选项，如果选中了这个选项，它可以匹配 hi, HI, Hi, hI 这四种情况中的任意一种。</p>
+<p class="calibre7">不幸的是，很多单词里包含 <strong class="calibre12">h</strong>i 这两个连续的字符，比如 <strong class="calibre12">hi</strong>m, <strong class="calibre12">hi</strong>story, <strong class="calibre12">hi</strong>gh 等等。用 <code class="pcalibre3 calibre10 pcalibre4">hi</code> 来查找的话，这里边的 <em class="calibre11">hi</em> 也会被找出来。如果要精确地查找 <em class="calibre11">hi</em> 这个单词的话，我们应该使用 <code class="pcalibre3 calibre10 pcalibre4">\bhi\b</code>。</p>
+<p class="calibre7"><code class="pcalibre3 calibre10 pcalibre4">\b</code> 是正则表达式规定的一个特殊代码（好吧，某些人叫它元字符，metacharacter），代表着单词的开头或结尾，也就是单词的分界处。虽然通常英文的单词是由空格，标点符号或者换行来分隔的，但是 <code class="pcalibre3 calibre10 pcalibre4">\b</code> <strong class="calibre12">并不匹配这些单词分隔字符中的任何一个，它只匹配一个位置</strong>。</p>
+<p class="calibre7">如果需要更精确的说法，<code class="pcalibre3 calibre10 pcalibre4">\b</code> 匹配这样的位置：<strong class="calibre12">它的前一个字符和后一个字符不全是(一个是,一个不是或不存在)</strong> <code class="pcalibre3 calibre10 pcalibre4">\w</code>。</p>
+<p class="calibre7">假如你要找的是 <em class="calibre11">hi</em> 后面不远处跟着一个 Lucy，你应该用 <code class="pcalibre3 calibre10 pcalibre4">\bhi\b.*\bLucy\b</code>。</p>
+<p class="calibre7">这里，<code class="pcalibre3 calibre10 pcalibre4">.</code>是另一个元字符，匹配除了换行符以外的任意字符。<strong class="calibre12">*</strong> 同样是<strong class="calibre12">元字符</strong>，不过它代表的不是字符，也不是位置，而是数量——它指定<strong class="calibre12">前边的内容可以连续重复使用任意次以使整个表达式得到匹配</strong>。因此，<code class="pcalibre3 calibre10 pcalibre4">.*</code> 连在一起就意味着任意数量的不包含换行的字符。现在 <code class="pcalibre3 calibre10 pcalibre4">\bhi\b.*\bLucy\b</code> 的意思就很明显了：先是一个单词hi,然后是任意个任意字符(但不能是换行)，最后是Lucy这个单词。</p>
+<p class="calibre7">换行符就是 <code class="pcalibre3 calibre10 pcalibre4">&#39;\n&#39;</code>, ASCII编码为10(十六进制0x0A)的字符。</p>
+<p class="calibre7">如果同时使用其它元字符，我们就能构造出功能更强大的正则表达式。比如下面这个例子：</p>
+<pre class="calibre13"><code class="calibre14 pcalibre6 pcalibre5">0\d\d-\d\d\d\d\d\d\d\d
+</code></pre><p class="calibre7">匹配这样的字符串：</p>
+<blockquote class="calibre15">
+<p class="calibre7">以0开头，然后是两个数字，然后是一个连字号“-”，最后是8个数字(也就是中国的电话号码。当然，这个例子只能匹配区号为3位的情形)。</p>
+</blockquote>
+<p class="calibre7">这里的 <code class="pcalibre3 calibre10 pcalibre4">\d</code> 是个新的<strong class="calibre12">元字符</strong>，匹配一位数字(0，或1，或2，或……)。<code class="pcalibre3 calibre10 pcalibre4">-</code>不是元字符，只匹配它本身——连字符(或者减号，或者中横线，或者随你怎么称呼它)。</p>
+<p class="calibre7">为了避免那么多烦人的重复，我们也可以这样写这个表达式：</p>
+<pre class="calibre13"><code class="calibre14 pcalibre6 pcalibre5">0\d{2}-\d{8}
+</code></pre><p class="calibre7">这里 <strong class="calibre12">\d</strong> 后面的 <strong class="calibre12">{2}({8})</strong> 的意思是前面 <strong class="calibre12">\d</strong> 必须连续重复匹配2次(8次)。</p>
 
         </div>
     
@@ -196,12 +202,12 @@
                 </div>
             </div>
         </div>
-        <a href="SUMMARY.html" class="navigation navigation-prev"
-           aria-label="Previous page: Table of Contents">
+        <a href="2.%20Zheng%20Ze%20Biao%20Da%20Shi%20Dao%20Di%20Shi%20Shi%20Yao%20Dong%20Xi%20_.html" class="navigation navigation-prev"
+           aria-label="Previous page: 2. 正则表达式到底是什么东西？">
             <i class="fa fa-angle-left"></i>
         </a>
-        <a href="1.%20Ru%20He%20Shi%20Yong%20Ben%20Jiao%20Cheng%20.html" class="navigation navigation-next"
-           aria-label="Next page: 1. 如何使用本教程">
+        <a href="4.%20Ce%20Shi%20Zheng%20Ze%20Biao%20Da%20Shi%20.html" class="navigation navigation-next"
+           aria-label="Next page: 4. 测试正则表达式">
             <i class="fa fa-angle-right"></i>
         </a>
     </div>
@@ -216,7 +222,7 @@
                     "level": "2.1",
                     "depth": 1,
                     "next": {
-                        "title": "1. 如何使用本教程",
+                        "title": "4. 测试正则表达式",
                         "level": "2.2",
                         "depth": 1,
                         "path": "next.md",
@@ -224,7 +230,7 @@
                         "articles": []
                     },
                     "previous": {
-                        "title": "Table of Contents",
+                        "title": "2. 正则表达式到底是什么东西？",
                         "level": "1.1",
                         "depth": 1,
                         "path": "prev.md",

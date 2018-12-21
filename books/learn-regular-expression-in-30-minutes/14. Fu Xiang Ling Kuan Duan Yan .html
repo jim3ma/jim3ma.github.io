@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>简介</title>
+    <title>14. 负向零宽断言</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="description" content="">
     <meta name="generator" content="GitBook 3.2.3">
@@ -27,8 +27,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152"
           href="gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
-    <link rel="next" href="1.%20Ru%20He%20Shi%20Yong%20Ben%20Jiao%20Cheng%20.html"/>
-    <link rel="prev" href="SUMMARY.html"/>
+    <link rel="next" href="15.%20Zhu%20Shi%20.html"/>
+    <link rel="prev" href="13.%20Ling%20Kuan%20Duan%20Yan%20.html"/>
 </head>
 <body>
 <div class="book">
@@ -128,7 +128,7 @@
                 <!-- Title -->
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
-                    <a href="index.html">简介</a>
+                    <a href="14. Fu Xiang Ling Kuan Duan Yan .html">14. 负向零宽断言</a>
                 </h1>
             </div>
             <div class="page-wrapper" tabindex="-1" role="main">
@@ -138,23 +138,23 @@
                             <section class="normal markdown-section">
                             <div class="page">
     
-        <h1 class="book-chapter" id="calibre_toc_1">简介</h1>
+        <h1 class="book-chapter" id="calibre_toc_15">14. 负向零宽断言</h1>
         <div class="section">
-            <h1 id="正则表达式30分钟入门教程" class="calibre5">正则表达式30分钟入门教程</h1>
-<h2 id="本文目标" class="calibre6">本文目标</h2>
-<p class="calibre7">30分钟内让你明白正则表达式是什么，并对它有一些基本的了解，让你可以在自己的程序或网页里使用它。</p>
-<h2 id="声明" class="calibre8">声明</h2>
-<p class="calibre7">本文非原创，是改编自<a href="http://deerchao.net/tutorials/regex/regex.htm#mission" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">《正则表达式30分钟入门教程》</a>，因为原作者的排版个人不是很喜欢，而且内容上个人觉得有些地方需要改进，所以在 gitbook 上开了一本书。</p>
-<h2 id="附加声明" class="calibre8">附加声明</h2>
-<p class="calibre7">本文是从 <code class="pcalibre3 calibre10 pcalibre4">luke0922</code> 的 <a href="https://legacy.gitbook.com/book/luke0922/learnregularexpressionin30minutes/details" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">GitBook</a> 上复制下来，再次修改的，主要是方便自己修改其中的错误，并且同步原作者的一些修改。</p>
-<h2 id="电子书下载" class="calibre8">电子书下载</h2>
-<p class="calibre7">可以从 <a href="https://legacy.gitbook.com/book/jim3ma/learn-regular-expression-in-30-minutes/details" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">GitBook</a> 上下载本书的电子版，包含 <code class="pcalibre3 calibre10 pcalibre4">epub</code>、<code class="pcalibre3 calibre10 pcalibre4">pdf</code>、<code class="pcalibre3 calibre10 pcalibre4">mobi</code> 格式。</p>
-<h2 id="参与贡献" class="calibre8">参与贡献</h2>
-<p class="calibre7">时间仓促，错误在所难免，如果发现有任何错误的地方，您可以直接点击左上角的<code class="pcalibre3 calibre10 pcalibre4">编辑本页</code>，进行编辑，提交修改。</p>
-<p class="calibre7">如果觉得您本文还不错，可以<a href="https://github.com/jim3ma/learn-regular-expression-in-30-minutes/" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">点击这里</a>前往 Github star 一下本文。</p>
-<h2 id="联系我" class="calibre8">联系我</h2>
-<p class="calibre7">主页：<a href="https://blog.jim.plus" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">https://blog.jim.plus</a></p>
-<p class="calibre7">邮箱：<a href="mailto:majinjing3@gmail.com" target="_blank" class="pcalibre2 pcalibre pcalibre1 calibre9">majinjing3@gmail.com</a></p>
+            <h1 id="负向零宽断言" class="calibre5">负向零宽断言</h1>
+<p class="calibre7">前面我们提到过怎么查找<strong class="calibre12">不是某个字符或不在某个字符类里的字符的方法(反义)。但是如果我们只是想要确保某个字符没有出现，但并不想去匹配它</strong>时怎么办？例如，如果我们想查找这样的单词--它里面出现了字母q，但是q后面跟的不是字母u，我们可以尝试这样：</p>
+<pre class="calibre13"><code class="calibre14 pcalibre6 pcalibre5">\b\w*q[^u]\w*\b
+</code></pre><p class="calibre7">匹配包含 <em class="calibre11">后面不是字母 u 的字母 q 的单词</em>。但是如果多做测试(或者你思维足够敏锐，直接就观察出来了)，你会发现，如果q出现在单词的结尾的话，像Iraq,Benq，这个表达式就会出错。这是因为 <code class="pcalibre3 calibre10 pcalibre4">[^u]</code> 总要匹配一个字符，所以如果 q 是单词的最后一个字符的话，后面的 <code class="pcalibre3 calibre10 pcalibre4">[^u]</code> 将会匹配q后面的单词分隔符(可能是空格，或者是句号或其它的什么)，后面的 <code class="pcalibre3 calibre10 pcalibre4">\w*\b</code> 将会匹配下一个单词，于是 <code class="pcalibre3 calibre10 pcalibre4">\b\w*q[^u]\w*\b</code> 就能匹配整个 <code class="pcalibre3 calibre10 pcalibre4">Iraq</code> fighting。负向零宽断言能解决这样的问题，因为它只匹配一个位置，并<strong class="calibre12">不消费</strong>任何字符。现在，我们可以这样来解决这个问题：</p>
+<pre class="calibre13"><code class="calibre14 pcalibre6 pcalibre5">\b\w*q(?!u)\w*\b
+</code></pre><p class="calibre7">零宽度负预测先行断言<code class="pcalibre3 calibre10 pcalibre4">(?!exp)</code>，断言此位置的后面不能匹配表达式 <code class="pcalibre3 calibre10 pcalibre4">exp</code>。例如：<code class="pcalibre3 calibre10 pcalibre4">\d{3}(?!\d)</code>匹配三位数字，而且这三位数字的后面不能是数字；<code class="pcalibre3 calibre10 pcalibre4">\b((?!abc)\w)+\b</code> 匹配不包含连续字符串 <code class="pcalibre3 calibre10 pcalibre4">abc</code> 的单词。</p>
+<p class="calibre7">同理，我们可以用<code class="pcalibre3 calibre10 pcalibre4">(?&lt;!exp)</code>，零宽度负回顾后发断言来断言此位置的前面不能匹配表达式 <code class="pcalibre3 calibre10 pcalibre4">exp</code>; <code class="pcalibre3 calibre10 pcalibre4">(?&lt;![a-z])\d{7}</code> 匹配前面不是小写字母的七位数字。</p>
+<p class="calibre7">一个更复杂的例子：<code class="pcalibre3 calibre10 pcalibre4">(?&lt;=&lt;(\w+)&gt;).*(?=&lt;\/\1&gt;)</code> 匹配不包含属性的简单HTML标签内里的内容。</p>
+<ul class="calibre24">
+<li class="calibre25"><code class="pcalibre3 calibre10 pcalibre4">(?&lt;=&lt;(\w+)&gt;)</code> 指定了这样的前缀：被尖括号括起来的单词(比如可能是 )</li>
+<li class="calibre25">然后是.*(任意的字符串)</li>
+<li class="calibre25">最后是一个后缀 <code class="pcalibre3 calibre10 pcalibre4">(?=&lt;\/\1&gt;)</code></li>
+</ul>
+<p class="calibre7">注意后缀里的 <code class="pcalibre3 calibre10 pcalibre4">\/</code>，它用到了前面提过的字符转义</p>
+<p class="calibre7"><code class="pcalibre3 calibre10 pcalibre4">\1</code> 则是一个反向引用，引用的正是捕获的第一组，前面的 <code class="pcalibre3 calibre10 pcalibre4">(\w+)</code> 匹配的内容，这样如果前缀实际上是 <code class="pcalibre3 calibre10 pcalibre4">&lt;b&gt;</code> 的话，后缀就是 <code class="pcalibre3 calibre10 pcalibre4">&lt;/b&gt;</code> 了。整个表达式匹配的是<strong class="calibre12">和</strong>之间的内容(再次提醒，不包括前缀和后缀本身)。</p>
 
         </div>
     
@@ -196,12 +196,12 @@
                 </div>
             </div>
         </div>
-        <a href="SUMMARY.html" class="navigation navigation-prev"
-           aria-label="Previous page: Table of Contents">
+        <a href="13.%20Ling%20Kuan%20Duan%20Yan%20.html" class="navigation navigation-prev"
+           aria-label="Previous page: 13. 零宽断言">
             <i class="fa fa-angle-left"></i>
         </a>
-        <a href="1.%20Ru%20He%20Shi%20Yong%20Ben%20Jiao%20Cheng%20.html" class="navigation navigation-next"
-           aria-label="Next page: 1. 如何使用本教程">
+        <a href="15.%20Zhu%20Shi%20.html" class="navigation navigation-next"
+           aria-label="Next page: 15. 注释">
             <i class="fa fa-angle-right"></i>
         </a>
     </div>
@@ -216,7 +216,7 @@
                     "level": "2.1",
                     "depth": 1,
                     "next": {
-                        "title": "1. 如何使用本教程",
+                        "title": "15. 注释",
                         "level": "2.2",
                         "depth": 1,
                         "path": "next.md",
@@ -224,7 +224,7 @@
                         "articles": []
                     },
                     "previous": {
-                        "title": "Table of Contents",
+                        "title": "13. 零宽断言",
                         "level": "1.1",
                         "depth": 1,
                         "path": "prev.md",

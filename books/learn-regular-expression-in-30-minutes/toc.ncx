@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="zh-CN">
+  <head>
+    <meta content="d4eb50ae-49fb-48c3-85e5-8675107ef702" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (3.15.0)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>正则表达式30分钟入门教程</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="u5Ne5QADyfFVQg2Mziy85yD" playOrder="1">
+      <navLabel>
+        <text>简介</text>
+      </navLabel>
+      <content src="index.html"/>
+    </navPoint>
+    <navPoint id="ulCOKLUNSnM5jKyrQXWu5m6" playOrder="2">
+      <navLabel>
+        <text>1. 如何使用本教程</text>
+      </navLabel>
+      <content src="1.%20Ru%20He%20Shi%20Yong%20Ben%20Jiao%20Cheng%20.html"/>
+    </navPoint>
+    <navPoint id="uFPOeBk2BXqXUwFQsg5v8WH" playOrder="3">
+      <navLabel>
+        <text>2. 正则表达式到底是什么东西？</text>
+      </navLabel>
+      <content src="2.%20Zheng%20Ze%20Biao%20Da%20Shi%20Dao%20Di%20Shi%20Shi%20Yao%20Dong%20Xi%20_.html"/>
+    </navPoint>
+    <navPoint id="uQOfyyxBdFYXqOFhxHslRm2" playOrder="4">
+      <navLabel>
+        <text>3. 入门</text>
+      </navLabel>
+      <content src="3.%20Ru%20Men%20.html"/>
+    </navPoint>
+    <navPoint id="uiXNANb4JmtKmYxwcPkEzU5" playOrder="5">
+      <navLabel>
+        <text>4. 测试正则表达式</text>
+      </navLabel>
+      <content src="4.%20Ce%20Shi%20Zheng%20Ze%20Biao%20Da%20Shi%20.html"/>
+    </navPoint>
+    <navPoint id="uljc6oa6hcsTvt4pbVazInE" playOrder="6">
+      <navLabel>
+        <text>5. 元字符</text>
+      </navLabel>
+      <content src="5.%20Yuan%20Zi%20Fu%20.html"/>
+    </navPoint>
+    <navPoint id="u4gkKQY9mHB6TRSfYRP2W7E" playOrder="7">
+      <navLabel>
+        <text>6. 字符转义</text>
+      </navLabel>
+      <content src="6.%20Zi%20Fu%20Zhuan%20Yi%20.html"/>
+    </navPoint>
+    <navPoint id="uAulllU9UJNfzF2EfPH6kSE" playOrder="8">
+      <navLabel>
+        <text>7. 重复</text>
+      </navLabel>
+      <content src="7.%20Zhong%20Fu%20.html"/>
+    </navPoint>
+    <navPoint id="uHI8JW2xwTyASrTJsLiyxAE" playOrder="9">
+      <navLabel>
+        <text>8. 字符类</text>
+      </navLabel>
+      <content src="8.%20Zi%20Fu%20Lei%20.html"/>
+    </navPoint>
+    <navPoint id="uBjefVuPM6oEroZh2wr8DA7" playOrder="10">
+      <navLabel>
+        <text>9. 分枝条件</text>
+      </navLabel>
+      <content src="9.%20Fen%20Zhi%20Tiao%20Jian%20.html"/>
+    </navPoint>
+    <navPoint id="u4RM5SBZU3Gtdn7KzsRTTGA" playOrder="11">
+      <navLabel>
+        <text>10. 分组</text>
+      </navLabel>
+      <content src="10.%20Fen%20Zu%20.html"/>
+    </navPoint>
+    <navPoint id="u4pNxHAJk7FOE2w2fIXO6C2" playOrder="12">
+      <navLabel>
+        <text>11. 反义</text>
+      </navLabel>
+      <content src="11.%20Fan%20Yi%20.html"/>
+    </navPoint>
+    <navPoint id="uq43XOnP6LRQUVfhWVl43zG" playOrder="13">
+      <navLabel>
+        <text>12. 后向引用</text>
+      </navLabel>
+      <content src="12.%20Hou%20Xiang%20Yin%20Yong%20.html"/>
+    </navPoint>
+    <navPoint id="u64NXnbXI7qVkNhjXYrFDa6" playOrder="14">
+      <navLabel>
+        <text>13. 零宽断言</text>
+      </navLabel>
+      <content src="13.%20Ling%20Kuan%20Duan%20Yan%20.html"/>
+    </navPoint>
+    <navPoint id="uShnJTUVBrz9hASkiWZj8FB" playOrder="15">
+      <navLabel>
+        <text>14. 负向零宽断言</text>
+      </navLabel>
+      <content src="14.%20Fu%20Xiang%20Ling%20Kuan%20Duan%20Yan%20.html"/>
+    </navPoint>
+    <navPoint id="u3S5PCAIncuTrWEFAbjEOv7" playOrder="16">
+      <navLabel>
+        <text>15. 注释</text>
+      </navLabel>
+      <content src="15.%20Zhu%20Shi%20.html"/>
+    </navPoint>
+    <navPoint id="uaGiLuVTSYYqFzf8SYsg7HE" playOrder="17">
+      <navLabel>
+        <text>16. 贪婪与懒惰</text>
+      </navLabel>
+      <content src="16.%20Tan%20Lan%20Yu%20Lan%20Duo%20.html"/>
+    </navPoint>
+    <navPoint id="uY8Gcim6CERArlOPxASQiPB" playOrder="18">
+      <navLabel>
+        <text>17. 处理选项</text>
+      </navLabel>
+      <content src="17.%20Chu%20Li%20Xuan%20Xiang%20.html"/>
+    </navPoint>
+    <navPoint id="uATbuXcXvSJmpy3mjnS8DFC" playOrder="19">
+      <navLabel>
+        <text>18. 平衡组:递归匹配</text>
+      </navLabel>
+      <content src="18.%20Ping%20Heng%20Zu%20_Di%20Gui%20Pi%20Pei%20.html"/>
+    </navPoint>
+    <navPoint id="ue4ldrk4Rc8VmUEnbfLeAc9" playOrder="20">
+      <navLabel>
+        <text>19. 本文未提到的内容</text>
+      </navLabel>
+      <content src="19.%20Ben%20Wen%20Wei%20Ti%20Dao%20De%20Nei%20Rong%20.html"/>
+    </navPoint>
+    <navPoint id="uexGbayseupiGOUtCoBy32D" playOrder="21">
+      <navLabel>
+        <text>20. 网上的资源及本文参考文献</text>
+      </navLabel>
+      <content src="20.%20Wang%20Shang%20De%20Zi%20Yuan%20Ji%20Ben%20Wen%20Can%20Kao%20Wen%20Xian%20.html"/>
+    </navPoint>
+    <navPoint id="ulfPvpUZIQ2Q84Gag6h6ab6" playOrder="22">
+      <navLabel>
+        <text>21. 更新记录</text>
+      </navLabel>
+      <content src="21.%20Geng%20Xin%20Ji%20Lu%20.html"/>
+    </navPoint>
+  </navMap>
+</ncx>
